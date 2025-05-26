@@ -1,0 +1,112 @@
+{
+    "findings": [
+        {
+            "action": [
+                "s3:ListBucket"
+            ],
+            "analyzedAt": "2025-05-11T08:36:06.170Z",
+            "condition": {
+                "aws:PrincipalArn": "arn:aws:iam::123456789012:user/*bcdefghijklmno",
+                "aws:SourceArn": "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno1",
+                "aws:SourceIp": "200.10.0.0/16"
+            },
+            "createdAt": "2025-05-11T08:35:50.381Z",
+            "id": "e82bd7b2-bef1-445a-ac21-7e45ea0a831e",
+            "isPublic": false,
+            "principal": {
+                "AWS": "*"
+            },
+            "resource": "arn:aws:s3:::antsknmath",
+            "resourceOwnerAccount": "222634363387",
+            "resourceType": "AWS::S3::Bucket",
+            "sources": [
+                {
+                    "type": "POLICY"
+                }
+            ],
+            "status": "ACTIVE",
+            "updatedAt": "2025-05-11T08:35:50.381Z"
+        },
+        {
+            "action": [
+                "s3:ListBucket"
+            ],
+            "analyzedAt": "2025-05-11T08:36:06.170Z",
+            "condition": {
+                "aws:PrincipalArn": "arn:aws:iam::123456789012:user/a*cdefghijklmno",
+                "aws:SourceArn": "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno2",
+                "aws:SourceIp": "200.10.0.0/17"
+            },
+            "createdAt": "2025-05-11T08:36:06.170Z",
+            "id": "3ae5f2b7-9f88-4439-a792-3c7b6cfcd584",
+            "isPublic": false,
+            "principal": {
+                "AWS": "*"
+            },
+            "resource": "arn:aws:s3:::antsknmath",
+            "resourceOwnerAccount": "222634363387",
+            "resourceType": "AWS::S3::Bucket",
+            "sources": [
+                {
+                    "type": "POLICY"
+                }
+            ],
+            "status": "ACTIVE",
+            "updatedAt": "2025-05-11T08:36:06.170Z"
+        },
+        {
+            "action": [
+                "s3:ListBucket"
+            ],
+            "analyzedAt": "2025-05-11T08:36:06.170Z",
+            "condition": {
+                "aws:PrincipalArn": "arn:aws:iam::123456789012:user/a*cdefghijklmno",
+                "aws:SourceArn": "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno1",
+                "aws:SourceIp": "200.10.0.0/16"
+            },
+            "createdAt": "2025-05-11T08:36:06.170Z",
+            "id": "8391b9af-b914-4848-baf1-ef37ff930da5",
+            "isPublic": false,
+            "principal": {
+                "AWS": "*"
+            },
+            "resource": "arn:aws:s3:::antsknmath",
+            "resourceOwnerAccount": "222634363387",
+            "resourceType": "AWS::S3::Bucket",
+            "sources": [
+                {
+                    "type": "POLICY"
+                }
+            ],
+            "status": "ACTIVE",
+            "updatedAt": "2025-05-11T08:36:06.170Z"
+        },
+        {
+            "action": [
+                "s3:ListBucket"
+            ],
+            "analyzedAt": "2025-05-11T08:36:06.170Z",
+            "condition": {
+                "aws:PrincipalArn": "arn:aws:iam::123456789012:user/*bcdefghijklmno",
+                "aws:SourceArn": "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno2",
+                "aws:SourceIp": "200.10.0.0/17"
+            },
+            "createdAt": "2025-05-11T08:36:06.170Z",
+            "id": "24e97331-9b4d-4cf9-ba78-6b3215cba3b1",
+            "isPublic": false,
+            "principal": {
+                "AWS": "*"
+            },
+            "resource": "arn:aws:s3:::antsknmath",
+            "resourceOwnerAccount": "222634363387",
+            "resourceType": "AWS::S3::Bucket",
+            "sources": [
+                {
+                    "type": "POLICY"
+                }
+            ],
+            "status": "ACTIVE",
+            "updatedAt": "2025-05-11T08:36:06.170Z"
+        }
+    ]
+}

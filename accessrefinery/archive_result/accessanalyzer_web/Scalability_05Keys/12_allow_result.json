@@ -1,0 +1,15 @@
+{
+    "findings": [
+        {
+            "analyzedAt": "2025-05-11T02:46:45.438Z",
+            "createdAt": "2025-05-11T02:46:45.438Z",
+            "error": "INTERNAL_ERROR",
+            "id": "b695ac87-ed6c-4f72-9f83-a79c03d9a6c3",
+            "resource": "arn:aws:s3:::antsknmath",
+            "resourceOwnerAccount": "222634363387",
+            "resourceType": "AWS::S3::Bucket",
+            "status": "ACTIVE",
+            "updatedAt": "2025-05-11T02:46:45.438Z"
+        }
+    ]
+}

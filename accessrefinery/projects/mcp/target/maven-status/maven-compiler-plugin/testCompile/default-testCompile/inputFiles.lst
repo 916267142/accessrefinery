@@ -1,0 +1,12 @@
+/home/simple/accessrefinery/projects/mcp/src/test/java/org/iam/variables/dynamics/OperableLabelFactoryTest.java
+/home/simple/accessrefinery/projects/mcp/src/test/java/org/iam/sat/SATDomainTest.java
+/home/simple/accessrefinery/projects/mcp/src/test/java/org/iam/core/MCPTest.java
+/home/simple/accessrefinery/projects/mcp/src/test/java/org/batfish/MutableBDDIntegerTest.java
+/home/simple/accessrefinery/projects/mcp/src/test/java/org/iam/sat/SATUtilsTest.java
+/home/simple/accessrefinery/projects/mcp/src/test/java/org/iam/core/ECEngineTest.java
+/home/simple/accessrefinery/projects/mcp/src/test/java/org/iam/sat/MutableSATIntegerTest.java
+/home/simple/accessrefinery/projects/mcp/src/test/java/org/iam/core/MCPFactoryTest.java
+/home/simple/accessrefinery/projects/mcp/src/test/java/org/iam/variables/statics/LabelFactoryTest.java
+/home/simple/accessrefinery/projects/mcp/src/test/java/org/batfish/BDDMatchers.java
+/home/simple/accessrefinery/projects/mcp/src/test/java/org/batfish/BDDMatchersImpl.java
+/home/simple/accessrefinery/projects/mcp/src/test/java/org/iam/core/MCPLabelsTest.java

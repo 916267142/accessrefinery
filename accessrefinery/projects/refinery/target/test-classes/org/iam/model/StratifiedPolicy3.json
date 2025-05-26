@@ -1,0 +1,18 @@
+{
+  "Version": "5.0",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Condition": {
+        "StringEquals": {
+          "SrcVpc": [
+            "vpc-b"
+          ],
+          "OrgID": [
+            "o-2"
+          ]
+        }
+      }
+    }
+  ]
+}

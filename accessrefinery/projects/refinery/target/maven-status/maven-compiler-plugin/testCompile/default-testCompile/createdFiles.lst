@@ -1,0 +1,8 @@
+org/iam/model/LabelTreeTest.class
+org/iam/intent/FindingTest.class
+org/iam/policy/grammer/MCPPolicyTest.class
+org/iam/core/AccessRefineryTest.class
+org/iam/policy/grammer/TestCondition.class
+org/iam/intent/MergeIntentTest.class
+org/iam/parser/PolicyTest.class
+org/iam/core/ILPSolverTest.class

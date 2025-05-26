@@ -1,0 +1,15 @@
+org/iam/sat/SATDomainTest.class
+org/iam/core/MCPFactoryTest.class
+org/batfish/BDDMatchersImpl$IsZero.class
+org/iam/variables/dynamics/OperableLabelFactoryTest.class
+org/iam/sat/MutableSATIntegerTest.class
+org/batfish/BDDMatchers.class
+org/iam/core/ECEngineTest.class
+org/batfish/BDDMatchersImpl.class
+org/iam/core/MCPTest.class
+org/batfish/MutableBDDIntegerTest.class
+org/iam/core/MCPLabelsTest.class
+org/iam/sat/SATUtilsTest.class
+org/batfish/BDDMatchersImpl$IsOne.class
+org/batfish/BDDMatchersImpl$Intersects.class
+org/iam/variables/statics/LabelFactoryTest.class

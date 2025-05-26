@@ -1,0 +1,25 @@
+=== JSON Directory Comparison Log ===
+Start time: 2025-05-12 16:36:31
+Comparing directories: archive_result/accessminer_bdd_rri_10rs/Correctness/ and archive_result/accessminer_sat_rri_3rs/Correctness/
+
+🔍 Comparing files in archive_result/accessminer_bdd_rri_10rs/Correctness/ and archive_result/accessminer_sat_rri_3rs/Correctness/...
+✅ 11_allow_allow_equal_result.json: equivalent
+✅ 12_allow_allow_overriding_result.json: equivalent
+✅ 13_allow_allow_overlapping1_result.json: equivalent
+✅ 14_allow_allow_overlapping2_result.json: equivalent
+✅ 15_allow_allow_disjoint_result.json: equivalent
+✅ 21_allow_deny_equal_result.json: equivalent
+✅ 22_allow_deny_overriding1_result.json: equivalent
+✅ 23_allow_deny_overriding2_result.json: equivalent
+✅ 24_allow_deny_disjoint_result.json: equivalent
+✅ 31_allow_deny_comp_overriding1_result.json: equivalent
+✅ 32_allow_deny_comp_overriding2_result.json: equivalent
+✅ 33_allow_deny_comp_disjoint_result.json: equivalent
+
+=== Summary ===
+Timestamp: 2025-05-12 16:36:33
+Total matched files: 12
+Different files: 0
+Identical files: 12
+
+🎉 All 12 matched files are semantically equivalent.

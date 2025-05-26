@@ -1,0 +1,95 @@
+-----------------new run---------------------
+Processing file: data/Scalability_06Keys//01_allow.json
+[0/5] Initial updatedAt: 2025-05-11T02:46:45.438Z
+[1/5] Bucket policy updated with data/Scalability_06Keys//01_allow.json
+[2/5] Resource scan started
+[3/5] updatedAt changed: 2025-05-11T08:35:50.381Z
+[4/5] intents saved at ./aws_result/Scalability_06Keys//01_allow_result.json
+[5/5] 2025-05-11 16:36:02: Total running time  : 17 seconds
+[5/5] 2025-05-11 16:36:02: Final intents count : 1
+---------------------------------------------
+Processing file: data/Scalability_06Keys//02_allow.json
+[0/5] Initial updatedAt: 2025-05-11T08:35:50.381Z
+[1/5] Bucket policy updated with data/Scalability_06Keys//02_allow.json
+[2/5] Resource scan started
+[3/5] updatedAt changed: 2025-05-11T08:36:06.170Z
+[4/5] intents saved at ./aws_result/Scalability_06Keys//02_allow_result.json
+[5/5] 2025-05-11 16:36:24: Total running time  : 22 seconds
+[5/5] 2025-05-11 16:36:24: Final intents count : 4
+---------------------------------------------
+Processing file: data/Scalability_06Keys//03_allow.json
+[0/5] Initial updatedAt: 2025-05-11T08:36:06.170Z
+[1/5] Bucket policy updated with data/Scalability_06Keys//03_allow.json
+[2/5] Resource scan started
+[3/5] updatedAt changed: 2025-05-11T08:36:27.656Z
+[4/5] intents saved at ./aws_result/Scalability_06Keys//03_allow_result.json
+[5/5] 2025-05-11 16:37:03: Total running time  : 39 seconds
+[5/5] 2025-05-11 16:37:03: Final intents count : 9
+---------------------------------------------
+Processing file: data/Scalability_06Keys//04_allow.json
+[0/5] Initial updatedAt: 2025-05-11T08:36:27.656Z
+[1/5] Bucket policy updated with data/Scalability_06Keys//04_allow.json
+[2/5] Resource scan started
+[3/5] updatedAt changed: 2025-05-11T08:37:06.802Z
+[4/5] intents saved at ./aws_result/Scalability_06Keys//04_allow_result.json
+[5/5] 2025-05-11 16:38:08: Total running time  : 65 seconds
+[5/5] 2025-05-11 16:38:08: Final intents count : 16
+---------------------------------------------
+Processing file: data/Scalability_06Keys//05_allow.json
+[0/5] Initial updatedAt: 2025-05-11T08:37:06.802Z
+[1/5] Bucket policy updated with data/Scalability_06Keys//05_allow.json
+[2/5] Resource scan started
+[3/5] updatedAt changed: 2025-05-11T08:38:13.409Z
+[4/5] intents saved at ./aws_result/Scalability_06Keys//05_allow_result.json
+[5/5] 2025-05-11 16:40:10: Total running time  : 122 seconds
+[5/5] 2025-05-11 16:40:10: Final intents count : 25
+---------------------------------------------
+Processing file: data/Scalability_06Keys//06_allow.json
+[0/5] Initial updatedAt: 2025-05-11T08:38:13.409Z
+[1/5] Bucket policy updated with data/Scalability_06Keys//06_allow.json
+[2/5] Resource scan started
+[3/5] updatedAt changed: 2025-05-11T08:40:14.218Z
+[4/5] intents saved at ./aws_result/Scalability_06Keys//06_allow_result.json
+[5/5] 2025-05-11 16:43:43: Total running time  : 213 seconds
+[5/5] 2025-05-11 16:43:43: Final intents count : 36
+---------------------------------------------
+Processing file: data/Scalability_06Keys//07_allow.json
+[0/5] Initial updatedAt: 2025-05-11T08:40:14.218Z
+[1/5] Bucket policy updated with data/Scalability_06Keys//07_allow.json
+[2/5] Resource scan started
+[3/5] updatedAt changed: 2025-05-11T08:44:37.793Z
+[4/5] intents saved at ./aws_result/Scalability_06Keys//07_allow_result.json
+[5/5] 2025-05-11 16:49:42: Total running time  : 359 seconds
+[5/5] 2025-05-11 16:49:42: Final intents count : 49
+---------------------------------------------
+Processing file: data/Scalability_06Keys//08_allow.json
+[0/5] Initial updatedAt: 2025-05-11T08:44:37.793Z
+[1/5] Bucket policy updated with data/Scalability_06Keys//08_allow.json
+[2/5] Resource scan started
+[3/5] updatedAt changed: 2025-05-11T08:49:45.689Z
+[4/5] intents saved at ./aws_result/Scalability_06Keys//08_allow_result.json
+[5/5] 2025-05-11 16:59:03: Total running time  : 561 seconds
+[5/5] 2025-05-11 16:59:03: Final intents count : 64
+---------------------------------------------
+Processing file: data/Scalability_06Keys//09_allow.json
+[0/5] Initial updatedAt: 2025-05-11T08:49:45.689Z
+[1/5] Bucket policy updated with data/Scalability_06Keys//09_allow.json
+[2/5] Resource scan started
+[3/5] updatedAt changed: 2025-05-11T08:59:38.303Z
+[4/5] intents saved at ./aws_result/Scalability_06Keys//09_allow_result.json
+[5/5] 2025-05-11 17:10:25: Total running time  : 682 seconds
+[5/5] 2025-05-11 17:10:25: Final intents count : 81
+---------------------------------------------
+Processing file: data/Scalability_06Keys//10_allow.json
+[0/5] Initial updatedAt: 2025-05-11T08:59:38.303Z
+[1/5] Bucket policy updated with data/Scalability_06Keys//10_allow.json
+[2/5] Resource scan started
+[3/5] updatedAt changed: 2025-05-11T09:12:36.112Z
+[4/5] intents saved at ./aws_result/Scalability_06Keys//10_allow_result.json
+[5/5] 2025-05-11 18:06:51: Total running time  : 3386 seconds
+[5/5] 2025-05-11 18:06:51: Final intents count : 1
+---------------------------------------------
+Processing file: data/Scalability_06Keys//11_allow.json
+[0/5] Initial updatedAt: 2025-05-11T09:12:36.112Z
+[1/5] Bucket policy updated with data/Scalability_06Keys//11_allow.json
+[2/5] Resource scan started

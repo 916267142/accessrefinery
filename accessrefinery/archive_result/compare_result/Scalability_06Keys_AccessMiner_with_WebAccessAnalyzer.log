@@ -1,0 +1,2446 @@
+=== JSON Directory Comparison Log ===
+Start time: 2025-05-12 16:35:22
+Comparing directories: archive_result/accessanalyzer_web/Scalability_06Keys/ and archive_result/accessminer_bdd_mci_10rs/Scalability_06Keys/
+
+🔍 Comparing files in archive_result/accessanalyzer_web/Scalability_06Keys/ and archive_result/accessminer_bdd_mci_10rs/Scalability_06Keys/...
+✅ 01_allow_result.json: equivalent
+✅ 02_allow_result.json: equivalent
+✅ 03_allow_result.json: equivalent
+✅ 04_allow_result.json: equivalent
+✅ 05_allow_result.json: equivalent
+✅ 06_allow_result.json: equivalent
+✅ 07_allow_result.json: equivalent
+✅ 08_allow_result.json: equivalent
+✅ 09_allow_result.json: equivalent
+❌ 10_allow_result.json: different
+=== Differences in 10_allow_result.json ===
+=== Normalized archive_result/accessanalyzer_web/Scalability_06Keys//10_allow_result.json ===
+{
+  "findings": [
+    {
+      "action": [],
+      "condition": {},
+      "principal": {
+        "AWS": []
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    }
+  ]
+}
+
+=== Normalized archive_result/accessminer_bdd_mci_10rs/Scalability_06Keys//10_allow_result.json ===
+{
+  "findings": [
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/*bcdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno1"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/16"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/*bcdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno10"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/25"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/*bcdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno2"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/17"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/*bcdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno3"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/18"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/*bcdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno4"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/19"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/*bcdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno5"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/20"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/*bcdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno6"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/21"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/*bcdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno7"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/22"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/*bcdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno8"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/23"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/*bcdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno9"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/24"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/a*cdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno1"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/16"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/a*cdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno10"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/25"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/a*cdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno2"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/17"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/a*cdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno3"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/18"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/a*cdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno4"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/19"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/a*cdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno5"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/20"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/a*cdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno6"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/21"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/a*cdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno7"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/22"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/a*cdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno8"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/23"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/a*cdefghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno9"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/24"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/ab*defghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno1"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/16"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/ab*defghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno10"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/25"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/ab*defghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno2"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/17"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/ab*defghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno3"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/18"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/ab*defghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno4"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/19"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/ab*defghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno5"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/20"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/ab*defghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno6"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/21"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/ab*defghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno7"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/22"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/ab*defghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno8"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/23"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/ab*defghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno9"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/24"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abc*efghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno1"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/16"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abc*efghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno10"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/25"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abc*efghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno2"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/17"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abc*efghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno3"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/18"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abc*efghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno4"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/19"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abc*efghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno5"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/20"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abc*efghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno6"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/21"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abc*efghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno7"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/22"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abc*efghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno8"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/23"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abc*efghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno9"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/24"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcd*fghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno1"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/16"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcd*fghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno10"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/25"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcd*fghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno2"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/17"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcd*fghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno3"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/18"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcd*fghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno4"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/19"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcd*fghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno5"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/20"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcd*fghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno6"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/21"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcd*fghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno7"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/22"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcd*fghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno8"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/23"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcd*fghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno9"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/24"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcde*ghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno1"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/16"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcde*ghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno10"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/25"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcde*ghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno2"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/17"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcde*ghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno3"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/18"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcde*ghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno4"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/19"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcde*ghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno5"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/20"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcde*ghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno6"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/21"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcde*ghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno7"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/22"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcde*ghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno8"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/23"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcde*ghijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno9"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/24"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdef*hijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno1"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/16"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdef*hijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno10"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/25"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdef*hijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno2"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/17"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdef*hijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno3"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/18"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdef*hijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno4"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/19"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdef*hijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno5"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/20"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdef*hijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno6"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/21"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdef*hijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno7"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/22"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdef*hijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno8"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/23"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdef*hijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno9"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/24"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefg*ijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno1"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/16"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefg*ijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno10"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/25"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefg*ijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno2"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/17"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefg*ijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno3"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/18"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefg*ijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno4"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/19"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefg*ijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno5"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/20"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefg*ijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno6"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/21"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefg*ijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno7"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/22"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefg*ijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno8"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/23"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefg*ijklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno9"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/24"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefgh*jklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno1"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/16"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefgh*jklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno10"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/25"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefgh*jklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno2"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/17"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefgh*jklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno3"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/18"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefgh*jklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno4"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/19"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefgh*jklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno5"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/20"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefgh*jklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno6"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/21"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefgh*jklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno7"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/22"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefgh*jklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno8"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/23"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefgh*jklmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno9"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/24"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefghi*klmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno1"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/16"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefghi*klmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno10"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/25"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefghi*klmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno2"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/17"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefghi*klmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno3"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/18"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefghi*klmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno4"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/19"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefghi*klmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno5"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/20"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefghi*klmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno6"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/21"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefghi*klmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno7"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/22"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefghi*klmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno8"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/23"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    },
+    {
+      "action": [
+        "s3:ListBucket"
+      ],
+      "condition": {
+        "aws:PrincipalArn": [
+          "arn:aws:iam::123456789012:user/abcdefghi*klmno"
+        ],
+        "aws:SourceArn": [
+          "arn:aws:sns:ap-northeast-1:123456789012:abcdefghijklmno9"
+        ],
+        "aws:SourceIp": [
+          "200.10.0.0/24"
+        ]
+      },
+      "principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "resource": [
+        "arn:aws:s3:::antsknmath"
+      ]
+    }
+  ]
+}
+
+
+=== Summary ===
+Timestamp: 2025-05-12 16:35:23
+Total matched files: 10
+Different files: 1
+Identical files: 9
+
+🚫 1 of 10 matched files are different.

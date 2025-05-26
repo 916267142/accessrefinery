@@ -1,0 +1,48 @@
+{
+	"InputFilePath" : "data/Correctness/14_allow_allow_overlapping2.json",
+	"GeneratedTime" : "2025-05-11 21:18:41",
+	"Finding" : [
+		{
+			"Principal" : {
+				"AWS" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"arn:aws:s3:::antsknmath"
+			],
+			"Condition" : {
+				"aws:SourceArn" : [
+					"arn:aws:sns:ap-northeast-1:123456789012:*bc"
+				],
+				"aws:PrincipalArn" : [
+					"arn:aws:iam::123456789012:user/*bc"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"AWS" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"arn:aws:s3:::antsknmath"
+			],
+			"Condition" : {
+				"aws:SourceArn" : [
+					"arn:aws:sns:ap-northeast-1:123456789012:a*c"
+				],
+				"aws:PrincipalArn" : [
+					"arn:aws:iam::123456789012:user/a*c"
+				]
+			}
+		}
+	]
+}
