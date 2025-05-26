@@ -1,0 +1,28 @@
+{
+    "Findings": [
+        {
+            "Principal": {
+                "IAM": "user1" 
+            },
+            "Action": "sts:agencies:assume",
+            "Condition": [
+                {
+                    "key": "g:PrincipalUrn",
+                    "value": "iam::123456789012:user:a*"
+                }
+            ]
+        },
+        {
+            "Principal": {
+                "IAM": "user1" 
+            },
+            "Action": "sts:agencies:assume",
+            "Condition": [
+                {
+                    "key": "g:PrincipalUrn",
+                    "value": "iam::123456789012:user:ab*"
+                }
+            ]
+        }
+    ]
+}

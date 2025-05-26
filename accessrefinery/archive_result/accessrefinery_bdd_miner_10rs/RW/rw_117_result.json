@@ -1,0 +1,110 @@
+{
+	"InputFilePath" : "data/RW/rw_117.json",
+	"GeneratedTime" : "2025-05-11 19:56:23",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::2w5kpyp6ipd3"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::2w5kpyp6ipd3"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::2w5kpyp6ipd3"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::2w5kpyp6ipd3/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::2w5kpyp6ipd3/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::2w5kpyp6ipd3"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::2w5kpyp6ipd3/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::2w5kpyp6ipd3/*"
+			]
+		}
+	]
+}

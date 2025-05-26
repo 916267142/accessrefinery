@@ -1,0 +1,97 @@
+{
+	"InputFilePath" : "data/RW/rw_255.json",
+	"GeneratedTime" : "2025-05-11 18:44:46",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::06e827b07c0026620f0dc018c5379c80:user:074952a96b00269e1f92c01852af1436"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::apoit/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::apoit/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::apoit/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::apoit/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::apoit/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::apoit/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::06e827b07c0026620f0dc018c5379c80:user:074952a96b00269e1f92c01852af1436"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::apoit"
+			]
+		}
+	]
+}

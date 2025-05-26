@@ -1,0 +1,58 @@
+{
+	"InputFilePath" : "data/RW/rw_251.json",
+	"GeneratedTime" : "2025-05-11 21:18:12",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::aosblueprints-cn-east-3-09ab88850180f5d10f7ec0063e2f8a00"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::aosblueprints-cn-east-3-09ab88850180f5d10f7ec0063e2f8a00"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::aosblueprints-cn-east-3-09ab88850180f5d10f7ec0063e2f8a00/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::aosblueprints-cn-east-3-09ab88850180f5d10f7ec0063e2f8a00/*"
+			]
+		}
+	]
+}

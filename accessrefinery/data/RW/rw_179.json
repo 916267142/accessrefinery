@@ -1,0 +1,71 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1577600540607",
+	"Statement" : [
+		{
+			"Sid" : "Customized1577600540472",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::06e827b07c0026620f0dc018c5379c80:user:074952a96b00269e1f92c01852af1436"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::accfun"
+			]
+		},
+		{
+			"Sid" : "Customized1577600523990",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::06e827b07c0026620f0dc018c5379c80:user:074952a96b00269e1f92c01852af1436"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::accfun/*"
+			]
+		},
+		{
+			"Sid" : "publicReadWritePolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:PutObject",
+				"s3:GetObject",
+				"s3:GetObjectVersion",
+				"s3:DeleteObjectVersion",
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::accfun/*"
+			]
+		},
+		{
+			"Sid" : "publicHeadBucketPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket",
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::accfun"
+			]
+		}
+	]
+}

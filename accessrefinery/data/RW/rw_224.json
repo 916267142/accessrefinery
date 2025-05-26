@@ -1,0 +1,28 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1620618138092",
+	"Statement" : [
+		{
+			"Sid" : "公共读-9460",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket",
+				"s3:HeadBucket",
+				"s3:GetBucketLocation",
+				"s3:ListBucketVersions",
+				"s3:GetObject",
+				"s3:RestoreObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::al6688",
+				"s3:::al6688/*"
+			]
+		}
+	]
+}

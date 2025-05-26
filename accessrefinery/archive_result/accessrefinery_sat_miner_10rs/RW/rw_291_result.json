@@ -1,0 +1,97 @@
+{
+	"InputFilePath" : "data/RW/rw_291.json",
+	"GeneratedTime" : "2025-05-11 18:44:50",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::avatar-pc"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::094270285f00f20b0ff9c00636d2a500:user:09e76a568400f3841f99c0069f745199"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::avatar-pc/web"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::094270285f00f20b0ff9c00636d2a500:user:09e76a568400f3841f99c0069f745199"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::avatar-pc/web"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::avatar-pc/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::avatar-pc/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::094270285f00f20b0ff9c00636d2a500:user:09e76a568400f3841f99c0069f745199"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::avatar-pc/web"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::avatar-pc"
+			]
+		}
+	]
+}

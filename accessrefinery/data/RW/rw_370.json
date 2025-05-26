@@ -1,0 +1,22 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1602474301335",
+	"Statement" : [
+		{
+			"Sid" : "SpReadOnly1602474300964",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::08705832d30026800fa4c01d9040f6c0:user:0a36cbc98d80f2da1feec01df5249c9a"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::booksir/*"
+			]
+		}
+	]
+}

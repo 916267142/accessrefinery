@@ -1,0 +1,136 @@
+{
+	"InputFilePath" : "data/RW/rw_398.json",
+	"GeneratedTime" : "2025-05-11 20:42:50",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"sts::d8126a20db13499c82e060007d1e8348:assumed-agency:cce_admin_trust/*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-4604/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:0886b9cdf280f40f1feac001e9be925c"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-4604/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:0886b9cdf280f40f1feac001e9be925c"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-4604"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:3e62a597bf624034baa451e8f803f118"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-4604/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:3e62a597bf624034baa451e8f803f118"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-4604"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::d8126a20db13499c82e060007d1e8348:user:*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-4604/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"sts::d8126a20db13499c82e060007d1e8348:assumed-agency:cce_admin_trust/*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-4604"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"sts::50531697b4c047888a33ce214da4d11f:assumed-agency:modelarts_admin_agency/*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-4604"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"sts::50531697b4c047888a33ce214da4d11f:assumed-agency:modelarts_admin_agency/*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-4604/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::d8126a20db13499c82e060007d1e8348:user:*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-4604"
+			]
+		}
+	]
+}

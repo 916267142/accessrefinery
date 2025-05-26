@@ -1,0 +1,57 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1585193925618",
+	"Statement" : [
+		{
+			"Sid" : "publicReadOnlyPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::aojier/*"
+			]
+		},
+		{
+			"Sid" : "publicHeadBucketPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket",
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::aojier"
+			]
+		},
+		{
+			"Sid" : "SpReadWrite1585193925352",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::082c48faf00026640fabc009de665680:user:082c48fbbb80259b1f5dc009abf72aa6"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:GetObjectVersion",
+				"s3:DeleteObjectVersion",
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::aojier/aojier"
+			]
+		}
+	]
+}

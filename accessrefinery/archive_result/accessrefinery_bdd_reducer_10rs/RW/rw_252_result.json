@@ -1,0 +1,42 @@
+{
+	"InputFilePath" : "data/RW/rw_252.json",
+	"GeneratedTime" : "2025-05-11 20:42:23",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::aoyou-obs/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::aoyou-obs/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1620812636502",
+	"Statement" : [
+		{
+			"Sid" : "公共读-566a",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket",
+				"s3:HeadBucket",
+				"s3:GetBucketLocation",
+				"s3:ListBucketVersions",
+				"s3:GetObject",
+				"s3:RestoreObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::ads4each-video-full-size",
+				"s3:::ads4each-video-full-size/*"
+			]
+		}
+	]
+}

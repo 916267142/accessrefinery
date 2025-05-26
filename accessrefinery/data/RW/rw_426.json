@@ -1,0 +1,28 @@
+{
+	"Version" : "2008-10-17",
+	"Statement" : [
+		{
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:053caba13a0010d21f2dc0016355b29c",
+					"iam::50531697b4c047888a33ce214da4d11f:user:3e62a597bf624034baa451e8f803f118",
+					"iam::d8126a20db13499c82e060007d1e8348:user:*",
+					"iam::50531697b4c047888a33ce214da4d11f:user:a753ddd5ed3f4ef8af8e5b87a07edbe3",
+					"iam::50531697b4c047888a33ce214da4d11f:user:09741f1f72cb44f7b4be0486dc1973e7",
+					"sts::50531697b4c047888a33ce214da4d11f:assumed-agency:modelarts_admin_agency/*",
+					"iam::50531697b4c047888a33ce214da4d11f:user:0650a51b5e80263e1f9cc0014ad91c3b",
+					"iam::50531697b4c047888a33ce214da4d11f:user:6b65b4c733ed49bd92f9a2afbaa73455",
+					"sts::d8126a20db13499c82e060007d1e8348:assumed-agency:cce_admin_trust/*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-autonomous-sh/*",
+				"s3:::bucket-autonomous-sh"
+			]
+		}
+	]
+}

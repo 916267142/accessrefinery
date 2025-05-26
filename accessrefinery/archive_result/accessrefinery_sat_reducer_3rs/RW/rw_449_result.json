@@ -1,0 +1,84 @@
+{
+	"InputFilePath" : "data/RW/rw_449.json",
+	"GeneratedTime" : "2025-05-11 21:18:35",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::d8126a20db13499c82e060007d1e8348:user:*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-shanghai-autotest"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:2e5e830e26814477bf812a74ccceba71"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-shanghai-autotest"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:2e5e830e26814477bf812a74ccceba71"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-shanghai-autotest/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:056f9fda868010ed1f4ac001bdc201f5"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-shanghai-autotest/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::d8126a20db13499c82e060007d1e8348:user:*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-shanghai-autotest/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:056f9fda868010ed1f4ac001bdc201f5"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-shanghai-autotest"
+			]
+		}
+	]
+}

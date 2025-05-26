@@ -1,0 +1,226 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.10/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.11/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.12/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.13/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.14/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.15/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.16/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.17/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.18/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.19/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.20/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.21/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.22/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.23/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.24/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.25/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.26/32"
+                }
+            }
+        }
+    ]
+}

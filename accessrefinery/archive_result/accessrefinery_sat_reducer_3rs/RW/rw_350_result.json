@@ -1,0 +1,71 @@
+{
+	"InputFilePath" : "data/RW/rw_350.json",
+	"GeneratedTime" : "2025-05-11 21:18:18",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::305abbcbab2b4ddbac9cd454f203b164:user:08ad3a520e00f2d71f67c00738aeebc2"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bigdatahll-sh/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::305abbcbab2b4ddbac9cd454f203b164:user:08ad3a520e00f2d71f67c00738aeebc2"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::bigdatahll-sh/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::305abbcbab2b4ddbac9cd454f203b164:user:08ad3a520e00f2d71f67c00738aeebc2"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bigdatahll-sh/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::305abbcbab2b4ddbac9cd454f203b164:user:08ad3a520e00f2d71f67c00738aeebc2"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bigdatahll-sh/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::305abbcbab2b4ddbac9cd454f203b164:user:08ad3a520e00f2d71f67c00738aeebc2"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::bigdatahll-sh/*"
+			]
+		}
+	]
+}

@@ -1,0 +1,48 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1622471520344",
+	"Statement" : [
+		{
+			"Sid" : "指定目录latin下的对象访问权限",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c825aa3ae8025a31f4dc000ec3a6897",
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c8ac4549e00f23a1f7fc000dfb3ee27"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:RestoreObject",
+				"s3:DeleteObject",
+				"s3:GetObjectAcl",
+				"s3:GetObjectVersion",
+				"s3:DeleteObjectVersion",
+				"s3:GetObjectVersionAcl",
+				"s3:AbortMultipartUpload",
+				"s3:ListMultipartUploadParts",
+				"s3:ModifyObjectMetaData"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Sid" : "指定目录latin的列举权限",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c825aa3ae8025a31f4dc000ec3a6897",
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c8ac4549e00f23a1f7fc000dfb3ee27"
+				]
+			},
+			"Action" : [
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of"
+			]
+		}
+	]
+}

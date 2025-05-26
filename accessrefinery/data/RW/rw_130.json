@@ -1,0 +1,22 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1599698350231",
+	"Statement" : [
+		{
+			"Sid" : "SpReadOnly1599698349551",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::08cbf8ee038025840f1fc007568e3600:user:08cbf8eec500106b1fb3c00758ab4c8c"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::5016/123"
+			]
+		}
+	]
+}

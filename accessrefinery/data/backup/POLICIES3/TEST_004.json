@@ -1,0 +1,155 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "*bcdefghij" 
+            },
+            "Action": "*bcdefghij",
+            "Condition": {
+                "StringMatch": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/*bcdefghij"
+                },
+                "IPAddress": {
+                    "aws:SourceIp": "10.10.10.10"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "a*cdefghij" 
+            },
+            "Action" : "a*cdefghij",
+            "Condition": {
+                "StringMatch": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/a*cdefghij"
+                },
+                "IPAddress": {
+                    "aws:SourceIp": "10.10.10.11"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "ab*defghij" 
+            },
+            "Action" : "ab*defghij",
+            "Condition": {
+                "StringMatch": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/ab*defghij"
+                },
+                "IPAddress": {
+                    "aws:SourceIp": "10.10.10.12"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "abc*efghij" 
+            },
+            "Action" : "abc*efghij",
+            "Condition": {
+                "StringMatch": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/abc*efghij"
+                },
+                "IPAddress": {
+                    "aws:SourceIp": "10.10.10.13"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "abcd*fghij" 
+            },
+            "Action" : "abcd*fghij",
+            "Condition": {
+                "StringMatch": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/abcd*fghij"
+                },
+                "IPAddress": {
+                    "aws:SourceIp": "10.10.10.14"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "abcde*ghij" 
+            },
+            "Action" : "abcde*ghij",
+            "Condition": {
+                "StringMatch": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/abcde*ghij"
+                },
+                "IPAddress": {
+                    "aws:SourceIp": "10.10.10.15"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "abcdef*hij" 
+            },
+            "Action" : "abcdef*hij",
+            "Condition": {
+                "StringMatch": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/abcdef*hij"
+                },
+                "IPAddress": {
+                    "aws:SourceIp": "10.10.10.16"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "abcdefg*ij" 
+            },
+            "Action" : "abcdefg*ij",
+            "Condition": {
+                "StringMatch": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/abcdefg*ij"
+                },
+                "IPAddress": {
+                    "aws:SourceIp": "10.10.10.17"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "abcdefgh*j" 
+            },
+            "Action" : "abcdefgh*j",
+            "Condition": {
+                "StringMatch": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/abcdefgh*j"
+                },
+                "IPAddress": {
+                    "aws:SourceIp": "10.10.10.18"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "abcdefghi*" 
+            },
+            "Action" : "abcdefghi*",
+            "Condition": {
+                "StringMatch": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/abcdefghi*"
+                },
+                "IPAddress": {
+                    "aws:SourceIp": "10.10.10.19"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+{
+	"InputFilePath" : "data/RW/rw_410.json",
+	"GeneratedTime" : "2025-05-11 21:18:26",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::d8126a20db13499c82e060007d1e8348:user:*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-8074/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:3e62a597bf624034baa451e8f803f118"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-8074"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:c35c07c39f7647ab93e4a76f3cff0b36"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-8074/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:c35c07c39f7647ab93e4a76f3cff0b36"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-8074"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:3e62a597bf624034baa451e8f803f118"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-8074/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::d8126a20db13499c82e060007d1e8348:user:*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-8074"
+			]
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "123456789012" 
+            },
+            "Action": [
+                "sts:agencies:assume"
+            ],
+            "Condition": {
+                "IPAddress": {
+                    "g:SourceIp": "10.10.10.10"
+                },
+                "StringMatch": {
+                    "g:PrincipalUrn": "*a*bA"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "123456789012" 
+            },
+            "Action": [
+                "sts:agencies:assume"
+            ],
+            "Condition": {
+                "IPAddress": {
+                    "g:SourceIp": "10.10.10.11"
+                },
+                "StringMatch": {
+                    "g:PrincipalUrn": "*a*b*"
+                }
+            }
+        }
+      ]
+}

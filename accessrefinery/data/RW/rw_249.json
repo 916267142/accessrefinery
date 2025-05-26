@@ -1,0 +1,26 @@
+{
+	"Version" : "2008-10-17",
+	"Statement" : [
+		{
+			"Sid" : "allowReferConsole",
+			"Effect" : "Deny",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::aosblueprints-cn-east-3-02548f793c57479fa49586fe6e4a4c2a/*"
+			],
+			"Condition" : {
+				"StringNotMatch" : {
+					"g:Referer" : [ ]
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,348 @@
+{
+	"InputFilePath" : "data/RW/rw_222.json",
+	"GeneratedTime" : "2025-05-11 19:57:59",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::fdd219aef6dd446fb49539ca32bb3a4f:user:0b930c9e1000f46d1f59c00d42a307b4"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketAcl"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"fdd219aef6dd446fb49539ca32bb3a4f"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata/akc_alg.db/df_feat_to_svm.jar"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"fdd219aef6dd446fb49539ca32bb3a4f"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata/akc_alg.db/h5_homepage_live_rank_deepfm_mtl_online_lives_lives_feature_res/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"fdd219aef6dd446fb49539ca32bb3a4f"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata/akc_alg.db/df_feat_to_svm.jar"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"152.32.211.199/32"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"152.32.211.199/32"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::fdd219aef6dd446fb49539ca32bb3a4f:user:0b930c9e1000f46d1f59c00d42a307b4"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketPolicy"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::fdd219aef6dd446fb49539ca32bb3a4f:user:0b930c9e1000f46d1f59c00d42a307b4"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketAcl"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"fdd219aef6dd446fb49539ca32bb3a4f"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata/akc_alg.db/h5_homepage_live_rank_deepfm_mtl_online_lives_lives_feature_res/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::fdd219aef6dd446fb49539ca32bb3a4f:user:0b930c9e1000f46d1f59c00d42a307b4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucket"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"152.32.211.199/32"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"fdd219aef6dd446fb49539ca32bb3a4f"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata/akc_alg.db/h5_homepage_live_rank_deepfm_mtl_online_buyers_feature_res/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"fdd219aef6dd446fb49539ca32bb3a4f"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata/akc_alg.db/df_feat_to_svm.jar"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"fdd219aef6dd446fb49539ca32bb3a4f"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata/akc_alg.db/df_feat_to_svm.jar"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"152.32.211.199/32"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"fdd219aef6dd446fb49539ca32bb3a4f"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata/akc_alg.db/h5_homepage_live_rank_deepfm_mtl_online_buyers_feature_res/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::fdd219aef6dd446fb49539ca32bb3a4f:user:0b930c9e1000f46d1f59c00d42a307b4"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketPolicy"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::fdd219aef6dd446fb49539ca32bb3a4f:user:0b930c9e1000f46d1f59c00d42a307b4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucket"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"fdd219aef6dd446fb49539ca32bb3a4f"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::akc-bigdata/akc_alg.db/df_feat_to_svm.jar"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"1.0.0.0/0"
+				]
+			}
+		}
+	]
+}

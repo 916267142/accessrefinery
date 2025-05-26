@@ -1,0 +1,24 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "user1" 
+            },
+            "Action": [
+                "sts:agencies:assume",
+                "sts::setSourceIdentity"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "*" 
+            },
+            "Action" : [
+                "sts::setSourceIdentity"
+            ]
+        }
+    ]
+}

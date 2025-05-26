@@ -1,0 +1,22 @@
+{
+    "Findings": [
+        {
+            "Principal": {
+                "IAM": "*" 
+            },
+            "Action": [
+                "sts::setSourceIdentity"
+            ],
+            "Condition": [
+                {
+                    "key": "g:PrincipalAccount",
+                    "value": "2333"
+                },
+                {
+                    "key": "g:PrincipalUrl",
+                    "value": "*:*:2333:*:*"
+                }
+            ]
+        }
+    ]
+}

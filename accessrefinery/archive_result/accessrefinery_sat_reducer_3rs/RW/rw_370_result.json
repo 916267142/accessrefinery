@@ -1,0 +1,32 @@
+{
+	"InputFilePath" : "data/RW/rw_370.json",
+	"GeneratedTime" : "2025-05-11 21:18:19",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::08705832d30026800fa4c01d9040f6c0:user:0a36cbc98d80f2da1feec01df5249c9a"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::booksir/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::08705832d30026800fa4c01d9040f6c0:user:0a36cbc98d80f2da1feec01df5249c9a"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::booksir/*"
+			]
+		}
+	]
+}

@@ -1,0 +1,396 @@
+{
+	"InputFilePath" : "data/RW/rw_213.json",
+	"GeneratedTime" : "2025-05-11 21:18:09",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:ListMultipartUploadParts"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:RestoreObject"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersionAcl"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:RestoreObject"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:ModifyObjectMetaData"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectAcl"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:ListBucketMultipartUploads"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectAcl"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersionAcl"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:ListBucketVersions"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:PutObjectAcl"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:ListBucketMultipartUploads"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:GetBucketLocation"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:ModifyObjectMetaData"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:AbortMultipartUpload"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:ListBucketVersions"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:AbortMultipartUpload"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:ListMultipartUploadParts"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:GetBucketLocation"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c656df32a00f2a61f5ac0149328d3dc"
+				]
+			},
+			"Action" : [
+				"s3:PutObjectAcl"
+			],
+			"Resource" : [
+				"s3:::aicc-enterprise/*"
+			]
+		}
+	]
+}

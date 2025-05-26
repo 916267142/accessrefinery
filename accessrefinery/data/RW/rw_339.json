@@ -1,0 +1,25 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1618498086982",
+	"Statement" : [
+		{
+			"Sid" : "自定义策略-a877",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::797c8fc3c4dd4f6985d5f42dc6bf70bd:user:1782f185f8d14e1f8b8ae10853d25fbe"
+				]
+			},
+			"Action" : [
+				"s3:Get*",
+				"s3:List*",
+				"s3:GetObject",
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bi-bucket-cn-east-3",
+				"s3:::bi-bucket-cn-east-3/*"
+			]
+		}
+	]
+}

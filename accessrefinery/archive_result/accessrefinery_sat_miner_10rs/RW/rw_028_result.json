@@ -1,0 +1,45 @@
+{
+	"InputFilePath" : "data/RW/rw_028.json",
+	"GeneratedTime" : "2025-05-11 18:42:13",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::05b3f09df68010fb0fb1c00916671220:user:096110906b00f3de1f73c009e9dd18c3"
+				]
+			},
+			"Action" : [
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::123245"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::05b3f09df68010fb0fb1c00916671220:user:096110906b00f3de1f73c009e9dd18c3"
+				]
+			},
+			"Action" : [
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::123245/123/"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::05b3f09df68010fb0fb1c00916671220:user:096110906b00f3de1f73c009e9dd18c3"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::123245/123/"
+			]
+		}
+	]
+}

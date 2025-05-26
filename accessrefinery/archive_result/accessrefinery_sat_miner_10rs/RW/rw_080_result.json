@@ -1,0 +1,19 @@
+{
+	"InputFilePath" : "data/RW/rw_080.json",
+	"GeneratedTime" : "2025-05-11 18:42:18",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::05cf6521440026070fc1c01db4dbf420:user:0bbecc73ae80f3561f49c01d1dd728cf"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::2020.test/1"
+			]
+		}
+	]
+}

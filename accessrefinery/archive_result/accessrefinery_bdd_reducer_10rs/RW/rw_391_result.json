@@ -1,0 +1,84 @@
+{
+	"InputFilePath" : "data/RW/rw_391.json",
+	"GeneratedTime" : "2025-05-11 20:42:44",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:3e62a597bf624034baa451e8f803f118"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-3087"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:0550ada7c3000fb41f3ec00124197e6a"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-3087"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::d8126a20db13499c82e060007d1e8348:user:*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-3087/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:3e62a597bf624034baa451e8f803f118"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-3087/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:0550ada7c3000fb41f3ec00124197e6a"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-3087/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::d8126a20db13499c82e060007d1e8348:user:*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-3087"
+			]
+		}
+	]
+}

@@ -1,0 +1,27 @@
+{
+	"Version" : "2008-10-17",
+	"Statement" : [
+		{
+			"Sid" : "公共读-6d36",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket",
+				"s3:HeadBucket",
+				"s3:GetBucketLocation",
+				"s3:ListBucketVersions",
+				"s3:GetObject",
+				"s3:RestoreObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bilibcak-sh",
+				"s3:::bilibcak-sh/*"
+			]
+		}
+	]
+}

@@ -1,0 +1,110 @@
+{
+	"InputFilePath" : "data/RW/rw_418.json",
+	"GeneratedTime" : "2025-05-11 18:45:29",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:3e62a597bf624034baa451e8f803f118"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-9370/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::d8126a20db13499c82e060007d1e8348:user:*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-9370"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::d8126a20db13499c82e060007d1e8348:user:*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-9370/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"sts::d8126a20db13499c82e060007d1e8348:assumed-agency:cce_admin_trust/*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-9370"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:c5b69bd23ac647af89a033dae6d06052"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-9370"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:c5b69bd23ac647af89a033dae6d06052"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-9370/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:3e62a597bf624034baa451e8f803f118"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-9370"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"sts::d8126a20db13499c82e060007d1e8348:assumed-agency:cce_admin_trust/*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-9370/*"
+			]
+		}
+	]
+}

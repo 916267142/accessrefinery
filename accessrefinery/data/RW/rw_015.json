@@ -1,0 +1,41 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1624349377466",
+	"Statement" : [
+		{
+			"Sid" : "目录读写-530c",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4",
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0cb299c26980f2391f97c01ab8e8d67a",
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0cb29858c180f56a1f01c01ae495a08b",
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0c284515ce80f5701f55c01af131b62f",
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b94db88c10025781fd7c01a35f5480a"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket",
+				"s3:HeadBucket",
+				"s3:GetBucketLocation",
+				"s3:ListBucketVersions",
+				"s3:ListBucketMultipartUploads",
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:RestoreObject",
+				"s3:DeleteObject",
+				"s3:GetObjectAcl",
+				"s3:PutObjectAcl",
+				"s3:GetObjectVersion",
+				"s3:GetObjectVersionAcl",
+				"s3:AbortMultipartUpload",
+				"s3:ListMultipartUploadParts",
+				"s3:ModifyObjectMetaData"
+			],
+			"Resource" : [
+				"s3:::10x-results-20201203",
+				"s3:::10x-results-20201203/*"
+			]
+		}
+	]
+}

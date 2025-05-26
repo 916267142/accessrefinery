@@ -1,0 +1,21 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1622099340669",
+	"Statement" : [
+		{
+			"Sid" : "公共读-81e9",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::bamen/*"
+			]
+		}
+	]
+}

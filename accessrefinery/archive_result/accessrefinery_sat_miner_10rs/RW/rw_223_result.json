@@ -1,0 +1,162 @@
+{
+	"InputFilePath" : "data/RW/rw_223.json",
+	"GeneratedTime" : "2025-05-11 18:44:41",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a84700e638026e10fa3c01df1ac1d80:user:0a847011f480f4451f2bc01d5ffef989"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::akc-risk-bigdata-in/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a84700e638026e10fa3c01df1ac1d80:user:0a847011f480f4451f2bc01d5ffef989"
+				]
+			},
+			"Action" : [
+				"s3:GetBucketAcl"
+			],
+			"Resource" : [
+				"s3:::akc-risk-bigdata-in/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a84700e638026e10fa3c01df1ac1d80:user:0a847011f480f4451f2bc01d5ffef989"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::akc-risk-bigdata-in"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a84700e638026e10fa3c01df1ac1d80:user:0a847011f480f4451f2bc01d5ffef989"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::akc-risk-bigdata-in"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a84700e638026e10fa3c01df1ac1d80:user:0a847011f480f4451f2bc01d5ffef989"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::akc-risk-bigdata-in"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a84700e638026e10fa3c01df1ac1d80:user:0a847011f480f4451f2bc01d5ffef989"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::akc-risk-bigdata-in/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a84700e638026e10fa3c01df1ac1d80:user:0a847011f480f4451f2bc01d5ffef989"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::akc-risk-bigdata-in/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a84700e638026e10fa3c01df1ac1d80:user:0a847011f480f4451f2bc01d5ffef989"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::akc-risk-bigdata-in"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a84700e638026e10fa3c01df1ac1d80:user:0a847011f480f4451f2bc01d5ffef989"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::akc-risk-bigdata-in/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a84700e638026e10fa3c01df1ac1d80:user:0a847011f480f4451f2bc01d5ffef989"
+				]
+			},
+			"Action" : [
+				"s3:GetBucketAcl"
+			],
+			"Resource" : [
+				"s3:::akc-risk-bigdata-in"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a84700e638026e10fa3c01df1ac1d80:user:0a847011f480f4451f2bc01d5ffef989"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::akc-risk-bigdata-in"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a84700e638026e10fa3c01df1ac1d80:user:0a847011f480f4451f2bc01d5ffef989"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::akc-risk-bigdata-in/*"
+			]
+		}
+	]
+}

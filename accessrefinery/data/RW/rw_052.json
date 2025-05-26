@@ -1,0 +1,40 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "importBucketPolicy",
+	"Statement" : [
+		{
+			"Sid" : "toBucket",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"0aaceb5c698010270fe6c01b5cf4ef00",
+					"0aaceb5c288010270fdfc01bb5700880",
+					"a39fbee122124df195f794de543ed82e"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::16097404370640aaceb5c380010272fe2c01b0eb12cd1"
+			]
+		},
+		{
+			"Sid" : "toBucketObjects",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"0aaceb5c698010270fe6c01b5cf4ef00",
+					"0aaceb5c288010270fdfc01bb5700880",
+					"a39fbee122124df195f794de543ed82e"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::16097404370640aaceb5c380010272fe2c01b0eb12cd1/*"
+			]
+		}
+	]
+}

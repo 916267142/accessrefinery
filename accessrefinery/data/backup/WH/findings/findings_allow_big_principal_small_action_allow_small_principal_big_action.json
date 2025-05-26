@@ -1,0 +1,22 @@
+{
+    "Findings": [
+        {
+            "Principal": {
+                "IAM": "user1" 
+            },
+            "Action": [
+                "sts::setSourceIdentity"
+            ],
+            "Condition": []
+        },
+        {
+            "Principal": {
+                "IAM": "*" 
+            },
+            "Action": [
+                "sts:agencies:assume"
+            ],
+            "Condition": []
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+	"InputFilePath" : "data/RW/rw_490.json",
+	"GeneratedTime" : "2025-05-11 18:46:02",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"d8126a20db13499c82e060007d1e8348"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::calltrain1/*"
+			]
+		}
+	]
+}

@@ -1,0 +1,62 @@
+{
+	"Version" : "2008-10-17",
+	"Statement" : [
+		{
+			"Sid" : "publicReadOnlyPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::738fdc-com/*"
+			]
+		},
+		{
+			"Sid" : "publicHeadBucketPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket",
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::738fdc-com"
+			]
+		},
+		{
+			"Sid" : "allowReferConsole",
+			"Effect" : "Deny",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::738fdc-com/*"
+			],
+			"Condition" : {
+				"StringNotMatch" : {
+					"g:Referer" : [
+						"https://*.738fdc.com*",
+						"https://servicewechat.com*",
+						"https://tmaservice.developer.toutiao.com*"
+					]
+				}
+			}
+		}
+	]
+}

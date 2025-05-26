@@ -1,0 +1,73 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "StringLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/*bcdefghijklmnopqrst",
+                    "aws:PrincipalId": "*bcdefghijklmnopqrst"
+                },
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.10/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "StringLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/a*cdefghijklmnopqrst",
+                    "aws:PrincipalId": "a*cdefghijklmnopqrst"
+                },
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.11/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "StringLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/ab*defghijklmnopqrst",
+                    "aws:PrincipalId": "ab*defghijklmnopqrst"
+                },
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.12/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "StringLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/abc*efghijklmnopqrst",
+                    "aws:PrincipalId": "abc*efghijklmnopqrst"
+                },
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.13/32"
+                }
+            }
+        }
+    ]
+}

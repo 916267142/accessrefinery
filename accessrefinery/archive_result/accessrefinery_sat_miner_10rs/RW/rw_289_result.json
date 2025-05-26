@@ -1,0 +1,19 @@
+{
+	"InputFilePath" : "data/RW/rw_289.json",
+	"GeneratedTime" : "2025-05-11 18:44:49",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::auto-rep-obs-test/*"
+			]
+		}
+	]
+}

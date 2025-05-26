@@ -1,0 +1,22 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1621166397940",
+	"Statement" : [
+		{
+			"Sid" : "桶读写-3ecc",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::62a17b4c08404f26976a3ef093efab6a:user:0bff28fe7a00254e1f69c01c63779a5d"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucket"
+			],
+			"Resource" : [
+				"s3:::c84188329-obs",
+				"s3:::c84188329-obs/*"
+			]
+		}
+	]
+}

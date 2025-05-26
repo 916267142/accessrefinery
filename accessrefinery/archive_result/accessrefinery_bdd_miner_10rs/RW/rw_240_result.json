@@ -1,0 +1,162 @@
+{
+	"InputFilePath" : "data/RW/rw_240.json",
+	"GeneratedTime" : "2025-05-11 19:58:02",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::andun-oss"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::andun-oss"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::andun-oss"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c1d7aef3480259e1f56c014e7d6111f"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketAcl"
+			],
+			"Resource" : [
+				"s3:::andun-oss/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c1d7aef3480259e1f56c014e7d6111f"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketPolicy"
+			],
+			"Resource" : [
+				"s3:::andun-oss/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::andun-oss/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c1d7aef3480259e1f56c014e7d6111f"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketAcl"
+			],
+			"Resource" : [
+				"s3:::andun-oss"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::andun-oss/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::andun-oss/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c1d7aef3480259e1f56c014e7d6111f"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucket"
+			],
+			"Resource" : [
+				"s3:::andun-oss"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c1d7aef3480259e1f56c014e7d6111f"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucket"
+			],
+			"Resource" : [
+				"s3:::andun-oss/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0aceff70ad80f53d0f91c01455b4a240:user:0c1d7aef3480259e1f56c014e7d6111f"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketPolicy"
+			],
+			"Resource" : [
+				"s3:::andun-oss"
+			]
+		}
+	]
+}

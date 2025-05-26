@@ -1,0 +1,11 @@
+{
+    "Findings": [
+        {
+            "Principal": {
+                "IAM": "user1" 
+            },
+            "Action": "sts:agencies:assume",
+            "Condition": []
+        }
+    ]
+}

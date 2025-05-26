@@ -1,0 +1,27 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1622443605916",
+	"Statement" : [
+		{
+			"Sid" : "公共读-71e4",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket",
+				"s3:GetBucketLocation",
+				"s3:ListBucketVersions",
+				"s3:GetObject",
+				"s3:RestoreObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::34234234343",
+				"s3:::34234234343/*"
+			]
+		}
+	]
+}

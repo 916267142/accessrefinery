@@ -1,0 +1,168 @@
+{
+	"InputFilePath" : "data/RW/rw_351.json",
+	"GeneratedTime" : "2025-05-11 19:58:12",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::bili-sh1/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"124.71.91.0/24"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::bili-sh1/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"119.3.112.0/24"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::bili-sh1/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"121.36.126.0/24"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::bili-sh1"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"121.36.126.0/24"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::bili-sh1/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"124.70.123.0/24"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::bili-sh1"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"139.9.96.0/24"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::bili-sh1/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"139.9.96.0/24"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::bili-sh1"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"119.3.112.0/24"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::bili-sh1/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"124.70.228.0/24"
+				]
+			}
+		}
+	]
+}

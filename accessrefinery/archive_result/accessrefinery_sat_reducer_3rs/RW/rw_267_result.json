@@ -1,0 +1,110 @@
+{
+	"InputFilePath" : "data/RW/rw_267.json",
+	"GeneratedTime" : "2025-05-11 21:18:12",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::a7309d49a76f4231881732cca5a35500:user:07475010bf8010ff1f89c011360226af"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::apps.3.ifengwoo.com/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::a7309d49a76f4231881732cca5a35500:user:065f1d93bb0026461f46c011901a763f"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::apps.3.ifengwoo.com"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::a7309d49a76f4231881732cca5a35500:user:07d2876123800ff51fe2c011ccf80425"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::apps.3.ifengwoo.com/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::a7309d49a76f4231881732cca5a35500:user:07475010bf8010ff1f89c011360226af"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::apps.3.ifengwoo.com"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::a7309d49a76f4231881732cca5a35500:user:065f1d93bb0026461f46c011901a763f"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::apps.3.ifengwoo.com/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::a7309d49a76f4231881732cca5a35500:user:07dd66721b8025321f8fc011671ed5dc"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::apps.3.ifengwoo.com"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::a7309d49a76f4231881732cca5a35500:user:07dd66721b8025321f8fc011671ed5dc"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::apps.3.ifengwoo.com/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::a7309d49a76f4231881732cca5a35500:user:07d2876123800ff51fe2c011ccf80425"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::apps.3.ifengwoo.com"
+			]
+		}
+	]
+}

@@ -1,0 +1,22 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1606182351992",
+	"Statement" : [
+		{
+			"Sid" : "SpReadOnly1606182351419",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bak-hwyhw-saas//"
+			]
+		}
+	]
+}

@@ -1,0 +1,27 @@
+{
+	"Version" : "2008-10-17",
+	"Statement" : [
+		{
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:05511e9e55800fb91f65c00129999c52",
+					"iam::50531697b4c047888a33ce214da4d11f:user:3e62a597bf624034baa451e8f803f118",
+					"iam::d8126a20db13499c82e060007d1e8348:user:*",
+					"iam::50531697b4c047888a33ce214da4d11f:user:4b1e2ec540a74d7998f4a111f548817f",
+					"iam::50531697b4c047888a33ce214da4d11f:user:064f8c9d600026411fe5c00199675118",
+					"sts::50531697b4c047888a33ce214da4d11f:assumed-agency:modelarts_admin_agency/*",
+					"iam::50531697b4c047888a33ce214da4d11f:user:053cc5144200264e1f84c00146be66d9",
+					"sts::d8126a20db13499c82e060007d1e8348:assumed-agency:cce_admin_trust/*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-vvv-3317/*",
+				"s3:::bucket-vvv-3317"
+			]
+		}
+	]
+}

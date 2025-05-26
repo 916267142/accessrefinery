@@ -1,0 +1,71 @@
+{
+	"InputFilePath" : "data/RW/rw_031.json",
+	"GeneratedTime" : "2025-05-11 20:40:14",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::c281aea4f66e4bdbbeeb62d9e3b7ed01:user:135662c0121547e6b87fe344ef78b898"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::12658/dream-server.exe"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::c281aea4f66e4bdbbeeb62d9e3b7ed01:user:135662c0121547e6b87fe344ef78b898"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::12658/dream-server.exe"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::c281aea4f66e4bdbbeeb62d9e3b7ed01:user:135662c0121547e6b87fe344ef78b898"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::12658/dream-server.exe"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::c281aea4f66e4bdbbeeb62d9e3b7ed01:user:135662c0121547e6b87fe344ef78b898"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::12658/dream-server.exe"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::c281aea4f66e4bdbbeeb62d9e3b7ed01:user:135662c0121547e6b87fe344ef78b898"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::12658/dream-server.exe"
+			]
+		}
+	]
+}

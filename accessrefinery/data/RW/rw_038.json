@@ -1,0 +1,55 @@
+{
+	"Version" : "2008-10-17",
+	"Statement" : [
+		{
+			"Sid" : "publicReadWritePolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:PutObject",
+				"s3:GetObject",
+				"s3:GetObjectVersion",
+				"s3:DeleteObjectVersion",
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::13605208175/*"
+			]
+		},
+		{
+			"Sid" : "publicHeadBucketPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket",
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::13605208175"
+			]
+		},
+		{
+			"Sid" : "bucktetInventoryPolicyStatementId1579364503179",
+			"Effect" : "Allow",
+			"Principal" : {
+				"Service" : [
+					"obs"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::13605208175/*"
+			]
+		}
+	]
+}

@@ -1,0 +1,61 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1621431835362",
+	"Statement" : [
+		{
+			"Sid" : "仅上传",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::0bb790ce6e80f23f0fa7c01aa32bea80:user:0bd09858138010dc1fb8c01a27cbb281"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket",
+				"s3:HeadBucket",
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::4d-bios",
+				"s3:::4d-bios/*"
+			]
+		},
+		{
+			"Sid" : "桶读写-d949",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::0bb790ce6e80f23f0fa7c01aa32bea80:user:0c020c305c800f321f24c01a30035757"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucket",
+				"s3:PutBucketPolicy",
+				"s3:PutBucketAcl"
+			],
+			"Resource" : [
+				"s3:::4d-bios",
+				"s3:::4d-bios/*"
+			]
+		},
+		{
+			"Sid" : "桶只读-4765",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::0bb790ce6e80f23f0fa7c01aa32bea80:user:0bd0a8ad950010e11f1dc01a583a12ec"
+				]
+			},
+			"Action" : [
+				"s3:Get*",
+				"s3:List*",
+				"s3:HeadBucket",
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::4d-bios",
+				"s3:::4d-bios/Lettuce_PFAL*"
+			]
+		}
+	]
+}

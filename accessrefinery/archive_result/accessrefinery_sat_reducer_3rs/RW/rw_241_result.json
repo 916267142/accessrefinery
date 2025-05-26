@@ -1,0 +1,71 @@
+{
+	"InputFilePath" : "data/RW/rw_241.json",
+	"GeneratedTime" : "2025-05-11 21:18:11",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::81741391217d427b8d05e822474f1b00:user:49e600b2ad1d428d9b98f82673647087"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::anhengcould/DBAPPOS-V3.0-5.3r-vNGFW-20200921.qcow2"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::81741391217d427b8d05e822474f1b00:user:49e600b2ad1d428d9b98f82673647087"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::anhengcould/DBAPPOS-V3.0-5.3r-vNGFW-20200921.qcow2"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::81741391217d427b8d05e822474f1b00:user:49e600b2ad1d428d9b98f82673647087"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::anhengcould/DBAPPOS-V3.0-5.3r-vNGFW-20200921.qcow2"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::81741391217d427b8d05e822474f1b00:user:49e600b2ad1d428d9b98f82673647087"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::anhengcould/DBAPPOS-V3.0-5.3r-vNGFW-20200921.qcow2"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::81741391217d427b8d05e822474f1b00:user:49e600b2ad1d428d9b98f82673647087"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::anhengcould/DBAPPOS-V3.0-5.3r-vNGFW-20200921.qcow2"
+			]
+		}
+	]
+}

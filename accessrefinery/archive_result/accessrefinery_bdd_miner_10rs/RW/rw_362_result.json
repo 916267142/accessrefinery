@@ -1,0 +1,78 @@
+{
+	"InputFilePath" : "data/RW/rw_362.json",
+	"GeneratedTime" : "2025-05-11 19:58:13",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::blog.jiabi/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"jiabi.tech*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::blog.jiabi"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::blog.jiabi/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"jiabi.tech*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::blog.jiabi"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"*"
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,25 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1593150689749",
+	"Statement" : [
+		{
+			"Sid" : "SpReadWrite1593150689631",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::074c251c96000f5a0f29c01bf4171580:user:08f51bad8e8026371f71c01b3f1d6ef8"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:GetObjectVersion",
+				"s3:DeleteObjectVersion",
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bucket-jiahuawl-dev/*"
+			]
+		}
+	]
+}

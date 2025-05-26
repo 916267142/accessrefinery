@@ -1,0 +1,57 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1606378245756",
+	"Statement" : [
+		{
+			"Sid" : "Customized1606378245139",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::bili-sh1/*"
+			],
+			"Condition" : {
+				"IpAddress" : {
+					"g:SourceIp" : [
+						"119.3.112.0/24",
+						"121.36.126.0/24",
+						"139.9.96.0/24",
+						"124.70.228.0/24",
+						"124.70.123.0/24",
+						"124.71.91.0/24"
+					]
+				}
+			}
+		},
+		{
+			"Sid" : "Customized1591257465801",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::bili-sh1"
+			],
+			"Condition" : {
+				"IpAddress" : {
+					"g:SourceIp" : [
+						"119.3.112.0/24",
+						"121.36.126.0/24",
+						"139.9.96.0/24"
+					]
+				}
+			}
+		}
+	]
+}

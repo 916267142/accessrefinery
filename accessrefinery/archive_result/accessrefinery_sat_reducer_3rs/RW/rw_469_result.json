@@ -1,0 +1,318 @@
+{
+	"InputFilePath" : "data/RW/rw_469.json",
+	"GeneratedTime" : "2025-05-11 21:18:39",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteReplicationConfiguration"
+			],
+			"Resource" : [
+				"s3:::bucmisc123/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bucmisc123"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketAcl"
+			],
+			"Resource" : [
+				"s3:::bucmisc123"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bucmisc123"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucketCustomDomainConfiguration"
+			],
+			"Resource" : [
+				"s3:::bucmisc123"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:PutObjectAcl"
+			],
+			"Resource" : [
+				"s3:::bucmisc123/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteDirectColdAccessConfiguration"
+			],
+			"Resource" : [
+				"s3:::bucmisc123/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteDirectColdAccessConfiguration"
+			],
+			"Resource" : [
+				"s3:::bucmisc123"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketPolicy"
+			],
+			"Resource" : [
+				"s3:::bucmisc123"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucketTagging"
+			],
+			"Resource" : [
+				"s3:::bucmisc123/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketPolicy"
+			],
+			"Resource" : [
+				"s3:::bucmisc123/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucket"
+			],
+			"Resource" : [
+				"s3:::bucmisc123/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucket"
+			],
+			"Resource" : [
+				"s3:::bucmisc123"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucketTagging"
+			],
+			"Resource" : [
+				"s3:::bucmisc123"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucketCustomDomainConfiguration"
+			],
+			"Resource" : [
+				"s3:::bucmisc123/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketAcl"
+			],
+			"Resource" : [
+				"s3:::bucmisc123/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bucmisc123/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bucmisc123/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:PutObjectAcl"
+			],
+			"Resource" : [
+				"s3:::bucmisc123"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucketInventoryConfiguration"
+			],
+			"Resource" : [
+				"s3:::bucmisc123/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucketWebsite"
+			],
+			"Resource" : [
+				"s3:::bucmisc123/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucketWebsite"
+			],
+			"Resource" : [
+				"s3:::bucmisc123"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteReplicationConfiguration"
+			],
+			"Resource" : [
+				"s3:::bucmisc123"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucketInventoryConfiguration"
+			],
+			"Resource" : [
+				"s3:::bucmisc123"
+			]
+		}
+	]
+}

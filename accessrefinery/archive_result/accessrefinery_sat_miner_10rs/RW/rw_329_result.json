@@ -1,0 +1,110 @@
+{
+	"InputFilePath" : "data/RW/rw_329.json",
+	"GeneratedTime" : "2025-05-11 18:44:55",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::beihuang"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a39e009aa80f47a0ff9c019e6f93e80:user:0af02f3b5b80f2d11fe8c019d736580a"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::beihuang/beihuang/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::beihuang"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a39e009aa80f47a0ff9c019e6f93e80:user:0af02f3b5b80f2d11fe8c019d736580a"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::beihuang/beihuang/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::beihuang/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a39e009aa80f47a0ff9c019e6f93e80:user:0af02f3b5b80f2d11fe8c019d736580a"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::beihuang"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a39e009aa80f47a0ff9c019e6f93e80:user:0af02f3b5b80f2d11fe8c019d736580a"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::beihuang/beihuang/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::beihuang/*"
+			]
+		}
+	]
+}

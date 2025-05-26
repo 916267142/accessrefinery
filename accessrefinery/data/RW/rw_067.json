@@ -1,0 +1,41 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1582620815682",
+	"Statement" : [
+		{
+			"Sid" : "publicReadWritePolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:PutObject",
+				"s3:GetObject",
+				"s3:GetObjectVersion",
+				"s3:DeleteObjectVersion",
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::2.25sh1-2/*"
+			]
+		},
+		{
+			"Sid" : "publicHeadBucketPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket",
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::2.25sh1-2"
+			]
+		}
+	]
+}

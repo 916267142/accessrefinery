@@ -1,0 +1,370 @@
+{
+	"InputFilePath" : "data/RW/rw_322.json",
+	"GeneratedTime" : "2025-05-11 18:44:53",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:GetBucketLocation"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:ListMultipartUploadParts"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersionAcl"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:ListBucketMultipartUploads"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectAcl"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersionAcl"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectAcl"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:ListBucketMultipartUploads"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:ListBucketVersions"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:ListMultipartUploadParts"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:GetBucketLocation"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:AbortMultipartUpload"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:PutObjectAcl"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:AbortMultipartUpload"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:PutObjectAcl"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0a033d228280100c0f37c01a8d599be0:user:0b952956d880f3621f0fc01a0f8d42e4"
+				]
+			},
+			"Action" : [
+				"s3:ListBucketVersions"
+			],
+			"Resource" : [
+				"s3:::bce-wdl-cellranger"
+			]
+		}
+	]
+}

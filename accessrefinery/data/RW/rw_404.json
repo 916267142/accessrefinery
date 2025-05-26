@@ -1,0 +1,26 @@
+{
+	"Version" : "2008-10-17",
+	"Statement" : [
+		{
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:0889c7d67500f5991f9bc001d64cdb4c",
+					"iam::50531697b4c047888a33ce214da4d11f:user:3e62a597bf624034baa451e8f803f118",
+					"iam::d8126a20db13499c82e060007d1e8348:user:*",
+					"sts::50531697b4c047888a33ce214da4d11f:assumed-agency:modelarts_admin_agency/*",
+					"iam::50531697b4c047888a33ce214da4d11f:user:68c497012f454b4dae19a16f4c963f19",
+					"iam::50531697b4c047888a33ce214da4d11f:user:08aeade7a800257d1f55c00132547ee1",
+					"sts::d8126a20db13499c82e060007d1e8348:assumed-agency:cce_admin_trust/*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-7004/*",
+				"s3:::bucket-7004"
+			]
+		}
+	]
+}

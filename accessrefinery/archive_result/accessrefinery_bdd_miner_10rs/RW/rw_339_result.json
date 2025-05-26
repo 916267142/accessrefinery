@@ -1,0 +1,84 @@
+{
+	"InputFilePath" : "data/RW/rw_339.json",
+	"GeneratedTime" : "2025-05-11 19:58:11",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::797c8fc3c4dd4f6985d5f42dc6bf70bd:user:1782f185f8d14e1f8b8ae10853d25fbe"
+				]
+			},
+			"Action" : [
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::bi-bucket-cn-east-3"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::797c8fc3c4dd4f6985d5f42dc6bf70bd:user:1782f185f8d14e1f8b8ae10853d25fbe"
+				]
+			},
+			"Action" : [
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::bi-bucket-cn-east-3/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::797c8fc3c4dd4f6985d5f42dc6bf70bd:user:1782f185f8d14e1f8b8ae10853d25fbe"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bi-bucket-cn-east-3"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::797c8fc3c4dd4f6985d5f42dc6bf70bd:user:1782f185f8d14e1f8b8ae10853d25fbe"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bi-bucket-cn-east-3/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::797c8fc3c4dd4f6985d5f42dc6bf70bd:user:1782f185f8d14e1f8b8ae10853d25fbe"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::bi-bucket-cn-east-3"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::797c8fc3c4dd4f6985d5f42dc6bf70bd:user:1782f185f8d14e1f8b8ae10853d25fbe"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::bi-bucket-cn-east-3/*"
+			]
+		}
+	]
+}

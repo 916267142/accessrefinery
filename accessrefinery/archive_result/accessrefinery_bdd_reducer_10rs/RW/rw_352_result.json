@@ -1,0 +1,32 @@
+{
+	"InputFilePath" : "data/RW/rw_352.json",
+	"GeneratedTime" : "2025-05-11 20:42:35",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::06dfea8249800f1f0f39c016feea94e0:user:0c77f145b900f4041f59c016875c72af"
+				]
+			},
+			"Action" : [
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::bilibacksourcesh/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::06dfea8249800f1f0f39c016feea94e0:user:0c77f145b900f4041f59c016875c72af"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::bilibacksourcesh/*"
+			]
+		}
+	]
+}

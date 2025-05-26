@@ -1,0 +1,90 @@
+{
+	"Version" : "2008-10-17",
+	"Statement" : [
+		{
+			"Sid" : "exeml-d8126a20db13499c82e060007d1e8348",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"d8126a20db13499c82e060007d1e8348"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::abc111/*"
+			]
+		},
+		{
+			"Sid" : "publicReadOnlyPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::abc111/*"
+			]
+		},
+		{
+			"Sid" : "publicHeadBucketPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket",
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::abc111"
+			]
+		},
+		{
+			"Sid" : "SpReadWrite1593250814083",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::09237af10880f20e0f6bc005112d3200:user:09237af1dd80f3911f3ac005a24e3675"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:GetObjectVersion",
+				"s3:DeleteObjectVersion",
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::abc111/input/*"
+			]
+		},
+		{
+			"Sid" : "SpReadWrite1593250832865",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::09237af10880f20e0f6bc005112d3200:user:09237af1dd80f3911f3ac005a24e3675"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:GetObjectVersion",
+				"s3:DeleteObjectVersion",
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::abc111/input/159324456079800040.jpg"
+			]
+		}
+	]
+}

@@ -1,0 +1,22 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1591093115097",
+	"Statement" : [
+		{
+			"Sid" : "SpReadOnly1591093114914",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::08e0aefcf900f46a0f79c01becfbe4e0:user:08e0aefddd80f5da1fc5c01b32d310ce"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::11512121/CloudTraces/*"
+			]
+		}
+	]
+}

@@ -1,0 +1,60 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1596699518941",
+	"Statement" : [
+		{
+			"Sid" : "publicReadWritePolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:PutObject",
+				"s3:GetObject",
+				"s3:GetObjectVersion",
+				"s3:DeleteObjectVersion",
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::20200804-0/*"
+			]
+		},
+		{
+			"Sid" : "publicHeadBucketPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket",
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::20200804-0"
+			]
+		},
+		{
+			"Sid" : "SpReadWrite1596699518838",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::09761b49a900f2480f81c00c6f63ffa0:user:09761b4a800026a61f8bc00cdcc9d81f"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:GetObjectVersion",
+				"s3:DeleteObjectVersion",
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::20200804-0/imager/*"
+			]
+		}
+	]
+}

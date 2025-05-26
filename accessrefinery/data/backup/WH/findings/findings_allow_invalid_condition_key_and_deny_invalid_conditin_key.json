@@ -1,0 +1,18 @@
+{
+    "Findings": [
+        {
+            "Principal": {
+                "IAM": "123456789012" 
+            },
+            "Action": [
+                "sts::setSourceIdentity"
+            ],
+            "Condition": [
+                {
+                    "key": "g:PrincipalUrn",
+                    "value": "*user*"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+{
+	"InputFilePath" : "data/RW/rw_124.json",
+	"GeneratedTime" : "2025-05-11 20:40:24",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::37yunyouxitest/file_0623c229c9800f342f0ec0122d527420_*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::37yunyouxitest/file_0623c229c9800f342f0ec0122d527420_*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::37yunyouxitest/file_0623c229c9800f342f0ec0122d527420_*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::37yunyouxitest"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::37yunyouxitest/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::37yunyouxitest/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::37yunyouxitest"
+			]
+		}
+	]
+}

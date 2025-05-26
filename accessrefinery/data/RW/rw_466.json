@@ -1,0 +1,21 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "op_svc_obs",
+	"Statement" : [
+		{
+			"Sid" : "bucktetInventoryPolicyStatementId1602235534627",
+			"Effect" : "Allow",
+			"Principal" : {
+				"Service" : [
+					"obs"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::bucketceshi/*"
+			]
+		}
+	]
+}

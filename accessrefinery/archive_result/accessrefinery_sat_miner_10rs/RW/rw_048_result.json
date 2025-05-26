@@ -1,0 +1,84 @@
+{
+	"InputFilePath" : "data/RW/rw_048.json",
+	"GeneratedTime" : "2025-05-11 18:42:15",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"ba5e430b73d6419fb2a6f20ec32d6295"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::160816829394005edff736e0026042f98c015974e1663/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"ef85862900e24589b2d9131b5d244222"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::160816829394005edff736e0026042f98c015974e1663"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"ef85862900e24589b2d9131b5d244222"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::160816829394005edff736e0026042f98c015974e1663/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"a39fbee122124df195f794de543ed82e"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::160816829394005edff736e0026042f98c015974e1663"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"a39fbee122124df195f794de543ed82e"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::160816829394005edff736e0026042f98c015974e1663/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"ba5e430b73d6419fb2a6f20ec32d6295"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::160816829394005edff736e0026042f98c015974e1663"
+			]
+		}
+	]
+}

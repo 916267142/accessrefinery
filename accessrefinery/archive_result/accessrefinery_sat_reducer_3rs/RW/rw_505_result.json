@@ -1,0 +1,84 @@
+{
+	"InputFilePath" : "data/RW/rw_505.json",
+	"GeneratedTime" : "2025-05-11 21:18:40",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0ad134411f000f1b1f42c00799405372:user:0ad134411f000f1b1f42c00799405372"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucket"
+			],
+			"Resource" : [
+				"s3:::catwo-01/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0ad134411f000f1b1f42c00799405372:user:0ad134411f000f1b1f42c00799405372"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketAcl"
+			],
+			"Resource" : [
+				"s3:::catwo-01/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0ad134411f000f1b1f42c00799405372:user:0ad134411f000f1b1f42c00799405372"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketAcl"
+			],
+			"Resource" : [
+				"s3:::catwo-01"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0ad134411f000f1b1f42c00799405372:user:0ad134411f000f1b1f42c00799405372"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucket"
+			],
+			"Resource" : [
+				"s3:::catwo-01"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0ad134411f000f1b1f42c00799405372:user:0ad134411f000f1b1f42c00799405372"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketPolicy"
+			],
+			"Resource" : [
+				"s3:::catwo-01/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0ad134411f000f1b1f42c00799405372:user:0ad134411f000f1b1f42c00799405372"
+				]
+			},
+			"Action" : [
+				"s3:PutBucketPolicy"
+			],
+			"Resource" : [
+				"s3:::catwo-01"
+			]
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+    "Version": "5.0",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": [
+                    "*"
+                ]
+            },
+            "Action": [
+                "sts:agencies:assume"
+            ],
+            "Condition": {
+                "StringMatch": {
+                    "g:PrincipalUrn": [
+                        "iam*34ab5e89-5973-4610-b1b8-7f0211452fb5:*user?*example*/ab*b*b*b*b*b*b*b"
+                    ]
+                },
+                "StringMatchIfExists": {
+                    "g:UserId": [
+                        "a*b*ab*"
+                    ]
+                },
+                "StringNotMatch": {
+                    "g:PrincipalId": [
+                        "a*bab*",
+                        "a*b?ab*",
+                        "a*b??ab*",
+                        "a*b???ab*",
+                        "a*b????ab*",
+                        "a*b?????ab*",
+                        "a*b??????ab*",
+                        "a*b???????ab*",
+                        "a*b????????ab*",
+                        "a*b?????????ab*",
+                        "a*b??????????ab*",
+                        "a*b???????????ab*",
+                        "a*b????????????ab*",
+                        "a*b?????????????ab*",
+                        "a*b??????????????ab*"
+                    ]
+                },
+                "StringEquals": {
+                    "g:PrincipalType": [
+                        "User"
+                    ]
+                }
+            }
+        }
+    ]
+}

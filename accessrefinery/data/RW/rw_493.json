@@ -1,0 +1,47 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1619525140407",
+	"Statement" : [
+		{
+			"Sid" : "自定义策略-8be5",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::0bf1ea1c1480f3370f41c0083caa6ba0:user:0c2850f30800f2991fe8c0088873af7a"
+				]
+			},
+			"Action" : [
+				"s3:*",
+				"s3:Get*",
+				"s3:Put*",
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::cangdauat",
+				"s3:::cangdauat/*"
+			]
+		},
+		{
+			"Sid" : "公共读-8554",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket",
+				"s3:HeadBucket",
+				"s3:GetBucketLocation",
+				"s3:ListBucketVersions",
+				"s3:GetObject",
+				"s3:RestoreObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::cangdauat",
+				"s3:::cangdauat/*"
+			]
+		}
+	]
+}

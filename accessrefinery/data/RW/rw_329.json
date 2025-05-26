@@ -1,0 +1,72 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1612773445522",
+	"Statement" : [
+		{
+			"Sid" : "Customized1608711751506",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::0a39e009aa80f47a0ff9c019e6f93e80:user:0af02f3b5b80f2d11fe8c019d736580a"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::beihuang"
+			]
+		},
+		{
+			"Sid" : "publicReadOnlyPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::beihuang/*"
+			]
+		},
+		{
+			"Sid" : "publicHeadBucketPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket",
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::beihuang"
+			]
+		},
+		{
+			"Sid" : "SpReadWrite1612773445278",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::0a39e009aa80f47a0ff9c019e6f93e80:user:0af02f3b5b80f2d11fe8c019d736580a"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:GetObjectVersion",
+				"s3:DeleteObjectVersion",
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::beihuang/beihuang/*"
+			]
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1619690536922",
+	"Statement" : [
+		{
+			"Sid" : "自定义策略-6ac6",
+			"Effect" : "Deny",
+			"Principal" : {
+				"IAM" : [
+					"iam::c41cde86e53646139483433cbb17a8cf:user:0bcbab664080f2ac1f58c0026dd6554e"
+				]
+			},
+			"Action" : [
+				"s3:Get*",
+				"s3:Put*"
+			],
+			"Resource" : [
+				"s3:::bucket-tj-shanghai1",
+				"s3:::bucket-tj-shanghai1/*"
+			]
+		}
+	]
+}

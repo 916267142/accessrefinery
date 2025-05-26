@@ -19,8 +19,13 @@ Maven >= 3.6.3
 All dependencies, including the ILP solver, JavaBDD, and MiniSat, are integrated into the project either as source code or via Maven. 
 Clone the repository and build the project with Maven:
 
+<!-- ```shell
+$ git clone <your-repo-url> 
+$ cd accessrefinery
+$ mvn clean package
+``` -->
+
 ```shell
-$ git clone <your-repo-url>
 $ cd accessrefinery
 $ mvn clean package
 ```
@@ -28,7 +33,7 @@ $ mvn clean package
 To run AccessRefinery, use:
 
 ```shell
-$ java -jar target/miner-1.0-SNAPSHOT-jar-with-dependencies.jar [options]
+$ java -jar target/refinery-1.0-SNAPSHOT-jar-with-dependencies.jar [options]
 ```
 
 **Command-line options:**
@@ -42,7 +47,7 @@ $ java -jar target/miner-1.0-SNAPSHOT-jar-with-dependencies.jar [options]
 
 **Example:**
 ```shell
-$ java -jar target/miner-1.0-SNAPSHOT-jar-with-dependencies.jar -m -r --round 10 -f data/Correctness
+$ java -jar target/refinery-1.0-SNAPSHOT-jar-with-dependencies.jar -m -r --round 10 -f data/Correctness
 ```
 
 Results are generated in the `results/` directory. The output includes:
@@ -115,19 +120,18 @@ All experimental results are archived in `/archive_result`.
 
 #### Results of AccessRefinery
 
-- `accessminer_bdd_mci_10rs`: Results of intent mining for 10 rounds using JavaBDD backend
-- `accessminer_sat_mci_10rs`: Results of intent mining for 10 rounds using MiniSAT backend
-- `accessminer_bdd_rri_10rs`: Results of intent mining and reduction for 10 rounds using JavaBDD
-- `accessminer_sat_rri_3rs`: Results of intent mining and reduction for 3 rounds using MiniSAT
+- `accessrefinery_bdd_miner_10rs`: Results of intent mining for 10 rounds using JavaBDD backend
+- `accessrefinery_sat_miner_10rs`: Results of intent mining for 10 rounds using MiniSAT backend
+- `accessrefinery_bdd_reducer_10rs`: Results of intent mining and reduction for 10 rounds using JavaBDD
+- `accessrefinery_sat_reducer_3rs`: Results of intent mining and reduction for 3 rounds using MiniSAT
 
-Scripts are provided to generate these results. Note that `accessminer_sat_rri_3rs` runs very slowly.
+Scripts are provided to generate these results. Note that `accessrefinery_sat_reducer_3rs` runs very slowly.
 
 ```bash
-$ sudo mvn clean package
-$ sh tools/running_bdd_mci.sh
-$ sh tools/running_sat_mci.sh
-$ sh tools/running_bdd_rri.sh
-$ sh tools/running_sat_rri.sh
+$ sh tools/running_bdd_miner.sh
+$ sh tools/running_sat_miner.sh
+$ sh tools/running_bdd_reducer.sh
+$ sh tools/running_sat_reducer.sh
 ```
 
 #### Results of AWS AccessAnalyzer via CLI
@@ -150,7 +154,7 @@ $ sudo apt install jq # JSON library required by the comparison script
 $ sh tools/running_batch_compare.sh
 ```
 
-Note: The result for `Scalability_05Keys/12_allow_result.json` may differ because AWS Access Analyzer may time out (the result will be marked with `"error": "INTERNAL_ERROR"` by Access Analyzer). This is normal.
+<!-- Note: The result for `Scalability_05Keys/12_allow_result.json` may differ because AWS Access Analyzer may time out (the result will be marked with `"error": "INTERNAL_ERROR"` by Access Analyzer). This is normal. -->
 
 ---
 

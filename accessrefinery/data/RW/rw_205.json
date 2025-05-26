@@ -1,0 +1,52 @@
+{
+	"Version" : "2008-10-17",
+	"Statement" : [
+		{
+			"Sid" : "SpReadOnly1601129584794",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::0a0e8e093b000f600f51c0080cfffc80:user:0a0e8e0a2c00f5991fcbc008ceebfeef"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::ai-data-shanghai/fangpi-set/*"
+			]
+		},
+		{
+			"Sid" : "SpReadOnly1601130764755",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::0a0e8e093b000f600f51c0080cfffc80:user:0a0e8e0a2c00f5991fcbc008ceebfeef"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::ai-data-shanghai/fangpi-set/*"
+			]
+		},
+		{
+			"Sid" : "exeml-d8126a20db13499c82e060007d1e8348",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"d8126a20db13499c82e060007d1e8348"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::ai-data-shanghai/*"
+			]
+		}
+	]
+}

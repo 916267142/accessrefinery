@@ -1,0 +1,38 @@
+{
+    "Version": "5.0",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": [
+                    "*"
+                ]
+            },
+            "Action": [
+                "*"
+            ],
+            "Condition": {
+                "ForAnyValue:StringMatch": {
+                    "g:CalledVia": [
+                        "service.*A*d*e*F*h*i*M*o*"
+                    ]
+                },
+                "ForAllValues:StringEquals": {
+                    "g:CalledVia": [
+                        "service.abcdefghijklmnopqrstuvwxyz"
+                    ]
+                },
+                "StringNotMatch": {
+                    "g:CalledViaFirst": [
+                        "?*?.*A*d*e*F*h*i*M*o*",
+                        "?*?.*b*c*e*F*h*i*J*k*"
+                    ],
+                    "g:CalledViaLast": [
+                        "?*?.*A*d*e*F*h*i*M*o*",
+                        "?*?.*b*c*e*F*h*i*J*k*"
+                    ]
+                }
+            }
+        }
+    ]
+}

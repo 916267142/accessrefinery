@@ -1,0 +1,71 @@
+{
+	"InputFilePath" : "data/RW/rw_439.json",
+	"GeneratedTime" : "2025-05-11 18:45:45",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::074c251c96000f5a0f29c01bf4171580:user:08f51bad8e8026371f71c01b3f1d6ef8"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::bucket-jiahuawl-dev/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::074c251c96000f5a0f29c01bf4171580:user:08f51bad8e8026371f71c01b3f1d6ef8"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bucket-jiahuawl-dev/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::074c251c96000f5a0f29c01bf4171580:user:08f51bad8e8026371f71c01b3f1d6ef8"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bucket-jiahuawl-dev/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::074c251c96000f5a0f29c01bf4171580:user:08f51bad8e8026371f71c01b3f1d6ef8"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::bucket-jiahuawl-dev/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::074c251c96000f5a0f29c01bf4171580:user:08f51bad8e8026371f71c01b3f1d6ef8"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bucket-jiahuawl-dev/*"
+			]
+		}
+	]
+}

@@ -1,0 +1,150 @@
+{
+	"InputFilePath" : "data/RW/rw_294.json",
+	"GeneratedTime" : "2025-05-11 19:58:07",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::aytaofang-com"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::aytaofang-com/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"https://*.aytaofang.com*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::aytaofang-com/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"https://servicewechat.com*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::aytaofang-com/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"https://*.aytaofang.com*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::aytaofang-com"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::aytaofang-com/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"https://servicewechat.com*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::aytaofang-com/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"https://tmaservice.developer.toutiao.com*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::aytaofang-com/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"https://tmaservice.developer.toutiao.com*"
+				]
+			}
+		}
+	]
+}

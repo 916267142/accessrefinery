@@ -1,0 +1,266 @@
+{
+	"InputFilePath" : "data/RW/rw_363.json",
+	"GeneratedTime" : "2025-05-11 21:18:19",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09976de87580f4d72f63c00b9ef445ab_01/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09a7215db98026862f2cc00bc5ec0f0d_01/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bluestacks/games/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09976de87580f4d72f63c00b9ef445ab_02/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09976de87580f4d72f63c00b9ef445ab_02/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09a7215db98026862f2cc00bc5ec0f0d_01/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bluestacks/games/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bluestacks/games/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09976de87580f4d72f63c00b9ef445ab_02/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09a7215db98026862f2cc00bc5ec0f0d_01/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09976de87580f4d72f63c00b9ef445ab_02/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09976de87580f4d72f63c00b9ef445ab_01/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::bluestacks/games/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09a7215db98026862f2cc00bc5ec0f0d_01/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09976de87580f4d72f63c00b9ef445ab_01/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::bluestacks/games/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09a7215db98026862f2cc00bc5ec0f0d_01/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09976de87580f4d72f63c00b9ef445ab_01/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09976de87580f4d72f63c00b9ef445ab_01/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::529375c06c6340f299819082b3051225:user:10208a4cf0944e339f523d9943ba02d3"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::bluestacks/file_09976de87580f4d72f63c00b9ef445ab_02/*"
+			]
+		}
+	]
+}

@@ -1,0 +1,69 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1612512030742",
+	"Statement" : [
+		{
+			"Sid" : "publicReadOnlyPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::amkt-dev-public-bucket/*"
+			]
+		},
+		{
+			"Sid" : "publicHeadBucketPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket",
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::amkt-dev-public-bucket"
+			]
+		},
+		{
+			"Sid" : "应用市场开发环境-读写权限",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::eaa1972541d74aabbcfa8273f00dfcf4:user:0a492cdb8900254b1fb7c011e12b440b"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket",
+				"s3:HeadBucket",
+				"s3:GetBucketLocation",
+				"s3:ListBucketVersions",
+				"s3:ListBucketMultipartUploads",
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:RestoreObject",
+				"s3:DeleteObject",
+				"s3:GetObjectAcl",
+				"s3:PutObjectAcl",
+				"s3:GetObjectVersion",
+				"s3:GetObjectVersionAcl",
+				"s3:AbortMultipartUpload",
+				"s3:ListMultipartUploadParts",
+				"s3:ModifyObjectMetaData"
+			],
+			"Resource" : [
+				"s3:::amkt-dev-public-bucket",
+				"s3:::amkt-dev-public-bucket/*"
+			]
+		}
+	]
+}

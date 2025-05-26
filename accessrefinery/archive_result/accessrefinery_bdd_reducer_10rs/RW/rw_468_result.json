@@ -1,0 +1,97 @@
+{
+	"InputFilePath" : "data/RW/rw_468.json",
+	"GeneratedTime" : "2025-05-11 20:43:30",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0734ad70ab800f670f51c01506e95f20:user:0734ad71c40010fa1fb9c015cb8cb084"
+				]
+			},
+			"Action" : [
+				"s3:PutObjectAcl"
+			],
+			"Resource" : [
+				"s3:::buckt1/file/Aurora-4k.jpg"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0734ad70ab800f670f51c01506e95f20:user:0734ad71c40010fa1fb9c015cb8cb084"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::buckt1/file/Aurora-4k.jpg"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0734ad70ab800f670f51c01506e95f20:user:0734ad71c40010fa1fb9c015cb8cb084"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::buckt1/file/Aurora-4k.jpg"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0734ad70ab800f670f51c01506e95f20:user:0734ad71c40010fa1fb9c015cb8cb084"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::buckt1/file/Aurora-4k.jpg"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0734ad70ab800f670f51c01506e95f20:user:0734ad71c40010fa1fb9c015cb8cb084"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::buckt1/file/Aurora-4k.jpg"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0734ad70ab800f670f51c01506e95f20:user:0734ad71c40010fa1fb9c015cb8cb084"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectAcl"
+			],
+			"Resource" : [
+				"s3:::buckt1/file/Aurora-4k.jpg"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0734ad70ab800f670f51c01506e95f20:user:0734ad71c40010fa1fb9c015cb8cb084"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::buckt1/file/Aurora-4k.jpg"
+			]
+		}
+	]
+}

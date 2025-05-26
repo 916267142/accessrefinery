@@ -1,0 +1,31 @@
+{
+	"Version" : "2008-10-17",
+	"Statement" : [
+		{
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::50531697b4c047888a33ce214da4d11f:user:076ae56d598010ca1f96c001d3144520",
+					"iam::50531697b4c047888a33ce214da4d11f:user:3e62a597bf624034baa451e8f803f118",
+					"iam::d8126a20db13499c82e060007d1e8348:user:*",
+					"iam::50531697b4c047888a33ce214da4d11f:user:5cf4dcd366fc4409a14f022a244854f3",
+					"iam::50531697b4c047888a33ce214da4d11f:user:d4da8491b13842529f4112e649e51942",
+					"iam::50531697b4c047888a33ce214da4d11f:user:4885ed965eae4ef387eb4e8abd6f7cd9",
+					"iam::50531697b4c047888a33ce214da4d11f:user:5129d7ff660a489ca3be674396e408e3",
+					"iam::50531697b4c047888a33ce214da4d11f:user:0f7bad3935254f0495af83174d190c02",
+					"sts::50531697b4c047888a33ce214da4d11f:assumed-agency:modelarts_admin_agency/*",
+					"iam::50531697b4c047888a33ce214da4d11f:user:15ad445217df4313b915cf574e7a03d8",
+					"iam::50531697b4c047888a33ce214da4d11f:user:6b65b4c733ed49bd92f9a2afbaa73455",
+					"sts::d8126a20db13499c82e060007d1e8348:assumed-agency:cce_admin_trust/*"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bucket-3245/*",
+				"s3:::bucket-3245"
+			]
+		}
+	]
+}

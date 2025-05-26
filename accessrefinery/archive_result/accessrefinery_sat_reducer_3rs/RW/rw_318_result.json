@@ -1,0 +1,19 @@
+{
+	"InputFilePath" : "data/RW/rw_318.json",
+	"GeneratedTime" : "2025-05-11 21:18:14",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"d8126a20db13499c82e060007d1e8348"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::bbq-modelarts/*"
+			]
+		}
+	]
+}

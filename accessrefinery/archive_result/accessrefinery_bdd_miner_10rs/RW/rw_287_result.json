@@ -1,0 +1,78 @@
+{
+	"InputFilePath" : "data/RW/rw_287.json",
+	"GeneratedTime" : "2025-05-11 19:58:05",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::089e6170350026f30fddc001382f5260:user:08aa8fd34200f4681f40c001f36c0d87"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::auditlog-hwstaff-l00357759-cn-east-3"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"121.36.117.108/32"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::089e6170350026f30fddc001382f5260:user:08aa8fd34200f4681f40c001f36c0d87"
+				]
+			},
+			"Action" : [
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::auditlog-hwstaff-l00357759-cn-east-3"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"121.36.117.108/32"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::089e6170350026f30fddc001382f5260:user:08aa8fd34200f4681f40c001f36c0d87"
+				]
+			},
+			"Action" : [
+				"s3:Get*"
+			],
+			"Resource" : [
+				"s3:::auditlog-hwstaff-l00357759-cn-east-3/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"121.36.117.108/32"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::089e6170350026f30fddc001382f5260:user:08aa8fd34200f4681f40c001f36c0d87"
+				]
+			},
+			"Action" : [
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::auditlog-hwstaff-l00357759-cn-east-3/*"
+			],
+			"Condition" : {
+				"g:SourceIp" : [
+					"121.36.117.108/32"
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,318 @@
+{
+	"InputFilePath" : "data/RW/rw_430.json",
+	"GeneratedTime" : "2025-05-11 21:18:32",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c825aa3ae8025a31f4dc000ec3a6897"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c8ac4549e00f23a1f7fc000dfb3ee27"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c8ac4549e00f23a1f7fc000dfb3ee27"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectAcl"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c825aa3ae8025a31f4dc000ec3a6897"
+				]
+			},
+			"Action" : [
+				"s3:RestoreObject"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c825aa3ae8025a31f4dc000ec3a6897"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c825aa3ae8025a31f4dc000ec3a6897"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c825aa3ae8025a31f4dc000ec3a6897"
+				]
+			},
+			"Action" : [
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c8ac4549e00f23a1f7fc000dfb3ee27"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c8ac4549e00f23a1f7fc000dfb3ee27"
+				]
+			},
+			"Action" : [
+				"s3:AbortMultipartUpload"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c825aa3ae8025a31f4dc000ec3a6897"
+				]
+			},
+			"Action" : [
+				"s3:ModifyObjectMetaData"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c8ac4549e00f23a1f7fc000dfb3ee27"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c8ac4549e00f23a1f7fc000dfb3ee27"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c8ac4549e00f23a1f7fc000dfb3ee27"
+				]
+			},
+			"Action" : [
+				"s3:ModifyObjectMetaData"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c8ac4549e00f23a1f7fc000dfb3ee27"
+				]
+			},
+			"Action" : [
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c825aa3ae8025a31f4dc000ec3a6897"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c8ac4549e00f23a1f7fc000dfb3ee27"
+				]
+			},
+			"Action" : [
+				"s3:ListMultipartUploadParts"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c8ac4549e00f23a1f7fc000dfb3ee27"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c825aa3ae8025a31f4dc000ec3a6897"
+				]
+			},
+			"Action" : [
+				"s3:ListMultipartUploadParts"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c825aa3ae8025a31f4dc000ec3a6897"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c8ac4549e00f23a1f7fc000dfb3ee27"
+				]
+			},
+			"Action" : [
+				"s3:RestoreObject"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c825aa3ae8025a31f4dc000ec3a6897"
+				]
+			},
+			"Action" : [
+				"s3:AbortMultipartUpload"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c8ac4549e00f23a1f7fc000dfb3ee27"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersionAcl"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c825aa3ae8025a31f4dc000ec3a6897"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersionAcl"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0c8257d28a00f3c70f0cc0005a30bc80:user:0c825aa3ae8025a31f4dc000ec3a6897"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectAcl"
+			],
+			"Resource" : [
+				"s3:::bucket-cloudbi-of/latin/*"
+			]
+		}
+	]
+}

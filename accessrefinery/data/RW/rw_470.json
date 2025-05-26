@@ -1,0 +1,21 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1617097664141",
+	"Statement" : [
+		{
+			"Sid" : "publicReadOnlyPolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::bureau/*"
+			]
+		}
+	]
+}

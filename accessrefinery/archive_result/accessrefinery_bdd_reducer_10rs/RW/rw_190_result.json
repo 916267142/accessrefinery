@@ -1,0 +1,396 @@
+{
+	"InputFilePath" : "data/RW/rw_190.json",
+	"GeneratedTime" : "2025-05-11 20:42:14",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:RestoreObject"
+			],
+			"Resource" : [
+				"s3:::activityych//*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:PutObjectAcl"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::activityych/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:ListMultipartUploadParts"
+			],
+			"Resource" : [
+				"s3:::activityych//*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::activityych/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:ModifyObjectMetaData"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:RestoreObject"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:ListBucketMultipartUploads"
+			],
+			"Resource" : [
+				"s3:::activityych//*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:ListBucketVersions"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectAcl"
+			],
+			"Resource" : [
+				"s3:::activityych//*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:GetBucketLocation"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:ListMultipartUploadParts"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersionAcl"
+			],
+			"Resource" : [
+				"s3:::activityych//*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:AbortMultipartUpload"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:GetBucketLocation"
+			],
+			"Resource" : [
+				"s3:::activityych//*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::activityych//*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:ListBucketVersions"
+			],
+			"Resource" : [
+				"s3:::activityych//*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:ModifyObjectMetaData"
+			],
+			"Resource" : [
+				"s3:::activityych//*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:AbortMultipartUpload"
+			],
+			"Resource" : [
+				"s3:::activityych//*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:PutObjectAcl"
+			],
+			"Resource" : [
+				"s3:::activityych//*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::activityych/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:ListBucketMultipartUploads"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersionAcl"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectAcl"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::0bea4413c400f5e70f25c00e84833ca0:user:0bea4414ba00f4bf1fa6c00e6266dba8"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::activityych/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::activityych"
+			]
+		}
+	]
+}

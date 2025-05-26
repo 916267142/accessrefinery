@@ -1,0 +1,186 @@
+{
+	"InputFilePath" : "data/RW/rw_098.json",
+	"GeneratedTime" : "2025-05-11 21:08:16",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::23333/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"https://xiaoxu-blog.cn*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::23333"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::23333/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"https://xiaoxu.org*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::23333/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"https://status.xiaoxu-blog.cn*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::23333/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"https://xiaoxu.org*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::23333"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::23333/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"https://xiaoxu.zimingdh.com*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::23333/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"https://xiaoxu.zimingdh.com*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::23333/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"https://xiaoxu-blog.cn*"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::23333/*"
+			],
+			"Condition" : {
+				"g:Referer" : [
+					"https://status.xiaoxu-blog.cn*"
+				]
+			}
+		}
+	]
+}

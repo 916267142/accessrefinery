@@ -1,0 +1,28 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": "*" 
+            },
+            "Action": [
+                "sts:agencies:assume"
+            ]
+        },
+        {
+            "Effect": "Deny",
+            "Principal": {
+                "IAM": "*" 
+            },
+            "Action" : [
+                "sts:agencies:assume"
+            ],
+            "Condition": {
+                "StringNotMatch": {
+                    "g:PrincipalAccount": "123456789012"
+                }
+            }
+        }
+    ]
+}

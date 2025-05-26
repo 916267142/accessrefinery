@@ -1,0 +1,25 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1623089458694",
+	"Statement" : [
+		{
+			"Sid" : "公共读",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:GetObjectVersion",
+				"s3:HeadBucket",
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::caidawei/*",
+				"s3:::caidawei"
+			]
+		}
+	]
+}

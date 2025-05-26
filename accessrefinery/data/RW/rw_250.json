@@ -1,0 +1,20 @@
+{
+	"Version" : "2008-10-17",
+	"Statement" : [
+		{
+			"Sid" : "AddPutObjectForCTS",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::a39fbee122124df195f794de543ed82e:user:dad27c761a644358848e8b278eec671d"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::aosblueprints-cn-east-3-0793b13fdea44d4480840931e88680ff/*"
+			]
+		}
+	]
+}

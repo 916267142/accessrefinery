@@ -1,0 +1,30 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1619777688999",
+	"Statement" : [
+		{
+			"Sid" : "Customized1596102938068",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::089e6170350026f30fddc001382f5260:user:08aa8fd34200f4681f40c001f36c0d87"
+				]
+			},
+			"Action" : [
+				"s3:Get*",
+				"s3:List*"
+			],
+			"Resource" : [
+				"s3:::auditlog-hwstaff-l00357759-cn-east-3",
+				"s3:::auditlog-hwstaff-l00357759-cn-east-3/*"
+			],
+			"Condition" : {
+				"IpAddress" : {
+					"g:SourceIp" : [
+						"121.36.117.108/32"
+					]
+				}
+			}
+		}
+	]
+}

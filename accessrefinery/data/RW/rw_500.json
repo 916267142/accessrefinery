@@ -1,0 +1,20 @@
+{
+	"Version" : "2008-10-17",
+	"Statement" : [
+		{
+			"Sid" : "exeml-d8126a20db13499c82e060007d1e8348",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"d8126a20db13499c82e060007d1e8348"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::carbyeason/*"
+			]
+		}
+	]
+}

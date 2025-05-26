@@ -1,0 +1,32 @@
+{
+	"InputFilePath" : "data/RW/rw_478.json",
+	"GeneratedTime" : "2025-05-11 21:18:39",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::bx15/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::bx15/*"
+			]
+		}
+	]
+}

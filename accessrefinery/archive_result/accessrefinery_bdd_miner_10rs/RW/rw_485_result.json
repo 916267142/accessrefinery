@@ -1,0 +1,71 @@
+{
+	"InputFilePath" : "data/RW/rw_485.json",
+	"GeneratedTime" : "2025-05-11 19:59:52",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::05d1aa8a54000f780f56c004903055c0:user:05d1aa8b7a8010e41fe3c00446cb004f"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::c-garbage/train_data/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::05d1aa8a54000f780f56c004903055c0:user:05d1aa8b7a8010e41fe3c00446cb004f"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::c-garbage/train_data/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::05d1aa8a54000f780f56c004903055c0:user:05d1aa8b7a8010e41fe3c00446cb004f"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::c-garbage/train_data/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::05d1aa8a54000f780f56c004903055c0:user:05d1aa8b7a8010e41fe3c00446cb004f"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::c-garbage/train_data/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::05d1aa8a54000f780f56c004903055c0:user:05d1aa8b7a8010e41fe3c00446cb004f"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::c-garbage/train_data/*"
+			]
+		}
+	]
+}

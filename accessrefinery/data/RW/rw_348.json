@@ -1,0 +1,68 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1622804033185",
+	"Statement" : [
+		{
+			"Sid" : "公共读写-e495",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:GetObjectAcl",
+				"s3:PutObjectAcl",
+				"s3:GetObjectVersion",
+				"s3:GetObjectVersionAcl",
+				"s3:AbortMultipartUpload",
+				"s3:ListMultipartUploadParts"
+			],
+			"Resource" : [
+				"s3:::bigdata-online/stat/*"
+			]
+		},
+		{
+			"Sid" : "公共读写-f0f3",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:GetObjectAcl",
+				"s3:PutObjectAcl",
+				"s3:GetObjectVersion",
+				"s3:GetObjectVersionAcl",
+				"s3:AbortMultipartUpload",
+				"s3:ListMultipartUploadParts"
+			],
+			"Resource" : [
+				"s3:::bigdata-online/ald_stat/*"
+			]
+		},
+		{
+			"Sid" : "并行文件系统读写-8de1",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucket",
+				"s3:PutBucketPolicy",
+				"s3:PutBucketAcl"
+			],
+			"Resource" : [
+				"s3:::bigdata-online",
+				"s3:::bigdata-online/*"
+			]
+		}
+	]
+}

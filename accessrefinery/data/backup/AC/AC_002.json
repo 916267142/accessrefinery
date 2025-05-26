@@ -1,0 +1,31 @@
+{
+    "Version": "5.0",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "IAM": [
+                    "*"
+                ]
+            },
+            "Action": [
+                "obs:object:getObject"
+            ],
+            "Resource": [
+                "obs:cn-north-4::bucket:example-bucket/*"
+            ],
+            "Condition": {
+                "StringMatch": {
+                    "g:PrincipalUrn": [
+                        "sts*34ab5e89-5973-4610-b1b8-7f0211452fb5:*assumed-agency?*example*/ab*b*b*b*b*b*b*b"
+                    ]
+                },
+                "StringNotMatch": {
+                    "g:PrincipalId": [
+                        "*:a*b*b*b*b*b*b*b"
+                    ]
+                }
+            }
+        }
+    ]
+}

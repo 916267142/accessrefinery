@@ -1,0 +1,97 @@
+{
+	"InputFilePath" : "data/RW/rw_247.json",
+	"GeneratedTime" : "2025-05-11 20:42:23",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::082c48faf00026640fabc009de665680:user:082c48fbbb80259b1f5dc009abf72aa6"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::aojier/aojier"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObjectVersion"
+			],
+			"Resource" : [
+				"s3:::aojier/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::082c48faf00026640fabc009de665680:user:082c48fbbb80259b1f5dc009abf72aa6"
+				]
+			},
+			"Action" : [
+				"s3:PutObject"
+			],
+			"Resource" : [
+				"s3:::aojier/aojier"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:HeadBucket"
+			],
+			"Resource" : [
+				"s3:::aojier"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:GetObject"
+			],
+			"Resource" : [
+				"s3:::aojier/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"s3:::aojier"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"iam::082c48faf00026640fabc009de665680:user:082c48fbbb80259b1f5dc009abf72aa6"
+				]
+			},
+			"Action" : [
+				"s3:DeleteObjectVersion"
+			],
+			"Resource" : [
+				"s3:::aojier/aojier"
+			]
+		}
+	]
+}

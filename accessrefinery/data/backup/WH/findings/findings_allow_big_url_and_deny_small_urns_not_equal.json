@@ -1,0 +1,18 @@
+{
+    "Findings": [
+        {
+            "Principal": {
+                "IAM": "*" 
+            },
+            "Action": [
+                "sts:agencies:assume"
+            ],
+            "Condition": [
+                {
+                    "key": "g:PrincipalAccount",
+                    "value": "123456789012"
+                }
+            ]
+        }
+    ]
+}

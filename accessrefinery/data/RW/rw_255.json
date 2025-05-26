@@ -1,0 +1,55 @@
+{
+	"Version" : "2008-10-17",
+	"Id" : "Policy1577669950611",
+	"Statement" : [
+		{
+			"Sid" : "publicReadWritePolicyStatementId",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:PutObject",
+				"s3:GetObject",
+				"s3:GetObjectVersion",
+				"s3:DeleteObjectVersion",
+				"s3:DeleteObject"
+			],
+			"Resource" : [
+				"s3:::apoit/*"
+			]
+		},
+		{
+			"Sid" : "Customized1577669890523",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::06e827b07c0026620f0dc018c5379c80:user:074952a96b00269e1f92c01852af1436"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::apoit"
+			]
+		},
+		{
+			"Sid" : "Customized1577669950486",
+			"Effect" : "Allow",
+			"Principal" : {
+				"IAM" : [
+					"iam::06e827b07c0026620f0dc018c5379c80:user:074952a96b00269e1f92c01852af1436"
+				]
+			},
+			"Action" : [
+				"s3:*"
+			],
+			"Resource" : [
+				"s3:::apoit/*"
+			]
+		}
+	]
+}

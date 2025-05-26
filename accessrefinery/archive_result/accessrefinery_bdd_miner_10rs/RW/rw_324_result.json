@@ -1,0 +1,84 @@
+{
+	"InputFilePath" : "data/RW/rw_324.json",
+	"GeneratedTime" : "2025-05-11 19:58:09",
+	"Finding" : [
+		{
+			"Principal" : {
+				"IAM" : [
+					"sts::fdd219aef6dd446fb49539ca32bb3a4f:assumed-agency:modelarts_agency/*"
+				]
+			},
+			"Action" : [
+				"s3:Put*"
+			],
+			"Resource" : [
+				"s3:::bd0ae417-5178-11eb-93b5-0255ac1000c5-log-dump/bd0ae417-5178-11eb-93b5-0255ac1000c5/ocr-server/47a8855a-e96e-4681-9870-52294a845c90-0.0.2/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"sts::fdd219aef6dd446fb49539ca32bb3a4f:assumed-agency:modelarts_agency/*"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucket"
+			],
+			"Resource" : [
+				"s3:::bd0ae417-5178-11eb-93b5-0255ac1000c5-log-dump/bd0ae417-5178-11eb-93b5-0255ac1000c5/ocr-server/47a8855a-e96e-4681-9870-52294a845c90-0.0.1/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"sts::fdd219aef6dd446fb49539ca32bb3a4f:assumed-agency:modelarts_agency/*"
+				]
+			},
+			"Action" : [
+				"s3:Put*"
+			],
+			"Resource" : [
+				"s3:::bd0ae417-5178-11eb-93b5-0255ac1000c5-log-dump/bd0ae417-5178-11eb-93b5-0255ac1000c5/ocr-server/47a8855a-e96e-4681-9870-52294a845c90-0.0.1/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"sts::fdd219aef6dd446fb49539ca32bb3a4f:assumed-agency:modelarts_agency/*"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucket"
+			],
+			"Resource" : [
+				"s3:::bd0ae417-5178-11eb-93b5-0255ac1000c5-log-dump/bd0ae417-5178-11eb-93b5-0255ac1000c5/ocr-server/47a8855a-e96e-4681-9870-52294a845c90-0.0.2/*"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"sts::fdd219aef6dd446fb49539ca32bb3a4f:assumed-agency:modelarts_agency/*"
+				]
+			},
+			"Action" : [
+				"s3:DeleteBucket"
+			],
+			"Resource" : [
+				"s3:::bd0ae417-5178-11eb-93b5-0255ac1000c5-log-dump"
+			]
+		},
+		{
+			"Principal" : {
+				"IAM" : [
+					"sts::fdd219aef6dd446fb49539ca32bb3a4f:assumed-agency:modelarts_agency/*"
+				]
+			},
+			"Action" : [
+				"s3:Put*"
+			],
+			"Resource" : [
+				"s3:::bd0ae417-5178-11eb-93b5-0255ac1000c5-log-dump"
+			]
+		}
+	]
+}
