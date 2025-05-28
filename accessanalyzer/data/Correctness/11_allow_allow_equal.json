@@ -1,0 +1,37 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "StringLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/*bc"
+                },
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.10/32"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::antsknmath",
+            "Condition": {
+                "StringLike": {
+                    "aws:PrincipalArn": "arn:aws:iam::123456789012:user/*bc"
+                },
+                "IpAddress": {
+                    "aws:SourceIp": "200.10.10.10/32"
+                }
+            }
+        }
+    ]
+}
