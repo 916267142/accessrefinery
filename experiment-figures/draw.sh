@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[ -d results ] || mkdir results
+
 set -e
 
 # generate data
