@@ -1,0 +1,30 @@
+{
+    "findings": [
+        {
+            "action": [
+                "s3:ListBucket"
+            ],
+            "analyzedAt": "2025-05-10T14:17:33.940Z",
+            "condition": {
+                "aws:PrincipalArn": "arn:aws:iam::123456789012:user/abc",
+                "aws:SourceIp": "200.10.10.10/31"
+            },
+            "createdAt": "2025-05-10T04:32:26.648Z",
+            "id": "3618a421-83f1-4c69-bde9-48e7b44e0756",
+            "isPublic": false,
+            "principal": {
+                "AWS": "*"
+            },
+            "resource": "arn:aws:s3:::antsknmath",
+            "resourceOwnerAccount": "222634363387",
+            "resourceType": "AWS::S3::Bucket",
+            "sources": [
+                {
+                    "type": "POLICY"
+                }
+            ],
+            "status": "ACTIVE",
+            "updatedAt": "2025-05-10T14:17:33.940Z"
+        }
+    ]
+}
