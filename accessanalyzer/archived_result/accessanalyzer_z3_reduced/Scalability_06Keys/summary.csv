@@ -1,0 +1,5 @@
+Number of Statements,Number of Findings,Rounds,Average Time per Round (s),Total Time (s)
+1,1,8,0.0136,0.9907
+2,2,25,0.0236,5.1574
+3,3,55,0.0582,25.6922
+4,4,101,0.1482,258.2376
