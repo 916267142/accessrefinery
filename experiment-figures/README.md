@@ -16,8 +16,9 @@ experiment-figures
 
 ### Run
 
-Run the following commands to generate the figures in the results directory.
+Run the following commands to generate the figures in the `results/` directory.
 ```shell
+$ cd experiment-figures
 $ apt install gnuplot 
 $ sh draw.sh
 ```
