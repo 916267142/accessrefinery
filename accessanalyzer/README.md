@@ -1,5 +1,5 @@
-# AccessAnalyzer: Stratified Intent Mining Tool
-A re-implemented version of AWS AccessAnalyzer for automatically discovering and organizing stratified intent structures from IAM policies.
+# AccessAnalyzer: Stratified Abstraction of Access Control Policies
+A re-implemented version of AWS AccessAnalyzer. https://assets.amazon.science/0f/23/212ac40144f193bb30fb19bd77af/stratified-abstraction-of-access-control-policies.pdf
 
 ## Setup
 
@@ -56,11 +56,11 @@ accessanalyzer
 |       |   |---...
 |       |---Scalability_05Keys
 |       |---Scalability_06Keys
-|----src                      # mining tool source code
+|----src                      # the source code accessanalyzer
 |----tools
 |       |---...               # scripts for running experiments
-|----pom.xml                  # Maven root configuration
-|----assembly.xml             # Maven assembly configuration
+|----pom.xml                  # maven root configuration
+|----assembly.xml             # maven assembly configuration
 ```
 
 ## Reproduction
