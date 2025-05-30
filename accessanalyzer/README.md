@@ -4,8 +4,11 @@ A re-implemented version of AWS AccessAnalyzer for automatically discovering and
 ## Setup
 
 ### Prerequisites
+- Linux
 - Java JDK >= 17
 - Maven 3.9.9
+- jq <= 1.6
+- bc 1.07.1
 
 ### Clone the repository
 ```bash
@@ -15,8 +18,7 @@ $ git clone https://anonymous.4open.science/r/ase25-5671/
 ### Install Z3 and add to PATH
 ```bash
 $ cd accessanalyzer
-$ unzip z3-4.15.0-x64-glibc-2.39.zip -d ~/z3-4.15.0
-$ echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/z3-4.15.0/bin' >> ~/.bashrc
+$ echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:'$(pwd)'/z3-4.15.0/bin' >> ~/.bashrc
 $ source ~/.bashrc
 ```
 
@@ -27,6 +29,10 @@ $ mvn clean package
 
 ## Run
 
+```bash
+$ java -jar target/accessanalyzer-1.0-SNAPSHOT-release.jar <options>
+```
+
 ### Command-line options:
 - `-r, --reduce`: Reduce the number of intents.
 - `-s, --solver <Z3/CVC5>`: Select the solver to use (Z3 or CVC5), default is Z3.
@@ -35,7 +41,7 @@ $ mvn clean package
 
 Example:
 ```bash
-$ java -jar target/accessanalyzer-1.0-SNAPSHOT-release.jar -r -s Z3 -f data/POLICIES
+$ java -jar target/accessanalyzer-1.0-SNAPSHOT-release.jar -r -s Z3 -f data/Correctness/
 ``` 
 
 Then the result will be output to the `results/` folder.
@@ -65,6 +71,41 @@ accessanalyzer
 ## Reproduction
 All experimental results are archived in `/archive_result`.
 
-### Results of AccessAnalyzer
+### Result of AccessAnalyzer
 
-Still waiting for write up.
+- `accessanalyzer_cvc5_unredueced'`: Results of intent mining using CVC5
+- `accessanalyzer_cvc5_redueced'`: Results of intent mining and reduction using CVC5
+- `accessanalyzer_z3_unredueced'`: Results of intent mining using Z3
+- `accessanalyzer_z3_redueced'`: Results of intent mining and reduction using Z3
+
+Scripts are provided to generate these results.
+
+**Note**: This project can process both folder-structured datasets and individual JSON files. Due to the time-consuming nature of processing large statements, a 1-hour timeout is set. The scripts process each file sequentially to allow timely termination if needed.
+
+```bash
+$ sh tools/mining_unreduced.sh
+$ sh tools/mining_reduced.sh
+$ sh tools/organize_result.sh
+```
+
+### Results of AccessRefinery
+
+- `accessrefinery_bdd_miner_10rs`: Results of intent mining for 10 rounds using JavaBDD backend
+- `accessrefinery_bdd_reducer_10rs`: Results of intent mining and reduction for 10 rounds using JavaBDD
+
+These results are copied from `accessrefinery/archived_results/` for comparison.
+
+### Results of Comparing AccessRefinery with AWS AccessAnalyzer
+
+- `compare_result`: Results of comparison
+
+The following instructions can be used to reproduce the results:
+
+```bash
+$ sudo apt install jq # JSON library required by the comparison script
+$ sh tools/running_batch_compare.sh
+```
+
+---
+
+Thank you for reading AccessAnalyzer! 
