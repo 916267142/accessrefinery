@@ -1,0 +1,25 @@
+=== JSON Directory Comparison Log ===
+Start time: 2025-05-30 15:53:15
+Comparing directories: archived_result/accessanalyzer_cvc5_reduced/Scalability_05Keys/ and archived_result/accessrefinery_bdd_reducer_10rs/Scalability_05Keys/
+
+🔍 Comparing files in archived_result/accessanalyzer_cvc5_reduced/Scalability_05Keys/ and archived_result/accessrefinery_bdd_reducer_10rs/Scalability_05Keys/...
+✅ 01_allow_result.json: equivalent
+✅ 02_allow_result.json: equivalent
+✅ 03_allow_result.json: equivalent
+✅ 04_allow_result.json: equivalent
+✅ 05_allow_result.json: equivalent
+✅ 06_allow_result.json: equivalent
+✅ 07_allow_result.json: equivalent
+✅ 08_allow_result.json: equivalent
+✅ 09_allow_result.json: equivalent
+✅ 10_allow_result.json: equivalent
+✅ 11_allow_result.json: equivalent
+✅ 12_allow_result.json: equivalent
+
+=== Summary ===
+Timestamp: 2025-05-30 15:53:15
+Total matched files: 12
+Different files: 0
+Identical files: 12
+
+🎉 All 12 matched files are semantically equivalent.

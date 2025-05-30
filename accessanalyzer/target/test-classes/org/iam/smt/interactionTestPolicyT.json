@@ -1,0 +1,41 @@
+{
+  "Version": "5.0",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Condition": {
+        "StringEquals": {
+          "SrcVpc": [
+            "vpc-a",
+            "vpc-b"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Condition": {
+        "StringEquals": {
+          "OrgID": [
+            "o-2"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Condition": {
+        "StringEquals": {
+          "SrcVpc": [
+            "vpc-b"
+          ]
+        },
+        "StringNotEquals": {
+          "OrgID": [
+            "o-1"
+          ]
+        }
+      }
+    }
+  ]
+}

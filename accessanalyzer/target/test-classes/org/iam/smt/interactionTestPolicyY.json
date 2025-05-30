@@ -1,0 +1,23 @@
+{
+  "Version": "5.0",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "IAM": [
+          "*"
+        ]
+      },
+      "Condition": {
+        "StringEquals": {
+          "SrcVpc": [
+            "vpc-a"
+          ],
+          "OrgID": [
+            "o-2"
+          ]
+        }
+      }
+    }
+  ]
+}

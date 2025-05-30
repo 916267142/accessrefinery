@@ -1,0 +1,46 @@
+{
+	"Findings" : [
+		{
+			"Principal" : {
+				"AWS" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"arn:aws:s3:::antsknmath"
+			],
+			"Condition" : {
+				"aws:PrincipalArn" : [
+					"arn:aws:iam::123:user/a*c"
+				],
+				"aws:SourceIp" : [
+					"200.10.10.10/31"
+				]
+			}
+		},
+		{
+			"Principal" : {
+				"AWS" : [
+					"*"
+				]
+			},
+			"Action" : [
+				"s3:ListBucket"
+			],
+			"Resource" : [
+				"arn:aws:s3:::antsknmath"
+			],
+			"Condition" : {
+				"aws:PrincipalArn" : [
+					"arn:aws:iam::123:user/*bc"
+				],
+				"aws:SourceIp" : [
+					"200.10.10.10/31"
+				]
+			}
+		}
+	]
+}
