@@ -28,10 +28,6 @@ sh tools/compare.sh archive_result/accessrefinery_bdd_miner_10rs/Scalability_06K
     archive_result/accessrefinery_sat_miner_10rs/Scalability_06Keys/ \
     compare_result/Scalability_06Keys_MCI_AccessRefinery_BDD_with_AccessRefinery_SAT.log
 
-sh tools/compare.sh archive_result/accessrefinery_bdd_miner_10rs/RW/  \
-    archive_result/accessrefinery_sat_miner_10rs/RW/ \
-    compare_result/Scalability_RW_MCI_AccessRefinery_BDD_with_AccessRefinery_SAT.log
-
 # compare Web AccessRefinery IReducer BDD with AccessRefinery IReducer SAT
 sh tools/compare.sh archive_result/accessrefinery_bdd_reducer_10rs/Correctness/  \
     archive_result/accessrefinery_sat_reducer_3rs/Correctness/ \
@@ -44,7 +40,3 @@ sh tools/compare.sh archive_result/accessrefinery_bdd_reducer_10rs/Scalability_0
 sh tools/compare.sh archive_result/accessrefinery_bdd_reducer_10rs/Scalability_06Keys/  \
     archive_result/accessrefinery_sat_reducer_3rs/Scalability_06Keys/ \
     compare_result/Scalability_06Keys_RRI_AccessRefinery_BDD_with_AccessRefinery_SAT.log
-
-sh tools/compare.sh archive_result/accessrefinery_bdd_reducer_10rs/RW/  \
-    archive_result/accessrefinery_sat_reducer_3rs/RW/ \
-    compare_result/Scalability_RW_RRI_AccessRefinery_BDD_with_AccessRefinery_SAT.log
