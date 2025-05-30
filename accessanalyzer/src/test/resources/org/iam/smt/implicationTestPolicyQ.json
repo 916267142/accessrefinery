@@ -1,0 +1,19 @@
+{
+  "Version": "5.0",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "IAM": [
+          "students"
+        ]
+      },
+      "Action": [
+        "getObject"
+      ],
+      "Resource": [
+        "cs240/Exam.pdf"
+      ]
+    }
+  ]
+}
