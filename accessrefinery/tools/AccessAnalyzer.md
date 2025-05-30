@@ -31,8 +31,8 @@ awscli
    > **Note**: Identity-based policies will not generate findings.  
    > Also, ensure that **Block all public access** is turned off for the bucket.
 
-   ![alt text](/tools/bucket.png)  
-   ![alt text](/tools/policy.png)
+   ![alt text](/accessrefinery/tools/bucket.png)  
+   ![alt text](/accessrefinery/tools/policy.png)
 
 3. Follow the [AWS IAM Access Analyzer Samples GitHub repository](https://github.com/aws-samples/aws-iam-access-analyzer-samples) to configure the CLI. Install the AWS CLI with:
 
