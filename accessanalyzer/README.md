@@ -4,16 +4,11 @@ A re-implemented version of AWS AccessAnalyzer for automatically discovering and
 ## Setup
 
 ### Prerequisites
-- Linux
+- Linux Ubuntu 22.04 LTS 
 - Java JDK >= 17
-- Maven 3.9.9
-- jq <= 1.6
-- bc 1.07.1
-
-### Clone the repository
-```bash
-$ git clone https://anonymous.4open.science/r/ase25-5671/
-```
+- Maven >= 3.6.3
+- Shell jq = 1.6
+  Shell bc = 1.07.1
 
 ### Install Z3 and add to PATH
 ```bash
@@ -78,13 +73,13 @@ All experimental results are archived in `/archive_result`.
 - `accessanalyzer_z3_unredueced'`: Results of intent mining using Z3
 - `accessanalyzer_z3_redueced'`: Results of intent mining and reduction using Z3
 
-Scripts are provided to generate these results.
-
-**Note**: This project can process both folder-structured datasets and individual JSON files. Due to the time-consuming nature of processing large statements, a 1-hour timeout is set. The scripts process each file sequentially to allow timely termination if needed.
-
+The following commands processes all datasets under the data directory in batch mode, with the timeout set to one hour.
 ```bash
 $ sh tools/mining_unreduced.sh
 $ sh tools/mining_reduced.sh
+```
+The following script moves the results to the specific directory.
+```bash
 $ sh tools/organize_result.sh
 ```
 
@@ -99,7 +94,7 @@ These results are copied from `accessrefinery/archived_results/` for comparison.
 
 - `compare_result`: Results of comparison
 
-The following instructions can be used to reproduce the results:
+The following commands can be used to reproduce the results:
 
 ```bash
 $ sudo apt install jq # JSON library required by the comparison script
