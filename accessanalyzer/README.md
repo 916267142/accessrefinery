@@ -1,5 +1,7 @@
 # AccessAnalyzer: Stratified Abstraction of Access Control Policies
-A re-implemented version of AWS AccessAnalyzer. https://assets.amazon.science/0f/23/212ac40144f193bb30fb19bd77af/stratified-abstraction-of-access-control-policies.pdf
+A re-implemented version of AWS AccessAnalyzer.
+
+https://assets.amazon.science/0f/23/212ac40144f193bb30fb19bd77af/stratified-abstraction-of-access-control-policies.pdf
 
 ## Setup
 
