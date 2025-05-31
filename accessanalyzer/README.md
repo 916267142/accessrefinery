@@ -4,10 +4,10 @@ A re-implemented version of AWS AccessAnalyzer for automatically discovering and
 ## Setup
 
 ### Prerequisites
-- Ubuntu 22.04 or before
+- Ubuntu 22.04
 - Java JDK >= 17
 - Maven 3.6.3
-- jq <= 1.6
+- jq 1.6
 - bc 1.07.1
 - Z3 4.14.1
 - CVC5 1.2.1
