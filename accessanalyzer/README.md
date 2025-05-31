@@ -12,11 +12,6 @@ A re-implemented version of AWS AccessAnalyzer for automatically discovering and
 - Z3 4.14.1
 - CVC5 1.2.1
 
-### Clone the repository
-```bash
-$ git clone https://anonymous.4open.science/r/ase25-5671/
-```
-
 ### Install Z3 and add to PATH
 ```bash
 $ cd accessanalyzer
