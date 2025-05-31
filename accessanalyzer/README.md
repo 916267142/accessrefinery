@@ -53,7 +53,7 @@ For the file `<file_name>.json`, the tool will output a folder named `results/<f
 - `<file_name>_<solver>_time.csv`: The time spent in mining the intents.
 
 ## Project Structure
-```
+```bash
 accessanalyzer
 |
 |----lib                      # third-party libraries
