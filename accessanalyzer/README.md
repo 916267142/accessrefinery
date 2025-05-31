@@ -84,14 +84,13 @@ Scripts are provided to generate these results.
 
 #### Generate preliminary results
 
-**Note**: This project can process both folder-structured datasets and individual JSON files. Due to the time-consuming nature of processing large statements, a 1-hour timeout is set. The scripts process each file sequentially to allow timely termination if needed.
+**Note**: This project will process both datasets in a folder. A 1-hour timeout is set.
 
 ```bash
 $ bash tools/mining_unreduced.sh
 $ bash tools/mining_reduced.sh
 ```
-
-**Note**: The two scripts above will take 10 to 20 hours to run. If you don't want to wait, we have provided pre-run preliminary results for you to conveniently execute the next script for result organization. You only need to run the following two commands:
+The two scripts above will take 10 to 20 hours to run. Alternatively, the result can be acquired from the archived data using the following command.
 
 ```bash
 $ cp -r ./archived_result/reduced_result ./reduced_result
