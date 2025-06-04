@@ -1,6 +1,6 @@
-# AccessRefinery: Mining Compact Access Control Intents on Public Cloud
+# AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud
 
-All code, datasets, and results for the paper are contained in this repository.
+All code, datasets (except real-world dataset), and results for the paper are contained in this repository.
 
 Note that when browsing on an anonymous website, the page may need to be refreshed after clicking a link.
 
