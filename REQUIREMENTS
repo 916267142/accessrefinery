@@ -5,10 +5,10 @@
 
 ## Software Environment
 - **Operating System:** Linux Ubuntu 22.04 LTS
-- **Java Runtime Environment:** Java JDK 17
 
 The following are the software dependencies required by the program, and we will provide complete installation instructions.
 
+- Java JDK 17
 - Maven 3.6.3
 - Shell jq 1.6
 - Shell bc 1.07.1
