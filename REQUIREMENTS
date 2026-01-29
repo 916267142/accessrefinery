@@ -1,0 +1,17 @@
+## Hardware Environment
+- **RAM:** ≥ 16 GB
+- **Storage:** ≥ 20 GB
+- **Performance:** No specific requirements
+
+## Software Environment
+- **Operating System:** Linux Ubuntu 22.04 LTS
+- **Java Runtime Environment:** Java JDK 17
+
+The following are the software dependencies required by the program, and we will provide complete installation instructions.
+
+- Maven 3.6.3
+- Shell jq 1.6
+- Shell bc 1.07.1
+- Shell awscli
+- SMT Solver Z3 4.14.1
+- SMT Solver CVC5 1.2.1
