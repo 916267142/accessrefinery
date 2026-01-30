@@ -1,5 +1,12 @@
-# AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud ![AccessRefinery Logo](logo2.png)
+<!--
+<img src="images/logo.png?raw=True" align="right" width="20%"/> AccessRefinery: Fast 
+-->
+<img src="logo2.png?raw=True" align="right" width="20%"/>
 
+# AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud
+
+
+<!-- #  ![AccessRefinery Logo](logo2.png) -->
 
 ## About AccessRefinery
 
