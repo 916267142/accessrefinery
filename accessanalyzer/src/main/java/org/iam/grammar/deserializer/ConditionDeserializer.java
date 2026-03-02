@@ -1,10 +1,10 @@
-package org.iam.grammer.deserializer;
+package org.iam.grammar.deserializer;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
-import org.iam.grammer.Condition;
+import org.iam.grammar.Condition;
 
 import java.io.IOException;
 import java.util.*;

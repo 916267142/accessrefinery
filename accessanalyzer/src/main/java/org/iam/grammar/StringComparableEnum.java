@@ -1,4 +1,4 @@
-package org.iam.grammer;
+package org.iam.grammar;
 
 public interface StringComparableEnum {
     String getValue();

@@ -1,0 +1,837 @@
+[INFO Feb 28, 2026, 12:22:09 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:09 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:09 PM] policy path: ./data/Correctness/11_allow_allow_equal.json
+[INFO Feb 28, 2026, 12:22:09 PM] findings path: ./data/Correctness/11_allow_allow_equal.json
+[INFO Feb 28, 2026, 12:22:09 PM] ----------< Processing policy - 11_allow_allow_equal.json >-----------
+[INFO Feb 28, 2026, 12:22:09 PM] ----------< Processing findings - 11_allow_allow_equal_result.json >-----------
+[INFO Feb 28, 2026, 12:22:09 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:10 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:10 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:10 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:10 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:10 PM] policy path: ./data/Correctness/12_allow_allow_overriding.json
+[INFO Feb 28, 2026, 12:22:10 PM] findings path: ./data/Correctness/12_allow_allow_overriding.json
+[INFO Feb 28, 2026, 12:22:10 PM] ----------< Processing policy - 12_allow_allow_overriding.json >-----------
+[INFO Feb 28, 2026, 12:22:10 PM] ----------< Processing findings - 12_allow_allow_overriding_result.json >-----------
+[INFO Feb 28, 2026, 12:22:10 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:10 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:10 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:11 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:11 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:11 PM] policy path: ./data/Correctness/13_allow_allow_overlapping1.json
+[INFO Feb 28, 2026, 12:22:11 PM] findings path: ./data/Correctness/13_allow_allow_overlapping1.json
+[INFO Feb 28, 2026, 12:22:11 PM] ----------< Processing policy - 13_allow_allow_overlapping1.json >-----------
+[INFO Feb 28, 2026, 12:22:11 PM] ----------< Processing findings - 13_allow_allow_overlapping1_result.json >-----------
+[INFO Feb 28, 2026, 12:22:11 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:11 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:11 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:11 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:11 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:11 PM] policy path: ./data/Correctness/14_allow_allow_overlapping2.json
+[INFO Feb 28, 2026, 12:22:11 PM] findings path: ./data/Correctness/14_allow_allow_overlapping2.json
+[INFO Feb 28, 2026, 12:22:11 PM] ----------< Processing policy - 14_allow_allow_overlapping2.json >-----------
+[INFO Feb 28, 2026, 12:22:11 PM] ----------< Processing findings - 14_allow_allow_overlapping2_result.json >-----------
+[INFO Feb 28, 2026, 12:22:12 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:12 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:12 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:12 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:12 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:12 PM] policy path: ./data/Correctness/15_allow_allow_disjoint.json
+[INFO Feb 28, 2026, 12:22:12 PM] findings path: ./data/Correctness/15_allow_allow_disjoint.json
+[INFO Feb 28, 2026, 12:22:12 PM] ----------< Processing policy - 15_allow_allow_disjoint.json >-----------
+[INFO Feb 28, 2026, 12:22:12 PM] ----------< Processing findings - 15_allow_allow_disjoint_result.json >-----------
+[INFO Feb 28, 2026, 12:22:12 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:13 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:13 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:13 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:13 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:13 PM] policy path: ./data/Correctness/21_allow_deny_equal.json
+[INFO Feb 28, 2026, 12:22:13 PM] findings path: ./data/Correctness/21_allow_deny_equal.json
+[INFO Feb 28, 2026, 12:22:13 PM] ----------< Processing policy - 21_allow_deny_equal.json >-----------
+[INFO Feb 28, 2026, 12:22:13 PM] ----------< Processing findings - 21_allow_deny_equal_result.json >-----------
+[INFO Feb 28, 2026, 12:22:13 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:13 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:13 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:14 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:14 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:14 PM] policy path: ./data/Correctness/22_allow_deny_overriding1.json
+[INFO Feb 28, 2026, 12:22:14 PM] findings path: ./data/Correctness/22_allow_deny_overriding1.json
+[INFO Feb 28, 2026, 12:22:14 PM] ----------< Processing policy - 22_allow_deny_overriding1.json >-----------
+[INFO Feb 28, 2026, 12:22:14 PM] ----------< Processing findings - 22_allow_deny_overriding1_result.json >-----------
+[INFO Feb 28, 2026, 12:22:14 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:14 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:14 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:14 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:14 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:14 PM] policy path: ./data/Correctness/23_allow_deny_overriding2.json
+[INFO Feb 28, 2026, 12:22:14 PM] findings path: ./data/Correctness/23_allow_deny_overriding2.json
+[INFO Feb 28, 2026, 12:22:14 PM] ----------< Processing policy - 23_allow_deny_overriding2.json >-----------
+[INFO Feb 28, 2026, 12:22:14 PM] ----------< Processing findings - 23_allow_deny_overriding2_result.json >-----------
+[INFO Feb 28, 2026, 12:22:15 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:15 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:15 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:15 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:15 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:15 PM] policy path: ./data/Correctness/24_allow_deny_disjoint.json
+[INFO Feb 28, 2026, 12:22:15 PM] findings path: ./data/Correctness/24_allow_deny_disjoint.json
+[INFO Feb 28, 2026, 12:22:15 PM] ----------< Processing policy - 24_allow_deny_disjoint.json >-----------
+[INFO Feb 28, 2026, 12:22:15 PM] ----------< Processing findings - 24_allow_deny_disjoint_result.json >-----------
+[INFO Feb 28, 2026, 12:22:15 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:16 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:16 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:16 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:16 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:16 PM] policy path: ./data/Correctness/31_allow_deny_comp_overriding1.json
+[INFO Feb 28, 2026, 12:22:16 PM] findings path: ./data/Correctness/31_allow_deny_comp_overriding1.json
+[INFO Feb 28, 2026, 12:22:16 PM] ----------< Processing policy - 31_allow_deny_comp_overriding1.json >-----------
+[INFO Feb 28, 2026, 12:22:16 PM] ----------< Processing findings - 31_allow_deny_comp_overriding1_result.json >-----------
+[INFO Feb 28, 2026, 12:22:16 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:16 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:16 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:17 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:17 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:17 PM] policy path: ./data/Correctness/32_allow_deny_comp_overriding2.json
+[INFO Feb 28, 2026, 12:22:17 PM] findings path: ./data/Correctness/32_allow_deny_comp_overriding2.json
+[INFO Feb 28, 2026, 12:22:17 PM] ----------< Processing policy - 32_allow_deny_comp_overriding2.json >-----------
+[INFO Feb 28, 2026, 12:22:17 PM] ----------< Processing findings - 32_allow_deny_comp_overriding2_result.json >-----------
+[INFO Feb 28, 2026, 12:22:17 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:17 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:17 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:17 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:18 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:18 PM] policy path: ./data/Correctness/33_allow_deny_comp_disjoint.json
+[INFO Feb 28, 2026, 12:22:18 PM] findings path: ./data/Correctness/33_allow_deny_comp_disjoint.json
+[INFO Feb 28, 2026, 12:22:18 PM] ----------< Processing policy - 33_allow_deny_comp_disjoint.json >-----------
+[INFO Feb 28, 2026, 12:22:18 PM] ----------< Processing findings - 33_allow_deny_comp_disjoint_result.json >-----------
+[INFO Feb 28, 2026, 12:22:18 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:19 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:19 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:19 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:19 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:19 PM] policy path: ./data/Scalability_05Keys/01_allow.json
+[INFO Feb 28, 2026, 12:22:19 PM] findings path: ./data/Scalability_05Keys/01_allow.json
+[INFO Feb 28, 2026, 12:22:19 PM] ----------< Processing policy - 01_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:19 PM] ----------< Processing findings - 01_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:19 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:20 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:20 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:20 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:20 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:20 PM] policy path: ./data/Scalability_05Keys/02_allow.json
+[INFO Feb 28, 2026, 12:22:20 PM] findings path: ./data/Scalability_05Keys/02_allow.json
+[INFO Feb 28, 2026, 12:22:20 PM] ----------< Processing policy - 02_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:20 PM] ----------< Processing findings - 02_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:20 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:21 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:21 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:21 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:21 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:21 PM] policy path: ./data/Scalability_05Keys/03_allow.json
+[INFO Feb 28, 2026, 12:22:21 PM] findings path: ./data/Scalability_05Keys/03_allow.json
+[INFO Feb 28, 2026, 12:22:21 PM] ----------< Processing policy - 03_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:21 PM] ----------< Processing findings - 03_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:21 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:22 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:22 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:22 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:22 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:22 PM] policy path: ./data/Scalability_05Keys/04_allow.json
+[INFO Feb 28, 2026, 12:22:22 PM] findings path: ./data/Scalability_05Keys/04_allow.json
+[INFO Feb 28, 2026, 12:22:22 PM] ----------< Processing policy - 04_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:22 PM] ----------< Processing findings - 04_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:22 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:22 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:22 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:23 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:23 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:23 PM] policy path: ./data/Scalability_05Keys/05_allow.json
+[INFO Feb 28, 2026, 12:22:23 PM] findings path: ./data/Scalability_05Keys/05_allow.json
+[INFO Feb 28, 2026, 12:22:23 PM] ----------< Processing policy - 05_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:23 PM] ----------< Processing findings - 05_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:23 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:23 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:23 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:24 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:24 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:24 PM] policy path: ./data/Scalability_05Keys/06_allow.json
+[INFO Feb 28, 2026, 12:22:24 PM] findings path: ./data/Scalability_05Keys/06_allow.json
+[INFO Feb 28, 2026, 12:22:24 PM] ----------< Processing policy - 06_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:24 PM] ----------< Processing findings - 06_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:24 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:25 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:25 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:25 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:25 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:25 PM] policy path: ./data/Scalability_05Keys/07_allow.json
+[INFO Feb 28, 2026, 12:22:25 PM] findings path: ./data/Scalability_05Keys/07_allow.json
+[INFO Feb 28, 2026, 12:22:25 PM] ----------< Processing policy - 07_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:25 PM] ----------< Processing findings - 07_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:26 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:26 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:26 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:27 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:27 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:27 PM] policy path: ./data/Scalability_05Keys/08_allow.json
+[INFO Feb 28, 2026, 12:22:27 PM] findings path: ./data/Scalability_05Keys/08_allow.json
+[INFO Feb 28, 2026, 12:22:27 PM] ----------< Processing policy - 08_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:27 PM] ----------< Processing findings - 08_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:27 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:28 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:28 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:28 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:28 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:28 PM] policy path: ./data/Scalability_05Keys/09_allow.json
+[INFO Feb 28, 2026, 12:22:28 PM] findings path: ./data/Scalability_05Keys/09_allow.json
+[INFO Feb 28, 2026, 12:22:28 PM] ----------< Processing policy - 09_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:28 PM] ----------< Processing findings - 09_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:28 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:29 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:29 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:29 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:29 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:29 PM] policy path: ./data/Scalability_05Keys/10_allow.json
+[INFO Feb 28, 2026, 12:22:29 PM] findings path: ./data/Scalability_05Keys/10_allow.json
+[INFO Feb 28, 2026, 12:22:29 PM] ----------< Processing policy - 10_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:29 PM] ----------< Processing findings - 10_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:30 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:30 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:30 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:31 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:31 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:31 PM] policy path: ./data/Scalability_05Keys/11_allow.json
+[INFO Feb 28, 2026, 12:22:31 PM] findings path: ./data/Scalability_05Keys/11_allow.json
+[INFO Feb 28, 2026, 12:22:31 PM] ----------< Processing policy - 11_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:31 PM] ----------< Processing findings - 11_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:31 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:32 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:32 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:32 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:32 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:32 PM] policy path: ./data/Scalability_05Keys/12_allow.json
+[INFO Feb 28, 2026, 12:22:32 PM] findings path: ./data/Scalability_05Keys/12_allow.json
+[INFO Feb 28, 2026, 12:22:32 PM] ----------< Processing policy - 12_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:32 PM] ----------< Processing findings - 12_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:33 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:33 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:33 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:33 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:33 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:33 PM] policy path: ./data/Scalability_06Keys/01_allow.json
+[INFO Feb 28, 2026, 12:22:33 PM] findings path: ./data/Scalability_06Keys/01_allow.json
+[INFO Feb 28, 2026, 12:22:33 PM] ----------< Processing policy - 01_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:33 PM] ----------< Processing findings - 01_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:34 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:34 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:34 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:34 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:34 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:34 PM] policy path: ./data/Scalability_06Keys/02_allow.json
+[INFO Feb 28, 2026, 12:22:34 PM] findings path: ./data/Scalability_06Keys/02_allow.json
+[INFO Feb 28, 2026, 12:22:34 PM] ----------< Processing policy - 02_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:34 PM] ----------< Processing findings - 02_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:35 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:35 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:35 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:35 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:35 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:35 PM] policy path: ./data/Scalability_06Keys/03_allow.json
+[INFO Feb 28, 2026, 12:22:35 PM] findings path: ./data/Scalability_06Keys/03_allow.json
+[INFO Feb 28, 2026, 12:22:35 PM] ----------< Processing policy - 03_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:35 PM] ----------< Processing findings - 03_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:36 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:36 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:36 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:36 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:36 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:36 PM] policy path: ./data/Scalability_06Keys/04_allow.json
+[INFO Feb 28, 2026, 12:22:36 PM] findings path: ./data/Scalability_06Keys/04_allow.json
+[INFO Feb 28, 2026, 12:22:36 PM] ----------< Processing policy - 04_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:36 PM] ----------< Processing findings - 04_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:36 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:37 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:37 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:37 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:37 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:37 PM] policy path: ./data/Scalability_06Keys/05_allow.json
+[INFO Feb 28, 2026, 12:22:37 PM] findings path: ./data/Scalability_06Keys/05_allow.json
+[INFO Feb 28, 2026, 12:22:37 PM] ----------< Processing policy - 05_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:37 PM] ----------< Processing findings - 05_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:37 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:38 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:38 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:38 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:38 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:38 PM] policy path: ./data/Scalability_06Keys/06_allow.json
+[INFO Feb 28, 2026, 12:22:38 PM] findings path: ./data/Scalability_06Keys/06_allow.json
+[INFO Feb 28, 2026, 12:22:38 PM] ----------< Processing policy - 06_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:38 PM] ----------< Processing findings - 06_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:37 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:37 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:37 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:37 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:37 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:37 PM] policy path: ./data/Scalability_06Keys/07_allow.json
+[INFO Feb 28, 2026, 12:22:37 PM] findings path: ./data/Scalability_06Keys/07_allow.json
+[INFO Feb 28, 2026, 12:22:37 PM] ----------< Processing policy - 07_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:37 PM] ----------< Processing findings - 07_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:37 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:38 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:38 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:38 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:38 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:38 PM] policy path: ./data/Scalability_06Keys/08_allow.json
+[INFO Feb 28, 2026, 12:22:38 PM] findings path: ./data/Scalability_06Keys/08_allow.json
+[INFO Feb 28, 2026, 12:22:38 PM] ----------< Processing policy - 08_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:38 PM] ----------< Processing findings - 08_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:38 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:39 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:39 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:39 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:39 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:39 PM] policy path: ./data/Correctness/11_allow_allow_equal.json
+[INFO Feb 28, 2026, 12:22:39 PM] findings path: ./data/Correctness/11_allow_allow_equal.json
+[INFO Feb 28, 2026, 12:22:39 PM] ----------< Processing policy - 11_allow_allow_equal.json >-----------
+[INFO Feb 28, 2026, 12:22:39 PM] ----------< Processing findings - 11_allow_allow_equal_result.json >-----------
+[INFO Feb 28, 2026, 12:22:39 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:39 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:39 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:40 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:40 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:40 PM] policy path: ./data/Correctness/12_allow_allow_overriding.json
+[INFO Feb 28, 2026, 12:22:40 PM] findings path: ./data/Correctness/12_allow_allow_overriding.json
+[INFO Feb 28, 2026, 12:22:40 PM] ----------< Processing policy - 12_allow_allow_overriding.json >-----------
+[INFO Feb 28, 2026, 12:22:40 PM] ----------< Processing findings - 12_allow_allow_overriding_result.json >-----------
+[INFO Feb 28, 2026, 12:22:40 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:40 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:40 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:40 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:40 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:40 PM] policy path: ./data/Correctness/13_allow_allow_overlapping1.json
+[INFO Feb 28, 2026, 12:22:41 PM] findings path: ./data/Correctness/13_allow_allow_overlapping1.json
+[INFO Feb 28, 2026, 12:22:41 PM] ----------< Processing policy - 13_allow_allow_overlapping1.json >-----------
+[INFO Feb 28, 2026, 12:22:41 PM] ----------< Processing findings - 13_allow_allow_overlapping1_result.json >-----------
+[INFO Feb 28, 2026, 12:22:41 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:41 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:41 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:41 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:41 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:41 PM] policy path: ./data/Correctness/14_allow_allow_overlapping2.json
+[INFO Feb 28, 2026, 12:22:41 PM] findings path: ./data/Correctness/14_allow_allow_overlapping2.json
+[INFO Feb 28, 2026, 12:22:41 PM] ----------< Processing policy - 14_allow_allow_overlapping2.json >-----------
+[INFO Feb 28, 2026, 12:22:41 PM] ----------< Processing findings - 14_allow_allow_overlapping2_result.json >-----------
+[INFO Feb 28, 2026, 12:22:42 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:42 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:42 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:42 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:42 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:42 PM] policy path: ./data/Correctness/15_allow_allow_disjoint.json
+[INFO Feb 28, 2026, 12:22:42 PM] findings path: ./data/Correctness/15_allow_allow_disjoint.json
+[INFO Feb 28, 2026, 12:22:42 PM] ----------< Processing policy - 15_allow_allow_disjoint.json >-----------
+[INFO Feb 28, 2026, 12:22:42 PM] ----------< Processing findings - 15_allow_allow_disjoint_result.json >-----------
+[INFO Feb 28, 2026, 12:22:42 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:43 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:43 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:43 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:43 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:43 PM] policy path: ./data/Correctness/21_allow_deny_equal.json
+[INFO Feb 28, 2026, 12:22:43 PM] findings path: ./data/Correctness/21_allow_deny_equal.json
+[INFO Feb 28, 2026, 12:22:43 PM] ----------< Processing policy - 21_allow_deny_equal.json >-----------
+[INFO Feb 28, 2026, 12:22:43 PM] ----------< Processing findings - 21_allow_deny_equal_result.json >-----------
+[INFO Feb 28, 2026, 12:22:43 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:43 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:43 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:44 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:44 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:44 PM] policy path: ./data/Correctness/22_allow_deny_overriding1.json
+[INFO Feb 28, 2026, 12:22:44 PM] findings path: ./data/Correctness/22_allow_deny_overriding1.json
+[INFO Feb 28, 2026, 12:22:44 PM] ----------< Processing policy - 22_allow_deny_overriding1.json >-----------
+[INFO Feb 28, 2026, 12:22:44 PM] ----------< Processing findings - 22_allow_deny_overriding1_result.json >-----------
+[INFO Feb 28, 2026, 12:22:44 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:44 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:44 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:44 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:44 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:44 PM] policy path: ./data/Correctness/23_allow_deny_overriding2.json
+[INFO Feb 28, 2026, 12:22:44 PM] findings path: ./data/Correctness/23_allow_deny_overriding2.json
+[INFO Feb 28, 2026, 12:22:44 PM] ----------< Processing policy - 23_allow_deny_overriding2.json >-----------
+[INFO Feb 28, 2026, 12:22:44 PM] ----------< Processing findings - 23_allow_deny_overriding2_result.json >-----------
+[INFO Feb 28, 2026, 12:22:45 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:45 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:45 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:45 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:45 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:45 PM] policy path: ./data/Correctness/24_allow_deny_disjoint.json
+[INFO Feb 28, 2026, 12:22:45 PM] findings path: ./data/Correctness/24_allow_deny_disjoint.json
+[INFO Feb 28, 2026, 12:22:45 PM] ----------< Processing policy - 24_allow_deny_disjoint.json >-----------
+[INFO Feb 28, 2026, 12:22:45 PM] ----------< Processing findings - 24_allow_deny_disjoint_result.json >-----------
+[INFO Feb 28, 2026, 12:22:45 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:46 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:46 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:46 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:46 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:46 PM] policy path: ./data/Correctness/31_allow_deny_comp_overriding1.json
+[INFO Feb 28, 2026, 12:22:46 PM] findings path: ./data/Correctness/31_allow_deny_comp_overriding1.json
+[INFO Feb 28, 2026, 12:22:46 PM] ----------< Processing policy - 31_allow_deny_comp_overriding1.json >-----------
+[INFO Feb 28, 2026, 12:22:46 PM] ----------< Processing findings - 31_allow_deny_comp_overriding1_result.json >-----------
+[INFO Feb 28, 2026, 12:22:46 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:47 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:47 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:47 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:47 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:47 PM] policy path: ./data/Correctness/32_allow_deny_comp_overriding2.json
+[INFO Feb 28, 2026, 12:22:47 PM] findings path: ./data/Correctness/32_allow_deny_comp_overriding2.json
+[INFO Feb 28, 2026, 12:22:47 PM] ----------< Processing policy - 32_allow_deny_comp_overriding2.json >-----------
+[INFO Feb 28, 2026, 12:22:47 PM] ----------< Processing findings - 32_allow_deny_comp_overriding2_result.json >-----------
+[INFO Feb 28, 2026, 12:22:47 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:47 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:47 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:48 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:48 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:48 PM] policy path: ./data/Correctness/33_allow_deny_comp_disjoint.json
+[INFO Feb 28, 2026, 12:22:48 PM] findings path: ./data/Correctness/33_allow_deny_comp_disjoint.json
+[INFO Feb 28, 2026, 12:22:48 PM] ----------< Processing policy - 33_allow_deny_comp_disjoint.json >-----------
+[INFO Feb 28, 2026, 12:22:48 PM] ----------< Processing findings - 33_allow_deny_comp_disjoint_result.json >-----------
+[INFO Feb 28, 2026, 12:22:48 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:48 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:48 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:48 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:48 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:48 PM] policy path: ./data/Scalability_05Keys/01_allow.json
+[INFO Feb 28, 2026, 12:22:48 PM] findings path: ./data/Scalability_05Keys/01_allow.json
+[INFO Feb 28, 2026, 12:22:48 PM] ----------< Processing policy - 01_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:48 PM] ----------< Processing findings - 01_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:49 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:49 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:49 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:49 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:49 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:49 PM] policy path: ./data/Scalability_05Keys/02_allow.json
+[INFO Feb 28, 2026, 12:22:49 PM] findings path: ./data/Scalability_05Keys/02_allow.json
+[INFO Feb 28, 2026, 12:22:49 PM] ----------< Processing policy - 02_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:49 PM] ----------< Processing findings - 02_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:49 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:50 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:50 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:50 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:50 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:50 PM] policy path: ./data/Scalability_05Keys/03_allow.json
+[INFO Feb 28, 2026, 12:22:50 PM] findings path: ./data/Scalability_05Keys/03_allow.json
+[INFO Feb 28, 2026, 12:22:50 PM] ----------< Processing policy - 03_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:50 PM] ----------< Processing findings - 03_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:50 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:51 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:51 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:51 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:51 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:51 PM] policy path: ./data/Scalability_06Keys/01_allow.json
+[INFO Feb 28, 2026, 12:22:51 PM] findings path: ./data/Scalability_06Keys/01_allow.json
+[INFO Feb 28, 2026, 12:22:51 PM] ----------< Processing policy - 01_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:51 PM] ----------< Processing findings - 01_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:51 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:51 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:51 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:52 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:52 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:52 PM] policy path: ./data/Scalability_06Keys/02_allow.json
+[INFO Feb 28, 2026, 12:22:52 PM] findings path: ./data/Scalability_06Keys/02_allow.json
+[INFO Feb 28, 2026, 12:22:52 PM] ----------< Processing policy - 02_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:52 PM] ----------< Processing findings - 02_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:52 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:52 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:52 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:52 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:52 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:52 PM] policy path: ./data/Scalability_06Keys/03_allow.json
+[INFO Feb 28, 2026, 12:22:52 PM] findings path: ./data/Scalability_06Keys/03_allow.json
+[INFO Feb 28, 2026, 12:22:52 PM] ----------< Processing policy - 03_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:52 PM] ----------< Processing findings - 03_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:53 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:53 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:53 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:53 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:53 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:53 PM] policy path: ./data/Scalability_06Keys/04_allow.json
+[INFO Feb 28, 2026, 12:22:53 PM] findings path: ./data/Scalability_06Keys/04_allow.json
+[INFO Feb 28, 2026, 12:22:53 PM] ----------< Processing policy - 04_allow.json >-----------
+[INFO Feb 28, 2026, 12:22:53 PM] ----------< Processing findings - 04_allow_result.json >-----------
+[INFO Feb 28, 2026, 12:22:54 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:54 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:54 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:54 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:54 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:54 PM] policy path: ./data/Correctness/11_allow_allow_equal.json
+[INFO Feb 28, 2026, 12:22:54 PM] findings path: ./data/Correctness/11_allow_allow_equal.json
+[INFO Feb 28, 2026, 12:22:54 PM] ----------< Processing policy - 11_allow_allow_equal.json >-----------
+[INFO Feb 28, 2026, 12:22:54 PM] ----------< Processing findings - tmp.jdWesc40fG >-----------
+[INFO Feb 28, 2026, 12:22:54 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:55 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:55 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:55 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:55 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:55 PM] policy path: ./data/Correctness/12_allow_allow_overriding.json
+[INFO Feb 28, 2026, 12:22:55 PM] findings path: ./data/Correctness/12_allow_allow_overriding.json
+[INFO Feb 28, 2026, 12:22:55 PM] ----------< Processing policy - 12_allow_allow_overriding.json >-----------
+[INFO Feb 28, 2026, 12:22:55 PM] ----------< Processing findings - tmp.21ovHXddiG >-----------
+[INFO Feb 28, 2026, 12:22:55 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:55 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:55 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:56 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:56 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:56 PM] policy path: ./data/Correctness/13_allow_allow_overlapping1.json
+[INFO Feb 28, 2026, 12:22:56 PM] findings path: ./data/Correctness/13_allow_allow_overlapping1.json
+[INFO Feb 28, 2026, 12:22:56 PM] ----------< Processing policy - 13_allow_allow_overlapping1.json >-----------
+[INFO Feb 28, 2026, 12:22:56 PM] ----------< Processing findings - tmp.ChlprXrB97 >-----------
+[INFO Feb 28, 2026, 12:22:56 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:56 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:56 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:56 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:56 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:56 PM] policy path: ./data/Correctness/14_allow_allow_overlapping2.json
+[INFO Feb 28, 2026, 12:22:56 PM] findings path: ./data/Correctness/14_allow_allow_overlapping2.json
+[INFO Feb 28, 2026, 12:22:56 PM] ----------< Processing policy - 14_allow_allow_overlapping2.json >-----------
+[INFO Feb 28, 2026, 12:22:56 PM] ----------< Processing findings - tmp.AoOTltqKAZ >-----------
+[INFO Feb 28, 2026, 12:22:57 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:57 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:57 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:57 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:57 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:57 PM] policy path: ./data/Correctness/15_allow_allow_disjoint.json
+[INFO Feb 28, 2026, 12:22:57 PM] findings path: ./data/Correctness/15_allow_allow_disjoint.json
+[INFO Feb 28, 2026, 12:22:57 PM] ----------< Processing policy - 15_allow_allow_disjoint.json >-----------
+[INFO Feb 28, 2026, 12:22:57 PM] ----------< Processing findings - tmp.5WCSWF3c2l >-----------
+[INFO Feb 28, 2026, 12:22:57 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:58 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:58 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:58 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:58 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:58 PM] policy path: ./data/Correctness/21_allow_deny_equal.json
+[INFO Feb 28, 2026, 12:22:58 PM] findings path: ./data/Correctness/21_allow_deny_equal.json
+[INFO Feb 28, 2026, 12:22:58 PM] ----------< Processing policy - 21_allow_deny_equal.json >-----------
+[INFO Feb 28, 2026, 12:22:58 PM] ----------< Processing findings - tmp.k2TxHWrl3D >-----------
+[INFO Feb 28, 2026, 12:22:58 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:59 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:59 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:59 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:59 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:59 PM] policy path: ./data/Correctness/22_allow_deny_overriding1.json
+[INFO Feb 28, 2026, 12:22:59 PM] findings path: ./data/Correctness/22_allow_deny_overriding1.json
+[INFO Feb 28, 2026, 12:22:59 PM] ----------< Processing policy - 22_allow_deny_overriding1.json >-----------
+[INFO Feb 28, 2026, 12:22:59 PM] ----------< Processing findings - tmp.XFjbZtbDP0 >-----------
+[INFO Feb 28, 2026, 12:22:59 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:22:59 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:22:59 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:22:59 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:22:59 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:22:59 PM] policy path: ./data/Correctness/23_allow_deny_overriding2.json
+[INFO Feb 28, 2026, 12:22:59 PM] findings path: ./data/Correctness/23_allow_deny_overriding2.json
+[INFO Feb 28, 2026, 12:23:00 PM] ----------< Processing policy - 23_allow_deny_overriding2.json >-----------
+[INFO Feb 28, 2026, 12:23:00 PM] ----------< Processing findings - tmp.9yCyFX8peu >-----------
+[INFO Feb 28, 2026, 12:23:00 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:00 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:00 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:00 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:00 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:00 PM] policy path: ./data/Correctness/24_allow_deny_disjoint.json
+[INFO Feb 28, 2026, 12:23:00 PM] findings path: ./data/Correctness/24_allow_deny_disjoint.json
+[INFO Feb 28, 2026, 12:23:00 PM] ----------< Processing policy - 24_allow_deny_disjoint.json >-----------
+[INFO Feb 28, 2026, 12:23:00 PM] ----------< Processing findings - tmp.kAuDr2VwY5 >-----------
+[INFO Feb 28, 2026, 12:23:01 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:01 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:01 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:01 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:01 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:01 PM] policy path: ./data/Correctness/31_allow_deny_comp_overriding1.json
+[INFO Feb 28, 2026, 12:23:01 PM] findings path: ./data/Correctness/31_allow_deny_comp_overriding1.json
+[INFO Feb 28, 2026, 12:23:01 PM] ----------< Processing policy - 31_allow_deny_comp_overriding1.json >-----------
+[INFO Feb 28, 2026, 12:23:01 PM] ----------< Processing findings - tmp.EcboNQsxfP >-----------
+[INFO Feb 28, 2026, 12:23:01 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:02 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:02 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:02 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:02 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:02 PM] policy path: ./data/Correctness/32_allow_deny_comp_overriding2.json
+[INFO Feb 28, 2026, 12:23:02 PM] findings path: ./data/Correctness/32_allow_deny_comp_overriding2.json
+[INFO Feb 28, 2026, 12:23:02 PM] ----------< Processing policy - 32_allow_deny_comp_overriding2.json >-----------
+[INFO Feb 28, 2026, 12:23:02 PM] ----------< Processing findings - tmp.BDP9Vj1xLp >-----------
+[INFO Feb 28, 2026, 12:23:02 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:02 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:02 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:03 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:03 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:03 PM] policy path: ./data/Correctness/33_allow_deny_comp_disjoint.json
+[INFO Feb 28, 2026, 12:23:03 PM] findings path: ./data/Correctness/33_allow_deny_comp_disjoint.json
+[INFO Feb 28, 2026, 12:23:03 PM] ----------< Processing policy - 33_allow_deny_comp_disjoint.json >-----------
+[INFO Feb 28, 2026, 12:23:03 PM] ----------< Processing findings - tmp.LOhC4JgVYD >-----------
+[INFO Feb 28, 2026, 12:23:03 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:03 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:03 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:03 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:03 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:03 PM] policy path: ./data/Scalability_05Keys/01_allow.json
+[INFO Feb 28, 2026, 12:23:03 PM] findings path: ./data/Scalability_05Keys/01_allow.json
+[INFO Feb 28, 2026, 12:23:03 PM] ----------< Processing policy - 01_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:03 PM] ----------< Processing findings - tmp.1ryS1WYqWA >-----------
+[INFO Feb 28, 2026, 12:23:04 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:04 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:04 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:04 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:04 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:04 PM] policy path: ./data/Scalability_05Keys/02_allow.json
+[INFO Feb 28, 2026, 12:23:04 PM] findings path: ./data/Scalability_05Keys/02_allow.json
+[INFO Feb 28, 2026, 12:23:04 PM] ----------< Processing policy - 02_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:04 PM] ----------< Processing findings - tmp.qYMKmpHcgT >-----------
+[INFO Feb 28, 2026, 12:23:04 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:05 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:05 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:05 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:05 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:05 PM] policy path: ./data/Scalability_05Keys/03_allow.json
+[INFO Feb 28, 2026, 12:23:05 PM] findings path: ./data/Scalability_05Keys/03_allow.json
+[INFO Feb 28, 2026, 12:23:05 PM] ----------< Processing policy - 03_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:05 PM] ----------< Processing findings - tmp.DZ0BTZJHvH >-----------
+[INFO Feb 28, 2026, 12:23:05 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:05 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:05 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:05 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:06 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:06 PM] policy path: ./data/Scalability_05Keys/04_allow.json
+[INFO Feb 28, 2026, 12:23:06 PM] findings path: ./data/Scalability_05Keys/04_allow.json
+[INFO Feb 28, 2026, 12:23:06 PM] ----------< Processing policy - 04_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:06 PM] ----------< Processing findings - tmp.KPJ5VtDsc7 >-----------
+[INFO Feb 28, 2026, 12:23:06 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:06 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:06 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:06 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:06 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:06 PM] policy path: ./data/Scalability_05Keys/05_allow.json
+[INFO Feb 28, 2026, 12:23:06 PM] findings path: ./data/Scalability_05Keys/05_allow.json
+[INFO Feb 28, 2026, 12:23:06 PM] ----------< Processing policy - 05_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:06 PM] ----------< Processing findings - tmp.O3FWaW5SJh >-----------
+[INFO Feb 28, 2026, 12:23:06 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:07 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:07 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:07 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:07 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:07 PM] policy path: ./data/Scalability_05Keys/06_allow.json
+[INFO Feb 28, 2026, 12:23:07 PM] findings path: ./data/Scalability_05Keys/06_allow.json
+[INFO Feb 28, 2026, 12:23:07 PM] ----------< Processing policy - 06_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:07 PM] ----------< Processing findings - tmp.pWDaB7Jhgf >-----------
+[INFO Feb 28, 2026, 12:23:07 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:07 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:07 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:08 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:08 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:08 PM] policy path: ./data/Scalability_05Keys/07_allow.json
+[INFO Feb 28, 2026, 12:23:08 PM] findings path: ./data/Scalability_05Keys/07_allow.json
+[INFO Feb 28, 2026, 12:23:08 PM] ----------< Processing policy - 07_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:08 PM] ----------< Processing findings - tmp.DCOxdkyqSd >-----------
+[INFO Feb 28, 2026, 12:23:08 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:08 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:08 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:08 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:08 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:08 PM] policy path: ./data/Scalability_05Keys/08_allow.json
+[INFO Feb 28, 2026, 12:23:08 PM] findings path: ./data/Scalability_05Keys/08_allow.json
+[INFO Feb 28, 2026, 12:23:08 PM] ----------< Processing policy - 08_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:08 PM] ----------< Processing findings - tmp.U7wWw9vsJm >-----------
+[INFO Feb 28, 2026, 12:23:09 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:07 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:07 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:07 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:07 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:07 PM] policy path: ./data/Scalability_05Keys/09_allow.json
+[INFO Feb 28, 2026, 12:23:07 PM] findings path: ./data/Scalability_05Keys/09_allow.json
+[INFO Feb 28, 2026, 12:23:07 PM] ----------< Processing policy - 09_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:07 PM] ----------< Processing findings - tmp.KTLoHBTi1v >-----------
+[INFO Feb 28, 2026, 12:23:08 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:08 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:08 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:08 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:08 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:08 PM] policy path: ./data/Scalability_05Keys/10_allow.json
+[INFO Feb 28, 2026, 12:23:08 PM] findings path: ./data/Scalability_05Keys/10_allow.json
+[INFO Feb 28, 2026, 12:23:08 PM] ----------< Processing policy - 10_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:08 PM] ----------< Processing findings - tmp.UaBQIzspe8 >-----------
+[INFO Feb 28, 2026, 12:23:08 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:08 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:08 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:09 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:09 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:09 PM] policy path: ./data/Scalability_05Keys/11_allow.json
+[INFO Feb 28, 2026, 12:23:09 PM] findings path: ./data/Scalability_05Keys/11_allow.json
+[INFO Feb 28, 2026, 12:23:09 PM] ----------< Processing policy - 11_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:09 PM] ----------< Processing findings - tmp.I9sKNmCgkm >-----------
+[INFO Feb 28, 2026, 12:23:09 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:09 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:09 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:09 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:09 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:09 PM] policy path: ./data/Scalability_05Keys/12_allow.json
+[INFO Feb 28, 2026, 12:23:09 PM] findings path: ./data/Scalability_05Keys/12_allow.json
+[INFO Feb 28, 2026, 12:23:09 PM] ----------< Processing policy - 12_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:09 PM] ----------< Processing findings - tmp.d6BUxzJhuz >-----------
+[INFO Feb 28, 2026, 12:23:10 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:10 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:10 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:10 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:10 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:10 PM] policy path: ./data/Scalability_05Keys/13_allow.json
+[INFO Feb 28, 2026, 12:23:10 PM] findings path: ./data/Scalability_05Keys/13_allow.json
+[INFO Feb 28, 2026, 12:23:10 PM] ----------< Processing policy - 13_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:10 PM] ----------< Processing findings - tmp.xawyGZVaDA >-----------
+[INFO Feb 28, 2026, 12:23:10 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:11 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:11 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:11 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:11 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:11 PM] policy path: ./data/Scalability_05Keys/14_allow.json
+[INFO Feb 28, 2026, 12:23:11 PM] findings path: ./data/Scalability_05Keys/14_allow.json
+[INFO Feb 28, 2026, 12:23:11 PM] ----------< Processing policy - 14_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:11 PM] ----------< Processing findings - tmp.ymassb5nXR >-----------
+[INFO Feb 28, 2026, 12:23:11 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:11 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:11 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:11 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:11 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:11 PM] policy path: ./data/Scalability_05Keys/15_allow.json
+[INFO Feb 28, 2026, 12:23:11 PM] findings path: ./data/Scalability_05Keys/15_allow.json
+[INFO Feb 28, 2026, 12:23:11 PM] ----------< Processing policy - 15_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:11 PM] ----------< Processing findings - tmp.ODp5xP9ZfZ >-----------
+[INFO Feb 28, 2026, 12:23:12 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:12 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:12 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:12 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:12 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:12 PM] policy path: ./data/Scalability_06Keys/01_allow.json
+[INFO Feb 28, 2026, 12:23:12 PM] findings path: ./data/Scalability_06Keys/01_allow.json
+[INFO Feb 28, 2026, 12:23:12 PM] ----------< Processing policy - 01_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:12 PM] ----------< Processing findings - tmp.Lh8kKPKsRG >-----------
+[INFO Feb 28, 2026, 12:23:13 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:13 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:13 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:13 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:13 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:13 PM] policy path: ./data/Scalability_06Keys/02_allow.json
+[INFO Feb 28, 2026, 12:23:13 PM] findings path: ./data/Scalability_06Keys/02_allow.json
+[INFO Feb 28, 2026, 12:23:13 PM] ----------< Processing policy - 02_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:13 PM] ----------< Processing findings - tmp.dubtIWgB0U >-----------
+[INFO Feb 28, 2026, 12:23:13 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:14 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:14 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:14 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:14 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:14 PM] policy path: ./data/Scalability_06Keys/03_allow.json
+[INFO Feb 28, 2026, 12:23:14 PM] findings path: ./data/Scalability_06Keys/03_allow.json
+[INFO Feb 28, 2026, 12:23:14 PM] ----------< Processing policy - 03_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:14 PM] ----------< Processing findings - tmp.wJ2tbOko9q >-----------
+[INFO Feb 28, 2026, 12:23:14 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:14 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:14 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:15 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:15 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:15 PM] policy path: ./data/Scalability_06Keys/04_allow.json
+[INFO Feb 28, 2026, 12:23:15 PM] findings path: ./data/Scalability_06Keys/04_allow.json
+[INFO Feb 28, 2026, 12:23:15 PM] ----------< Processing policy - 04_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:15 PM] ----------< Processing findings - tmp.yTzZ7aPn9L >-----------
+[INFO Feb 28, 2026, 12:23:15 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:15 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:15 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:15 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:15 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:15 PM] policy path: ./data/Scalability_06Keys/05_allow.json
+[INFO Feb 28, 2026, 12:23:15 PM] findings path: ./data/Scalability_06Keys/05_allow.json
+[INFO Feb 28, 2026, 12:23:15 PM] ----------< Processing policy - 05_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:15 PM] ----------< Processing findings - tmp.CggVg5ApIP >-----------
+[INFO Feb 28, 2026, 12:23:16 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:16 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:16 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:16 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:16 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:16 PM] policy path: ./data/Scalability_06Keys/06_allow.json
+[INFO Feb 28, 2026, 12:23:16 PM] findings path: ./data/Scalability_06Keys/06_allow.json
+[INFO Feb 28, 2026, 12:23:16 PM] ----------< Processing policy - 06_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:16 PM] ----------< Processing findings - tmp.ADUOgILXKI >-----------
+[INFO Feb 28, 2026, 12:23:17 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:17 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:17 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:17 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:17 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:17 PM] policy path: ./data/Scalability_06Keys/07_allow.json
+[INFO Feb 28, 2026, 12:23:17 PM] findings path: ./data/Scalability_06Keys/07_allow.json
+[INFO Feb 28, 2026, 12:23:17 PM] ----------< Processing policy - 07_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:17 PM] ----------< Processing findings - tmp.ZE8nEgmFxR >-----------
+[INFO Feb 28, 2026, 12:23:17 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:18 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:18 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:18 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:18 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:18 PM] policy path: ./data/Scalability_06Keys/08_allow.json
+[INFO Feb 28, 2026, 12:23:18 PM] findings path: ./data/Scalability_06Keys/08_allow.json
+[INFO Feb 28, 2026, 12:23:18 PM] ----------< Processing policy - 08_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:18 PM] ----------< Processing findings - tmp.GUn2joJQSo >-----------
+[INFO Feb 28, 2026, 12:23:18 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:18 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:18 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:19 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:19 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:19 PM] policy path: ./data/Scalability_06Keys/09_allow.json
+[INFO Feb 28, 2026, 12:23:19 PM] findings path: ./data/Scalability_06Keys/09_allow.json
+[INFO Feb 28, 2026, 12:23:19 PM] ----------< Processing policy - 09_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:19 PM] ----------< Processing findings - tmp.WySCXJNdth >-----------
+[INFO Feb 28, 2026, 12:23:19 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:19 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:19 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:19 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:19 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:19 PM] policy path: ./data/Scalability_06Keys/10_allow.json
+[INFO Feb 28, 2026, 12:23:19 PM] findings path: ./data/Scalability_06Keys/10_allow.json
+[INFO Feb 28, 2026, 12:23:19 PM] ----------< Processing policy - 10_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:19 PM] ----------< Processing findings - tmp.U0MkukufvW >-----------
+[INFO Feb 28, 2026, 12:23:20 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:20 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:20 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:20 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:20 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:20 PM] policy path: ./data/Scalability_06Keys/11_allow.json
+[INFO Feb 28, 2026, 12:23:20 PM] findings path: ./data/Scalability_06Keys/11_allow.json
+[INFO Feb 28, 2026, 12:23:20 PM] ----------< Processing policy - 11_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:20 PM] ----------< Processing findings - tmp.iAytjfS8i9 >-----------
+[INFO Feb 28, 2026, 12:23:21 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:21 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:21 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:21 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:21 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:21 PM] policy path: ./data/Scalability_06Keys/12_allow.json
+[INFO Feb 28, 2026, 12:23:21 PM] findings path: ./data/Scalability_06Keys/12_allow.json
+[INFO Feb 28, 2026, 12:23:21 PM] ----------< Processing policy - 12_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:21 PM] ----------< Processing findings - tmp.MW9J9VJMo6 >-----------
+[INFO Feb 28, 2026, 12:23:21 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:22 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:22 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:22 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:22 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:22 PM] policy path: ./data/Scalability_06Keys/13_allow.json
+[INFO Feb 28, 2026, 12:23:22 PM] findings path: ./data/Scalability_06Keys/13_allow.json
+[INFO Feb 28, 2026, 12:23:22 PM] ----------< Processing policy - 13_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:22 PM] ----------< Processing findings - tmp.vixWOF5vlu >-----------
+[INFO Feb 28, 2026, 12:23:22 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:23 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:23 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:23 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:23 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:23 PM] policy path: ./data/Scalability_06Keys/14_allow.json
+[INFO Feb 28, 2026, 12:23:23 PM] findings path: ./data/Scalability_06Keys/14_allow.json
+[INFO Feb 28, 2026, 12:23:23 PM] ----------< Processing policy - 14_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:23 PM] ----------< Processing findings - tmp.Z9Dh0c3kZ4 >-----------
+[INFO Feb 28, 2026, 12:23:23 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:23 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:23 PM] [2/2]  finish covering checking : true
+[INFO Feb 28, 2026, 12:23:24 PM] ----------[ Shaky Jenga Tower Code ]-------------
+[INFO Feb 28, 2026, 12:23:24 PM] logger path: /home/testmachine/accessrefinery-fse25/accessanalyzer/miner.log
+[INFO Feb 28, 2026, 12:23:24 PM] policy path: ./data/Scalability_06Keys/15_allow.json
+[INFO Feb 28, 2026, 12:23:24 PM] findings path: ./data/Scalability_06Keys/15_allow.json
+[INFO Feb 28, 2026, 12:23:24 PM] ----------< Processing policy - 15_allow.json >-----------
+[INFO Feb 28, 2026, 12:23:24 PM] ----------< Processing findings - tmp.l2vw3xviOW >-----------
+[INFO Feb 28, 2026, 12:23:24 PM] [1/2]  finish parser policy and findings
+[INFO Feb 28, 2026, 12:23:24 PM] The findings cover the policy.
+[INFO Feb 28, 2026, 12:23:24 PM] [2/2]  finish covering checking : true

@@ -1,7 +1,7 @@
 package org.iam.smt.Z3Solver;
 
 import com.microsoft.z3.*;
-import org.iam.grammer.Condition;
+import org.iam.grammar.Condition;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,13 +43,6 @@ public class Z3Encoder {
         );
     }
 
-    /**
-     * Converts an IPv4 address string to a 32-bit unsigned integer (stored as Java long).
-     *
-     * @param ipAddress Ipv4 address in dotted-decimal format (e.g. "192.168.1.1").
-     * @return 32-bit unsigned integer represented as long.
-     * @throws IllegalArgumentException if input format is invalid.
-     */
     private static long ipToLong(String ipAddress) {
         String[] octets = ipAddress.split("\\.");
         if (octets.length != 4) {

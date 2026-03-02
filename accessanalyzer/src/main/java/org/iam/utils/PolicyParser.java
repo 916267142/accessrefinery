@@ -3,14 +3,20 @@ package org.iam.utils;
 import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Path;
+import java.util.Collections;
 import java.util.Objects;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.iam.grammer.Policy;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+import org.iam.grammar.*;
+import org.iam.grammar.deserializer.FindingDeserializer;
 
 /**
  * The PolicyParser class provides utility methods for parsing policy files and input streams
@@ -99,5 +105,31 @@ public class PolicyParser {
         ClassLoader classLoader = PolicyParser.class.getClassLoader();
         return Objects.requireNonNull(classLoader.getResourceAsStream(fileName),
                 "Resource not found");
+    }
+
+    /**
+     * Parses a findings JSON file into a Set of Finding objects.
+     *
+     * @param filePath The path of the findings JSON file.
+     * @return A Set of Finding objects.
+     */
+    public static Set<Finding> parseFindings(Path filePath) {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+
+        SimpleModule module = new SimpleModule();
+        module.addDeserializer(Finding.class, new FindingDeserializer());
+        mapper.registerModule(module);
+
+        try {
+            JsonNode root = mapper.readTree(filePath.toFile());
+            JsonNode findingsNode = root.get("Findings");
+            if (findingsNode != null && findingsNode.isArray()) {
+                return mapper.convertValue(findingsNode, new TypeReference<Set<Finding>>() {});
+            }
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "Error parsing findings file: " + filePath, e);
+        }
+        return Collections.emptySet();
     }
 }

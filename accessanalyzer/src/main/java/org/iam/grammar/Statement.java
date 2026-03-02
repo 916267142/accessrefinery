@@ -1,12 +1,12 @@
-package org.iam.grammer;
+package org.iam.grammar;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import org.iam.grammer.deserializer.ConditionDeserializer;
-import org.iam.grammer.deserializer.PrincipalDeserializer;
-import org.iam.grammer.deserializer.StringDeserializer;
+import org.iam.grammar.deserializer.ConditionDeserializer;
+import org.iam.grammar.deserializer.PrincipalDeserializer;
+import org.iam.grammar.deserializer.StringDeserializer;
 
 import java.util.Objects;
 import java.util.Set;

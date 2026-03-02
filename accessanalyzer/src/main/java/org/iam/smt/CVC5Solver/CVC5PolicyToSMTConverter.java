@@ -3,10 +3,10 @@ package org.iam.smt.CVC5Solver;
 import io.github.cvc5.*;
 import org.iam.config.Parameter;
 import org.iam.exceptions.SolverRuntimeException;
-import org.iam.grammer.Condition;
-import org.iam.grammer.Policy;
-import org.iam.grammer.Principal;
-import org.iam.grammer.Statement;
+import org.iam.grammar.Condition;
+import org.iam.grammar.Policy;
+import org.iam.grammar.Principal;
+import org.iam.grammar.Statement;
 import org.iam.smt.SMTConstraintConverter;
 
 public class CVC5PolicyToSMTConverter implements SMTConstraintConverter<Term, CVC5Request, Policy> {

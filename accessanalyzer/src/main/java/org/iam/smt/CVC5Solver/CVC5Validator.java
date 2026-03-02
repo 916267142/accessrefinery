@@ -3,9 +3,9 @@ package org.iam.smt.CVC5Solver;
 
 import io.github.cvc5.*;
 import org.iam.core.Node;
-import org.iam.grammer.Finding;
-import org.iam.grammer.Policy;
-import org.iam.grammer.Principal;
+import org.iam.grammar.Finding;
+import org.iam.grammar.Policy;
+import org.iam.grammar.Principal;
 import org.iam.smt.SMTConstraintFactory;
 import org.iam.smt.Validator;
 
@@ -14,9 +14,6 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 public class CVC5Validator implements Validator {
-    public static long implicationTimeCounter = 0;
-    public static long intersectionTimeCounter = 0;
-
     private final TermManager termManager;
     private final Solver solver;
 
@@ -32,8 +29,6 @@ public class CVC5Validator implements Validator {
                                                     Node<String> resourceNode,
                                                     Map<String, Node<String>> conditionNode) {
         try {
-            long startTime = System.nanoTime();
-
             solver.resetAssertions();
             CVC5Request CVC5Request = new CVC5Request(termManager);
 
@@ -47,8 +42,6 @@ public class CVC5Validator implements Validator {
 
             solver.assertFormula(conjunction);
             Result result = solver.checkSat();
-
-            intersectionTimeCounter += System.nanoTime() - startTime;
 
             return result.isSat();
         } catch (CVC5ApiException e) {
@@ -67,8 +60,6 @@ public class CVC5Validator implements Validator {
     @Override
     public boolean checkImplication(Object objectP, Object objectQ) {
         try {
-            long startTime = System.nanoTime();
-
             solver.resetAssertions();
             CVC5Request CVC5Request = new CVC5Request(termManager);
 
@@ -80,9 +71,6 @@ public class CVC5Validator implements Validator {
 
             solver.assertFormula(termManager.mkTerm(Kind.NOT, termManager.mkTerm(Kind.IMPLIES, SMTP, SMTQ)));
             Result result = solver.checkSat();
-
-            double implicationTime = System.nanoTime() - startTime;
-            implicationTimeCounter += implicationTime;
 
             return result.isUnsat();
         } catch (CVC5ApiException e) {
@@ -102,8 +90,6 @@ public class CVC5Validator implements Validator {
     @Override
     public boolean checkIntersection(Object objectP, Object objectQ) {
         try {
-            long startTime = System.nanoTime();
-
             solver.resetAssertions();
             CVC5Request CVC5Request = new CVC5Request(termManager);
 
@@ -116,8 +102,6 @@ public class CVC5Validator implements Validator {
 
             solver.assertFormula(conjunction);
             Result result = solver.checkSat();
-
-            intersectionTimeCounter += System.nanoTime() - startTime;
 
             return result.isSat();
         } catch (CVC5ApiException e) {

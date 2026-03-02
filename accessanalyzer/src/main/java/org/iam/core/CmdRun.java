@@ -1,9 +1,9 @@
 package org.iam.core;
 
 import org.iam.config.Parameter;
-import org.iam.grammer.Policy;
-import org.iam.grammer.serializer.JsonFindings;
-import org.iam.grammer.Finding;
+import org.iam.grammar.Policy;
+import org.iam.grammar.serializer.JsonFindings;
+import org.iam.grammar.Finding;
 import org.iam.utils.FileUtil;
 import org.iam.utils.LoggerUtil;
 import org.iam.utils.PolicyParser;
@@ -40,6 +40,13 @@ public class CmdRun {
                 .hasArg(false)
                 .desc("reduce the number of intents")
                 .build());
+        options.addOption(Option.builder("c")
+                .longOpt("cover")
+                .hasArg(true)
+                .numberOfArgs(2)
+                .valueSeparator(' ')
+                .desc("check whether the findings cover the policy, provide policy file and findings file")
+                .build());
 
         CommandLineParser parser = new DefaultParser();
         try {
@@ -67,6 +74,18 @@ public class CmdRun {
                 }
             }
 
+            if (cmd.hasOption("c")) {
+                String[] values = cmd.getOptionValues("c");
+                if (values.length != 2) {
+                    throw new ParseException("Please provide both policy file and findings file for covering check.");
+                }
+                Path policyPath = Paths.get(values[0]);
+                Path findingsPath = Paths.get(values[1]);
+                CmdRun cmdRun = new CmdRun();
+                cmdRun.runCoveringChecker(policyPath, findingsPath);
+                return;
+            }
+
             if (cmd.hasOption("r")) {
                 Parameter.isReduced = true;
             }
@@ -77,12 +96,10 @@ public class CmdRun {
                 File file = inputPath.toFile();
                 if (!file.exists()) {
                     throw new ParseException("The input file does not exist.");
-                } else if (file.isDirectory()) {
-                    runBatchMiner(inputPath);
                 } else if (file.isFile()) {
                     runSingleMiner(inputPath);
                 } else {
-                    throw new ParseException("The input file is neither a file nor a directory.");
+                    throw new ParseException("The input file is neither a file.");
                 }
             }
         } catch (IOException | ParseException e) {
@@ -105,15 +122,15 @@ public class CmdRun {
         Parameter.timeLog = outputPath.resolve(FileUtil.changeToCsvWithTime(fileName)).toString();
 
         TimeMeasure timeMeasure = new TimeMeasure();
-        MinerFactory minerFactory = new MinerFactory();
+        Miner miner = new Miner();
         Policy policy = PolicyParser.parseFile(inputPath);
         Parameter.LOGGER.info("[1/5]  finish parser policy");
         long startTime = System.nanoTime();
-        Set<Finding> ansFindings = minerFactory.mineIntent(policy, timeMeasure);
+        Set<Finding> ansFindings = miner.mineIntent(policy, timeMeasure);
         Parameter.LOGGER.info("[3/5]  finish findings mining : " + ansFindings.size());
 
         if (Parameter.isReduced) {
-            ansFindings = minerFactory.reduceIntent(policy, ansFindings);
+            ansFindings = miner.reduceIntent(policy, ansFindings);
             Parameter.LOGGER.info("[5/5]  finish findings reduction : " + ansFindings.size());
         } else {
             Parameter.LOGGER.info("[4/5]  successful generate file");
@@ -133,48 +150,30 @@ public class CmdRun {
         timeMeasure.writeToFile(Parameter.timeLog);
     }
 
-    static int policiesIdx = 0;
-    public static void runBatchMiner(Path inputFolderPath) throws IOException {
-        Path outputFolderPath = FileUtil.replaceSecondLastLevel(inputFolderPath);
-        FileUtil.createDirectoryIfNotExists(outputFolderPath);
+    public void runCoveringChecker(Path policyPath, Path findingsPath) {
+        Path outputPath = FileUtil.replaceThirdLastLevel(policyPath);
+        FileUtil.createDirectoryIfNotExists(outputPath);
+
         Parameter.LOGGER.info("----------[ Shaky Jenga Tower Code ]-------------");
         Parameter.LOGGER.info("logger path: " + LoggerUtil.getLogFilePath());
-        Parameter.LOGGER.info("input  path: " + inputFolderPath);
-        Parameter.LOGGER.info("output path: " + outputFolderPath);
-        List<String> fileNames = FileUtil.getFileNames(inputFolderPath);
+        Parameter.LOGGER.info("policy path: " + policyPath);
+        Parameter.LOGGER.info("findings path: " + findingsPath);
 
-        for (String fileName : fileNames) {
-            Parameter.LOGGER.info("----------< " + ++policiesIdx + "th policy - " + fileName + " >-----------");
-            Path inputFilePath = inputFolderPath.resolve(fileName);
-            Parameter.timeLog = outputFolderPath.resolve(FileUtil.changeToCsvWithTime(fileName)).toString();
+        String policyName = policyPath.getFileName().toString();
+        String findingsName = findingsPath.getFileName().toString();
+        Parameter.LOGGER.info("----------< Processing policy - " + policyName + " >-----------");
+        Parameter.LOGGER.info("----------< Processing findings - " + findingsName + " >-----------");
 
-            TimeMeasure timeMeasure = new TimeMeasure();
-            MinerFactory minerFactory = new MinerFactory();
-            Policy policy = PolicyParser.parseFile(inputFilePath);
-            Parameter.LOGGER.info("[1/5]  finish parser policy");
-            long startTime = System.nanoTime();
-            Set<Finding> ansFindings = minerFactory.mineIntent(policy, timeMeasure);
-            Parameter.LOGGER.info("[3/5]  finish findings mining : " + ansFindings.size());
-
-            if (Parameter.isReduced) {
-                ansFindings = minerFactory.reduceIntent(policy, ansFindings);
-                Parameter.LOGGER.info("[5/5]  finish findings reduction : " + ansFindings.size());
-            } else {
-                Parameter.LOGGER.info("[4/5]  successful generate file");
-                Parameter.LOGGER.info("[5/5]  successful written findings : " + ansFindings.size());
-            }
-
-            long endTime = System.nanoTime();
-            long wholeTime = endTime - startTime;
-            timeMeasure.setWholeTime(wholeTime);
-            JsonFindings jsonFindings = new JsonFindings(ansFindings);
-
-            Path outputFindingPath = outputFolderPath.resolve(FileUtil.changeToJsonWithFindings(fileName));
-            JsonFindings.printToFile(jsonFindings, outputFindingPath);
-            Parameter.LOGGER.info("The findings file was output to " + outputFindingPath);
-            Parameter.LOGGER.info("The time file was output to " + Parameter.timeLog);
-            Parameter.LOGGER.info(String.format("Time: %.4f%n", wholeTime / 1e9));
-            timeMeasure.writeToFile(Parameter.timeLog);
+        Miner miner = new Miner();
+        Policy policy = PolicyParser.parseFile(policyPath);
+        Set<Finding> findings = PolicyParser.parseFindings(findingsPath);
+        Parameter.LOGGER.info("[1/2]  finish parser policy and findings");
+        boolean ans = miner.checkCovering(policy, findings);
+        if (ans) {
+            Parameter.LOGGER.info("The findings cover the policy.");
+        } else {
+            Parameter.LOGGER.info("The findings do not cover the policy.");
         }
+        Parameter.LOGGER.info("[2/2]  finish covering checking : " + ans);
     }
 }

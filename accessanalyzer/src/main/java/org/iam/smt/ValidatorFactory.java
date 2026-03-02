@@ -2,9 +2,9 @@ package org.iam.smt;
 
 import org.iam.config.Parameter;
 import org.iam.core.Node;
-import org.iam.grammer.Finding;
-import org.iam.grammer.Policy;
-import org.iam.grammer.Principal;
+import org.iam.grammar.Finding;
+import org.iam.grammar.Policy;
+import org.iam.grammar.Principal;
 import org.iam.smt.CVC5Solver.CVC5Validator;
 import org.iam.smt.Z3Solver.Z3Validator;
 
