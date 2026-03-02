@@ -3,9 +3,9 @@ package org.iam.smt.Z3Solver;
 import com.microsoft.z3.BoolExpr;
 import com.microsoft.z3.Context;
 import org.iam.core.Node;
-import org.iam.grammer.Condition;
-import org.iam.grammer.Principal;
-import org.iam.grammer.Finding;
+import org.iam.grammar.Condition;
+import org.iam.grammar.Principal;
+import org.iam.grammar.Finding;
 import org.iam.smt.SMTConstraintConverter;
 
 import java.util.Map;
@@ -178,5 +178,15 @@ public class Z3FindingsToSMTConverter implements SMTConstraintConverter<BoolExpr
                     ctx.mkAnd(result, conditionConstraint);
         }
         return result == null ? ctx.mkTrue() : result;
+    }
+
+    public BoolExpr toFindingSetConstraint(Z3Request z3Request, Set<Finding> input) {
+        Context ctx = z3Request.getContext();
+        BoolExpr result = null;
+        for (Finding finding : input) {
+            BoolExpr findingConstraint = toSMTConstraint(z3Request, finding);
+            result = result == null ? findingConstraint : ctx.mkOr(result, findingConstraint);
+        }
+        return result == null ? ctx.mkFalse() : result;
     }
 }

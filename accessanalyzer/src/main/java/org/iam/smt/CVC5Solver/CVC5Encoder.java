@@ -1,7 +1,7 @@
 package org.iam.smt.CVC5Solver;
 
 import io.github.cvc5.*;
-import org.iam.grammer.Condition;
+import org.iam.grammar.Condition;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,13 +44,6 @@ public class CVC5Encoder {
         return termManager.mkTerm(Kind.EQUAL, maskedIp, maskedCidr);
     }
 
-    /**
-     * Converts an IPv4 address string to a 32-bit unsigned integer (stored as Java long).
-     *
-     * @param ipAddress Ipv4 address in dotted-decimal format (e.g. "192.168.1.1").
-     * @return 32-bit unsigned integer represented as long.
-     * @throws IllegalArgumentException If input format is invalid.
-     */
     private static long ipToLong(String ipAddress) {
         String[] octets = ipAddress.split("\\.");
         if (octets.length != 4) {

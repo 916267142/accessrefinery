@@ -3,9 +3,9 @@ package org.iam.smt.Z3Solver;
 
 import com.microsoft.z3.*;
 import org.iam.core.Node;
-import org.iam.grammer.Finding;
-import org.iam.grammer.Policy;
-import org.iam.grammer.Principal;
+import org.iam.grammar.Finding;
+import org.iam.grammar.Policy;
+import org.iam.grammar.Principal;
 import org.iam.smt.SMTConstraintFactory;
 import org.iam.smt.Validator;
 
@@ -15,10 +15,6 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 public class Z3Validator implements Validator {
-
-    // debug
-    public static long implicationTimeCounter = 0;
-    public static long intersectionTimeCounter = 0;
 
     private final Context ctx;
     private final Solver solver;
@@ -33,7 +29,6 @@ public class Z3Validator implements Validator {
                                                     Node<String> actionNode,
                                                     Node<String> resourceNode,
                                                     Map<String, Node<String>> conditionNode) {
-        long startTime = System.nanoTime();
 
         solver.reset();
 
@@ -70,8 +65,6 @@ public class Z3Validator implements Validator {
         solver.add(conjunction);
         Status result = solver.check();
 
-        intersectionTimeCounter += System.nanoTime() - startTime;
-
         return result == Status.SATISFIABLE;
     }
     /**
@@ -80,13 +73,10 @@ public class Z3Validator implements Validator {
      *
      * @param objectP The antecedent of the implication. Must be an instance of `Findings` or `Policy`
      * @param objectQ The consequent of the implication. Must be an instance of `Findings` or `Policy`
-     * @return 'true' if the implication `object -> objectQ` is valid, otherwise 'false'.
+     * @return 'true' if the implication `objectP -> objectQ` is valid, otherwise 'false'.
      */
     @Override
     public boolean checkImplication(Object objectP, Object objectQ) {
-
-        // debug
-        long startTime = System.nanoTime();
 
         solver.reset();
         Z3Request z3Request = new Z3Request(ctx);
@@ -120,9 +110,6 @@ public class Z3Validator implements Validator {
         solver.add(ctx.mkNot(ctx.mkImplies(SMTP, SMTQ)));
         Status result = solver.check();
 
-        double implicationTime = System.nanoTime() - startTime;
-        implicationTimeCounter += implicationTime;
-
         return result == Status.UNSATISFIABLE;
     }
 
@@ -135,9 +122,6 @@ public class Z3Validator implements Validator {
      * @return `true` if the conjunction of `objectP` and `objectQ` is satisfiable, otherwise `false`.
      */
     public boolean checkIntersection(Object objectP, Object objectQ) {
-
-        // debug
-        long startTime = System.nanoTime();
 
         solver.reset();
         Z3Request z3Request = new Z3Request(ctx);
@@ -169,8 +153,6 @@ public class Z3Validator implements Validator {
 
         solver.add(conjunction);
         Status result = solver.check();
-
-        intersectionTimeCounter += System.nanoTime() - startTime;
 
         return Objects.requireNonNull(result) == Status.SATISFIABLE;
     }

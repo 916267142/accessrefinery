@@ -1,4 +1,4 @@
-package org.iam.grammer.serializer;
+package org.iam.grammar.serializer;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,9 +8,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.util.StdDateFormat;
-import org.iam.grammer.Condition;
-import org.iam.grammer.Principal;
-import org.iam.grammer.Finding;
+import org.iam.grammar.Condition;
+import org.iam.grammar.Principal;
+import org.iam.grammar.Finding;
 
 import java.io.File;
 import java.io.IOException;

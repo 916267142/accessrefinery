@@ -3,7 +3,7 @@ package org.iam.smt;
 import org.iam.config.Parameter;
 import org.iam.core.Node;
 import org.iam.exceptions.SolverRuntimeException;
-import org.iam.grammer.*;
+import org.iam.grammar.*;
 import org.iam.smt.CVC5Solver.CVC5FindingsToSMTConverter;
 import org.iam.smt.CVC5Solver.CVC5PolicyToSMTConverter;
 import org.iam.smt.CVC5Solver.CVC5Request;
@@ -40,6 +40,11 @@ public class SMTConstraintFactory {
                 case Z3 -> Z3FindingsConverter.toSMTConstraint((Z3Request) request, (Finding) input);
                 case CVC5 -> CVC5FindingsConverter.toSMTConstraint((CVC5Request) request, (Finding) input);
             };
+        } else if (input instanceof Set<?>) {
+            return switch (Parameter.getActiveSolver()) {
+                case Z3 -> Z3FindingsConverter.toFindingSetConstraint((Z3Request) request, (Set<Finding>) input);
+                case CVC5 -> CVC5FindingsConverter.toFindingSetConstraint((CVC5Request) request, (Set<Finding>) input);
+            };
         } else {
             throw new IllegalArgumentException("Unsupported input type: " + input.getClass());
         }
@@ -68,6 +73,12 @@ public class SMTConstraintFactory {
             return getKeyToType((Policy) input);
         } else if (input instanceof Finding) {
             return getKeyToType((Finding) input);
+        } else if (input instanceof Set<?>) {
+            HashMap<String, VarType> mergedMap = new HashMap<>();
+            for (Object item : (Set<?>) input) {
+                mergedMap.putAll(initializeKeyToType(item));
+            }
+            return mergedMap;
         } else {
             throw new IllegalArgumentException("Unsupported input type: " + input.getClass());
         }

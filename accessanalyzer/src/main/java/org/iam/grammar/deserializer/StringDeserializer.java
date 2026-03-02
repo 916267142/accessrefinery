@@ -1,4 +1,4 @@
-package org.iam.grammer.deserializer;
+package org.iam.grammar.deserializer;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;

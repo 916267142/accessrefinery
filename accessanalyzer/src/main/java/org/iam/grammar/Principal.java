@@ -1,4 +1,4 @@
-package org.iam.grammer;
+package org.iam.grammar;
 
 
 import java.util.Objects;

@@ -7,9 +7,9 @@ import io.github.cvc5.TermManager;
 import org.iam.config.Parameter;
 import org.iam.core.Node;
 import org.iam.exceptions.SolverRuntimeException;
-import org.iam.grammer.Condition;
-import org.iam.grammer.Finding;
-import org.iam.grammer.Principal;
+import org.iam.grammar.Condition;
+import org.iam.grammar.Finding;
+import org.iam.grammar.Principal;
 import org.iam.smt.SMTConstraintConverter;
 
 import java.util.Map;
@@ -228,5 +228,15 @@ public class CVC5FindingsToSMTConverter implements SMTConstraintConverter<Term, 
         } catch (CVC5ApiException e) {
             throw new SolverRuntimeException(Parameter.SolverType.CVC5, e);
         }
+    }
+
+    public Term toFindingSetConstraint(CVC5Request cvc5Request, Set<Finding> findings) {
+        TermManager termManager = cvc5Request.getTermManager();
+        Term result = null;
+        for (Finding finding : findings) {
+            Term findingConstraint = toSMTConstraint(cvc5Request, finding);
+            result = result == null ? findingConstraint : termManager.mkTerm(Kind.OR, result, findingConstraint);
+        }
+        return result == null ? termManager.mkFalse() : result;
     }
 }

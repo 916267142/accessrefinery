@@ -1,4 +1,4 @@
-package org.iam.grammer;
+package org.iam.grammar;
 
 import com.fasterxml.jackson.annotation.*;
 import org.iam.utils.PolicyParser;

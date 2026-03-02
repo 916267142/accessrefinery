@@ -38,18 +38,10 @@ public class TimeMeasure {
 
     public void writeToFile(String filename) throws IOException {
         try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
-            switch (Parameter.getActiveLogic()) {
-                case STRATIFIED -> {
-                    writer.println("SingleRound,AllRound,WholeTime");
-                    for (RoundTime round : rounds) {
-                        String line = String.format("%.4f,%.4f,%.4f", round.singleRound/1e9, round.allRound/1e9, wholeTime/1e9);
-                        writer.println(line);
-                    }
-                }
-                case ENUMERATED -> {
-                    writer.println("WholeTime");
-                    writer.println(String.format("%.4f", wholeTime/1e9));
-                }
+            writer.println("SingleRound,AllRound,WholeTime");
+            for (RoundTime round : rounds) {
+                String line = String.format("%.4f,%.4f,%.4f", round.singleRound / 1e9, round.allRound / 1e9, wholeTime / 1e9);
+                writer.println(line);
             }
         }
     }

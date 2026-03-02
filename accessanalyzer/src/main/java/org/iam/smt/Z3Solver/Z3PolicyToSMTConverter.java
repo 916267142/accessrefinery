@@ -2,10 +2,10 @@ package org.iam.smt.Z3Solver;
 
 import com.microsoft.z3.BoolExpr;
 import com.microsoft.z3.Context;
-import org.iam.grammer.Condition;
-import org.iam.grammer.Policy;
-import org.iam.grammer.Principal;
-import org.iam.grammer.Statement;
+import org.iam.grammar.Condition;
+import org.iam.grammar.Policy;
+import org.iam.grammar.Principal;
+import org.iam.grammar.Statement;
 import org.iam.smt.SMTConstraintConverter;
 
 public class Z3PolicyToSMTConverter implements SMTConstraintConverter<BoolExpr, Z3Request, Policy> {
