@@ -3,9 +3,16 @@
 <img src="logo2.png?raw=True" align="right" width="20%"/> 
 -->
 
+<img src="logo.png" align="right" width="30%"/>
+
 # AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud
 
 by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang ](https://xjtu-netverify.github.io/people/pzhang/) and [Jianyuan Zhang](https://xjtu-netverify.github.io/people/jyzhang/) at [ANTS lab](https://xjtu-netverify.github.io/).
+
+![Java](https://img.shields.io/badge/Java-17-007396?logo=java&logoColor=white)
+![Tests](https://img.shields.io/badge/tests-passing-brightgreen?logo=java)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Paper](https://img.shields.io/badge/paper-FSE2026-orange)
 
 ## About AccessRefinery
 

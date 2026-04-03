@@ -1,0 +1,23 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/statistic.xml
+.idea/libraries/
+
+*.dot
+*.iws
+*.iml
+*.ipr
+
+data/TEST
+result/*
+aws_result/*
+accessrefinery.log*
+.vscode/launch.json
+comparison.log
