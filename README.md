@@ -3,9 +3,10 @@
 <img src="logo2.png?raw=True" align="right" width="20%"/> 
 -->
 
-<img src="logo.png" align="right" width="30%"/>
-
-# AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <h1>AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud</h1>
+    <img src="logo.png" width="40%">
+</div>
 
 by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang ](https://xjtu-netverify.github.io/people/pzhang/) and [Jianyuan Zhang](https://xjtu-netverify.github.io/people/jyzhang/) at [ANTS lab](https://xjtu-netverify.github.io/).
 
