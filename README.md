@@ -3,10 +3,12 @@
 <img src="logo2.png?raw=True" align="right" width="20%"/> 
 -->
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
+<!-- <div style="display: flex; justify-content: space-between; align-items: center;">
     <h1 style="margin: 0;">AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud</h1>
     <img src="logo.png" width="30%">
-</div>
+</div> -->
+
+# AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud
 
 by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang ](https://xjtu-netverify.github.io/people/pzhang/) and [Jianyuan Zhang](https://xjtu-netverify.github.io/people/jyzhang/) at [ANTS lab](https://xjtu-netverify.github.io/).
 
@@ -15,19 +17,23 @@ by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang ](ht
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Paper](https://img.shields.io/badge/paper-FSE2026-orange)
 
+> Ning Kang, Peng Zhang, Jianyuan Zhang, Hao Li, Dan Wang, Zhenrong Gu, Weibo Lin, 
+> Shibiao Jiang, Zhu He, Xu Du, Longfei Chen, Jun Li, and Xiaohong Guan
+> "AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud", ACM FSE 2026
+
 ## About AccessRefinery
 
-AccessRefinery automatically mines access control intents from IAM (Identity and Access Management) policies. These intents help users verify the correctness and safety of their policies.
+AccessRefinery automatically mines access control intents from IAM (Identity and Access Management) policies. These intents help users verify the correctness and security of their policies. Compared with [AWS Access Analyzer](https://link.springer.com/content/pdf/10.1007/978-3-030-53288-8_9.pdf) and their [commercial system](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-concepts.html), AccessRefinery reduces mining time by 10–100× and eliminates roughly 10× redundant intents.
 
-The key idea for accelerating intent mining is to reduce the redundancy of multi-round SMT solving by preprocessing constraints into bit-vector constraints using our Multi-Theory Constraint Preprocessor (MCP).
-For intent reduction, AccessRefinery computes a compact set of intents that covers all mined intents by solving a min-set-cover problem. Compared with prior approaches such as AWS Access Analyzer, AccessRefinery achieves a one-to-two orders-of-magnitude speedup, and the reduced intent set is one-to-two orders-of-magnitude smaller.
+The key idea behind AccessRefinery for accelerating intent mining is to reduce the redundancy of multi-round SMT solving by preprocessing constraints into bit-vector constraints using our Multi-Theory Constraint Preprocessor (MCP).  
+For intent reduction, AccessRefinery computes a compact set that covers all mined intents by solving a min-set-cover problem.
 
 In addition, the MCP module supports two extra features, both fully integrated into the tool:
 
 - Checking implication relationships for IAM policies
-- Multi-round SMT solving, equivalent to standard SMT computations
+- Performing multi-round SMT solving, equivalent to standard SMT computations
 
-For technical details and a complete evaluation, see our FSE 2026 paper: AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud (PDF).
+For technical details and a full evaluation, refer to our FSE 2026 paper: [*AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud* ](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf).
 
 ## Install
 
