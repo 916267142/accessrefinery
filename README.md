@@ -55,7 +55,7 @@ This repository is the artifact accompanying the AccessRefinery paper. It includ
     - `Scalability_05Keys/` and `Scalability_06Keys/` contain the synthetic datasets for scalability experiments.
 - `tools/` contains scripts for running the experiments.
 - `pom.xml` is the Maven root configuration.
-- `figure/` contains the source used to generate the figures in the paper.
+- `paper_figures/` contains the source used to generate the figures in the paper.
 - `archive_results/` contains archived experimental results.
 
 For comparison, the repository also includes two AWS Access Analyzer artifacts:
@@ -229,3 +229,52 @@ STATUS
 LICENSE Xijiaotong 
 
 INSATLL
+
+---
+
+### Reproduction
+
+All experimental results are archived in `/archive_result`. 
+
+#### Results of AccessRefinery
+
+- `accessrefinery_bdd_miner_10rs`: Results of intent mining for 10 rounds using JavaBDD backend
+- `accessrefinery_sat_miner_10rs`: Results of intent mining for 10 rounds using MiniSAT backend
+- `accessrefinery_bdd_reducer_10rs`: Results of intent mining and reduction for 10 rounds using JavaBDD
+- `accessrefinery_sat_reducer_3rs`: Results of intent mining and reduction for 3 rounds using MiniSAT
+
+Scripts are provided to generate these results. Note that `accessrefinery_sat_reducer_3rs` runs very slowly.
+
+```bash
+$ sh tools/running_bdd_miner.sh
+$ sh tools/running_sat_miner.sh
+$ sh tools/running_bdd_reducer.sh
+$ sh tools/running_sat_reducer.sh
+```
+
+#### Results of AWS AccessAnalyzer via CLI
+
+- `/accessanalyzer_web`: Results of intent mining using AWS AccessAnalyzer via CLI
+
+Note: AWS AccessAnalyzer is accessed remotely, so only correctness experiments can be performed, not performance experiments.
+
+The following instructions can be used to reproduce the results (it is strongly recommended to skip this step, as AWS CLI environment configuration is extremely complicated):
+- [Running AWS Access Analyzer via CLI](tools/AccessAnalyzer.md)
+
+#### Results of Comparing AccessRefinery with AWS AccessAnalyzer
+
+- `compare_result`: Results of comparison
+
+The following instructions can be used to reproduce the results:
+
+```bash
+$ # JSON library required by the comparison script, the verson of jq is 1.6
+$ sudo apt install jq 
+$ sh tools/running_batch_compare.sh
+```
+
+<!-- Note: The result for `Scalability_05Keys/12_allow_result.json` may differ because AWS Access Analyzer may time out (the result will be marked with `"error": "INTERNAL_ERROR"` by Access Analyzer). This is normal. -->
+
+---
+
+Thank you for reading AccessRefinery!
