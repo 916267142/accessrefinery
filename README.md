@@ -10,7 +10,7 @@
 
 # AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud
 
-by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang ](https://xjtu-netverify.github.io/people/pzhang/) and [Jianyuan Zhang](https://xjtu-netverify.github.io/people/jyzhang/) at [ANTS lab](https://xjtu-netverify.github.io/).
+by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](https://xjtu-netverify.github.io/people/pzhang/) and [Jianyuan Zhang](https://xjtu-netverify.github.io/people/jyzhang/) at [ANTS lab](https://xjtu-netverify.github.io/).
 
 ![Java](https://img.shields.io/badge/Java-17-007396?logo=java&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-passing-brightgreen?logo=java)
@@ -23,58 +23,123 @@ by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang ](ht
 
 ## About AccessRefinery
 
-AccessRefinery automatically mines access control intents from IAM (Identity and Access Management) policies. These intents help users verify the correctness and security of their policies. Compared with [AWS Access Analyzer](https://link.springer.com/content/pdf/10.1007/978-3-030-53288-8_9.pdf) and their [commercial system](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-concepts.html), AccessRefinery reduces mining time by 10–100× and eliminates roughly 10× redundant intents.
+**AccessRefinery** automatically mines access control intents from IAM (Identity and Access Management) policies. These intents help users verify the correctness and security of their policies. Compared with the [commercial system](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-concepts.html) in [AWS Access Analyzer](https://link.springer.com/content/pdf/10.1007/978-3-030-53288-8_9.pdf), AccessRefinery speeds up mining by ~10–100× and reduces the number of intents by up to ~10×.
 
-The key idea behind AccessRefinery for accelerating intent mining is to reduce the redundancy of multi-round SMT solving by preprocessing constraints into bit-vector constraints using our Multi-Theory Constraint Preprocessor (MCP).  
-For intent reduction, AccessRefinery computes a compact set that covers all mined intents by solving a min-set-cover problem.
+The key idea behind **AccessRefinery** for accelerating intent mining is to reduce redundancy in multi-round SMT solving by preprocessing constraints into bit-vector constraints using our Multi-Theory Constraint Preprocessor (MCP).  
+For intent reduction, **AccessRefinery** computes a compact set that covers all mined intents by solving a minimum set-cover problem.
 
-In addition, the MCP module supports the extra feature, fully integrated into the tool Performing multi-round SMT solving, equivalent to standard SMT computations.
+For technical details and a full evaluation, refer to our FSE 2026 paper: [*AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud*](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf).
 
-For technical details and a full evaluation, refer to our FSE 2026 paper: [*AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud* ](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf).
+> Note: MCP is decoupled from **AccessRefinery**. It could be a separate project, but installation would be more complex. We therefore keep MCP and **AccessRefinery** as two separate Maven modules, allowing other researchers to reuse MCP flexibly.
 
-## Install
+## Setup
 
-All code, datasets (except real-world dataset), and results for the paper are contained in this repository.
+### Prerequisites
 
-Note that when browsing on an anonymous website, the page may need to be refreshed after clicking a link.
+Ubuntu 22.04.5 is recommended. See [Requirement](REQUIREMENTS.md) for details.
 
-- [AccessRefinery and AWS Access Analyzer CLI version](accessrefinery/README.md)
-- [Access Analyzer reproduction version](accessanalyzer/README.md)
-- [Experimental Figures](experiment-figures/README.md)
+### Install and Compile
 
+After setting up Linux, follow [Install](INSTALL.md) to install the environment, and compile **AccessRefinery** and our reproduced **Access Analyzer** (baseline).
 
-## Project Structure
+## Structure
 
-**To simplify the experimental setup, MCP and AccessRefinery have been integrated. The two modules remain fully decoupled, and a standalone repository containing only MCP is also provided. You can still follow the instructions below to run MCP.**
+This repository is the artifact accompanying the AccessRefinery paper. It includes the implementation, experimental datasets, reproduction scripts, archived results, and the comparison baselines used in the evaluation.
 
-The `mcp` module is Multi-Theory Constraint Preprocessor (MCP) that supports fast multi-round SMT solving. 
-The `refinery` module implements intent mining and reduction based on MCP.
+- `projects/` contains the source code of **AccessRefinery**.
+    - `bdd/` implements the binary decision diagram backend used by MCP.
+    - `mcp/` implements the Multi-Theory Constraint Preprocessor.
+    - `refinery/` implements intent mining and reduction.
+- `data/` contains the datasets used in the experiments.
+    - `Correctness/` contains the synthetic dataset for correctness experiments.
+    - `Scalability_05Keys/` and `Scalability_06Keys/` contain the synthetic datasets for scalability experiments.
+- `tools/` contains scripts for running the experiments.
+- `pom.xml` is the Maven root configuration.
+- `figure/` contains the source used to generate the figures in the paper.
+- `archive_results/` contains archived experimental results.
 
-```text
-accessrefinery
-|
-|----data
-|       |---Correctness       # input datasets
-|       |   |---11_allow_allow_equal.json
-|       |   |---...
-|       |---Scalability_05Keys
-|       |---Scalability_06Keys
-|----projects
-|       |---bdd               # binary decision diagram module
-|       |---mcp               # Multi-Theory Constraint Preprocessor
-|       |---refinery          # mining and reducing intents module
-|----tools
-|       |---...               # scripts for running experiments
-|----pom.xml                  # Maven root configuration
-```
+For comparison, the repository also includes two AWS Access Analyzer artifacts:
+
+- `AccessAnalyzerCLI/` contains the scripts and instructions for running the AWS commercial Access Analyzer through the CLI.
+- `AccessAnalyzer/` contains our reproduced AWS Access Analyzer implementation and run instructions.
 
 ## Using Multi-Theory Constraint Preprocessor (MCP)
 
+### Overview
 
-MCP supports multi-round SMT solving. Each domain supports regular expressions, IP prefixes/bit-vectors, ranges, and sets.
-An example of using MCP is shown below. This example is also included in the test directory [MCPFactoryTest.java](projects/mcp/src/test/java/org/iam/core/MCPFactoryTest.java) and will be executed automatically during `mvn package`.
+MCP is a reusable module for multi-round SMT solving. It supports regular expressions, IP prefixes/bit-vectors, ranges, and sets. In this repository, MCP is already integrated into AccessRefinery, so you can use it directly without a separate installation.
+
+### Reuse In Another Project
+
+If you want to reuse MCP in another Maven project, first build and install the artifact locally:
+
+```shell
+mvn clean package
+mvn install:install-file \
+    -Dfile=target/refinery-1.0-SNAPSHOT-jar-with-dependencies.jar \
+    -DgroupId=org.iam \
+    -DartifactId=refinery \
+    -Dversion=1.0-SNAPSHOT \
+    -Dpackaging=jar \
+    -DgeneratePom=true
+```
+
+Then add the dependency to your `pom.xml`:
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.iam</groupId>
+        <artifactId>mcp</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+</dependencies>
+```
+
+Then import MCP in your project : 
+
+```
+import org.iam.mcp.*;
+```
+
+### Example Policy
+
+The example below shows how to model resource and IP constraints in MCP, combine them with bit-vector operations, and check whether a policy covers a target intent. The JSON policy and the Java code describe the same two candidate intents: `dept*/user1.txt` with `112.0.0.0/24`, and `dept1/user*.txt` with `113.0.0.0/24`. The example is also included in [MCPFactoryTest.java](projects/mcp/src/test/java/org/iam/core/MCPFactoryTest.java) and runs automatically during `mvn package`.
+
+The policy below represents the two candidate intents used in the example.
+
+```json
+{
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Resource": "dept*/user1.txt",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "112.0.0.0/24"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Resource": "dept1/user*.txt",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "113.0.0.0/24"
+                }
+            }
+        }
+    ]
+}
+```
+
+### Example Code
+
+The corresponding MCP code is shown below.
 
 ```java
+import org.iam.mcp.*;
+
 MCPFactory mcp = new MCPFactory(MCPType.BDD);
 mcp.addVar("Res", LabelType.REGEXP, "dept*/user1.txt");
 mcp.addVar("Res", LabelType.REGEXP, "dept1/user*.txt");
@@ -94,17 +159,17 @@ MCPBitVector s3 = res2.not().and(ip2);
 MCPBitVector policy = s1.diff(s2).diff(s3);
 MCPBitVector intent6 = res1.and(ip1);
 
-if(policy.and(intent6.not()).isZero()) {
-    // ... main logic for empty result
+if (policy.and(intent6.not()).isZero()) {
+    // main logic for an empty result
 } else {
-    // ... main logic for non-empty result
+    // main logic for a non-empty result
 }
 ```
 
 
 ## Using AccessRefinery
 
-All dependencies, including the ILP solver, JavaBDD, and MiniSat, are integrated into the project either as source code or via Maven. 
+All dependencies, including the ILP solver, JavaBDD, and MiniSat, are integrated into the project either as source code or via Maven.
 Clone the repository and build the project with Maven:
 
 <!-- ```shell
