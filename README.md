@@ -58,6 +58,8 @@ This repository is the artifact accompanying the AccessRefinery paper. It includ
 - `paper_figures/` contains the source used to generate the figures in the paper.
 - `archive_results/` contains archived experimental results.
 
+After compilation, the `target/` directory will contain `refinery-1.0.jar` (for intent mining) and `mcp-1.0.jar` (which can be reused in other projects to support multi-round SMT solving).
+
 For comparison, the repository also includes two AWS Access Analyzer artifacts:
 
 - `AccessAnalyzerCLI/` contains the scripts and instructions for running the AWS commercial Access Analyzer through the CLI.
@@ -65,21 +67,24 @@ For comparison, the repository also includes two AWS Access Analyzer artifacts:
 
 ## Using Multi-Theory Constraint Preprocessor (MCP)
 
-### Overview
-
-MCP is a reusable module for multi-round SMT solving. It supports regular expressions, IP prefixes/bit-vectors, ranges, and sets. In this repository, MCP is already integrated into AccessRefinery, so you can use it directly without a separate installation.
+MCP is a data structure for multi-round SMT solving. It supports regular expressions, IP prefixes/bit-vectors, ranges, and sets. In this repository, MCP is already integrated into AccessRefinery, so you can use it directly without a separate installation.
 
 ### Reuse in Another Project
 
-If you want to reuse MCP in another Maven project, first build and install the artifact locally:
+Following [Install](INSTALL.md) to generate jar package. Recall again:
 
 ```shell
 mvn clean package
+```
+
+This generates `target/mcp-1.0.jar`. Install it into your local Maven repository:
+
+```
 mvn install:install-file \
-    -Dfile=target/refinery-1.0-SNAPSHOT-jar-with-dependencies.jar \
+    -Dfile=target/mcp-1.0.jar \
     -DgroupId=org.ants \
     -DartifactId=accessrefinery \
-    -Dversion=1.0-SNAPSHOT \
+    -Dversion=1.0 \
     -Dpackaging=jar \
     -DgeneratePom=true
 ```
@@ -91,7 +96,7 @@ Then add the dependency to your `pom.xml`:
     <dependency>
         <groupId>org.ants</groupId>
         <artifactId>accessrefinery</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
     </dependency>
 </dependencies>
 ```
@@ -166,27 +171,20 @@ public class Main {
 }
 ```
 
-
 ## Using AccessRefinery
 
-All dependencies, including the ILP solver, JavaBDD, and MiniSat, are integrated into the project either as source code or via Maven.
-Clone the repository and build the project with Maven:
+AccessRefinery builds on MCP for IAM intent mining.
 
-<!-- ```shell
-$ git clone <your-repo-url> 
-$ cd accessrefinery
-$ mvn clean package
-``` -->
+Follow [Install](INSTALL.md) to build the JAR package, recall again:
 
 ```shell
-$ cd accessrefinery
-$ mvn clean package
+mvn clean package
 ```
 
 To run AccessRefinery, use:
 
 ```shell
-$ java -jar target/refinery-1.0-SNAPSHOT-jar-with-dependencies.jar [options]
+$ java -jar target/refinery-1.0.jar [options]
 ```
 
 **Command-line options:**
@@ -198,15 +196,39 @@ $ java -jar target/refinery-1.0-SNAPSHOT-jar-with-dependencies.jar [options]
 - `--round <number>` : Number of mining rounds (to reduce experimental bias).
 - `--merge` : The optimization of merging the output format of intents.
 
+AccessRefinery supports mining a batch of policies. For example:
+
 **Example:**
 ```shell
-$ java -jar target/refinery-1.0-SNAPSHOT-jar-with-dependencies.jar -m -r --round 10 -f data/Correctness
+$ java -jar target/refinery-1.0.jar -m -r --round 1 -f data/Correctness
 ```
 
-Results are generated in the `results/` directory. The output includes:
+The command produces logs similar to the following:
+
+```cmd
+[INFO] 2026-04-05 22:51:33 : ----------[ AccessRefinery Mode ]-------------
+[INFO] 2026-04-05 22:51:33 : logger path: /home/simple/workspace/accessrefinery-workspace/accessrefinery/accessrefinery.log
+[INFO] 2026-04-05 22:51:33 : input  path: data/Correctness
+[INFO] 2026-04-05 22:51:33 : output path: result/Correctness
+[INFO] 2026-04-05 22:51:33 : ----------< 1th policy - 11_allow_allow_equal.json >-----------
+[INFO] 2026-04-05 22:51:33 : [1/6]  finish parser policy
+[INFO] 2026-04-05 22:51:33 : [2/6]  finish ECs calculation
+[INFO] 2026-04-05 22:51:33 : [3/6]  finish label tree calculation
+[INFO] 2026-04-05 22:51:33 : [4/6]  finish findings mining : 1
+[INFO] 2026-04-05 22:51:33 : [5/6]  finish ECs calculation
+[INFO] 2026-04-05 22:51:33 : [6/6]  finish findings reduction : 1
+[INFO] 2026-04-05 22:51:33 : ----------< 2th policy - 12_allow_allow_overriding.json >-----------
+[INFO] 2026-04-05 22:51:33 : [1/6]  finish parser policy
+[INFO] 2026-04-05 22:51:33 : [2/6]  finish ECs calculation
+[INFO] 2026-04-05 22:51:33 : [3/6]  finish label tree calculation
+...
+```
+
+After processing all policies, results are generated in the `results/` directory. The output includes:
 - `xxx.json`: The generated intents for each policy.
 - `xxx.csv`: Statistics for multi-round SMT solving for each policy.
 - `summary.txt`: Summary statistics for all policies in a folder.
+
 
 ## Evaluation
 
