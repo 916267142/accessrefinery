@@ -32,6 +32,8 @@ For technical details and a full evaluation, refer to our FSE 2026 paper: [*Acce
 
 > Note: MCP is decoupled from **AccessRefinery**. It could be a separate project, but installation would be more complex. We therefore keep MCP and **AccessRefinery** as two separate Maven modules, allowing other researchers to reuse MCP flexibly.
 
+---
+
 ## Setup
 
 ### Prerequisites
@@ -64,6 +66,8 @@ For comparison, the repository also includes two AWS Access Analyzer artifacts:
 
 - `AccessAnalyzerCLI/` contains the scripts and instructions for running the AWS commercial Access Analyzer through the CLI.
 - `AccessAnalyzer/` contains our reproduced AWS Access Analyzer implementation and run instructions.
+
+---
 
 ## Using Multi-Theory Constraint Preprocessor (MCP)
 
@@ -171,6 +175,8 @@ public class Main {
 }
 ```
 
+---
+
 ## Using AccessRefinery
 
 AccessRefinery builds on MCP for IAM intent mining.
@@ -228,44 +234,25 @@ After processing all policies, results are generated in the `results/` directory
 - `xxx.json`: The generated intents for each policy.
 - `xxx.csv`: Statistics for multi-round SMT solving for each policy.
 - `summary.txt`: Summary statistics for all policies in a folder.
-
-
-## Evaluation
-
-<!-- Note: AWS AccessAnalyzer is accessed remotely, so only correctness experiments can be performed.
-Performance experiments require a consistent environment, so we have re-implemented a version of Access Analyzer. -->
-
-1. 功能性奖 说明可复现  
-2. 可用性奖 代码结构性很好，别人可以复用
-3. 公开性奖 代码挂到Zendo上面
-
-注意：
-1. 附上作者邮件，解释如何运行和安装
-2. MCP解耦，AccessRefinery和MCP都附上小例子，说明如何使用
- 
- 
-REQUIREMENTS 
-
-STATUS
-
-LICENSE Xijiaotong 
-
-INSATLL
+- `accessrefinery.log` : Record the runnning log.
 
 ---
 
-### Reproduction
+## Evaluation Reproduction
 
-All experimental results are archived in `/archive_result`. 
+All experimental results are archived in `/archive_result`.
+The following commands reproduce the AccessRefinery results.
+For reproduced Access Analyzer and AWS Access Analyzer results, see the sections below.
+We recommend skipping those comparison runs because we have already archived and organized the corresponding outputs.
 
 #### Results of AccessRefinery
 
-- `accessrefinery_bdd_miner_10rs`: Results of intent mining for 10 rounds using JavaBDD backend
-- `accessrefinery_sat_miner_10rs`: Results of intent mining for 10 rounds using MiniSAT backend
-- `accessrefinery_bdd_reducer_10rs`: Results of intent mining and reduction for 10 rounds using JavaBDD
-- `accessrefinery_sat_reducer_3rs`: Results of intent mining and reduction for 3 rounds using MiniSAT
+- `accessrefinery_bdd_miner_10rs`: Intent mining results for 10 rounds with the JavaBDD backend.
+- `accessrefinery_sat_miner_10rs`: Intent mining results for 10 rounds with the MiniSAT backend.
+- `accessrefinery_bdd_reducer_10rs`: Intent mining and reduction results for 10 rounds with JavaBDD.
+- `accessrefinery_sat_reducer_3rs`: Intent mining and reduction results for 3 rounds with MiniSAT.
 
-Scripts are provided to generate these results. Note that `accessrefinery_sat_reducer_3rs` runs very slowly.
+The following scripts generate these results. Note that `accessrefinery_sat_reducer_3rs` runs very slowly.
 
 ```bash
 $ sh tools/running_bdd_miner.sh
@@ -300,3 +287,26 @@ $ sh tools/running_batch_compare.sh
 ---
 
 Thank you for reading AccessRefinery!
+
+
+ 
+ 
+REQUIREMENTS 
+
+STATUS
+
+LICENSE Xijiaotong 
+
+INSATLL
+
+
+<!-- Note: AWS AccessAnalyzer is accessed remotely, so only correctness experiments can be performed.
+Performance experiments require a consistent environment, so we have re-implemented a version of Access Analyzer. -->
+
+1. 功能性奖 说明可复现  
+2. 可用性奖 代码结构性很好，别人可以复用
+3. 公开性奖 代码挂到Zendo上面
+
+注意：
+1. 附上作者邮件，解释如何运行和安装
+2. MCP解耦，AccessRefinery和MCP都附上小例子，说明如何使用
