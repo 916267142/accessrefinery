@@ -1,9 +1,9 @@
 package org.iam.model;
 
-import org.iam.core.MCPFactory;
-
 import java.util.HashMap;
 import java.util.HashSet;
+
+import org.mcp.core.MCPFactory;
 
 /**
  * DomainLabelTrees manages label trees for multiple domains.

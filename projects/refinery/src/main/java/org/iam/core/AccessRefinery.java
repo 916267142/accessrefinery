@@ -2,19 +2,22 @@ package org.iam.core;
 
 import net.sf.javabdd.BDD;
 
-import org.iam.core.MCPFactory.MCPType;
 import org.iam.policy.grammer.Policy;
 import org.iam.policy.model.MCPPolicy;
 import org.iam.intent.MCPIntent;
 import org.iam.intent.MergeIntent;
 import org.iam.utils.Parameter;
 import org.iam.utils.PolicyParser;
-import org.iam.utils.Printer;
 import org.iam.utils.ResultsAnalyzer;
 import org.iam.model.DomainLabelTrees;
 import org.iam.model.IntentOrPolicyLabel;
 import org.iam.utils.TimeMeasure;
-import org.iam.variables.statics.Label;
+import org.mcp.core.ECEngine;
+import org.mcp.core.MCPBitVector;
+import org.mcp.core.MCPFactory;
+import org.mcp.core.MCPFactory.MCPType;
+import org.mcp.utils.Printer;
+import org.mcp.variables.statics.Label;
 
 import java.io.IOException;
 import java.nio.file.Path;

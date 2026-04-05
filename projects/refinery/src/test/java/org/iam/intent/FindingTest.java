@@ -1,16 +1,15 @@
 package org.iam.intent;
 
-import org.iam.core.MCPFactory.MCPType;
 import org.iam.model.DomainLabelTrees;
 import org.iam.model.LabelTree;
 import org.iam.utils.Parameter;
-import org.iam.core.MCPLabels;
-import org.iam.core.MCPBitVector;
-import org.iam.core.MCPFactory;
-import org.iam.variables.statics.LabelType;
 import org.junit.Assert;
 import org.junit.Test;
-
+import org.mcp.core.MCPBitVector;
+import org.mcp.core.MCPFactory;
+import org.mcp.core.MCPLabels;
+import org.mcp.core.MCPFactory.MCPType;
+import org.mcp.variables.statics.LabelType;
 
 import java.util.Set;
 

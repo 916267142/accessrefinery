@@ -69,7 +69,7 @@ For comparison, the repository also includes two AWS Access Analyzer artifacts:
 
 MCP is a reusable module for multi-round SMT solving. It supports regular expressions, IP prefixes/bit-vectors, ranges, and sets. In this repository, MCP is already integrated into AccessRefinery, so you can use it directly without a separate installation.
 
-### Reuse In Another Project
+### Reuse in Another Project
 
 If you want to reuse MCP in another Maven project, first build and install the artifact locally:
 
@@ -77,8 +77,8 @@ If you want to reuse MCP in another Maven project, first build and install the a
 mvn clean package
 mvn install:install-file \
     -Dfile=target/refinery-1.0-SNAPSHOT-jar-with-dependencies.jar \
-    -DgroupId=org.iam \
-    -DartifactId=refinery \
+    -DgroupId=org.ants \
+    -DartifactId=accessrefinery \
     -Dversion=1.0-SNAPSHOT \
     -Dpackaging=jar \
     -DgeneratePom=true
@@ -89,24 +89,17 @@ Then add the dependency to your `pom.xml`:
 ```xml
 <dependencies>
     <dependency>
-        <groupId>org.iam</groupId>
-        <artifactId>mcp</artifactId>
+        <groupId>org.ants</groupId>
+        <artifactId>accessrefinery</artifactId>
         <version>1.0-SNAPSHOT</version>
     </dependency>
 </dependencies>
 ```
 
-Then import MCP in your project : 
+### Example
 
-```
-import org.iam.mcp.*;
-```
-
-### Example Policy
-
-The example below shows how to model resource and IP constraints in MCP, combine them with bit-vector operations, and check whether a policy covers a target intent. The JSON policy and the Java code describe the same two candidate intents: `dept*/user1.txt` with `112.0.0.0/24`, and `dept1/user*.txt` with `113.0.0.0/24`. The example is also included in [MCPFactoryTest.java](projects/mcp/src/test/java/org/iam/core/MCPFactoryTest.java) and runs automatically during `mvn package`.
-
-The policy below represents the two candidate intents used in the example.
+This example follows the running example in the paper (Line 375).
+Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resource`: `dept*/user1.txt`, `IpAddress`: `112.0.0.0/24`).
 
 ```json
 {
@@ -132,37 +125,44 @@ The policy below represents the two candidate intents used in the example.
     ]
 }
 ```
-
-### Example Code
-
-The corresponding MCP code is shown below.
+Suppose our goal is to check the satisfiability of three formulas: $\neg I_6 \land P$, $I_6 \land \neg P$, and $I_6 \land P$. The corresponding MCP code is shown below.
+The example is also included in [MCPFactoryTest.java](projects/mcp/src/test/java/org/mcp/core/MCPFactoryTest.java) and runs automatically during `mvn package`.
 
 ```java
-import org.iam.mcp.*;
+package com.example;
+import org.batfish.datamodel.Prefix;
+import org.junit.Assert;
+import org.mcp.core.MCPBitVector;
+import org.mcp.core.MCPFactory;
+import org.mcp.core.MCPFactory.MCPType;
+import org.mcp.variables.statics.LabelType;
 
-MCPFactory mcp = new MCPFactory(MCPType.BDD);
-mcp.addVar("Res", LabelType.REGEXP, "dept*/user1.txt");
-mcp.addVar("Res", LabelType.REGEXP, "dept1/user*.txt");
+public class Main {
+    public static void main(String[] args) {
+        MCPFactory mcp = new MCPFactory(MCPType.BDD);
+        mcp.addVar("Res", LabelType.REGEXP, "dept*/user1.txt");
+        mcp.addVar("Res", LabelType.REGEXP, "dept1/user*.txt");
+        mcp.addVar("IP", LabelType.PREFIX, Prefix.parse("112.0.0.0/24"));
+        mcp.addVar("IP", LabelType.PREFIX, Prefix.parse("113.0.0.0/24"));
+        mcp.updates();
 
-mcp.addVar("IP", LabelType.PREFIX, Prefix.parse("112.0.0.0/24"));
-mcp.addVar("IP", LabelType.PREFIX, Prefix.parse("113.0.0.0/24"));
+        MCPBitVector res1 = mcp.getVar("Res", "dept*/user1.txt");
+        MCPBitVector res2 = mcp.getVar("Res", "dept1/user*.txt");
+        MCPBitVector ip1 = mcp.getVar("IP", Prefix.parse("112.0.0.0/24"));
+        MCPBitVector ip2 = mcp.getVar("IP", Prefix.parse("113.0.0.0/24"));
+        MCPBitVector s1 = (res1.or(res2)).and(ip1.or(ip2));
+        MCPBitVector s2 = res1.not().and(ip1);
+        MCPBitVector s3 = res2.not().and(ip2);
+        MCPBitVector policy = s1.diff(s2).diff(s3);
+        MCPBitVector intent6 = res1.and(ip1);
 
-mcp.updates();
-
-MCPBitVector res1 = mcp.getVar("Res", "dept*/user1.txt");
-MCPBitVector res2 = mcp.getVar("Res", "dept1/user*.txt");
-MCPBitVector ip1 = mcp.getVar("IP", Prefix.parse("112.0.0.0/24"));
-MCPBitVector ip2 = mcp.getVar("IP", Prefix.parse("113.0.0.0/24"));
-MCPBitVector s1 = (res1.or(res2)).and(ip1.or(ip2));
-MCPBitVector s2 = res1.not().and(ip1);
-MCPBitVector s3 = res2.not().and(ip2);
-MCPBitVector policy = s1.diff(s2).diff(s3);
-MCPBitVector intent6 = res1.and(ip1);
-
-if (policy.and(intent6.not()).isZero()) {
-    // main logic for an empty result
-} else {
-    // main logic for a non-empty result
+        // ¬I6∧P is satisfiable.
+        Assert.assertTrue(!policy.and(intent6.not()).isZero());
+        // I6∧¬P is unsatisfiable.
+        Assert.assertTrue(policy.not().and(intent6).isZero());
+        // I6∧P is satisfiable.
+        Assert.assertTrue(!policy.and(intent6).isZero());
+    }
 }
 ```
 

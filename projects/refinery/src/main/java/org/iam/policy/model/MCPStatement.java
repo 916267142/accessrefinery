@@ -2,11 +2,11 @@ package org.iam.policy.model;
 
 import com.google.common.collect.ImmutableSet;
 
-import org.iam.core.MCPBitVector;
-import org.iam.core.MCPFactory;
 import org.iam.policy.grammer.Statement;
 import org.iam.utils.Parameter;
-import org.iam.variables.statics.LabelType;
+import org.mcp.core.MCPBitVector;
+import org.mcp.core.MCPFactory;
+import org.mcp.variables.statics.LabelType;
 
 import java.util.List;
 

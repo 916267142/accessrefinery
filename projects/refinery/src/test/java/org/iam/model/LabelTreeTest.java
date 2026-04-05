@@ -1,9 +1,9 @@
 package org.iam.model;
 
-import org.iam.core.MCPLabels;
-import org.iam.variables.statics.LabelType;
 import org.junit.Assert;
 import org.junit.Test;
+import org.mcp.core.MCPLabels;
+import org.mcp.variables.statics.LabelType;
 
 import java.util.HashMap;
 import java.util.HashSet;

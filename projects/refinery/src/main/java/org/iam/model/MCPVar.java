@@ -1,6 +1,6 @@
 package org.iam.model;
 
-import org.iam.core.MCPBitVector;
+import org.mcp.core.MCPBitVector;
 
 /**
  * Interface for objects that can be represented as symbolic variables using MCPBitVector.

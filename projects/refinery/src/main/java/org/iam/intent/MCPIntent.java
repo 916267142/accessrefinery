@@ -2,13 +2,13 @@ package org.iam.intent;
 
 import com.google.common.collect.ImmutableSet;
 
-import org.iam.core.MCPBitVector;
-import org.iam.core.MCPFactory;
-import org.iam.variables.statics.LabelType;
 import org.batfish.datamodel.Prefix;
 import org.iam.model.DomainLabelTrees;
 import org.iam.policy.model.MCPCondition;
 import org.iam.utils.Parameter;
+import org.mcp.core.MCPBitVector;
+import org.mcp.core.MCPFactory;
+import org.mcp.variables.statics.LabelType;
 
 import java.util.HashMap;
 import java.util.HashSet;

@@ -1,9 +1,9 @@
 package org.iam.policy.model;
 
-import org.iam.core.MCPBitVector;
-import org.iam.core.MCPFactory;
 import org.iam.policy.grammer.Policy;
 import org.iam.policy.grammer.Statement;
+import org.mcp.core.MCPBitVector;
+import org.mcp.core.MCPFactory;
 import org.iam.model.MCPVar;
 
 import java.util.HashSet;

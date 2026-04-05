@@ -2,10 +2,10 @@ package org.iam.model;
 
 import org.iam.intent.MCPIntent;
 import org.iam.policy.model.MCPPolicy;
-import org.iam.variables.dynamics.OperableLabel;
-import org.iam.variables.statics.Label;
-import org.iam.core.MCPBitVector;
-import org.iam.core.MCPOperableLabel;
+import org.mcp.core.MCPBitVector;
+import org.mcp.core.MCPOperableLabel;
+import org.mcp.variables.dynamics.OperableLabel;
+import org.mcp.variables.statics.Label;
 
 
 /**

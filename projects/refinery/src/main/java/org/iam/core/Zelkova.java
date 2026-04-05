@@ -4,8 +4,9 @@ import org.iam.policy.grammer.Policy;
 import org.iam.policy.model.MCPPolicy;
 import org.iam.utils.Parameter;
 import org.iam.utils.PolicyParser;
-import org.iam.utils.Printer;
 import org.iam.utils.TimeMeasure;
+import org.mcp.core.MCPFactory;
+import org.mcp.utils.Printer;
 
 import net.sf.javabdd.BDD;
 

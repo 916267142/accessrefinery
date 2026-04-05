@@ -1,16 +1,16 @@
 package org.iam.policy.grammer;
 
-import org.iam.core.MCPBitVector;
-import org.iam.core.MCPFactory;
-import org.iam.core.MCPFactory.MCPType;
 import org.iam.policy.model.MCPPolicy;
 import org.iam.utils.PolicyParser;
-import org.iam.variables.statics.LabelType;
 import org.junit.Assert;
 import org.junit.Test;
 // import org.iam.utils.Printer;
 // import org.batfish.datamodel.Prefix;
 // import com.google.common.collect.Range;
+import org.mcp.core.MCPBitVector;
+import org.mcp.core.MCPFactory;
+import org.mcp.core.MCPFactory.MCPType;
+import org.mcp.variables.statics.LabelType;
 
 import java.util.Set;
 
