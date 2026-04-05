@@ -44,10 +44,23 @@ OS name: "linux", version: "6.8.0-90-generic", arch: "amd64", family: "unix"
 sudo apt install openjdk-17-jdk
 ```
 
+Add Java to environment variables (recommended):
+
+```bash
+vi ~/.bashrc
+
+# Add the following lines into ~/.bashrc
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+
+# Apply changes
+source ~/.bashrc
+```
+
 Verify the Java compiler:
 
 ```bash
-javac -v
+javac -version
 ```
 
 Expected output:
@@ -56,12 +69,10 @@ Expected output:
 javac 17.0.17
 ```
 
-`apt` automatically configures Java-related environment settings.
-
 Verify Java runtime:
 
 ```bash
-java -v
+java -version
 ```
 
 Expected output:
