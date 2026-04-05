@@ -1,17 +1,19 @@
-## Hardware Environment
+## Hardware Requirements
 - **RAM:** ≥ 16 GB
 - **Storage:** ≥ 20 GB
 - **Performance:** No specific requirements
 
-## Software Environment
-- **Operating System:** Linux Ubuntu 22.04 LTS
+## Software Requirements
+- **Operating System:** Ubuntu 22.04 LTS (Linux)
 
-The following are the software dependencies required by the program, and we will provide complete installation instructions.
+The following software dependencies are required. Complete installation instructions are provided in the installation guide.
 
 - Java JDK 17
 - Maven 3.6.3
-- Shell jq 1.6
-- Shell bc 1.07.1
-- Shell awscli
-- SMT Solver Z3 4.14.1
-- SMT Solver CVC5 1.2.1
+- jq 1.6
+
+The following requirements are optional if you only plan to run AccessRefinery and not the comparison with Access Analyzer.
+- bc 1.07.1
+- AWS CLI (awscli)
+- SMT solver Z3 4.14.2
+- SMT solver CVC5 1.2.1

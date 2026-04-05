@@ -142,7 +142,7 @@ Expected output:
 ```
 
 ## Install and Compile Reproduced Access Analyzer
-
+ 
 ```bash
 cd accessanalyzer
 echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:'$(pwd)'/lib/z3-4.14.1/bin' >> ~/.bashrc
