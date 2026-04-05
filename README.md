@@ -245,8 +245,6 @@ The following commands reproduce the AccessRefinery results.
 For reproduced Access Analyzer and AWS Access Analyzer results, see the sections below.
 We recommend skipping those comparison runs because we have already archived and organized the corresponding outputs.
 
-#### Results of AccessRefinery
-
 - `accessrefinery_bdd_miner_10rs`: Intent mining results for 10 rounds with the JavaBDD backend.
 - `accessrefinery_sat_miner_10rs`: Intent mining results for 10 rounds with the MiniSAT backend.
 - `accessrefinery_bdd_reducer_10rs`: Intent mining and reduction results for 10 rounds with JavaBDD.
@@ -260,6 +258,39 @@ $ sh tools/running_sat_miner.sh
 $ sh tools/running_bdd_reducer.sh
 $ sh tools/running_sat_reducer.sh
 ```
+
+### Section 6.1 Correctness of MCP
+
+- **Basic Boolean operations**
+Basic Boolean operations are tested in [MCPTest.java](projects/mcp/src/test/java/org/mcp/core/MCPTest.java). These tests run automatically during `mvn package`.
+
+- **Consistency in the number of intents.**
+
+ `compare_result`: Results of comparison
+
+The following instructions can be used to reproduce the results:
+
+```bash
+$ # JSON library required by the comparison script (jq 1.6)
+$ sudo apt install jq 
+$ sh tools/running_batch_compare.sh
+```
+
+See `archive_result/compare_result`. Use the `NumberMCI` column in `summary.txt` to plot Figure 9 in the paper.
+
+### Section 6.2 Can AccessRefinery Reduce Intents?
+
+Run:
+```
+$ sh tools/running_bdd_reducer.sh
+```
+
+This produces output in `accessrefinery_bdd_reducer_10rs/`.
+
+In `summary.txt`, `NumberMCI` represents the number of intents before reduction, and `NumberRRI` represents the number after reduction. Use these values to plot Figure 10 in the paper.
+
+> The real-world dataset in the paper cannot be open-sourced for commercial reasons.
+
 
 #### Results of AWS AccessAnalyzer via CLI
 
