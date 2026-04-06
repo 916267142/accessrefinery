@@ -7,7 +7,7 @@
     <img src="logo.png" width="30%">
 </div> -->
 
-<img src="tools/logo2.png?raw=True" align="right" width="30%"/>
+<img src="tools/logo2.png?raw=True" align="right" width="20%"/>
 
 # AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud
 
