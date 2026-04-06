@@ -16,9 +16,9 @@ by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](htt
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Paper](https://img.shields.io/badge/paper-FSE2026-orange)
 
-> Ning Kang, Peng Zhang, Jianyuan Zhang, Hao Li, Dan Wang, Zhenrong Gu, Weibo Lin, 
+<!-- > Ning Kang, Peng Zhang, Jianyuan Zhang, Hao Li, Dan Wang, Zhenrong Gu, Weibo Lin, 
 > Shibiao Jiang, Zhu He, Xu Du, Longfei Chen, Jun Li, and Xiaohong Guan
-> "AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud", ACM FSE 2026
+> "AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud", ACM FSE 2026 -->
 
 ## About AccessRefinery
 
