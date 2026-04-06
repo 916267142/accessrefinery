@@ -267,7 +267,9 @@ The following folders will be generated under `result/`. The difference between 
 
 After generating the experimental results, we explain how to reproduce the figures，tables and conclusions reported in the paper.
 
-#### 6.1.2 Correctness of AccessRefinery
+#### 6.1 Is the re-implementation of Access Analyzer valid, and is AccessRefinery correct?
+
+##### 6.1.2 Correctness of AccessRefinery
 
 - **Correctness of MCP**
 Basic Boolean operations are tested in [MCPTest.java](projects/mcp/src/test/java/org/mcp/core/MCPTest.java). These tests run automatically during `mvn package`.
@@ -286,46 +288,45 @@ Then use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/su
 - **Correctness of Intent Reducer**
 Run `sh tools/running_bdd_reducer.sh`, then compare the values in `accessrefinery_bdd_reducer_10rs/Correctness/summary.txt`: `NumberMCI` is the number of intents before reduction, and `NumberRRI` is the number after reduction.
 
-### Section 6.2 Can AccessRefinery reduce the number of intents?
+#### Section 6.2 Can AccessRefinery reduce the number of intents?
 
-Required logs:
+**Target**: Figure 10 in the paper.
+
+**Required logs**:
 - `accessrefinery_bdd_reducer_10rs/`
     - `Scalability_05Keys/summary.txt`
     - `Scalability_06Keys/summary.txt`
 
 The `NumberMCI` column represents the number of intents before reduction, and the `NumberRRI` column represents the number after reduction.
 
-Corresponding figure:
-Figure 10 in the paper.
-
 > The real-world results in the paper cannot be open-sourced for commercial reasons.
 
-### Section 6.3 Can AccessRefinery speedup intent mining and reduction by using MCP?
+#### Section 6.3 Can AccessRefinery speedup intent mining and reduction by using MCP?
 
-Required logs:
+**Target**: Figure 13 in the paper.
+
+**Required logs**:
 - `accessrefinery_bdd_miner_10rs/`
     - `Scalability_05Keys/summary.txt`
     - `Scalability_06Keys/summary.txt`
 
 The `TotalTimeAverage` column represents the average runtime over 10 rounds.
 
-Corresponding figure:
-Figure 13 in the paper.
+#### Section 6.4 How does AccessRefinery performon real-world datasets?
 
-### Section 6.4 How does AccessRefinery performon real-world datasets?
+**Target**: Real-world evaluation discussed in the paper.
 
-Required logs:
+**Required logs**:
 - Not released in this artifact.
 
-Reason:
 These logs are omitted for commercial reasons.
 
-Corresponding part:
-Real-world evaluation discussed in the paper.
+#### Section 6.5 Is SAT or BDD better for intent mining and reduction?
 
-### Section 6.5 Is SAT or BDD better for intent mining and reduction?
+**Target (Intent Mining)**:
+"For intent mining, using JavaBDD is 1-6x faster than using MiniSAT (for clarity, the figure is omitted)."
 
-Required logs:
+**Required logs (Intent Mining)**:
 - `accessrefinery_bdd_miner_10rs/`
     - `Scalability_05Keys/summary.txt`
     - `Scalability_06Keys/summary.txt`
@@ -335,10 +336,9 @@ Required logs:
 
 The `TotalTimeAverage` column represents the average runtime over 10 rounds.
 
-Corresponding statement:
-"For intent mining, using JavaBDD is 1-6x faster than using MiniSAT (for clarity, the figure is omitted)."
+**Target (Intent Reduction)**: Figure 13 in the paper.
 
-Required logs:
+**Required logs (Intent Reduction)**:
 - `accessrefinery_bdd_reducer_10rs/`
     - `Scalability_05Keys/summary.txt`
     - `Scalability_06Keys/summary.txt`
@@ -348,12 +348,11 @@ Required logs:
 
 For a fair comparison, compare average runtime per round using `TotalTimeAverage / rounds` (BDD: 10 rounds, SAT: 3 rounds).
 
-Corresponding figure:
-Figure 13 in the paper.
+#### Section 6.6 How does AccessRefinery accelerate single-round solving in multi-round SMT solving compared to SMT solvers?
 
-### Section 6.6 How does AccessRefinery accelerate single-round solving in multi-round SMT solving compared to SMT solvers?
+**Target**: Table 2 in the paper.
 
-Required logs:
+**Required logs**:
 
 - `accessrefinery_bdd_miner_10rs/`
     - `Scalability_05Keys/`
@@ -362,10 +361,7 @@ Required logs:
 `MCILabelsTimeAverage` is the average MCP preprocessing time.
 `NumberRRI` is the number of reduced intents.
 
-Corresponding table:
-Table 2 in the paper.
-
-### Drawing the figures in the paper
+#### Drawing the figures in the paper
 
 The following commands install `gnuplot` and generate all figures used in the experiments.
 The generated figures are saved in `paper_figures/results/`.
