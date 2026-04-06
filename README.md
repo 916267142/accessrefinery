@@ -7,10 +7,7 @@
     <img src="logo.png" width="30%">
 </div> -->
 
-<h1>
-    <img src="tools/logo.png" align="right" width="28%"/>
-    AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud
-</h1>
+# AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud
 
 by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](https://xjtu-netverify.github.io/people/pzhang/) and [Jianyuan Zhang](https://xjtu-netverify.github.io/people/jyzhang/) at [ANTS lab](https://xjtu-netverify.github.io/).
 
@@ -25,55 +22,47 @@ by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](htt
 
 ## About AccessRefinery
 
-**AccessRefinery** automatically mines access control intents from IAM (Identity and Access Management) policies. These intents help users verify the correctness and security of their policies. Compared with the [commercial system](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-concepts.html) in [AWS Access Analyzer](https://link.springer.com/content/pdf/10.1007/978-3-030-53288-8_9.pdf), AccessRefinery speeds up mining by ~10–100× and reduces the number of intents by up to ~10×.
+**AccessRefinery** automatically mines access control intents from IAM (Identity and Access Management) policies. These intents help users verify policy correctness. Compared with [AWS Access Analyzer](https://link.springer.com/content/pdf/10.1007/978-3-030-53288-8_9.pdf) and its [commercial deployment](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-concepts.html), AccessRefinery accelerates mining by ~10-100x and reduces the number of intents by up to ~10x.
 
-The key idea behind **AccessRefinery** for accelerating intent mining is to reduce redundancy in multi-round SMT solving by preprocessing constraints into bit-vector constraints using our Multi-Theory Constraint Preprocessor (MCP).  
+The key idea of **AccessRefinery** for accelerating multi-round SMT solving is to reduce redundancy by preprocessing constraints into bit-vector constraints using our Multi-Theory Constraint Preprocessor (MCP).  
 For intent reduction, **AccessRefinery** computes a compact set that covers all mined intents by solving a minimum set-cover problem.
+Moreover, we design MCP as a separate module from **AccessRefinery**, allowing other researchers to reuse MCP flexibly.
 
-For technical details and a full evaluation, refer to our FSE 2026 paper: [*AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud*](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf).
+For technical details, see our FSE 2026 paper: [*AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud*](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf).
 
-> Note: MCP is decoupled from **AccessRefinery**. It could be a separate project, but installation would be more complex. We therefore keep MCP and **AccessRefinery** as two separate Maven modules, allowing other researchers to reuse MCP flexibly.
-
----
-
-## Setup
-
-### Prerequisites
-
-Ubuntu 22.04.5 is recommended. See [Requirement](REQUIREMENTS.md) for details.
-
-### Install and Compile
-
-After setting up Linux, follow [Install](INSTALL.md) to install the environment, and compile **AccessRefinery** and our reproduced **Access Analyzer** (baseline).
+<!-- 
+After setting up Linux, follow [Install](INSTALL.md) to install the environment, and compile **AccessRefinery** and our reproduced **Access Analyzer** (baseline). -->
 
 ## Structure
 
-This repository is the artifact accompanying the AccessRefinery paper. It includes the implementation, experimental datasets, reproduction scripts, archived results, and the comparison baselines used in the evaluation.
+This repository includes the implementation of AccessRefinery, along with datasets, reproduction scripts, and archived results.
 
 - `projects/` contains the source code of **AccessRefinery**.
     - `bdd/` implements the binary decision diagram backend used by MCP.
-    - `mcp/` implements the Multi-Theory Constraint Preprocessor.
+    - `mcp/` implements the Multi-Theory Constraint Preprocessor (MCP).
     - `refinery/` implements intent mining and reduction.
-- `data/` contains the datasets used in the experiments.
+- `data/` contains the datasets.
     - `Correctness/` contains the synthetic dataset for correctness experiments.
     - `Scalability_05Keys/` and `Scalability_06Keys/` contain the synthetic datasets for scalability experiments.
 - `tools/` contains scripts for running the experiments.
 - `pom.xml` is the Maven root configuration.
-- `paper_figures/` contains the source used to generate the figures in the paper.
+- `paper_figures/` contains scripts for generating the figures in the paper.
 - `archive_results/` contains archived experimental results.
-
-After compilation, the `target/` directory will contain `refinery-1.0.jar` (for intent mining) and `mcp-1.0.jar` (which can be reused in other projects to support multi-round SMT solving).
 
 For comparison, the repository also includes two AWS Access Analyzer artifacts:
 
-- `AccessAnalyzerCLI/` contains the scripts and instructions for running the AWS commercial Access Analyzer through the CLI.
-- `AccessAnalyzer/` contains our reproduced AWS Access Analyzer implementation and run instructions.
+- `AccessAnalyzerCLI/` contains scripts for running the AWS commercial Access Analyzer via the CLI API, along with run instructions.
+- `AccessAnalyzer/` contains our re-implementation of Access Analyzer and run instructions.
 
----
+## Setup
+
+See [Requirements](REQUIREMENTS.md) and [Installation](INSATLL.md) for setup details, including our **re-implementation of Access Analyzer**.
+
+After compilation, the `target/` directory will contain `refinery-1.0.jar` (for intent mining and reduction) and `mcp-1.0.jar` (which can be reused in other projects for fast multi-round SMT solving).
 
 ## Using Multi-Theory Constraint Preprocessor (MCP)
 
-MCP is a data structure for multi-round SMT solving. It supports regular expressions, IP prefixes/bit-vectors, ranges, and sets. In this repository, MCP is already integrated into AccessRefinery, so you can use it directly without a separate installation.
+MCP is a data structure for fast multi-round SMT solving. It supports regular expressions, IP prefixes/bit-vectors, ranges, and sets. In this repository, MCP is already integrated into AccessRefinery, so you can use it directly without a separate installation.
 
 ### Reuse in Another Project
 
@@ -117,7 +106,16 @@ Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resou
     "Statement": [
         {
             "Effect": "Allow",
-            "Resource": "dept*/user1.txt",
+            "Resource": ["dept*/user1.txt", "dept1/user*.txt"]
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": ["112.0.0.0/24", "113.0.0.0/24"]
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "NotResource": "dept1/user*.txt",
             "Condition": {
                 "IpAddress": {
                     "aws:SourceIp": "112.0.0.0/24"
@@ -125,11 +123,11 @@ Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resou
             }
         },
         {
-            "Effect": "Allow",
-            "Resource": "dept1/user*.txt",
+            "Effect": "Deny",
+            "NotResource": "dept*/user1.txt",
             "Condition": {
                 "IpAddress": {
-                    "aws:SourceIp": "113.0.0.0/24"
+                    "aws:SourceIp" : "113.0.0.0/24"
                 }
             }
         }
