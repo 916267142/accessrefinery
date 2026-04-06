@@ -256,6 +256,8 @@ The following folders will be generated under `result/`. The difference between 
 
 After generating the experimental results, we explain how to reproduce the figures，tables and conclusions reported in the paper.
 
+---
+
 #### 6.1 Is the re-implementation of Access Analyzer valid, and is AccessRefinery correct?
 
 ##### 6.1.2 Correctness of AccessRefinery
@@ -277,6 +279,8 @@ Then use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/su
 - **Correctness of Intent Reducer**
 Run `sh tools/running_bdd_reducer.sh`, then compare the values in `accessrefinery_bdd_reducer_10rs/Correctness/summary.txt`: `NumberMCI` is the number of intents before reduction, and `NumberRRI` is the number after reduction.
 
+---
+
 #### Section 6.2 Can AccessRefinery reduce the number of intents?
 
 **Target**: Figure 10 in the paper.
@@ -294,6 +298,8 @@ The `NumberMCI` column represents the number of intents before reduction, and th
 
 > Note: The real-world results in the paper cannot be open-sourced for commercial reasons.
 
+---
+
 #### Section 6.3 Can AccessRefinery speedup intent mining and reduction by using MCP?
 
 **Target**: Figure 13 in the paper.
@@ -305,6 +311,8 @@ The `NumberMCI` column represents the number of intents before reduction, and th
 
 The `TotalTimeAverage` column represents the average runtime over 10 rounds.
 
+---
+
 #### Section 6.4 How does AccessRefinery performon real-world datasets?
 
 **Target**: Real-world evaluation discussed in the paper.
@@ -313,6 +321,8 @@ The `TotalTimeAverage` column represents the average runtime over 10 rounds.
 - Not released in this artifact.
 
 These logs are omitted for commercial reasons.
+
+---
 
 #### Section 6.5 Is SAT or BDD better for intent mining and reduction?
 
@@ -341,6 +351,8 @@ The `TotalTimeAverage` column represents the average runtime over 10 rounds.
 
 For a fair comparison, compare average runtime per round using `TotalTimeAverage / rounds` (BDD: 10 rounds, SAT: 3 rounds).
 
+---
+
 #### Section 6.6 How does AccessRefinery accelerate single-round solving in multi-round SMT solving compared to SMT solvers?
 
 **Target**: Table 2 in the paper.
@@ -353,6 +365,8 @@ For a fair comparison, compare average runtime per round using `TotalTimeAverage
 
 `MCILabelsTimeAverage` is the average MCP preprocessing time.
 `NumberRRI` is the number of reduced intents.
+
+---
 
 #### Drawing the figures in the paper
 
