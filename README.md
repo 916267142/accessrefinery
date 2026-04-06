@@ -35,24 +35,25 @@ After setting up Linux, follow [Install](INSTALL.md) to install the environment,
 
 ## Structure
 
-This repository includes the implementation of AccessRefinery, along with datasets, reproduction scripts, and archived results.
+This repository includes the implementation of **AccessRefinery**, along with datasets, reproduction scripts, and archived results.
 
-- `projects/` contains the source code of **AccessRefinery**.
-    - `bdd/` implements the binary decision diagram backend used by MCP.
-    - `mcp/` implements the Multi-Theory Constraint Preprocessor (MCP).
-    - `refinery/` implements intent mining and reduction.
-- `data/` contains the datasets.
-    - `Correctness/` contains the synthetic dataset for correctness experiments.
-    - `Scalability_05Keys/` and `Scalability_06Keys/` contain the synthetic datasets for scalability experiments.
-- `tools/` contains scripts for running the experiments.
-- `pom.xml` is the Maven root configuration.
-- `paper_figures/` contains scripts for generating the figures in the paper.
-- `archive_results/` contains archived experimental results.
+- `projects/`: Implementation of **AccessRefinery**.
+    - `bdd/`: Implementation of the binary decision diagram backend used by MCP.
+    - `mcp/`: Implementation of the Multi-Theory Constraint Preprocessor (MCP).
+    - `refinery/`: Implementation of intent mining and reduction.
+- `data/`:
+    - `Correctness/`: Dataset for correctness experiments.
+    - `Scalability_05Keys/`: Synthetic dataset for scalability experiments.
+    - `Scalability_06Keys/`: Synthetic dataset for scalability experiments.
+- `tools/`: Scripts for running the experiments.
+- `pom.xml`: Maven root configuration.
+- `paper_figures/`: Scripts for generating the figures in the paper.
+- `archive_results/`: Archived experimental results.
 
 For comparison, the repository also includes two AWS Access Analyzer artifacts:
 
-- `AccessAnalyzerCLI/` contains scripts for running the AWS commercial Access Analyzer via the CLI API, along with run instructions.
-- `AccessAnalyzer/` contains our re-implementation of Access Analyzer and run instructions.
+- `AccessAnalyzerCLI/`: Scripts for running AWS Access Analyzer via the CLI API, along with run instructions.
+- `AccessAnalyzer/`: Our re-implementation of Access Analyzer and run instructions.
 
 ## Setup
 
@@ -62,11 +63,11 @@ After compilation, the `target/` directory will contain `refinery-1.0.jar` (for 
 
 ## Using Multi-Theory Constraint Preprocessor (MCP)
 
-MCP is a data structure for fast multi-round SMT solving. It supports regular expressions, IP prefixes/bit-vectors, ranges, and sets. In this repository, MCP is already integrated into AccessRefinery, so you can use it directly without a separate installation.
+MCP is a data structure for fast multi-round SMT solving. It supports regular expressions, IP prefixes/bit-vectors, ranges, and sets. In this repository, MCP is already integrated into **AccessRefinery**, so you can use it directly without a separate installation.
 
 ### Reuse in Another Project
 
-Follow [Install](INSTALL.md) to generate the JAR package. As a reminder:
+Follow [Install](INSTALL.md) to generate the JAR package. Recall that:
 
 ```shell
 mvn clean package
@@ -214,14 +215,6 @@ The command produces logs similar to the following:
 [INFO] 2026-04-05 22:51:33 : ----------< 1th policy - 11_allow_allow_equal.json >-----------
 [INFO] 2026-04-05 22:51:33 : [1/6]  finish parser policy
 [INFO] 2026-04-05 22:51:33 : [2/6]  finish ECs calculation
-[INFO] 2026-04-05 22:51:33 : [3/6]  finish label tree calculation
-[INFO] 2026-04-05 22:51:33 : [4/6]  finish findings mining : 1
-[INFO] 2026-04-05 22:51:33 : [5/6]  finish ECs calculation
-[INFO] 2026-04-05 22:51:33 : [6/6]  finish findings reduction : 1
-[INFO] 2026-04-05 22:51:33 : ----------< 2th policy - 12_allow_allow_overriding.json >-----------
-[INFO] 2026-04-05 22:51:33 : [1/6]  finish parser policy
-[INFO] 2026-04-05 22:51:33 : [2/6]  finish ECs calculation
-[INFO] 2026-04-05 22:51:33 : [3/6]  finish label tree calculation
 ...
 ```
 
@@ -254,10 +247,10 @@ $ sh tools/running_sat_reducer.sh
 
 The following folders will be generated under `result/`. The difference between `bbd_` and `sat_` is the backend used to represent bit-vectors. The suffix `10rs` means the experiment is run for 10 rounds and the average is reported. Because `accessrefinery_sat_reducer_3rs` runs very slowly, we report results for only three rounds.
 
-- `accessrefinery_bdd_miner_10rs`: Intent mining results for 10 rounds with JavaBDD.
-- `accessrefinery_sat_miner_10rs`: Intent mining results for 10 rounds with MiniSAT.
-- `accessrefinery_bdd_reducer_10rs`: Intent mining and reduction results for 10 rounds with JavaBDD.
-- `accessrefinery_sat_reducer_3rs`: Intent mining and reduction results for 3 rounds with MiniSAT.
+- `accessrefinery_bdd_miner_10rs/`: Intent mining results for 10 rounds with JavaBDD.
+- `accessrefinery_sat_miner_10rs/`: Intent mining results for 10 rounds with MiniSAT.
+- `accessrefinery_bdd_reducer_10rs/`: Intent mining and reduction results for 10 rounds with JavaBDD.
+- `accessrefinery_sat_reducer_3rs/`: Intent mining and reduction results for 3 rounds with MiniSAT.
 
 ### Correspondence to Paper Sections
 
@@ -288,6 +281,8 @@ Run `sh tools/running_bdd_reducer.sh`, then compare the values in `accessrefiner
 
 **Target**: Figure 10 in the paper.
 
+![Figure 10](tools/Experiment-Effectiveness-ThreeGraph.png)
+
 **Required logs**:
 - `accessrefinery_bdd_reducer_10rs/`
     - `Scalability_05Keys/summary.txt`
@@ -295,7 +290,7 @@ Run `sh tools/running_bdd_reducer.sh`, then compare the values in `accessrefiner
 
 The `NumberMCI` column represents the number of intents before reduction, and the `NumberRRI` column represents the number after reduction.
 
-> The real-world results in the paper cannot be open-sourced for commercial reasons.
+> Note: The real-world results in the paper cannot be open-sourced for commercial reasons.
 
 #### Section 6.3 Can AccessRefinery speedup intent mining and reduction by using MCP?
 
