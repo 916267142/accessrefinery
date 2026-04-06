@@ -200,7 +200,7 @@ $ java -jar target/refinery-1.0.jar [options]
 - `-f, --file <path>` : Input path for policy files (must be under `data/`).
 - `-s, --sat` : Use SAT as the solving core (default is BDD).
 - `--round <number>` : Number of mining rounds (to reduce experimental bias).
-- `--merge` : The optimization of merging the output format of intents.
+<!-- - `--merge` : The optimization of merging the output format of intents. -->
 
 AccessRefinery supports mining a batch of policies. For example:
 
@@ -240,18 +240,17 @@ After processing all policies, results are generated in the `results/` directory
 
 ## Evaluation Reproduction
 
-All experimental results are archived in `/archive_result`.
-The following commands reproduce the AccessRefinery results.
-For reproduced Access Analyzer and AWS Access Analyzer results, see the sections below.
-We recommend skipping those comparison runs because we have already archived and organized the corresponding outputs.
+This section explains how to reproduce the AccessRefinery results reported in the paper figures.
+For other results, see [Reproduced Access Analyzer]() and [CLI-based Access Analyzer]().
 
-- `accessrefinery_bdd_miner_10rs`: Intent mining results for 10 rounds with the JavaBDD backend.
-- `accessrefinery_sat_miner_10rs`: Intent mining results for 10 rounds with the MiniSAT backend.
-- `accessrefinery_bdd_reducer_10rs`: Intent mining and reduction results for 10 rounds with JavaBDD.
-- `accessrefinery_sat_reducer_3rs`: Intent mining and reduction results for 3 rounds with MiniSAT.
+If you do not want to run the full comparison workflow, you can still verify correctness, since all experimental results are archived in `/archive_result`.
 
-The following scripts generate these results. Note that `accessrefinery_sat_reducer_3rs` runs very slowly.
+> It is strongly recommended to skip AWS CLI reproduction, because the environment setup is complex (AWS account registration, billing setup, and CLI credential configuration).
 
+### Running AccessRefinery
+
+The following scripts reproduce the AccessRefinery results.
+These scripts automatically invoke `target/refinery-1.0.jar`.
 ```bash
 $ sh tools/running_bdd_miner.sh
 $ sh tools/running_sat_miner.sh
@@ -259,16 +258,24 @@ $ sh tools/running_bdd_reducer.sh
 $ sh tools/running_sat_reducer.sh
 ```
 
-### Section 6.1 Correctness of MCP
+The following folders will be generated under `result/`.
 
-- **Basic Boolean operations**
+> Note: `accessrefinery_sat_reducer_3rs` runs very slowly, so we report results for only three rounds.
+
+- `accessrefinery_bdd_miner_10rs`: Intent mining results for 10 rounds with the JavaBDD backend.
+- `accessrefinery_sat_miner_10rs`: Intent mining results for 10 rounds with the MiniSAT backend.
+- `accessrefinery_bdd_reducer_10rs`: Intent mining and reduction results for 10 rounds with JavaBDD.
+- `accessrefinery_sat_reducer_3rs`: Intent mining and reduction results for 3 rounds with MiniSAT.
+
+### Correspondence to Paper Sections
+
+#### 6.1.2 Correctness of AccessRefinery
+
+- **Correctness of MCP**
 Basic Boolean operations are tested in [MCPTest.java](projects/mcp/src/test/java/org/mcp/core/MCPTest.java). These tests run automatically during `mvn package`.
 
-- **Consistency in the number of intents.**
-
- `compare_result`: Results of comparison
-
-The following instructions can be used to reproduce the results:
+- **Correctness of Intent Miner**
+The following commands check whether the intents mined by AccessRefinery are consistent with those from AWS Access Analyzer (via CLI). Logs are generated in `compare_result/`:
 
 ```bash
 $ # JSON library required by the comparison script (jq 1.6)
@@ -276,68 +283,111 @@ $ sudo apt install jq
 $ sh tools/running_batch_compare.sh
 ```
 
-See `archive_result/compare_result`. Use the `NumberMCI` column in `summary.txt` to plot Figure 9 in the paper.
+Then use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary.txt` to plot Figure 9 of the paper.
 
-### Section 6.2 Can AccessRefinery Reduce Intents?
+- **Correctness of Intent Reducer**
+Run `sh tools/running_bdd_reducer.sh`, then compare the values in `accessrefinery_bdd_reducer_10rs/Correctness/summary.txt`: `NumberMCI` is the number of intents before reduction, and `NumberRRI` is the number after reduction.
 
-Run:
-```
-$ sh tools/running_bdd_reducer.sh
-```
+### Section 6.2 Can AccessRefinery reduce the number of intents?
 
-This produces output in `accessrefinery_bdd_reducer_10rs/`.
+Required logs:
+- `accessrefinery_bdd_reducer_10rs/`
+    - `Scalability_05Keys/summary.txt`
+    - `Scalability_06Keys/summary.txt`
 
-In `summary.txt`, `NumberMCI` represents the number of intents before reduction, and `NumberRRI` represents the number after reduction. Use these values to plot Figure 10 in the paper.
+The `NumberMCI` column represents the number of intents before reduction, and the `NumberRRI` column represents the number after reduction.
 
-> The real-world dataset in the paper cannot be open-sourced for commercial reasons.
+Corresponding figure:
+Figure 10 in the paper.
+
+> The real-world results in the paper cannot be open-sourced for commercial reasons.
+
+### Section 6.3 Can AccessRefinery speedup intent mining and reduction by using MCP?
+
+Required logs:
+- `accessrefinery_bdd_miner_10rs/`
+    - `Scalability_05Keys/summary.txt`
+    - `Scalability_06Keys/summary.txt`
+
+The `TotalTimeAverage` column represents the average runtime over 10 rounds.
+
+Corresponding figure:
+Figure 13 in the paper.
+
+### Section 6.4 How does AccessRefinery performon real-world datasets?
+
+Required logs:
+- Not released in this artifact.
+
+Reason:
+These logs are omitted for commercial reasons.
+
+Corresponding part:
+Real-world evaluation discussed in the paper.
+
+### Section 6.5 Is SAT or BDD better for intent mining and reduction?
+
+Required logs:
+- `accessrefinery_bdd_miner_10rs/`
+    - `Scalability_05Keys/summary.txt`
+    - `Scalability_06Keys/summary.txt`
+- `accessrefinery_sat_miner_10rs/`
+    - `Scalability_05Keys/summary.txt`
+    - `Scalability_06Keys/summary.txt`
+
+The `TotalTimeAverage` column represents the average runtime over 10 rounds.
+
+Corresponding statement:
+"For intent mining, using JavaBDD is 1-6x faster than using MiniSAT (for clarity, the figure is omitted)."
+
+Required logs:
+- `accessrefinery_bdd_reducer_10rs/`
+    - `Scalability_05Keys/summary.txt`
+    - `Scalability_06Keys/summary.txt`
+- `accessrefinery_sat_reducer_3rs/`
+    - `Scalability_05Keys/summary.txt`
+    - `Scalability_06Keys/summary.txt`
+
+For a fair comparison, compare average runtime per round using `TotalTimeAverage / rounds` (BDD: 10 rounds, SAT: 3 rounds).
+
+Corresponding figure:
+Figure 13 in the paper.
+
+### Section 6.6 How does AccessRefinery accelerate single-round solving in multi-round SMT solving compared to SMT solvers?
+
+Required logs:
+
+- `accessrefinery_bdd_miner_10rs/`
+    - `Scalability_05Keys/`
+    - `Scalability_06Keys/`
+
+`MCILabelsTimeAverage` is the average MCP preprocessing time.
+`NumberRRI` is the number of reduced intents.
+
+Corresponding table:
+Table 2 in the paper.
+
+## Developer
+
+For questions about installation and running, please contact Ning Kang at 916267142@qq.com.
 
 
-#### Results of AWS AccessAnalyzer via CLI
+<!-- #### Results of AWS AccessAnalyzer via CLI
 
 - `/accessanalyzer_web`: Results of intent mining using AWS AccessAnalyzer via CLI
 
-Note: AWS AccessAnalyzer is accessed remotely, so only correctness experiments can be performed, not performance experiments.
+Note: AWS Access Analyzer is accessed remotely, so only correctness experiments can be performed, not performance experiments.
 
-The following instructions can be used to reproduce the results (it is strongly recommended to skip this step, as AWS CLI environment configuration is extremely complicated):
-- [Running AWS Access Analyzer via CLI](tools/AccessAnalyzer.md)
+The following instructions can be used to reproduce the results (it is strongly recommended to skip this step, as AWS CLI environment configuration is complex):
+- [Running AWS Access Analyzer via CLI](tools/AccessAnalyzer.md) -->
 
-#### Results of Comparing AccessRefinery with AWS AccessAnalyzer
-
-- `compare_result`: Results of comparison
-
-The following instructions can be used to reproduce the results:
-
-```bash
-$ # JSON library required by the comparison script, the verson of jq is 1.6
-$ sudo apt install jq 
-$ sh tools/running_batch_compare.sh
-```
 
 <!-- Note: The result for `Scalability_05Keys/12_allow_result.json` may differ because AWS Access Analyzer may time out (the result will be marked with `"error": "INTERNAL_ERROR"` by Access Analyzer). This is normal. -->
 
----
-
-Thank you for reading AccessRefinery!
-
-
- 
- 
-REQUIREMENTS 
-
-STATUS
-
-LICENSE Xijiaotong 
-
-INSATLL
-
-
-<!-- Note: AWS AccessAnalyzer is accessed remotely, so only correctness experiments can be performed.
-Performance experiments require a consistent environment, so we have re-implemented a version of Access Analyzer. -->
-
-1. 功能性奖 说明可复现  
+<!-- 1. 功能性奖 说明可复现  
 2. 可用性奖 代码结构性很好，别人可以复用
 3. 公开性奖 代码挂到Zendo上面
 
 注意：
 1. 附上作者邮件，解释如何运行和安装
-2. MCP解耦，AccessRefinery和MCP都附上小例子，说明如何使用
+2. MCP解耦，AccessRefinery和MCP都附上小例子，说明如何使用 -->
