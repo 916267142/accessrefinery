@@ -7,16 +7,10 @@
     <img src="logo.png" width="30%">
 </div> -->
 
-<table>
-    <tr>
-        <td>
-            <h1>AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud</h1>
-        </td>
-        <td align="right" valign="top" width="22%">
-            <img src="tools/logo2.png?raw=True" width="100%"/>
-        </td>
-    </tr>
-</table>
+<h1>
+    <img src="tools/logo3.png" align="right" width="28%"/>
+    AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud
+</h1>
 
 by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](https://xjtu-netverify.github.io/people/pzhang/) and [Jianyuan Zhang](https://xjtu-netverify.github.io/people/jyzhang/) at [ANTS lab](https://xjtu-netverify.github.io/).
 
