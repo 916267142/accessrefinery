@@ -213,7 +213,6 @@ The command produces logs similar to the following:
 
 ```cmd
 [INFO] 2026-04-05 22:51:33 : ----------[ AccessRefinery Mode ]-------------
-[INFO] 2026-04-05 22:51:33 : logger path: /home/simple/workspace/accessrefinery-workspace/accessrefinery/accessrefinery.log
 [INFO] 2026-04-05 22:51:33 : input  path: data/Correctness
 [INFO] 2026-04-05 22:51:33 : output path: result/Correctness
 [INFO] 2026-04-05 22:51:33 : ----------< 1th policy - 11_allow_allow_equal.json >-----------
@@ -241,16 +240,15 @@ After processing all policies, results are generated in the `results/` directory
 ## Evaluation Reproduction
 
 This section explains how to reproduce the AccessRefinery results reported in the paper figures.
-For other results, see [Reproduced Access Analyzer]() and [CLI-based Access Analyzer]().
+For other results, see [Re-implementation of Access Analyzer]() and [Access Analyzer via the CLI API]().
 
-If you do not want to run the full comparison workflow, you can still verify correctness, since all experimental results are archived in `/archive_result`.
+If you do not want to run Access Analyzer, you can still verify the evaluation results reported in the paper, since all experimental results are archived in `/archive_result`.
 
 > It is strongly recommended to skip AWS CLI reproduction, because the environment setup is complex (AWS account registration, billing setup, and CLI credential configuration).
 
 ### Running AccessRefinery
 
-The following scripts reproduce the AccessRefinery results.
-These scripts automatically invoke `target/refinery-1.0.jar`.
+The following scripts reproduce the AccessRefinery results，which automatically invoke `target/refinery-1.0.jar`.
 ```bash
 $ sh tools/running_bdd_miner.sh
 $ sh tools/running_sat_miner.sh
@@ -258,16 +256,16 @@ $ sh tools/running_bdd_reducer.sh
 $ sh tools/running_sat_reducer.sh
 ```
 
-The following folders will be generated under `result/`.
+The following folders will be generated under `result/`. The difference between `bbd_` and `sat_` is the backend used to represent bit-vectors. The suffix `10rs` means the experiment is run for 10 rounds and the average is reported. Because `accessrefinery_sat_reducer_3rs` runs very slowly, we report results for only three rounds.
 
-> Note: `accessrefinery_sat_reducer_3rs` runs very slowly, so we report results for only three rounds.
-
-- `accessrefinery_bdd_miner_10rs`: Intent mining results for 10 rounds with the JavaBDD backend.
-- `accessrefinery_sat_miner_10rs`: Intent mining results for 10 rounds with the MiniSAT backend.
+- `accessrefinery_bdd_miner_10rs`: Intent mining results for 10 rounds with JavaBDD.
+- `accessrefinery_sat_miner_10rs`: Intent mining results for 10 rounds with MiniSAT.
 - `accessrefinery_bdd_reducer_10rs`: Intent mining and reduction results for 10 rounds with JavaBDD.
 - `accessrefinery_sat_reducer_3rs`: Intent mining and reduction results for 3 rounds with MiniSAT.
 
 ### Correspondence to Paper Sections
+
+After generating the experimental results, we explain how to reproduce the figures，tables and conclusions reported in the paper.
 
 #### 6.1.2 Correctness of AccessRefinery
 
@@ -366,6 +364,17 @@ Required logs:
 
 Corresponding table:
 Table 2 in the paper.
+
+### Drawing the figures in the paper
+
+The following commands install `gnuplot` and generate all figures used in the experiments.
+The generated figures are saved in `paper_figures/results/`.
+
+```shell
+sudo apt install gnuplot
+cd paper_figures
+sh draw.sh
+```
 
 ## Developer
 
