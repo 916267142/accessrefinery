@@ -281,7 +281,7 @@ Run `sh tools/running_bdd_reducer.sh`, then compare the values in `accessrefiner
 
 **Target**: Figure 10 in the paper.
 
-<img src="./tools/Experiment-Effectiveness-ThreeGraph.png" width="300"/>
+<img src="./tools/Experiment-Effectiveness-ThreeGraph.png" width="450"/>
 <!-- 
 ![Figure 10](tools/Experiment-Effectiveness-ThreeGraph.png) -->
 
