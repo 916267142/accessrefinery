@@ -7,8 +7,8 @@
     <img src="logo.png" width="30%">
 </div> -->
 
-
 <img src="tools/logo2.png?raw=True" align="right" width="30%"/>
+
 # AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud
 
 by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](https://xjtu-netverify.github.io/people/pzhang/) and [Jianyuan Zhang](https://xjtu-netverify.github.io/people/jyzhang/) at [ANTS lab](https://xjtu-netverify.github.io/).
