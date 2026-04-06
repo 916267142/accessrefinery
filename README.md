@@ -66,7 +66,7 @@ MCP is a data structure for fast multi-round SMT solving. It supports regular ex
 
 ### Reuse in Another Project
 
-Following [Install](INSTALL.md) to generate jar package. Recall again:
+Follow [Install](INSTALL.md) to generate the JAR package. As a reminder:
 
 ```shell
 mvn clean package
@@ -98,7 +98,7 @@ Then add the dependency to your `pom.xml`:
 
 ### Example
 
-This example follows the running example in the paper (Line 375).
+This example follows the running example in the paper (line 375).
 Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resource`: `dept*/user1.txt`, `IpAddress`: `112.0.0.0/24`).
 
 ```json
@@ -106,7 +106,7 @@ Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resou
     "Statement": [
         {
             "Effect": "Allow",
-            "Resource": ["dept*/user1.txt", "dept1/user*.txt"]
+            "Resource": ["dept*/user1.txt", "dept1/user*.txt"],
             "Condition": {
                 "IpAddress": {
                     "aws:SourceIp": ["112.0.0.0/24", "113.0.0.0/24"]
@@ -134,7 +134,8 @@ Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resou
     ]
 }
 ```
-Suppose our goal is to check the satisfiability of three formulas: $\neg I_6 \land P$, $I_6 \land \neg P$, and $I_6 \land P$. The corresponding MCP code is shown below.
+
+Our goal is to check the satisfiability of three formulas: $\neg I_6 \land P$, $I_6 \land \neg P$, and $I_6 \land P$. The corresponding MCP code is shown below.
 The example is also included in [MCPFactoryTest.java](projects/mcp/src/test/java/org/mcp/core/MCPFactoryTest.java) and runs automatically during `mvn package`.
 
 ```java
@@ -175,11 +176,9 @@ public class Main {
 }
 ```
 
----
-
 ## Using AccessRefinery
 
-AccessRefinery builds on MCP for IAM intent mining.
+**AccessRefinery** builds on MCP for IAM intent mining and reduction.
 
 Follow [Install](INSTALL.md) to build the JAR package, recall again:
 
@@ -187,7 +186,7 @@ Follow [Install](INSTALL.md) to build the JAR package, recall again:
 mvn clean package
 ```
 
-To run AccessRefinery, use:
+To run **AccessRefinery**, use:
 
 ```shell
 $ java -jar target/refinery-1.0.jar [options]
@@ -195,14 +194,11 @@ $ java -jar target/refinery-1.0.jar [options]
 
 **Command-line options:**
 - `-h, --help` : Show help information.
-- `-m, --mine` : Enable mining mode (extract intents).
-- `-r, --reduce` : Enable reduction of intents.
+- `-m, --mine` : Enable intent mining.
+- `-r, --reduce` : Enable intent reduction.
 - `-f, --file <path>` : Input path for policy files (must be under `data/`).
-- `-s, --sat` : Use SAT as the solving core (default is BDD).
+- `-s, --sat` : Use SAT to encode bit-vectors (default is BDD).
 - `--round <number>` : Number of mining rounds (to reduce experimental bias).
-<!-- - `--merge` : The optimization of merging the output format of intents. -->
-
-AccessRefinery supports mining a batch of policies. For example:
 
 **Example:**
 ```shell
@@ -229,13 +225,13 @@ The command produces logs similar to the following:
 ...
 ```
 
-After processing all policies, results are generated in the `results/` directory. The output includes:
+After processing all policies, results are generated in the `results/Correctness/` directory. The output includes:
 - `xxx.json`: The generated intents for each policy.
 - `xxx.csv`: Statistics for multi-round SMT solving for each policy.
 - `summary.txt`: Summary statistics for all policies in a folder.
-- `accessrefinery.log` : Record the runnning log.
 
----
+In addition, one file is generated in the current path:
+- `accessrefinery.log` : Records the running log.
 
 ## Evaluation Reproduction
 
