@@ -8,7 +8,7 @@
 </div> -->
 
 <h1>
-    <img src="tools/logo3.png" align="right" width="28%"/>
+    <img src="tools/logo3.png" align="right" width="25%"/>
     AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud
 </h1>
 
