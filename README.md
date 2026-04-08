@@ -392,27 +392,11 @@ cd paper_figures
 sh draw.sh
 ```
 
-## Developer
+## Contact
 
-For questions about installation and running, please contact Ning Kang at 916267142@qq.com.
+- Ning Kang (<kangning2018@qq.com>)
+- Peng Zhang (<p-zhang@xjtu.edu.cn>)
 
+## License
 
-<!-- #### Results of AWS AccessAnalyzer via CLI
-
-- `/accessanalyzer_web`: Results of intent mining using AWS AccessAnalyzer via CLI
-
-Note: AWS Access Analyzer is accessed remotely, so only correctness experiments can be performed, not performance experiments.
-
-The following instructions can be used to reproduce the results (it is strongly recommended to skip this step, as AWS CLI environment configuration is complex):
-- [Running AWS Access Analyzer via CLI](tools/AccessAnalyzer.md) -->
-
-
-<!-- Note: The result for `Scalability_05Keys/12_allow_result.json` may differ because AWS Access Analyzer may time out (the result will be marked with `"error": "INTERNAL_ERROR"` by Access Analyzer). This is normal. -->
-
-<!-- 1. 功能性奖 说明可复现  
-2. 可用性奖 代码结构性很好，别人可以复用
-3. 公开性奖 代码挂到Zendo上面
-
-注意：
-1. 附上作者邮件，解释如何运行和安装
-2. MCP解耦，AccessRefinery和MCP都附上小例子，说明如何使用 -->
+Apache-2.0 License, see [LICENSE](LICENSE).
