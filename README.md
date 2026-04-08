@@ -28,7 +28,7 @@ by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](htt
 
 To accelerate intent mining, **AccessRefinery** uses our Multi-Theory Constraint Preprocessor (MCP) to speed up multi-round SMT solving by preprocessing constraints into bit-vector constraints.  
 For intent reduction, **AccessRefinery** computes a compact set that covers all mined intents by solving a minimum set-cover problem.
-Moreover, we design MCP as a separate module from **AccessRefinery**, allowing other researchers to reuse MCP flexibly.
+Moreover, we design MCP as a module separate from **AccessRefinery**, allowing other researchers to reuse MCP flexibly.
 
 For technical details, see our FSE 2026 paper: [*AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud*](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf).
 
@@ -39,7 +39,7 @@ After setting up Linux, follow [Install](INSTALL.md) to install the environment,
 
 <!-- This repository includes the implementation of **AccessRefinery**, along with datasets, reproduction scripts, and archived results. -->
 
-Since AWS Access Analyzer is not open-source and provides only a CLI, we also reimplemented Access Analyzer for evaluation. We distinguish the two versions as follows:
+Since AWS Access Analyzer is not open source and provides only a CLI, we also reimplemented Access Analyzer for evaluation. We distinguish the two versions as follows:
 
 - **Reimplemented Access Analyzer** - our reimplementation of Access Analyzer.
 - **CLI-based Access Analyzer** – the AWS commercial Access Analyzer, invoked through its remote CLI API.
@@ -122,7 +122,7 @@ Then add the dependency to your `pom.xml`:
 
 ### Example
 
-This example follows the running example in the paper (line 375).
+This example follows the example in the paper (line 375).
 Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resource`: `dept*/user1.txt`, `IpAddress`: `112.0.0.0/24`).
 
 ```json
@@ -255,9 +255,9 @@ In addition, one file is generated in the current path:
 
 ## Evaluation Reproduction
 
-This section explains how to reproduce the results of **AccessRefinery** and **Reimplemented Access Analyzer** reported in the paper.
+This section explains how to reproduce the results of **AccessRefinery** and the **Reimplemented Access Analyzer** reported in the paper.
 
-> Recall that We recommand to skip [reproducing CLI-based Access Analyzer](xxxxxx). However, you can still verify the evaluation results reported in the paper, since all experimental results are archived in `archive_result/`.
+> Recall that we recommend skipping the reproduction of the CLI-based Access Analyzer. However, you can still verify the evaluation results reported in the paper, since all experimental results are archived in `archive_result/`.
 
 ### Running AccessRefinery
 
@@ -277,42 +277,71 @@ The following folders will be generated under `result/`. The difference between 
 - `accessrefinery_bdd_reducer_10rs/`: Intent mining and reduction results for 10 rounds with JavaBDD.
 - `accessrefinery_sat_reducer_3rs/`: Intent mining and reduction results for 3 rounds with MiniSAT.
 
-### Running Re-implemented Access Analyzer 
+### Running Re-implemented Access Analyzer
 
 ### Correspondence to Paper Sections
 
 After generating the experimental results, we explain how to reproduce the figures, tables, and conclusions reported in the paper.
 
+### 5 Experiment Setup
+
+**Target:** "*AWS provides an online Command Line Interface (CLI) for Access Analyzer, which we use to validate the correctness of our re-implementation. Specifically, for the 6-key dataset with 13 to 15 statements, both versions time out (> 1 hour). Both versions produce identical intents on the Correctness, 5-key, and 6-key datasets.*"
+
+**Reproduced Steps:**
+
+//Todo @after-the-end
+
 ---
 
-#### 6.1 Is the re-implementation of Access Analyzer valid, and is AccessRefinery correct?
+### 6.1 Is AccessRefinery correct?
 
-##### 6.1.2 Correctness of AccessRefinery
+#### Correctness of MCP
 
-- **Correctness of MCP**
+**Target:** "*We conducted a series of basic Boolean operation tests.*"
+
+**Reproduced Steps:**
+
 Basic Boolean operations are tested in [MCPTest.java](projects/mcp/src/test/java/org/mcp/core/MCPTest.java). These tests run automatically during `mvn package`.
 
-- **Correctness of Intent Miner**
-The following commands check whether the intents mined by AccessRefinery are consistent with those from AWS Access Analyzer (via CLI). Logs are generated in `compare_result/`:
+---
 
-```bash
-# JSON library required by the comparison script (jq 1.6)
-sudo apt install jq 
-sh tools/running_batch_compare.sh
-```
+#### Correctness of Intent Miner
 
-Then use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary.txt` to plot Figure 9 of the paper.
+**Target:** Figure 10 in the paper
 
-- **Correctness of Intent Reducer**
-Run `sh tools/running_bdd_reducer.sh`, then compare the values in `accessrefinery_bdd_reducer_10rs/Correctness/summary.txt`: `NumberMCI` is the number of intents before reduction, and `NumberRRI` is the number after reduction.
+<img src="./tools/figures/figure10.png" width="450"/>
+
+**Required logs**:
+Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary.txt` to plot Figure 10 of the paper.
 
 ---
 
-#### Section 6.2 Can AccessRefinery reduce the number of intents?
+**Target:** "*We compared the intents produced by AccessRefinery (without intent reduction), our re-implementation of Access Analyzer, and the AWS Access Analyzer via the CLI API. On synthetic datasets, all three produce the same set of intents.*"
 
-**Target**: Figure 10 in the paper.
+**Required Steps:**
 
-<img src="./tools/figures/figure12.png" width="450"/>
+The following commands check whether the intents mined by AccessRefinery are consistent with those from AWS Access Analyzer (via CLI). Logs are generated in `result/compare_accessrefinery_with_accessanalyzer_cli/`:
+
+```bash
+sh tools/running_batch_compare.sh
+```
+---
+
+### Correctness of Intent Reducer
+
+**Target:** "*(1) The reduced intents fully cover the policy. (2) Removing any intent from the reduced intents causes the remaining intents to no longer cover the policy.*"
+
+Required Steps:
+
+//Todo @after-the-end
+
+---
+
+### Section 6.2 Can AccessRefinery reduce the number of intents?
+
+**Target**: Figure 11 in the paper.
+
+<img src="./tools/figures/figure11.png" width="450"/>
 
 **Required logs**:
 
@@ -326,11 +355,11 @@ The `NumberMCI` column represents the number of intents before reduction, and th
 
 ---
 
-#### Section 6.3 Can AccessRefinery speed up intent mining and reduction by using MCP?
+### Section 6.3 Can AccessRefinery speed up intent mining and reduction by using MCP?
 
-**Target**: Figure 13 in the paper.
+**Target**: Figure 12 in the paper.
 
-<img src="./tools/figures/figure13.png" width="450"/>
+<img src="./tools/figures/figure12.png" width="450"/>
 
 **Required logs**:
 
@@ -342,21 +371,27 @@ The `TotalTimeAverage` column represents the average runtime over 10 rounds.
 
 ---
 
-#### Section 6.4 How does AccessRefinery perform on real-world datasets?
+**Target**: Figure 13 in the paper.
 
-**Target**: Real-world evaluation discussed in the paper.
-
-<img src="./tools/figures/figure14.png" width="450"/>
+<img src="./tools/figures/figure13.png" width="450"/>
 
 **Required logs**:
 
-- Not released in this artifact.
+- `accessrefinery_bdd_reducer_10rs/`
+  - `Scalability_05Keys/summary.txt`
+  - `Scalability_06Keys/summary.txt`
+
+The `TotalTimeAverage` column represents the average runtime over 10 rounds.
+
+---
+
+### Section 6.4 How does AccessRefinery perform on real-world datasets?
 
 These logs are omitted for commercial reasons.
 
 ---
 
-#### Section 6.5 Is SAT or BDD better for intent mining and reduction?
+### Section 6.5 Is SAT or BDD better for intent mining and reduction?
 
 **Target (Intent Mining)**:
 "For intent mining, using JavaBDD is 1-6x faster than using MiniSAT (for clarity, the figure is omitted)."
@@ -372,10 +407,11 @@ These logs are omitted for commercial reasons.
 
 The `TotalTimeAverage` column represents the average runtime over 10 rounds.
 
-**Target (Intent Reduction)**: Figure 13 in the paper.
+---
+
+**Target (Intent Reduction)**: Figure 15 in the paper.
 
 <img src="./tools/figures/figure15.png" width="450"/>
-
 
 **Required logs (Intent Reduction)**:
 
@@ -386,16 +422,15 @@ The `TotalTimeAverage` column represents the average runtime over 10 rounds.
   - `Scalability_05Keys/summary.txt`
   - `Scalability_06Keys/summary.txt`
 
-For a fair comparison, compare average runtime per round using `TotalTimeAverage / rounds` (BDD: 10 rounds, SAT: 3 rounds).
+For a fair comparison, compare average runtime per round using `TotalTimeAverage / rounds`. Since SAT-based reduction is much slower, we report SAT results for only 3 rounds.
 
 ---
 
-#### Section 6.6 How does AccessRefinery accelerate single-round solving in multi-round SMT solving compared to SMT solvers?
+### Section 6.6 How does AccessRefinery accelerate single-round solving in multi-round SMT solving compared to SMT solvers?
 
 **Target**: Table 2 in the paper.
 
 <img src="./tools/figures/table2.png" width="450"/>
-
 
 **Required logs**:
 
@@ -408,7 +443,7 @@ For a fair comparison, compare average runtime per round using `TotalTimeAverage
 
 ---
 
-#### Drawing the figures in the paper
+### Drawing the figures in the paper
 
 The following commands install `gnuplot` and generate all figures used in the experiments.
 The generated figures are saved in `paper_figures/results/`.
