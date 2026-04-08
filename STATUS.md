@@ -11,9 +11,9 @@ Thus, we apply for the following ACM Artifact Evaluation badges:
 
 ## Evaluated - Functional
 
-We believe this artifact satisfies the Functional criteria (documented, consistent, complete, exercisable, and supported by appropriate evidence of verification and validation), for the following reason:
+We believe this artifact satisfies the Functional criteria (*The artifacts associated with the research are found to be documented, consistent, complete, exercisable, and include appropriate evidence of verification and validation.*), for the following reasons:
 
-> Note that: The baseline approach, AWS Access Analyzer, is not open-sourced.
+> Note: The baseline approach, AWS Access Analyzer, is not open-source.
 
 - **Documented:** The artifact provides clear instructions for *project structure*, *environment setup* (requirements and installation), and *execution*.
 - **Consistent:** The artifact is consistent with the paper claims and includes *MCP*, *AccessRefinery*, our *re-implementation of AWS Access Analyzer*, and *scripts for invoking AWS Access Analyzer via CLI API*.
@@ -23,24 +23,24 @@ We believe this artifact satisfies the Functional criteria (documented, consiste
 
 ## Evaluated - Reusable
 
-We believe this artifact satisfies the Reusable criteria (Functional plus high-quality engineering and documentation for repurposing), for the following reasons:
+We believe this artifact satisfies the Reusable criteria (*They are very carefully documented and well-structured to the extent that reuse and repurposing is facilitated*), for the following reasons:
 
-- **MCP Design**: 
-  - MCP is engineered as an independently reusable module and can be integrated into other projects via a packaged JAR and Maven dependency.
-  - MCP is implemented with a generic architecture and currently supports multiple constraint types, including regex, bit-vector/prefix, range, and set. Each type is defined through a dedicated interface and can be automatically assembled into the MCP pipeline.
-  - MCP provides standard Maven-based documentation.
-
-- **Project Design**: 
-  - The codebase is modular and well-structured, with clear separation among the BDD backend, MCP preprocessing, and intent mining/reduction logic.
-  - The project provides a unified build-and-run workflow. Building from the repository root automatically generates `mcp-1.0.jar`, `accessrefinery-1.0.jar`, and `accessanalyzer-1.0.jar`.
-  - Both AccessRefinery and Access Analyzer expose standard command-line interfaces.
-  - Both AccessRefinery and Access Analyzer include scripts for automatically collecting experimental results.
-
-- **Document**: 
-  - The repository includes concrete MCP usage examples and command-level integration and execution instructions.
-  - Reproduction scripts, organized datasets, archived results, and figure-generation tooling support independent extension and comparative studies.
+- **Well-structured**:
+  - MCP is designed as an independent Maven module. After compilation, it produces `mcp-1.0.jar`, which can be easily reused by other projects.
+  - MCP adopts a generic architecture. For multiple variable types, including regex, bit-vector/prefix, range, and set, MCP maps them into generic representations and applies a unified preprocessing workflow (e.g., equivalence-class partitioning and bit-vector encoding). This design makes MCP easily extensible to other variable types.
+  - The repository is organized into separate Maven modules, specifically BDD (used by MCP for bit-vector representation), MCP, AccessRefinery (MCP-based intent mining), and Access Analyzer (baseline). Running `mvn package` at the repository root automatically generates the corresponding JAR files: `mcp-1.0.jar` (for reuse in other projects), `accessrefinery-1.0.jar` (intent mining), and `accessanalyzer-1.0.jar` (baseline for intent mining).
+  
+- **Carefully documented**:
+  - MCP, AccessRefinery, and Access Analyzer are documented with usage explanations and concrete examples.
+  - AccessRefinery and Access Analyzer provide scripts that automatically generate organized experimental results.
+  - Experimental logs are systematically archived.
+  - The artifact explains how experimental results correspond to the figures reported in the paper.
+  - Automated plotting scripts are provided.
+  - Auto-generated Maven documentation explains MCP functions.
   
 ## Available
+
+We believe this artifact satisfies the Available criteria (*A DOI or link to this repository, along with a unique identifier for the object, is provided*).
 
 We make the artifact publicly available through the following channels:
 
