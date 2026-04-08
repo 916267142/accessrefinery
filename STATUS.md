@@ -29,7 +29,7 @@ We believe this artifact satisfies the Reusable criteria (*They are very careful
   - MCP is designed as an independent Maven module. After compilation, it produces `mcp-1.0.jar`, which can be easily reused by other projects.
   - MCP adopts a generic architecture. For multiple variable types, including regex, bit-vector/prefix, range, and set, MCP maps them into generic representations and applies a unified preprocessing workflow (e.g., equivalence-class partitioning and bit-vector encoding). This design makes MCP easily extensible to other variable types.
   - The repository is organized into separate Maven modules, specifically BDD (used by MCP for bit-vector representation), MCP, AccessRefinery (MCP-based intent mining), and Access Analyzer (baseline). Running `mvn package` at the repository root automatically generates the corresponding JAR files: `mcp-1.0.jar` (for reuse in other projects), `accessrefinery-1.0.jar` (intent mining), and `accessanalyzer-1.0.jar` (baseline for intent mining).
-  
+
 - **Carefully documented**:
   - MCP, AccessRefinery, and Access Analyzer are documented with usage explanations and concrete examples.
   - AccessRefinery and Access Analyzer provide scripts that automatically generate organized experimental results.
