@@ -15,28 +15,29 @@ We believe this artifact satisfies the Functional criteria (*The artifacts assoc
 
 > Note: The baseline approach, AWS Access Analyzer, is not open-source.
 
-- **Documented:** The artifact provides clear instructions for *project structure*, *environment setup* (requirements and installation), and *execution*.
-- **Consistent:** The artifact is consistent with the paper claims and includes *MCP*, *AccessRefinery*, our *re-implementation of AWS Access Analyzer*, and *scripts for invoking AWS Access Analyzer via CLI API*.
-- **Complete:** The artifact includes all materials needed to reproduce the experimental results, including the *AccessRefinery implementation*, *baseline implementations*, *datasets*, and *experiment and plotting scripts*.
-- **Exercisable:** The artifact provides instructions that allow users to run standard Maven workflows to execute our system and reproduce the experimental results.
-- **Verification and Validation Evidence:** The artifact provides *archived results* for reproducibility checks.
+- **Documented:** The repository provides concrete instructions for project structure, environment setup (requirements and installation), and command-level execution.
+- **Exercisable:** Users can run standard Maven workflows to build and execute the system from source.
+- **Complete:** The artifact includes all required components to reproduce the reported experiments, including AccessRefinery, baseline implementations, datasets, and experiment/plotting scripts.
+- **Consistent:** The released artifact aligns with the paper's claims and includes MCP, AccessRefinery, our re-implementation of AWS Access Analyzer, and scripts for invoking AWS Access Analyzer through the CLI API.
+- **Verification and Validation Evidence:** Archived experiment outputs are provided to support reproducibility checks.
 
 ## Evaluated - Reusable
 
-We believe this artifact satisfies the Reusable criteria (*They are very carefully documented and well-structured to the extent that reuse and repurposing is facilitated*), for the following reasons:
+In addition to being functional, we believe this artifact satisfies the Reusable criteria (*They are very carefully documented and well-structured to the extent that reuse and repurposing is facilitated*), for the following reasons:
 
-- **Well-structured**:
-  - MCP is designed as an independent Maven module. After compilation, it produces `mcp-1.0.jar`, which can be easily reused by other projects.
-  - MCP adopts a generic architecture. For multiple variable types, including regex, bit-vector/prefix, range, and set, MCP maps them into generic representations and applies a unified preprocessing workflow (e.g., equivalence-class partitioning and bit-vector encoding). This design makes MCP easily extensible to other variable types.
-  - The repository is organized into separate Maven modules, specifically BDD (used by MCP for bit-vector representation), MCP, AccessRefinery (MCP-based intent mining), and Access Analyzer (baseline). Running `mvn package` at the repository root automatically generates the corresponding JAR files: `mcp-1.0.jar` (for reuse in other projects), `accessrefinery-1.0.jar` (intent mining), and `accessanalyzer-1.0.jar` (baseline for intent mining).
+- **Modular architecture and clear interfaces:**
+  - MCP is packaged as an independent Maven module; compiling the project produces `mcp-1.0.jar`, which can be directly integrated into other Java projects.
+  - MCP uses a generic design with unified preprocessing (e.g., equivalence-class partitioning and bit-vector encoding) across multiple variable types, including regex, bit-vector/prefix, range, and set.
+  - This abstraction-based design makes MCP straightforward to extend to additional variable types.
 
-- **Carefully documented**:
-  - MCP, AccessRefinery, and Access Analyzer are documented with usage explanations and concrete examples.
-  - AccessRefinery and Access Analyzer provide scripts that automatically generate organized experimental results.
-  - Experimental logs are systematically archived.
-  - The artifact explains how experimental results correspond to the figures reported in the paper.
-  - Automated plotting scripts are provided.
-  - Auto-generated Maven documentation explains MCP functions.
+- **Reusable project organization and build outputs:**
+  - The repository is split into clear Maven modules (BDD, MCP, AccessRefinery, and Access Analyzer), enabling targeted reuse of components.
+  - Running `mvn package` at the repository root generates reusable deliverables (`mcp-1.0.jar`) and executable artifacts (`accessrefinery-1.0.jar`, `accessanalyzer-1.0.jar`).
+
+- **Documentation and automation for extension and adoption:**
+  - MCP, AccessRefinery, and Access Analyzer include usage-oriented documentation with concrete examples.
+  - Auto-generated Maven documentation is provided for MCP APIs.
+  - Automation scripts generate organized experiment outputs, and archived logs are mapped to paper figures, which lowers the cost of extension, comparison, and follow-up studies.
   
 ## Available
 
