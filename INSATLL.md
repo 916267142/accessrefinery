@@ -1,44 +1,22 @@
 # Installation Overview
 
-**AccessRefinery** is a tool for mining IAM intents. In our experiments, we compare it with **AWS Access Analyzer**.
+**AccessRefinery** is an intent-mining tool for IAM policies. In our experiments, we compare it with **AWS Access Analyzer**.
 
-Since AWS Access Analyzer is not open-source and provides only a CLI, we also implemented a **reproduced version of Access Analyzer** for experimental comparison. We distinguish the two versions as follows:
-- **Reproduced Access Analyzer** - our full reimplementation of Access Analyzer
-- **AWS CLI Access Analyzer** – the original tool accessed via its remote CLI interface
+Since AWS Access Analyzer is not open-source and provides only a CLI, we also reimplemented Access Analyzer for evaluation. We distinguish the two versions as follows:
 
-> **Note:** Installing the [Reproduced Access Analyzer](#install-and-compile-reproduced-access-analyzer) and [AWS CLI Access Analyzer](#install-and-compile-aws-access-analyzer) is **optional**.
-> All experimental results have already been archived, so these steps can be skipped if you only want to use AccessRefinery.
+- **Reimplemented Access Analyzer** - our reimplementation of Access Analyzer.
+- **CLI-based Access Analyzer** – the AWS commercial Access Analyzer, invoked through its remote CLI interface.
 
-## Install Experimental Environment
+It is strongly recommended to skip reproducing *CLI-based Access Analyzer* because the environment setup is extremely complex (AWS account registration, billing setup, and CLI credential configuration). Therefore, we provide archived results for *CLI-based Access Analyzer*. However, we still provide [installation instructions](xxxxxx) for developers who want to test *CLI-based Access Analyzer*.
 
-1. Prepare a Linux system (recommended: Ubuntu 22.04.5):
+## Set Up the Experimental Environment
+
+- Prepare a Linux system (recommended: Ubuntu 22.04.5):
 
 ubuntu-22.04.5-desktop-amd64.iso  
 https://releases.ubuntu.com/jammy/ubuntu-22.04.5-desktop-amd64.iso
 
-2. Install Maven:
-
-```bash
-sudo apt install maven
-```
-
-Verify Maven:
-
-```bash
-mvn -v
-```
-
-Expected output (example):
-
-```text
-Apache Maven 3.6.3
-Maven home: /usr/share/maven
-Java version: 11.0.29, vendor: Ubuntu, runtime: /usr/lib/jvm/java-11-openjdk-amd64
-Default locale: en_US, platform encoding: UTF-8
-OS name: "linux", version: "6.8.0-90-generic", arch: "amd64", family: "unix"
-```
-
-3. Install JDK 17:
+- Install JDK 17:
 
 ```bash
 sudo apt install openjdk-17-jdk
@@ -47,13 +25,8 @@ sudo apt install openjdk-17-jdk
 Add Java to environment variables (recommended):
 
 ```bash
-vi ~/.bashrc
-
-# Add the following lines into ~/.bashrc
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-export PATH=$JAVA_HOME/bin:$PATH
-
-# Apply changes
+export 'JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' >> ~/.bashrc
+export 'PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 
@@ -65,7 +38,7 @@ javac -version
 
 Expected output:
 
-```text
+```shell
 javac 17.0.17
 ```
 
@@ -77,13 +50,19 @@ java -version
 
 Expected output:
 
-```text
+```shell
 openjdk version "17.0.17" 2025-10-21
 OpenJDK Runtime Environment (build 17.0.17+10-Ubuntu-122.04)
 OpenJDK 64-Bit Server VM (build 17.0.17+10-Ubuntu-122.04, mixed mode, sharing)
 ```
 
-Then run:
+- Install Maven:
+
+```bash
+sudo apt install maven
+```
+
+Verify Maven:
 
 ```bash
 mvn -v
@@ -99,30 +78,50 @@ Default locale: en_US, platform encoding: UTF-8
 OS name: "linux", version: "6.8.0-90-generic", arch: "amd64", family: "unix"
 ```
 
-4. Install `jq` for JSON processing and correctness-result comparison:
+- Install `jq` for JSON processing:
 
-```shell
+```bash
 sudo apt install jq
 ```
 
 Then run:
 
-```shell
+```bash
 jq --version
 ```
+
 Expected output:
 
-```text
+```shell
 jq-1.6
 ```
 
-## Compile AccessRefinery
- 
+- Install `Z3`
+
+```bash
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:'$(pwd)'/baselines/accessanalyzer-reimpl/lib/z3-4.14.1/bin' >> ~/.bashrc
+source ~/.bashrc
+```
+
+Then run:
+
+```bash
+z3 -version
+```
+
+Expected output:
+
+```shell
+Z3 version 4.12.2 - 64 bit
+```
+
+> Note: CVC5 is automatically installed by Maven package.
+
+## Compile AccessRefinery and Access Analyzer
+
 ```bash
 mvn clean package
 ```
-
-This step automatically runs `mvn test`. If you see output similar to the following, the AccessRefinery environment is set up correctly and the project has been compiled successfully.
 
 Expected output:
 
@@ -141,12 +140,6 @@ Expected output:
 [INFO] ------------------------------------------------------------------------
 ```
 
-## Install and Compile Reproduced Access Analyzer
- 
-```bash
-cd accessanalyzer
-echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:'$(pwd)'/lib/z3-4.14.1/bin' >> ~/.bashrc
-source ~/.bashrc
-```
+Then you will find `target/mcp-1.0.jar`, `target/accessrefinery-1.0.jar`, `target/accessanalyzer-1.0.jar`.
 
-## Install and Compile AWS Access Analyzer
+This step automatically runs `mvn test`. If you can see these JAR files, the AccessRefinery and Access Analyzer environment is set up correctly, and the project has been compiled successfully.

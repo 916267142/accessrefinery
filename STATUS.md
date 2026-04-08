@@ -30,7 +30,7 @@ We believe this artifact satisfies the Functional criteria (*The artifacts assoc
 
 ## Evaluated - Reusable
 
-In addition to being functional, we believe this artifact satisfies the Reusable criteria (*They are very carefully documented and well-structured to the extent that reuse and repurposing is facilitated*), for the following reasons:
+We believe this artifact satisfies the Reusable criteria (*They are very carefully documented and well-structured to the extent that reuse and repurposing is facilitated*), for the following reasons:
 
 - **Reuse and repurposing of MCP:** To make MCP easy to use and extend, we provide the following design:
   - **Modular Design:** MCP is designed as an independent Maven module. Compiling the project will produce `mcp-1.0.jar`, which can be directly imported by other Java projects.
@@ -45,7 +45,7 @@ In addition to being functional, we believe this artifact satisfies the Reusable
 
 ## Available
 
-We believe this artifact satisfies the Available criteria (*A DOI or link to this repository, along with a unique identifier for the object, is provided*) for the following reason.
+We believe this artifact satisfies the Available criteria (*A DOI or link to this repository, along with a unique identifier for the object, is provided*) for the following reasons:
 
 The artifact is publicly available in two ways:
 

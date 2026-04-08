@@ -247,7 +247,6 @@ For other results, see [Re-implementation of Access Analyzer]() and [Access Anal
 
 If you do not want to run Access Analyzer, you can still verify the evaluation results reported in the paper, since all experimental results are archived in `/archive_result`.
 
-> It is strongly recommended to skip AWS CLI reproduction, because the environment setup is complex (AWS account registration, billing setup, and CLI credential configuration).
 
 ### Running AccessRefinery
 
