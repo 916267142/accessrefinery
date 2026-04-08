@@ -55,6 +55,17 @@ For comparison, the repository also includes two AWS Access Analyzer artifacts:
 - `AccessAnalyzerCLI/`: Scripts for running AWS Access Analyzer via the CLI API, along with run instructions.
 - `AccessAnalyzer/`: Our re-implementation of Access Analyzer and run instructions.
 
+<!-- ## Project Structure
+
+This repository contains the implementation of AccessRefinery and the baselines used for comparison.
+
+- `accessrefinery/`: Implementation of AccessRefinery (our approach)
+- `baselines/`: Compared methods
+  - `accessanalyzer-reimpl/`: Our reimplementation of Access Analyzer
+  - `accessanalyzer-cli/`: Scripts for the official AWS Access Analyzer CLI
+- `data/`: Experimental datasets
+- `tools/`: Scripts for running experiments -->
+
 ## Setup
 
 See [Requirements](REQUIREMENTS.md) and [Installation](INSATLL.md) for setup details, including our **re-implementation of Access Analyzer**.
