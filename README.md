@@ -314,8 +314,6 @@ Basic Boolean operations are tested in [MCPTest.java](projects/mcp/src/test/java
 **Required logs**:
 Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary.txt` to plot Figure 10 of the paper.
 
----
-
 **Target:** "*We compared the intents produced by AccessRefinery (without intent reduction), our re-implementation of Access Analyzer, and the AWS Access Analyzer via the CLI API. On synthetic datasets, all three produce the same set of intents.*"
 
 **Required Steps:**
@@ -327,7 +325,7 @@ sh tools/running_batch_compare.sh
 ```
 ---
 
-### Correctness of Intent Reducer
+#### Correctness of Intent Reducer
 
 **Target:** "*(1) The reduced intents fully cover the policy. (2) Removing any intent from the reduced intents causes the remaining intents to no longer cover the policy.*"
 
