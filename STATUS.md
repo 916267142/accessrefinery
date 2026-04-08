@@ -1,10 +1,10 @@
 ## STATUS
 
-Our artifact is consistent with the artifacts of interest:
+We believe our artifact is consistent with the categories of artifacts of interest:
 
-- **Software:** The artifact provides AccessRefinery, the implementation presented in our paper, together with our re-implementation of AWS Access Analyzer, both of which support follow-up studies.
-- **Frameworks:** The artifact introduces Multi-round Constraints Preprocessor (MCP), a data structure that provides basic operations for accelerating multi-round SMT solving and can potentially be applied in other software engineering studies. For example, ACL analysis for misconfigurations or redundancies also involves multi-round solving (Fireman, S&P 2006) and can potentially benefit from MCP.
-- **Datasets and Reproduction Assets:** The artifact provides open-source datasets synthesized from realistic data for both scalability and correctness evaluation, together with open-source experiment workflows (execution scripts and plotting scripts) that provide a reusable reference for subsequent research.
+- **Software:** We provide the implementation presented in our paper, AccessRefinery, together with our re-implementation of AWS Access Analyzer, which allows follow-up studies.
+- **Frameworks:** We design Multi-round Constraints Preprocessor (MCP) as a data structure (Java JAR package) that accelerates multi-round SMT solving. It can potentially be applied in other software engineering systems.
+- **Datasets:** We provide two open-source datasets synthesized from realistic data for scalability and correctness evaluation, respectively.
 
 Thus, we apply for the following ACM Artifact Evaluation badges:
 
@@ -12,11 +12,12 @@ Thus, we apply for the following ACM Artifact Evaluation badges:
 
 We believe this artifact satisfies the Functional criteria: documented, consistent, complete, exercisable, and supported by appropriate evidence of verification and validation.
 
-- **Documented:** The artifact provides clear instructions for project structure, environment setup (requirements and installation), and execution.
-- **Consistent:** The artifact content is consistent with the paper claims: it includes MCP, AccessRefinery, our re-implementation of AWS Access Analyzer, and CLI invocation scripts for AWS Access Analyzer (with non-open-source parts explicitly noted where applicable).
-- **Complete:** The artifact includes all core components needed to reproduce the paper claims: the AccessRefinery implementation, baseline implementations (including our re-implementation of AWS Access Analyzer), datasets, experiment scripts, and figure-generation scripts.
-- **Exercisable:** Users can run standard Maven workflows for building, testing, execution, and experiment reproduction using the provided commands and scripts.
-- **Verification and Validation Evidence:** The artifact provides archived experimental results as concrete evidence for reproducibility checks.
+- **Documented:** The artifact provides clear instructions for *project structure*, *environment setup* (requirements and installation), and *execution*.
+- **Consistent:** The artifact is consistent with the paper claims and includes *MCP*, *AccessRefinery*, our *re-implementation of AWS Access Analyzer*, and *scripts for invoking AWS Access Analyzer via CLI API*.
+> Note that: The baseline approach, AWS Access Analyzer, is not open-sourced.
+- **Complete:** The artifact includes all materials needed to reproduce the experimental results, including the *AccessRefinery implementation*, *baseline implementations*, *datasets*, and *experiment and plotting scripts*.
+- **Exercisable:** The artifact provides instructions that allow users to run standard Maven workflows to execute our system and reproduce the experimental results.
+- **Verification and Validation Evidence:** The artifact provides *archived results* for reproducibility checks.
 
 ### 2) Evaluated - Reusable
 
