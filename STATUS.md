@@ -1,49 +1,53 @@
-
 # STATUS
 
-We believe our artifact is consistent with the categories of artifacts of interest:
+Our artifact aligns with the focus of the FSE 2026 Artifacts Track, as follows:
 
-- **Software:** We provide the implementation presented in our paper, AccessRefinery, together with our re-implementation of AWS Access Analyzer, which allows follow-up studies.
-- **Frameworks:** We design Multi-round Constraints Preprocessor (MCP) as a data structure (Java JAR package) that accelerates multi-round SMT solving. It can potentially be applied in other software engineering systems.
-- **Datasets:** We provide two open-source datasets synthesized from realistic data for scalability and correctness evaluation, respectively.
+- **Software:** We provide the implementation of AccessRefinery and our re-implementation of AWS Access Analyzer (baseline), which enables follow-up studies.
+- **Frameworks:** We design the Multi-round Constraints Preprocessor (MCP), which accelerates multi-round SMT solving. It can potentially be applied to other software engineering systems. Moreover, we provide it as a Java JAR package, which allows easy reuse.
+- **Datasets:** We provide three open-source datasets synthesized from real-world data.
 
-Thus, we apply for the following ACM Artifact Evaluation badges:
+Moreover, we apply for the following FSE 2026 Artifact Evaluation badges:
 
 ## Evaluated - Functional
 
 We believe this artifact satisfies the Functional criteria (*The artifacts associated with the research are found to be documented, consistent, complete, exercisable, and include appropriate evidence of verification and validation.*), for the following reasons:
 
-> Note: The baseline approach, AWS Access Analyzer, is not open-source.
-
-- **Documented:** The repository provides concrete instructions for project structure, environment setup (requirements and installation), and command-level execution.
-- **Exercisable:** Users can run standard Maven workflows to build and execute the system from source.
-- **Complete:** The artifact includes all required components to reproduce the reported experiments, including AccessRefinery, baseline implementations, datasets, and experiment/plotting scripts.
-- **Consistent:** The released artifact aligns with the paper's claims and includes MCP, AccessRefinery, our re-implementation of AWS Access Analyzer, and scripts for invoking AWS Access Analyzer through the CLI API.
-- **Verification and Validation Evidence:** Archived experiment outputs are provided to support reproducibility checks.
+- **Documented:** The artifact provides details on
+  - requirements
+  - installation
+  - project structure
+  - usage and examples
+  - reproduction scripts and instructions
+- **Exercisable:** Users can run standard Maven workflows (Java JDK 17) to build and execute the system from source.
+- **Complete:** The artifact includes all required materials to reproduce the reported experiments:
+  - source code for AccessRefinery
+  - source code for our re-implementation of AWS Access Analyzer
+  - scripts for invoking AWS Access Analyzer via the CLI API (The baseline approach, AWS Access Analyzer, is not open-source and provides only a CLI API.)
+  - three synthetic datasets
+  - experiment scripts
+  - plotting scripts
+  - reproduction instructions
+- **Consistency and Evidence:** The released artifact aligns with the paper's evaluation conclusions. We provide archived results and instructions on how to map the results to the conclusions in the paper.
 
 ## Evaluated - Reusable
 
 In addition to being functional, we believe this artifact satisfies the Reusable criteria (*They are very carefully documented and well-structured to the extent that reuse and repurposing is facilitated*), for the following reasons:
 
-- **Modular architecture and clear interfaces:**
-  - MCP is packaged as an independent Maven module; compiling the project produces `mcp-1.0.jar`, which can be directly integrated into other Java projects.
-  - MCP uses a generic design with unified preprocessing (e.g., equivalence-class partitioning and bit-vector encoding) across multiple variable types, including regex, bit-vector/prefix, range, and set.
-  - This abstraction-based design makes MCP straightforward to extend to additional variable types.
+- **Reuse and repurposing of MCP:** To make MCP easy to use and extend, we provide the following design:
+  - **Modular Design:** MCP is designed as an independent Maven module. Compiling the project will produce `mcp-1.0.jar`, which can be directly imported by other Java projects.
+  - **Easy-to-use Java API:** MCP supports Java-style chained Boolean operations, for example, `policy.not().and(intent1.or(intent2))`.
+  - **General Design:** MCP uses a general design for multiple variable types, including regex (RegexpLabel.java), prefix (PrefixLabel.java), range (RangeLabel.java), and set (IntegerSetLabel.java). These types are mapped to a unified superclass (Label.java) based on language features such as polymorphism in Java. MCP then performs processing (e.g., equivalence-class partitioning and bit-vector encoding) on the unified superclass. This general design makes MCP easy to extend to other variable types.
 
-- **Reusable project organization and build outputs:**
-  - The repository is split into clear Maven modules (BDD, MCP, AccessRefinery, and Access Analyzer), enabling targeted reuse of components.
-  - Running `mvn package` at the repository root generates reusable deliverables (`mcp-1.0.jar`) and executable artifacts (`accessrefinery-1.0.jar`, `accessanalyzer-1.0.jar`).
+- **Reuse and repurposing of AccessRefinery and Access Analyzer:** To facilitate intent mining for cloud users and comparison experiments for developers, we provide the following design:
+  - **Modular Design:** The artifact adopts an independent modular design. Running `mvn package` at the repository root generates `accessrefinery-1.0.jar` and `accessanalyzer-1.0.jar`, which can be conveniently used for intent mining.
+  - **Easy-to-use Command-Line API:** We design the Java JAR package to support command-line parsing, so developers do not need to deal with internal implementation details when conducting comparison experiments.
+  For example, `$ java -jar target/refinery-1.0.jar -m -r --sat --round 10 -f data/Correctness` will automatically run 10 rounds to compute the average time, and `--sat` indicates that MiniSAT is used instead of BDD to represent bit-vectors.
 
-- **Documentation and automation for extension and adoption:**
-  - MCP, AccessRefinery, and Access Analyzer include usage-oriented documentation with concrete examples.
-  - Auto-generated Maven documentation is provided for MCP APIs.
-  - Automation scripts generate organized experiment outputs, and archived logs are mapped to paper figures, which lowers the cost of extension, comparison, and follow-up studies.
-  
 ## Available
 
 We believe this artifact satisfies the Available criteria (*A DOI or link to this repository, along with a unique identifier for the object, is provided*).
 
-We make the artifact publicly available through the following channels:
+The artifact is publicly available in two ways:
 
-- Archival release: [Zenodo]() snapshot with DOI 1111:1111.
-- Development release: public [GitHub repository]().
+- Archival release: [Zenodo] snapshot version with DOI 1111:1111.
+- Development release: [GitHub]() repository version.
