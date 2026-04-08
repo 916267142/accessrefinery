@@ -2,12 +2,6 @@
 
 **AccessRefinery** is an intent-mining tool for IAM policies. In our experiments, we compare it with **AWS Access Analyzer**.
 
-Since AWS Access Analyzer is not open-source and provides only a CLI, we also reimplemented Access Analyzer for evaluation. We distinguish the two versions as follows:
-
-- **Reimplemented Access Analyzer** - our reimplementation of Access Analyzer.
-- **CLI-based Access Analyzer** – the AWS commercial Access Analyzer, invoked through its remote CLI interface.
-
-It is strongly recommended to skip reproducing *CLI-based Access Analyzer* because the environment setup is extremely complex (AWS account registration, billing setup, and CLI credential configuration). Therefore, we provide archived results for *CLI-based Access Analyzer*. However, we still provide [installation instructions](xxxxxx) for developers who want to test *CLI-based Access Analyzer*.
 
 ## Set Up the Experimental Environment
 

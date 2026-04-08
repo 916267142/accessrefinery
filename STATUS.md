@@ -2,7 +2,7 @@
 
 Our artifact aligns with the focus of the FSE 2026 Artifacts Track, as follows:
 
-- **Software:** We provide the implementation of AccessRefinery and our re-implementation of AWS Access Analyzer (baseline), which enables follow-up studies.
+- **Software:** We provide the implementation of AccessRefinery and our reimplementation of AWS Access Analyzer (baseline), which enables follow-up studies.
 - **Frameworks:** We design the Multi-round Constraints Preprocessor (MCP) as a data structure, which accelerates multi-round SMT solving. Moreover, we design MCP as a Java JAR package, which allows easy reuse.
 - **Datasets:** We provide three open-source datasets synthesized from real-world data.
 
@@ -22,7 +22,7 @@ We believe this artifact satisfies the Functional criteria (*The artifacts assoc
 - **Exercisable:** Users can run standard Maven workflows (Java JDK 17) to build and execute the system from source.
 - **Complete:** The artifact includes all required materials to reproduce the reported experiments:
   - Source code for AccessRefinery
-  - Source code for our re-implementation of AWS Access Analyzer
+  - Source code for our reimplementation of AWS Access Analyzer
   - Scripts for invoking AWS Access Analyzer via the CLI API (The baseline approach, AWS Access Analyzer, is not open-source and provides only a CLI API.)
   - Three synthetic datasets
   - Reproduction scripts and instructions
