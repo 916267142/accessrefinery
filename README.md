@@ -257,7 +257,7 @@ In addition, one file is generated in the current path:
 
 This section explains how to reproduce the results of **AccessRefinery** and **Reimplemented Access Analyzer** reported in the paper.
 
-> Recall that We recommand to skip [reproducing CLI-based Access Analyzer](xxxxxx). However, you can still verify the evaluation results reported in the paper, since all experimental results are archived in `/archive_result`.
+> Recall that We recommand to skip [reproducing CLI-based Access Analyzer](xxxxxx). However, you can still verify the evaluation results reported in the paper, since all experimental results are archived in `archive_result/`.
 
 ### Running AccessRefinery
 
