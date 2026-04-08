@@ -10,9 +10,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>projects/bdd</module>
-        <module>projects/mcp</module>
-        <module>projects/refinery</module>
+        <module>baselines/accessanalyzer-reimpl</module>
+        <module>accessrefinery/bdd</module>
+        <module>accessrefinery/mcp</module>
+        <module>accessrefinery/refinery</module>
     </modules>
 
     <properties>
@@ -80,6 +81,12 @@
             <dependency>
                 <groupId>org.ants</groupId>
                 <artifactId>mcp</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.ants</groupId>
+                <artifactId>accessanalyzer</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

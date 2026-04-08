@@ -35,12 +35,17 @@ After setting up Linux, follow [Install](INSTALL.md) to install the environment,
 
 ## Structure
 
-This repository includes the implementation of **AccessRefinery**, along with datasets, reproduction scripts, and archived results.
+<!-- This repository includes the implementation of **AccessRefinery**, along with datasets, reproduction scripts, and archived results. -->
 
-- `projects/`: Implementation of **AccessRefinery**.
+This repository contains the implementation of AccessRefinery and the baselines used for comparison.
+
+- `accessrefinery/`: Implementation of **AccessRefinery**.
     - `bdd/`: Implementation of the binary decision diagram backend used by MCP.
     - `mcp/`: Implementation of the Multi-Theory Constraint Preprocessor (MCP).
     - `refinery/`: Implementation of intent mining and reduction.
+- `baselines/`:
+    - `accessanalyzer-reimpl`: Re-implementation of AWS Access Analyzer.
+    - `accessanalyzer-cli`: Scripts for calling AWS Access Analyzer via the CLI API.
 - `data/`:
     - `Correctness/`: Dataset for correctness experiments.
     - `Scalability_05Keys/`: Synthetic dataset for scalability experiments.
@@ -50,14 +55,12 @@ This repository includes the implementation of **AccessRefinery**, along with da
 - `paper_figures/`: Scripts for generating the figures in the paper.
 - `archive_results/`: Archived experimental results.
 
-For comparison, the repository also includes two AWS Access Analyzer artifacts:
+<!-- For comparison, the repository also includes two AWS Access Analyzer artifacts:
 
 - `AccessAnalyzerCLI/`: Scripts for running AWS Access Analyzer via the CLI API, along with run instructions.
-- `AccessAnalyzer/`: Our re-implementation of Access Analyzer and run instructions.
+- `AccessAnalyzer/`: Our re-implementation of Access Analyzer and run instructions. -->
 
 <!-- ## Project Structure
-
-This repository contains the implementation of AccessRefinery and the baselines used for comparison.
 
 - `accessrefinery/`: Implementation of AccessRefinery (our approach)
 - `baselines/`: Compared methods
@@ -70,7 +73,7 @@ This repository contains the implementation of AccessRefinery and the baselines 
 
 See [Requirements](REQUIREMENTS.md) and [Installation](INSATLL.md) for setup details, including our **re-implementation of Access Analyzer**.
 
-After compilation, the `target/` directory will contain `refinery-1.0.jar` (for intent mining and reduction) and `mcp-1.0.jar` (which can be reused in other projects for fast multi-round SMT solving).
+After compilation, the `target/` directory will contain `accessrefinery-1.0.jar` (for intent mining and reduction), `mcp-1.0.jar` (which can be reused in other projects for fast multi-round SMT solving), and `accessanalyzer-1.0.jar` (our baseline re-implementation).
 
 ## Using Multi-Theory Constraint Preprocessor (MCP)
 
