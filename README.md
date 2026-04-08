@@ -213,10 +213,11 @@ mvn clean package
 To run **AccessRefinery**, use:
 
 ```shell
-$ java -jar target/refinery-1.0.jar [options]
+java -jar target/refinery-1.0.jar [options]
 ```
 
 **Command-line options:**
+
 - `-h, --help` : Show help information.
 - `-m, --mine` : Enable intent mining.
 - `-r, --reduce` : Enable intent reduction.
@@ -225,8 +226,9 @@ $ java -jar target/refinery-1.0.jar [options]
 - `--round <number>` : Number of mining rounds (to reduce experimental bias).
 
 **Example:**
+
 ```shell
-$ java -jar target/refinery-1.0.jar -m -r --round 1 -f data/Correctness
+java -jar target/refinery-1.0.jar -m -r --round 1 -f data/Correctness
 ```
 
 The command produces logs similar to the following:
@@ -242,11 +244,13 @@ The command produces logs similar to the following:
 ```
 
 After processing all policies, results are generated in the `results/Correctness/` directory. The output includes:
+
 - `xxx.json`: The generated intents for each policy.
 - `xxx.csv`: Statistics for multi-round SMT solving for each policy.
 - `summary.txt`: Summary statistics for all policies in a folder.
 
 In addition, one file is generated in the current path:
+
 - `accessrefinery.log` : Records the running log.
 
 ## Evaluation Reproduction
@@ -258,11 +262,12 @@ This section explains how to reproduce the results of **AccessRefinery** and **R
 ### Running AccessRefinery
 
 The following scripts reproduce the AccessRefinery results and automatically invoke `target/refinery-1.0.jar`.
+
 ```bash
-$ sh tools/running_bdd_miner.sh
-$ sh tools/running_sat_miner.sh
-$ sh tools/running_bdd_reducer.sh
-$ sh tools/running_sat_reducer.sh
+sh tools/running_bdd_miner.sh
+sh tools/running_sat_miner.sh
+sh tools/running_bdd_reducer.sh
+sh tools/running_sat_reducer.sh
 ```
 
 The following folders will be generated under `result/`. The difference between `bdd_` and `sat_` is the backend used to represent bit-vectors. The suffix `10rs` means the experiment is run for 10 rounds and the average is reported. Because `accessrefinery_sat_reducer_3rs` runs very slowly, we report results for only three rounds.
@@ -291,9 +296,9 @@ Basic Boolean operations are tested in [MCPTest.java](projects/mcp/src/test/java
 The following commands check whether the intents mined by AccessRefinery are consistent with those from AWS Access Analyzer (via CLI). Logs are generated in `compare_result/`:
 
 ```bash
-$ # JSON library required by the comparison script (jq 1.6)
-$ sudo apt install jq 
-$ sh tools/running_batch_compare.sh
+# JSON library required by the comparison script (jq 1.6)
+sudo apt install jq 
+sh tools/running_batch_compare.sh
 ```
 
 Then use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary.txt` to plot Figure 9 of the paper.
@@ -307,14 +312,13 @@ Run `sh tools/running_bdd_reducer.sh`, then compare the values in `accessrefiner
 
 **Target**: Figure 10 in the paper.
 
-<img src="./tools/Experiment-Effectiveness-ThreeGraph.png" width="450"/>
-<!-- 
-![Figure 10](tools/Experiment-Effectiveness-ThreeGraph.png) -->
+<img src="./tools/figures/figure12.png" width="450"/>
 
 **Required logs**:
+
 - `accessrefinery_bdd_reducer_10rs/`
-    - `Scalability_05Keys/summary.txt`
-    - `Scalability_06Keys/summary.txt`
+  - `Scalability_05Keys/summary.txt`
+  - `Scalability_06Keys/summary.txt`
 
 The `NumberMCI` column represents the number of intents before reduction, and the `NumberRRI` column represents the number after reduction.
 
@@ -326,10 +330,13 @@ The `NumberMCI` column represents the number of intents before reduction, and th
 
 **Target**: Figure 13 in the paper.
 
+<img src="./tools/figures/figure13.png" width="450"/>
+
 **Required logs**:
+
 - `accessrefinery_bdd_miner_10rs/`
-    - `Scalability_05Keys/summary.txt`
-    - `Scalability_06Keys/summary.txt`
+  - `Scalability_05Keys/summary.txt`
+  - `Scalability_06Keys/summary.txt`
 
 The `TotalTimeAverage` column represents the average runtime over 10 rounds.
 
@@ -339,7 +346,10 @@ The `TotalTimeAverage` column represents the average runtime over 10 rounds.
 
 **Target**: Real-world evaluation discussed in the paper.
 
+<img src="./tools/figures/figure14.png" width="450"/>
+
 **Required logs**:
+
 - Not released in this artifact.
 
 These logs are omitted for commercial reasons.
@@ -352,24 +362,29 @@ These logs are omitted for commercial reasons.
 "For intent mining, using JavaBDD is 1-6x faster than using MiniSAT (for clarity, the figure is omitted)."
 
 **Required logs (Intent Mining)**:
+
 - `accessrefinery_bdd_miner_10rs/`
-    - `Scalability_05Keys/summary.txt`
-    - `Scalability_06Keys/summary.txt`
+  - `Scalability_05Keys/summary.txt`
+  - `Scalability_06Keys/summary.txt`
 - `accessrefinery_sat_miner_10rs/`
-    - `Scalability_05Keys/summary.txt`
-    - `Scalability_06Keys/summary.txt`
+  - `Scalability_05Keys/summary.txt`
+  - `Scalability_06Keys/summary.txt`
 
 The `TotalTimeAverage` column represents the average runtime over 10 rounds.
 
 **Target (Intent Reduction)**: Figure 13 in the paper.
 
+<img src="./tools/figures/figure15.png" width="450"/>
+
+
 **Required logs (Intent Reduction)**:
+
 - `accessrefinery_bdd_reducer_10rs/`
-    - `Scalability_05Keys/summary.txt`
-    - `Scalability_06Keys/summary.txt`
+  - `Scalability_05Keys/summary.txt`
+  - `Scalability_06Keys/summary.txt`
 - `accessrefinery_sat_reducer_3rs/`
-    - `Scalability_05Keys/summary.txt`
-    - `Scalability_06Keys/summary.txt`
+  - `Scalability_05Keys/summary.txt`
+  - `Scalability_06Keys/summary.txt`
 
 For a fair comparison, compare average runtime per round using `TotalTimeAverage / rounds` (BDD: 10 rounds, SAT: 3 rounds).
 
@@ -379,11 +394,14 @@ For a fair comparison, compare average runtime per round using `TotalTimeAverage
 
 **Target**: Table 2 in the paper.
 
+<img src="./tools/figures/table2.png" width="450"/>
+
+
 **Required logs**:
 
 - `accessrefinery_bdd_miner_10rs/`
-    - `Scalability_05Keys/`
-    - `Scalability_06Keys/`
+  - `Scalability_05Keys/`
+  - `Scalability_06Keys/`
 
 `MCILabelsTimeAverage` is the average MCP preprocessing time.
 `NumberRRI` is the number of reduced intents.
