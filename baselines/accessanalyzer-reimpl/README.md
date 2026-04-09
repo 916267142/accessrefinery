@@ -27,7 +27,7 @@ $ mvn clean package
 ## Run
 
 ```bash
-$ java -jar target/accessanalyzer-1.0-SNAPSHOT-release.jar <options>
+$ java -jar target/accessanalyzer-1.0.jar <options>
 ```
 
 ### Command-line options:
@@ -38,7 +38,7 @@ $ java -jar target/accessanalyzer-1.0-SNAPSHOT-release.jar <options>
 
 Example:
 ```bash
-$ java -jar target/accessanalyzer-1.0-SNAPSHOT-release.jar -r -s Z3 -f data/Correctness/
+$ java -jar target/accessanalyzer-1.0.jar -r -s Z3 -f data/Correctness/
 ``` 
 
 Then the result will be output to the `results/` folder.

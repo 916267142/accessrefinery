@@ -228,7 +228,7 @@ java -jar target/refinery-1.0.jar [options]
 **Example:**
 
 ```shell
-java -jar target/refinery-1.0.jar -m -r --round 1 -f data/Correctness
+java -jar target/accessrefinery-1.0.jar -m -r --round 1 -f data/Correctness
 ```
 
 The command produces logs similar to the following:

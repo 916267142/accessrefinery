@@ -1,14 +1,15 @@
 # Installation Overview
 
-**AccessRefinery** is an intent-mining tool for IAM policies. In our experiments, we compare it with **AWS Access Analyzer**.
+<!-- **AccessRefinery** is an intent-mining tool for IAM policies. In our experiments, we compare it with **AWS Access Analyzer**. -->
 
+This installation includes the environment for **AccessRefinery** and our reimplemented **Access Analyzer** baseline.
 
-## Set Up the Experimental Environment
+## Environment Setup
 
 - Prepare a Linux system (recommended: Ubuntu 22.04.5):
 
-ubuntu-22.04.5-desktop-amd64.iso  
-https://releases.ubuntu.com/jammy/ubuntu-22.04.5-desktop-amd64.iso
+ubuntu-22.04.5-desktop-amd64.iso
+<https://releases.ubuntu.com/jammy/ubuntu-22.04.5-desktop-amd64.iso>
 
 - Install JDK 17:
 
@@ -78,7 +79,7 @@ OS name: "linux", version: "6.8.0-90-generic", arch: "amd64", family: "unix"
 sudo apt install jq
 ```
 
-Then run:
+Verify `jq`:
 
 ```bash
 jq --version
@@ -92,24 +93,24 @@ jq-1.6
 
 - Install `Z3`
 
-```bash
-echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:'$(pwd)'/baselines/accessanalyzer-reimpl/lib/z3-4.14.1/bin' >> ~/.bashrc
-source ~/.bashrc
-```
-
-Then run:
+Z3 is already precompiled. Run the following script to automatically copy the Z3 executable to the appropriate directories.
 
 ```bash
-z3 -version
+sh tools/install_z3.sh
 ```
 
 Expected output:
 
 ```shell
-Z3 version 4.12.2 - 64 bit
+Copied Z3 files to:
+- /usr/lib
+- /usr/bin
+- /home/nkang/.local/bin
+Z3 version 4.14.1 - 64 bit
+Z3 installation is correct.
 ```
 
-> Note: CVC5 is automatically installed by Maven package.
+> Note: CVC5 will be installed automatically when compiling the project.
 
 ## Compile AccessRefinery and Access Analyzer
 
@@ -120,20 +121,22 @@ mvn clean package
 Expected output:
 
 ```shell
-[INFO] Reactor Summary for accessrefinery 1.0-SNAPSHOT:
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for accessrefinery 1.0:
 [INFO] 
-[INFO] accessrefinery ..................................... SUCCESS [  5.882 s]
-[INFO] bdd ................................................ SUCCESS [01:05 min]
-[INFO] mcp ................................................ SUCCESS [ 12.214 s]
-[INFO] refinery ........................................... SUCCESS [03:38 min]
+[INFO] accessrefinery ..................................... SUCCESS [  0.002 s]
+[INFO] accessanalyzer ..................................... SUCCESS [ 17.548 s]
+[INFO] bdd ................................................ SUCCESS [  5.056 s]
+[INFO] mcp ................................................ SUCCESS [ 13.862 s]
+[INFO] refinery ........................................... SUCCESS [ 15.490 s]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  05:01 min
-[INFO] Finished at: 2026-01-29T19:54:43+08:00
+[INFO] Total time:  52.040 s
+[INFO] Finished at: 2026-04-09T16:08:12+08:00
 [INFO] ------------------------------------------------------------------------
 ```
 
 Then you will find `target/mcp-1.0.jar`, `target/accessrefinery-1.0.jar`, `target/accessanalyzer-1.0.jar`.
 
-This step automatically runs `mvn test`. If you can see these JAR files, the AccessRefinery and Access Analyzer environment is set up correctly, and the project has been compiled successfully.
+> This step automatically runs `mvn test`. If you can see these JAR files, the AccessRefinery and Access Analyzer environment is set up correctly, and the project has been compiled successfully.

@@ -97,6 +97,7 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
+                    <includeSystemScope>true</includeSystemScope>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
@@ -143,9 +144,11 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>org.iam.Main</mainClass>
+                            <mainClass>org.aws.Main</mainClass>
                         </manifest>
                     </archive>
+                    <outputDirectory>${project.parent.build.directory}</outputDirectory>
+                    <finalName>accessanalyzer-1.0</finalName>
                     <descriptors>
                         <descriptor>${project.basedir}/assembly/release.xml</descriptor>
                     </descriptors>
