@@ -90,31 +90,4 @@ Z3 installation is correct.
 
 > Note: `CVC5` is installed automatically during project compilation.
 
-## Compile **AccessRefinery** and **Access Analyzer**
-
-```bash
-mvn clean package
-```
-
-Expected output:
-
-```shell
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Summary for accessrefinery 1.0:
-[INFO] 
-[INFO] accessrefinery ..................................... SUCCESS [  0.002 s]
-[INFO] accessanalyzer ..................................... SUCCESS [ 17.548 s]
-[INFO] bdd ................................................ SUCCESS [  5.056 s]
-[INFO] mcp ................................................ SUCCESS [ 13.862 s]
-[INFO] refinery ........................................... SUCCESS [ 15.490 s]
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  52.040 s
-[INFO] Finished at: 2026-04-09T16:08:12+08:00
-[INFO] ------------------------------------------------------------------------
-```
-
-The build produces `target/mcp-1.0.jar` (for **MCP**), `target/accessrefinery-1.0.jar` (for **AccessRefinery**), and `target/accessanalyzer-1.0.jar` (for reimplemented **Access Analyzer**).
-
-> This step automatically runs `mvn test`. If these JAR files are generated, the environments for **AccessRefinery**, **MCP**, and **Access Analyzer** are set up correctly, and the project has been compiled successfully.
+<!-- ## Compile **AccessRefinery** and **Access Analyzer** -->

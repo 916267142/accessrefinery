@@ -32,57 +32,72 @@ Moreover, we design MCP as a module separate from **AccessRefinery**, allowing o
 
 For technical details, see our FSE 2026 paper: [*AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud*](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf).
 
-<!-- 
-After setting up Linux, follow [Install](INSTALL.md) to install the environment, and compile **AccessRefinery** and our reproduced **Access Analyzer** (baseline). -->
+<!-- After setting up Linux, follow [Install](INSTALL.md) to install the environment, and compile **AccessRefinery** and our reproduced **Access Analyzer** (baseline). -->
 
 ## Structure
 
 <!-- This repository includes the implementation of **AccessRefinery**, along with datasets, reproduction scripts, and archived results. -->
 
-Since AWS Access Analyzer is not open source and provides only a CLI, we also reimplemented Access Analyzer for evaluation. We distinguish the two versions as follows:
+Since AWS Access Analyzer is not open source and provides only a CLI, we also reimplemented Access Analyzer for evaluation. We distinguish the two versions as **Reimplemented Access Analyzer** and **CLI-based Access Analyzer**.
 
-- **Reimplemented Access Analyzer** - our reimplementation of Access Analyzer.
-- **CLI-based Access Analyzer** – the AWS commercial Access Analyzer, invoked through its remote CLI API.
-
-This repository contains the implementation of AccessRefinery and the baselines used for comparison.
-
+- `data/`:
+  - `Correctness/`: Dataset for correctness experiments.
+  - `Scalability_05Keys/`: Synthetic dataset for scalability experiments.
+  - `Scalability_06Keys/`: Synthetic dataset for scalability experiments.
 - `accessrefinery/`: Implementation of **AccessRefinery**.
   - `bdd/`: Implementation of the binary decision diagram backend used by MCP.
   - `mcp/`: Implementation of the Multi-Theory Constraint Preprocessor (MCP).
   - `refinery/`: Implementation of intent mining and reduction.
 - `baselines/`:
   - `accessanalyzer-reimpl`: Reimplementation of AWS Access Analyzer.
-  - `accessanalyzer-cli`: Scripts for calling AWS Access Analyzer via the CLI API.
-- `data/`:
-  - `Correctness/`: Dataset for correctness experiments.
-  - `Scalability_05Keys/`: Synthetic dataset for scalability experiments.
-  - `Scalability_06Keys/`: Synthetic dataset for scalability experiments.
-- `tools/`: Scripts for running the experiments.
+  - `accessanalyzer-cli`: Scripts for invoking Access Analyzer via AWS Command-Line Interface (CLI).
 - `pom.xml`: Maven root configuration.
+- `tools/`: Scripts for running the experiments.
+- `docs/`: Stores documents such as auto-generated JavaDoc. 
 - `paper_figures/`: Scripts for generating the figures in the paper.
 - `archive_results/`: Archived experimental results.
 
-<!-- For comparison, the repository also includes two AWS Access Analyzer artifacts:
-
-- `AccessAnalyzerCLI/`: Scripts for running AWS Access Analyzer via the CLI API, along with run instructions.
-- `AccessAnalyzer/`: Our reimplementation of Access Analyzer and run instructions. -->
-
-<!-- ## Project Structure
-
-- `accessrefinery/`: Implementation of AccessRefinery (our approach)
-- `baselines/`: Compared methods
-  - `accessanalyzer-reimpl/`: Our reimplementation of Access Analyzer
-  - `accessanalyzer-cli/`: Scripts for the official AWS Access Analyzer CLI
-- `data/`: Experimental datasets
-- `tools/`: Scripts for running experiments -->
-
 ## Setup
 
-See [Requirements](REQUIREMENTS.md) and [Installation](INSATLL.md) for AccessRefinery and the reimplemented Access Analyzer.
+### Prerequisites
 
-After compilation, the `target/` directory will contain `mcp-1.0.jar` (which can be reused in other projects for fast multi-round SMT solving), `accessrefinery-1.0.jar` (AccessRefinery), and `accessanalyzer-1.0.jar` (Reimplemented Access Analyzer).
+See [Requirements](REQUIREMENTS.md) and [Installation](INSTALL.md) for detailed setup instructions. Prepare a Linux environment and install Java JDK 17, Maven, Z3 (for Access Analyzer), and jq (for JSON processing).
 
-> It is strongly recommended that you skip installing the CLI-based Access Analyzer because its setup is complex (AWS account registration, billing setup, and CLI credential configuration). Instead, we provide archived results for the CLI-based Access Analyzer. We also provide CLI installation instructions for developers.
+### Build
+
+From the project root directory, run:
+
+```bash
+mvn clean package
+```
+
+The build generates the following artifacts in `target/`:
+
+- `mcp-1.0.jar` for **MCP**, which can be reused in other projects for fast multi-round SMT solving.
+- `accessrefinery-1.0.jar` for **AccessRefinery**.
+- `accessanalyzer-1.0.jar` for the reimplemented **Access Analyzer**.
+
+<!-- 
+Expected output:
+
+```shell
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for accessrefinery 1.0:
+[INFO] 
+[INFO] accessrefinery ..................................... SUCCESS [  0.002 s]
+[INFO] accessanalyzer ..................................... SUCCESS [ 17.548 s]
+[INFO] bdd ................................................ SUCCESS [  5.056 s]
+[INFO] mcp ................................................ SUCCESS [ 13.862 s]
+[INFO] refinery ........................................... SUCCESS [ 15.490 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  52.040 s
+[INFO] Finished at: 2026-04-09T16:08:12+08:00
+[INFO] ------------------------------------------------------------------------
+``` -->
+
+<!-- > This step automatically runs `mvn test`. If these JAR files are generated, the environments for **AccessRefinery**, **MCP**, and **Access Analyzer** are set up correctly, and the project has been compiled successfully. -->
 
 ## Using Multi-Theory Constraint Preprocessor (MCP)
 
@@ -90,13 +105,7 @@ MCP is a data structure for fast multi-round SMT solving. It supports regular ex
 
 ### Reuse in Another Project
 
-Follow [Install](INSTALL.md) to generate the JAR package. Recall that:
-
-```bash
-mvn clean package
-```
-
-This generates `target/mcp-1.0.jar`. Install it into your local Maven repository:
+Install `target/mcp-1.0.jar` into your local Maven repository:
 
 ```bash
 mvn install:install-file \
@@ -159,8 +168,8 @@ Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resou
 }
 ```
 
-Moreover, suppose our goal is to check the satisfiability of three formulas: $\neg I_6 \land P$, $I_6 \land \neg P$, and $I_6 \land P$. The corresponding MCP code is shown below.
-The example is also included in [MCPFactoryTest.java](projects/mcp/src/test/java/org/mcp/core/MCPFactoryTest.java) and runs automatically during `mvn package`.
+Moreover, suppose our goal is to check the satisfiability of three formulas: $\neg I_6 \land P$, $I_6 \land \neg P$, and $I_6 \land P$. The MCP code for checking these formulas is shown below.
+The example is also included in [MCPFactoryTest.java](accessrefinery/mcp/src/test/java/org/mcp/core/MCPFactoryTest.java) and runs automatically during `mvn package`.
 
 ```java
 package com.example;
@@ -203,12 +212,6 @@ public class Main {
 ## Using AccessRefinery
 
 **AccessRefinery** builds on MCP for IAM intent mining and reduction. In this repository, MCP is already integrated into **AccessRefinery**, so you can use it directly without a separate installation.
-
-Follow [Install](INSTALL.md) to build the JAR package:
-
-```shell
-mvn clean package
-```
 
 To run **AccessRefinery**, use:
 
@@ -259,7 +262,9 @@ This section explains how to reproduce the results of **AccessRefinery** and the
 
 > Recall that we recommend skipping the reproduction of the CLI-based Access Analyzer. However, you can still verify the evaluation results reported in the paper, since all experimental results are archived in `archive_result/`.
 
-### Running AccessRefinery
+### Generate Archival Results
+
+#### AcessRefinery
 
 The following scripts reproduce the AccessRefinery results and automatically invoke `target/refinery-1.0.jar`.
 
@@ -276,6 +281,10 @@ The following folders will be generated under `result/`. The difference between 
 - `accessrefinery_sat_miner_10rs/`: Intent mining results for 10 rounds with MiniSAT.
 - `accessrefinery_bdd_reducer_10rs/`: Intent mining and reduction results for 10 rounds with JavaBDD.
 - `accessrefinery_sat_reducer_3rs/`: Intent mining and reduction results for 3 rounds with MiniSAT.
+
+
+
+<!-- > It is strongly recommended that you skip installing the CLI-based Access Analyzer because its setup is complex (AWS account registration, billing setup, and CLI credential configuration). Instead, we provide archived results for the CLI-based Access Analyzer. We also provide CLI installation instructions for developers. -->
 
 ### Running Re-implemented Access Analyzer
 
@@ -451,6 +460,10 @@ sudo apt install gnuplot
 cd paper_figures
 sh draw.sh
 ```
+
+## For developer
+
+
 
 ## Contact
 

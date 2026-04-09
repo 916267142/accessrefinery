@@ -21,3 +21,4 @@ aws_result/*
 accessrefinery.log*
 comparison.log
 miner.log
+compare_accessrefinery_with_accessanalyzer_cli/*
