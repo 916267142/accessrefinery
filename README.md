@@ -62,7 +62,7 @@ The build generates the following JAR packages in `target/`:
 - `accessrefinery-1.0.jar` for **AccessRefinery**.
 - `accessanalyzer-1.0.jar` for the reimplemented **Access Analyzer**.
 
-For development in VS Code, see [details](docs/developer/VSCODE_DEVELOPER_GUIDE.md).
+For development in VS Code IDEA, see [details](docs/vscode-develop/VSCODE.md).
 
 ## Using Multi-Theory Constraint Preprocessor (MCP)
 
