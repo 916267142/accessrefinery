@@ -1,42 +1,31 @@
-#!/bin/bash
+#!/bin/sh
 
-mkdir compare_accessrefinery_with_accessanalyzer_cli
+RESULT_ROOT="results"
+OUTPUT_DIR="${RESULT_ROOT}/accessrefinery_compare_results"
+ARCHIVE_ROOT="archive_result"
+COMPARE_SCRIPT="tools/accessrefinery/compare.sh"
+
+mkdir -p "${OUTPUT_DIR}"
+
+DATASETS="Correctness Scalability_05Keys Scalability_06Keys"
 
 # compare Web Access Analyzer with AccessRefinery
-sh tools/accessrefinery/compare.sh archive_result/accessanalyzer_web/Correctness/ \
-    archive_result/accessrefinery_bdd_miner_10rs/Correctness/ \
-    compare_accessrefinery_with_accessanalyzer_cli/Correctness_AccessRefinery_with_WebAccessAnalyzer.log
+for DATASET in ${DATASETS}; do
+    sh "${COMPARE_SCRIPT}" "${ARCHIVE_ROOT}/accessanalyzer_cli/${DATASET}/" \
+        "${ARCHIVE_ROOT}/accessrefinery_bdd_miner_10rs/${DATASET}/" \
+        "${OUTPUT_DIR}/${DATASET}_AccessRefinery_with_CliAccessAnalyzer.log"
+done
 
-sh tools/accessrefinery/compare.sh archive_result/accessanalyzer_web/Scalability_05Keys/ \
-    archive_result/accessrefinery_bdd_miner_10rs/Scalability_05Keys/ \
-    compare_accessrefinery_with_accessanalyzer_cli/Scalability_05Keys_AccessRefinery_with_WebAccessAnalyzer.log
+# compare AccessRefinery MCI BDD with AccessRefinery MCI SAT
+for DATASET in ${DATASETS}; do
+    sh "${COMPARE_SCRIPT}" "${ARCHIVE_ROOT}/accessrefinery_bdd_miner_10rs/${DATASET}/" \
+        "${ARCHIVE_ROOT}/accessrefinery_sat_miner_10rs/${DATASET}/" \
+        "${OUTPUT_DIR}/${DATASET}_MCI_AccessRefinery_BDD_with_AccessRefinery_SAT.log"
+done
 
-sh tools/accessrefinery/compare.sh archive_result/accessanalyzer_web/Scalability_06Keys/ \
-    archive_result/accessrefinery_bdd_miner_10rs/Scalability_06Keys/ \
-    compare_accessrefinery_with_accessanalyzer_cli/Scalability_06Keys_AccessRefinery_with_WebAccessAnalyzer.log
-
-# compare Web AccessRefinery Irefinery BDD with AccessRefinery Irefinery SAT
-sh tools/accessrefinery/compare.sh archive_result/accessrefinery_bdd_miner_10rs/Correctness/  \
-    archive_result/accessrefinery_sat_miner_10rs/Correctness/ \
-    compare_accessrefinery_with_accessanalyzer_cli/Correctness_MCI_AccessRefinery_BDD_with_AccessRefinery_SAT.log
-
-sh tools/accessrefinery/compare.sh archive_result/accessrefinery_bdd_miner_10rs/Scalability_05Keys/  \
-    archive_result/accessrefinery_sat_miner_10rs/Scalability_05Keys/ \
-    compare_accessrefinery_with_accessanalyzer_cli/Scalability_05Keys_MCI_AccessRefinery_BDD_with_AccessRefinery_SAT.log
-
-sh tools/accessrefinery/compare.sh archive_result/accessrefinery_bdd_miner_10rs/Scalability_06Keys/  \
-    archive_result/accessrefinery_sat_miner_10rs/Scalability_06Keys/ \
-    compare_accessrefinery_with_accessanalyzer_cli/Scalability_06Keys_MCI_AccessRefinery_BDD_with_AccessRefinery_SAT.log
-
-# compare Web AccessRefinery IReducer BDD with AccessRefinery IReducer SAT
-sh tools/accessrefinery/compare.sh archive_result/accessrefinery_bdd_reducer_10rs/Correctness/  \
-    archive_result/accessrefinery_sat_reducer_3rs/Correctness/ \
-    compare_accessrefinery_with_accessanalyzer_cli/Correctness_RRI_AccessRefinery_BDD_with_AccessRefinery_SAT.log
-
-sh tools/accessrefinery/compare.sh archive_result/accessrefinery_bdd_reducer_10rs/Scalability_05Keys/  \
-    archive_result/accessrefinery_sat_reducer_3rs/Scalability_05Keys/ \
-    compare_accessrefinery_with_accessanalyzer_cli/Scalability_05Keys_RRI_AccessRefinery_BDD_with_AccessRefinery_SAT.log
-
-sh tools/accessrefinery/compare.sh archive_result/accessrefinery_bdd_reducer_10rs/Scalability_06Keys/  \
-    archive_result/accessrefinery_sat_reducer_3rs/Scalability_06Keys/ \
-    compare_accessrefinery_with_accessanalyzer_cli/Scalability_06Keys_RRI_AccessRefinery_BDD_with_AccessRefinery_SAT.log
+# compare AccessRefinery RRI BDD with AccessRefinery RRI SAT
+for DATASET in ${DATASETS}; do
+    sh "${COMPARE_SCRIPT}" "${ARCHIVE_ROOT}/accessrefinery_bdd_reducer_10rs/${DATASET}/" \
+        "${ARCHIVE_ROOT}/accessrefinery_sat_reducer_3rs/${DATASET}/" \
+        "${OUTPUT_DIR}/${DATASET}_RRI_AccessRefinery_BDD_with_AccessRefinery_SAT.log"
+done

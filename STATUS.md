@@ -42,7 +42,7 @@ We believe this artifact satisfies the Reusable criteria (*They are very careful
 
 - **Reuse and Repurposing of AccessRefinery and Access Analyzer (Tool-Level Reuse)**: We provide the following evidence to support practical reuse in intent-mining and comparison workflows:
   - **Easy-to-use Command-Line API and Examples:** Running `$ mvn package` at the repository root generates `accessrefinery-1.0.jar` and `accessanalyzer-1.0.jar`. For each JAR package, we provide command-line parsing support, so developers do not need to handle internal implementation details when conducting comparison experiments.
-  For example, `$ java -jar target/refinery-1.0.jar -m -r --sat --round 10 -f data/Correctness` automatically runs 10 rounds to compute average runtime, and `--sat` indicates that MiniSAT is used instead of BDD to represent bit-vectors.
+  For example, `$ java -jar target/accessrefinery-1.0.jar -m -r --sat --round 10 -f data/Correctness` automatically runs 10 rounds to compute average runtime, and `--sat` indicates that MiniSAT is used instead of BDD to represent bit-vectors.
   We also provide usage examples for both **AccessRefinery** and **Access Analyzer**.
   - **Standardized API Documentation:** We provide standardized comments in the AccessRefinery source code, enabling automatic Maven documentation generation.
 

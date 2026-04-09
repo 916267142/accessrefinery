@@ -59,7 +59,7 @@ public class FileUtil {
     }
 
     /**
-     * Replaces the second last level of the input path with "result".
+     * Replaces the second last level of the input path with "results".
      *
      * @param inputFoldPath the input path
      * @return the new path with the second last level replaced
@@ -78,7 +78,7 @@ public class FileUtil {
             newPath = newPath.resolve(inputFoldPath.getName(i));
         }
 
-        newPath = newPath.resolve("result");
+        newPath = newPath.resolve("results");
 
         newPath = newPath.resolve(inputFoldPath.getName(nameCount - 1));
 

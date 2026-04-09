@@ -7,7 +7,7 @@ DIR2=$2
 LOG_FILE="${3:-"comparison.log"}"
 
 if [ ! -d "$DIR1" ] || [ ! -d "$DIR2" ]; then
-  echo "❌ Error: Both arguments must be directories."
+  echo "❌ $DIR1 $DIR2 Error: Both arguments must be directories."
   exit 1
 fi
 

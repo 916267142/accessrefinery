@@ -216,7 +216,7 @@ public class Main {
 To run **AccessRefinery**, use:
 
 ```shell
-java -jar target/refinery-1.0.jar [options]
+java -jar target/accessrefinery-1.0.jar [options]
 ```
 
 **Command-line options:**
@@ -258,33 +258,49 @@ In addition, one file is generated in the current path:
 
 ## Evaluation Reproduction
 
-This section explains how to reproduce the results of **AccessRefinery** and the **Reimplemented Access Analyzer** reported in the paper.
+This section explains how to reproduce the results reported in the paper. 
+We archived all results reported in paper in `archive_result/`.
 
-> Recall that we recommend skipping the reproduction of the CLI-based Access Analyzer. However, you can still verify the evaluation results reported in the paper, since all experimental results are archived in `archive_result/`.
+> Note that the results for the real-world datasets are omitted because of commercial restrictions.
 
-### Generate Archival Results
+### Reproducing Archived Results
 
-#### AcessRefinery
+#### Reproducing AccessRefinery
 
-The following scripts reproduce the AccessRefinery results and automatically invoke `target/refinery-1.0.jar`.
+The following scripts reproduce the AccessRefinery results and automatically invoke `target/accessrefinery-1.0.jar`.
 
 ```bash
-sh tools/running_bdd_miner.sh
-sh tools/running_sat_miner.sh
-sh tools/running_bdd_reducer.sh
-sh tools/running_sat_reducer.sh
+sh tools/accessrefinery/running_bdd_miner.sh
+sh tools/accessrefinery/running_sat_miner.sh
+sh tools/accessrefinery/running_bdd_reducer.sh
+sh tools/accessrefinery/running_sat_reducer.sh
+sh tools/accessrefinery/running_batch_compare.sh
 ```
 
-The following folders will be generated under `result/`. The difference between `bdd_` and `sat_` is the backend used to represent bit-vectors. The suffix `10rs` means the experiment is run for 10 rounds and the average is reported. Because `accessrefinery_sat_reducer_3rs` runs very slowly, we report results for only three rounds.
+The following directories will be generated under `results/`:
 
 - `accessrefinery_bdd_miner_10rs/`: Intent mining results for 10 rounds with JavaBDD.
 - `accessrefinery_sat_miner_10rs/`: Intent mining results for 10 rounds with MiniSAT.
 - `accessrefinery_bdd_reducer_10rs/`: Intent mining and reduction results for 10 rounds with JavaBDD.
 - `accessrefinery_sat_reducer_3rs/`: Intent mining and reduction results for 3 rounds with MiniSAT.
+- `compare_accessrefinery_with_accessanalyzer_cli/`: Comparison logs for AccessRefinery and the CLI-based Access Analyzer, as well as BDD-versus-SAT comparisons.
 
+> Because `accessrefinery_sat_reducer_3rs` runs very slowly, we report only three rounds for that experiment.
 
+#### Reproducing reimplemented Access Analyzer
 
-<!-- > It is strongly recommended that you skip installing the CLI-based Access Analyzer because its setup is complex (AWS account registration, billing setup, and CLI credential configuration). Instead, we provide archived results for the CLI-based Access Analyzer. We also provide CLI installation instructions for developers. -->
+@after-the-end
+
+Archived results for the reimplemented Access Analyzer are also available in `archive_result/`.
+
+#### Reproducing CLI-based Access Analyzer
+
+It is strongly recommended that you skip reproducing the CLI-based Access Analyzer because its setup is complex (AWS account registration, billing setup, and CLI credential configuration). We still provide [Instructions]() for developers.
+
+We 归档数据在
+
+- archive_result
+ 
 
 ### Running Re-implemented Access Analyzer
 
@@ -462,8 +478,6 @@ sh draw.sh
 ```
 
 ## For developer
-
-
 
 ## Contact
 
