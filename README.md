@@ -237,10 +237,19 @@ We recommend skipping reproduction of results from the **reimplemented Access An
 The following scripts invoke `target/accessrefinery-1.0.jar` and reproduce the **AccessRefinery** results.
 
 ```bash
+# The execution takes about 5min
 sh tools/accessrefinery/running_bdd_miner.sh
+
+# The execution takes about 5min
 sh tools/accessrefinery/running_sat_miner.sh
+
+# The execution takes about 10min
 sh tools/accessrefinery/running_bdd_reducer.sh
+
+# The execution takes about 1h
 sh tools/accessrefinery/running_sat_reducer.sh
+
+# The execution takes about 10 seconds.
 sh tools/accessrefinery/running_batch_compare.sh
 ```
 
