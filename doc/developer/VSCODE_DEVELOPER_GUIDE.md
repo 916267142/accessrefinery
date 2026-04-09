@@ -42,10 +42,9 @@ Open the `Run and Debug` view (Ctrl+Shift+D), select a debug configuration (e.g.
 
 While debugging, you can set breakpoints in the source code and inspect the program state using the `VARIABLES`, `CALL STACK`, and `BREAKPOINTS` panels.
 
-## 5. Troubleshooting
+<img src="debug.png" alt="Example" width="600" />
 
-- **Issue:** `ConfigError: The project 'refinery' is not a valid java project`
-  - **Solution:** Remove the `projectName` field from `.vscode/launch.json`. VS Code will auto-detect projects based on `mainClass` and working directory.
+## 5. Troubleshooting
 
 - **Issue:** `Cannot resolve modulepaths/classpaths automatically`
   - **Solution:** Ensure `.vscode/launch.json` does not have hardcoded `classPaths` or `modulePaths`. Let Maven/VS Code handle the classpath automatically.
