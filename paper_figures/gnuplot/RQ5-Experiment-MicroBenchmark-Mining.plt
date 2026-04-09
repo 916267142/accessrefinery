@@ -24,13 +24,13 @@ set xtics font ", 11"
 set ytics font ", 11"
 set boxwidth 0.9
 
-set key width -0.9 Left vertical maxrows 1 reverse samplen 1 at screen 1.15, 0.99 font ',13' spacing 1.2
+set key width 1.5 Left vertical maxrows 1 reverse samplen 1 at screen 1.0, 1.03 font ',13' spacing 2
 set bmargin screen 0.33
 set tmargin at screen 0.9
 set rmargin screen 0.87
 
 # Output settings
-set output 'results/Experiment-Scalability-Mining-RQ2.pdf'
+set output 'results/RQ5-Experiment-MicroBenchmark-Mining.pdf'
 
 set label "# of Allow statements" at screen 0.54, 0.06 center font ",13"
 set label "5-Keys" at screen 0.21, 0.75 center font ",13"
@@ -45,9 +45,8 @@ set xrange[-1: 16]
 set xtics 3
 set size 1, 0.9
 set offsets 0.5,0.5,0,0
-plot 'data/Experiment-Scalability-MCI-K2.dat' using ($0+1):2 w lp ls 1 title 'Access Analyzer(Z3)', \
-     '' using ($0+1):3  w lp ls 2 title 'Access Analyzer(CVC5)', \
-     '' using ($0+1):5  w lp ls 3 title 'AccessRefinery'
+plot 'data/Experiment-Scalability-MCI-K2.dat' using ($0+1):4 w lp ls 2 title 'AccessRefinery(MiniSAT)', \
+     '' using ($0+1):5  w lp ls 3 title 'AccessRefinery(JavaBDD)'
 
 unset ylabel
 set log y
@@ -56,7 +55,5 @@ set xrange[-1: 16]
 set xtics 3
 set size 1, 0.9
 set offsets 0.5,0.5,0,0
-plot 'data/Experiment-Scalability-MCI-K3.dat' using ($0+1):2 w lp ls 1 title 'Access Analyzer(Z3)', \
-     '' using ($0+1):3  w lp ls 2 title 'Access Analyzer(CVC5)', \
-     '' using ($0+1):5  w lp ls 3 title 'AccessRefinery'
-
+plot 'data/Experiment-Scalability-MCI-K3.dat' using ($0+1):4 w lp ls 2 title 'AccessRefinery(MiniSAT)', \
+     '' using ($0+1):5  w lp ls 3 title 'AccessRefinery(JavaBDD)'

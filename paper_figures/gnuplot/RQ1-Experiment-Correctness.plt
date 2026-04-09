@@ -29,7 +29,7 @@ set tmargin at screen 0.9
 set rmargin screen 0.87
 
 # Output settings
-set output 'results/Experiment-Correctness-TwoGraph.pdf'
+set output 'results/RQ1-Experiment-Correctness.pdf'
 
 set style fill pattern
 set boxwidth 0.9

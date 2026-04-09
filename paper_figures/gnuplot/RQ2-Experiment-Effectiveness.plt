@@ -30,7 +30,7 @@ set tmargin at screen 0.9
 set rmargin screen 0.87
 
 # Output settings
-set output 'results/Experiment-Effectiveness-RQ1.pdf'
+set output 'results/RQ2-Experiment-Effectiveness.pdf'
 
 set label "The ID of datasets" at screen 0.54, 0.06 center font ",13"
 set label "Real-world" at screen 0.195, 0.76 center font ",13"

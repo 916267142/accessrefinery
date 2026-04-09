@@ -25,7 +25,7 @@ set bmargin screen 0.3
 set tmargin at screen 0.82
 set rmargin screen 0.96
 
-set output 'results/Experiment-Scalabiliy-RealWorld-RQ3.pdf'
+set output 'results/RQ4-Experiment-Scalabiliy-RealWorld.pdf'
 set size 1, 0.9
 
 set multiplot layout 1,2 margins 0.15, 0.96, 0.26, 0.68 spacing 0.09
