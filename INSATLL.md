@@ -19,8 +19,8 @@ sudo apt install openjdk-17-jdk
 Add Java to environment variables (recommended):
 
 ```bash
-export 'JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' >> ~/.bashrc
-export 'PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
+echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' >> ~/.bashrc
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 
