@@ -17,7 +17,7 @@ To accelerate intent mining, **AccessRefinery** uses our Multi-Theory Constraint
 For intent reduction, **AccessRefinery** computes a compact set that covers all mined intents by solving a minimum set-cover problem.
 Moreover, we design MCP as a module separate from **AccessRefinery**, allowing other researchers to reuse MCP flexibly.
 
-For technical details, see our FSE 2026 paper: [*AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud*](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf).
+For technical details, see our [FSE 2026 paper](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf).
 
 ## Structure
 
@@ -66,7 +66,7 @@ For development environment setup in VS Code, see [details](docs/developer/VSCOD
 
 ## Using Multi-Theory Constraint Preprocessor (MCP)
 
-MCP is a data structure for fast multi-round SMT solving. It supports regular expressions, IP prefixes/bit-vectors, ranges, and sets.
+**MCP** is a data structure for fast multi-round SMT solving. It supports regular expressions, IP prefixes/bit-vectors, ranges, and sets.
 
 ### Reuse in Another Project
 
@@ -176,7 +176,7 @@ public class Main {
 
 ## Using AccessRefinery
 
-**AccessRefinery** builds on MCP for IAM intent mining and reduction. In this repository, MCP is already integrated into **AccessRefinery**, so you can use it directly without a separate installation.
+**AccessRefinery** builds on **MCP** for IAM intent mining and reduction. In this repository, **MCP** is already integrated into **AccessRefinery**, so you can use it directly without a separate installation.
 
 To run **AccessRefinery**, use:
 
@@ -223,18 +223,18 @@ In addition, one file is generated in the current path:
 
 ## Evaluation Reproduction
 
-This section describes how to reproduce the conclusions in the paper. We archive all results in `archive_results/`.
+This section describes how to reproduce the paper's conclusions. All archived results are available in `archive_results/`.
 
 > We omit the results for the real-world datasets because of commercial restrictions.
 
-We recommend skipping full reproduction of the Reimplemented Access Analyzer (because it takes a very long time) and the CLI-based Access Analyzer (because setup is complex and requires AWS account registration, billing setup, and CLI credential configuration). We still provide instructions for developers who need to reproduce these results.
+We recommend skipping full reproduction of the **Reimplemented Access Analyzer** (because it takes a very long time) and the **CLI-based Access Analyzer** (because the setup is complex and requires AWS account registration, billing setup, and CLI credential configuration). We still provide instructions for developers who need to reproduce these results.
 
-- See [details](baselines/accessanalyzer-reimpl/README.md) for reproducing results of the Reimplemented Access Analyzer.
-- See [details](baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for reproducing results of the CLI-based Access Analyzer.
+- See [details](baselines/accessanalyzer-reimpl/README.md) for reproducing results of the **Reimplemented Access Analyzer**.
+- See [details](baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for reproducing results of the **CLI-based Access Analyzer**.
 
-### Reproducing AccessRefinery Artifacts
+### Reproducing **AccessRefinery** Artifacts
 
-The following scripts invoke `target/accessrefinery-1.0.jar` and reproduce the AccessRefinery artifacts.
+The following scripts invoke `target/accessrefinery-1.0.jar` and reproduce the **AccessRefinery** artifacts.
 
 ```bash
 sh tools/accessrefinery/running_bdd_miner.sh
@@ -250,13 +250,13 @@ The following directories are generated under `results/`:
 - `accessrefinery_sat_miner_10rs/`: Intent mining results for 10 rounds with MiniSAT.
 - `accessrefinery_bdd_reducer_10rs/`: Intent mining and reduction results for 10 rounds with JavaBDD.
 - `accessrefinery_sat_reducer_3rs/`: Intent mining and reduction results for 3 rounds with MiniSAT.
-- `compare_accessrefinery_with_accessanalyzer_cli/`: Comparison logs for AccessRefinery and the CLI-based Access Analyzer, including BDD-versus-SAT comparisons.
+- `compare_accessrefinery_with_accessanalyzer_cli/`: Comparison logs for **AccessRefinery** and the **CLI-based Access Analyzer**, including BDD-versus-SAT comparisons.
 
 > Because the MiniSAT-based reduction experiment runs very slowly, we report only three rounds for that experiment.
 
 ### Conclusions
 
-This section highlights two representative conclusions. For a complete mapping between experimental logs and paper conclusions for AccessRefinfery, see [details](docs/REPRODUCTION.md).
+This section highlights two representative conclusions. For a complete mapping between experimental logs and paper conclusions for **AccessRefinery**, see [details](docs/REPRODUCTION.md).
 
 1. **AccessRefinery** is 10-100x faster than **Access Analyzer** for intent mining.
 
@@ -277,7 +277,7 @@ This section highlights two representative conclusions. For a complete mapping b
     - `Scalability_05Keys/summary.csv`
     - `Scalability_06Keys/summary.csv`
 
-`Total Time (s)` denotes the runtime for the **reimplemented Access Analyzer**. These runs are reported for one round because multi-round runs are prohibitively slow.
+`Total Time (s)` denotes the runtime for the **Reimplemented Access Analyzer**. These runs are reported for one round because multi-round runs are prohibitively slow.
 
 2. **AccessRefinery** can reduce the number of intents by up to 10x after reduction.
 
