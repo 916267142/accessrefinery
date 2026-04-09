@@ -2,7 +2,7 @@
 
 RESULT_ROOT="results"
 OUTPUT_DIR="${RESULT_ROOT}/accessrefinery_compare_results"
-ARCHIVE_ROOT="archive_result"
+ARCHIVE_ROOT="archive_results"
 COMPARE_SCRIPT="tools/accessrefinery/compare.sh"
 
 mkdir -p "${OUTPUT_DIR}"
