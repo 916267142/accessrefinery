@@ -1,12 +1,3 @@
-<!-- 
-<img src="images/logo.png?raw=True" align="right" width="20%"/> AccessRefinery: Fast 
--->
-
-<!-- <div style="display: flex; justify-content: space-between; align-items: center;">
-    <h1 style="margin: 0;">AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud</h1>
-    <img src="logo.png" width="30%">
-</div> -->
-
 # AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud
 
 by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](https://xjtu-netverify.github.io/people/pzhang/) and [Jianyuan Zhang](https://xjtu-netverify.github.io/people/jyzhang/) at [ANTS lab](https://xjtu-netverify.github.io/).
@@ -15,10 +6,6 @@ by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](htt
 ![Tests](https://img.shields.io/badge/tests-passing-brightgreen?logo=java)
 ![License](https://img.shields.io/badge/license-Apache--2.0-green)
 ![Paper](https://img.shields.io/badge/paper-FSE2026-orange)
-
-<!-- > Ning Kang, Peng Zhang, Jianyuan Zhang, Hao Li, Dan Wang, Zhenrong Gu, Weibo Lin, 
-> Shibiao Jiang, Zhu He, Xu Du, Longfei Chen, Jun Li, and Xiaohong Guan
-> "AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud", ACM FSE 2026 -->
 
 ## About AccessRefinery
 
@@ -32,11 +19,7 @@ Moreover, we design MCP as a module separate from **AccessRefinery**, allowing o
 
 For technical details, see our FSE 2026 paper: [*AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud*](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf).
 
-<!-- After setting up Linux, follow [Install](INSTALL.md) to install the environment, and compile **AccessRefinery** and our reproduced **Access Analyzer** (baseline). -->
-
 ## Structure
-
-<!-- This repository includes the implementation of **AccessRefinery**, along with datasets, reproduction scripts, and archived results. -->
 
 Since AWS Access Analyzer is not open source and provides only a CLI, we also reimplemented Access Analyzer for evaluation. We distinguish the two versions as **Reimplemented Access Analyzer** and **CLI-based Access Analyzer**.
 
@@ -63,7 +46,7 @@ Since AWS Access Analyzer is not open source and provides only a CLI, we also re
 
 ### Prerequisites
 
-See [Requirements](REQUIREMENTS.md) and [Installation](INSTALL.md) for detailed setup instructions. Prepare a Linux environment and install Java JDK 17, Maven, Z3 (for Access Analyzer), and jq (for JSON processing).
+See [Requirements](REQUIREMENTS.md) and [Installation](INSTALL.md) for detailed setup (Linux, Java, Z3, jq) instructions. 
 
 ### Build
 
@@ -78,28 +61,6 @@ The build generates the following artifacts in `target/`:
 - `mcp-1.0.jar` for **MCP**, which can be reused in other projects for fast multi-round SMT solving.
 - `accessrefinery-1.0.jar` for **AccessRefinery**.
 - `accessanalyzer-1.0.jar` for the reimplemented **Access Analyzer**.
-
-<!-- 
-Expected output:
-
-```shell
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Summary for accessrefinery 1.0:
-[INFO] 
-[INFO] accessrefinery ..................................... SUCCESS [  0.002 s]
-[INFO] accessanalyzer ..................................... SUCCESS [ 17.548 s]
-[INFO] bdd ................................................ SUCCESS [  5.056 s]
-[INFO] mcp ................................................ SUCCESS [ 13.862 s]
-[INFO] refinery ........................................... SUCCESS [ 15.490 s]
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  52.040 s
-[INFO] Finished at: 2026-04-09T16:08:12+08:00
-[INFO] ------------------------------------------------------------------------
-``` -->
-
-<!-- > This step automatically runs `mvn test`. If these JAR files are generated, the environments for **AccessRefinery**, **MCP**, and **Access Analyzer** are set up correctly, and the project has been compiled successfully. -->
 
 For development environment setup in VS Code, see [details](docs/developer/VSCODE_DEVELOPER_GUIDE.md).
 
@@ -293,9 +254,9 @@ The following directories are generated under `results/`:
 
 > Because the MiniSAT-based reduction experiment runs very slowly, we report only three rounds for that experiment.
 
-### Representative Conclusions
+### Conclusions
 
-This section highlights two representative conclusions. For a complete mapping between experimental logs and paper conclusions for AccessRefinfery, see [REPRODUCTION.md](docs/REPRODUCTION.md).
+This section highlights two representative conclusions. For a complete mapping between experimental logs and paper conclusions for AccessRefinfery, see [details](docs/REPRODUCTION.md).
 
 1. **AccessRefinery** is 10-100x faster than **Access Analyzer** for intent mining.
 
