@@ -1,0 +1,7 @@
+org.batfish
+org.batfish.datamodel
+org.mcp.core
+org.mcp.sat
+org.mcp.utils
+org.mcp.variables.dynamics
+org.mcp.variables.statics
