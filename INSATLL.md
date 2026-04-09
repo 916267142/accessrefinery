@@ -1,8 +1,8 @@
-# Installation Overview
+# Installation
 
 <!-- **AccessRefinery** is an intent-mining tool for IAM policies. In our experiments, we compare it with **AWS Access Analyzer**. -->
 
-This installation includes the environment for **AccessRefinery** and our reimplemented **Access Analyzer** baseline.
+This guide describes how to set up the experimental environment for **MCP**， **AccessRefinery**, and our reimplemented **Access Analyzer** baseline.
 
 ## Environment Setup
 
@@ -17,35 +17,22 @@ ubuntu-22.04.5-desktop-amd64.iso
 sudo apt install openjdk-17-jdk
 ```
 
-Add Java to environment variables (recommended):
+Add Java to the environment variables (recommended):
 
 ```bash
 echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
-```
 
-Verify the Java compiler:
-
-```bash
 javac -version
-```
-
-Expected output:
-
-```shell
-javac 17.0.17
-```
-
-Verify Java runtime:
-
-```bash
 java -version
 ```
 
 Expected output:
 
 ```shell
+javac 17.0.17
+
 openjdk version "17.0.17" 2025-10-21
 OpenJDK Runtime Environment (build 17.0.17+10-Ubuntu-122.04)
 OpenJDK 64-Bit Server VM (build 17.0.17+10-Ubuntu-122.04, mixed mode, sharing)
@@ -55,11 +42,6 @@ OpenJDK 64-Bit Server VM (build 17.0.17+10-Ubuntu-122.04, mixed mode, sharing)
 
 ```bash
 sudo apt install maven
-```
-
-Verify Maven:
-
-```bash
 mvn -v
 ```
 
@@ -77,11 +59,6 @@ OS name: "linux", version: "6.8.0-90-generic", arch: "amd64", family: "unix"
 
 ```bash
 sudo apt install jq
-```
-
-Verify `jq`:
-
-```bash
 jq --version
 ```
 
@@ -91,9 +68,9 @@ Expected output:
 jq-1.6
 ```
 
-- Install `Z3`
+- Install `Z3`:
 
-Z3 is already precompiled. Run the following script to automatically copy the Z3 executable to the appropriate directories.
+`Z3` is already precompiled. Run the following script to automatically copy the `Z3` executable and libraries to the required directories.
 
 ```bash
 sh tools/install_z3.sh
@@ -111,9 +88,9 @@ Z3 version 4.14.1 - 64 bit
 Z3 installation is correct.
 ```
 
-> Note: CVC5 will be installed automatically when compiling the project.
+> Note: `CVC5` is installed automatically during project compilation.
 
-## Compile AccessRefinery and Access Analyzer
+## Compile **AccessRefinery** and **Access Analyzer**
 
 ```bash
 mvn clean package
@@ -138,6 +115,6 @@ Expected output:
 [INFO] ------------------------------------------------------------------------
 ```
 
-Then you will find `target/mcp-1.0.jar`, `target/accessrefinery-1.0.jar`, `target/accessanalyzer-1.0.jar`.
+The build produces `target/mcp-1.0.jar` (for **MCP**), `target/accessrefinery-1.0.jar` (for **AccessRefinery**), and `target/accessanalyzer-1.0.jar` (for reimplemented **Access Analyzer**).
 
-> This step automatically runs `mvn test`. If you can see these JAR files, the AccessRefinery and Access Analyzer environment is set up correctly, and the project has been compiled successfully.
+> This step automatically runs `mvn test`. If these JAR files are generated, the environments for **AccessRefinery**, **MCP**, and **Access Analyzer** are set up correctly, and the project has been compiled successfully.

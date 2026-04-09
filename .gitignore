@@ -19,6 +19,5 @@ data/TEST
 result/*
 aws_result/*
 accessrefinery.log*
-.vscode/launch.json
 comparison.log
 miner.log
