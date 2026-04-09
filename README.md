@@ -53,7 +53,9 @@ Since AWS Access Analyzer is not open source and provides only a CLI, we also re
   - `accessanalyzer-cli`: Scripts for invoking Access Analyzer via AWS Command-Line Interface (CLI).
 - `pom.xml`: Maven root configuration.
 - `tools/`: Scripts for running the experiments.
-- `docs/`: Stores documents such as auto-generated JavaDoc. 
+- `docs/`: Stores documents such as auto-generated JavaDoc.
+  - `mcp-javadoc`
+  - `accessrefinery-javadoc` 
 - `paper_figures/`: Scripts for generating the figures in the paper.
 - `archive_results/`: Archived experimental results.
 
@@ -98,6 +100,8 @@ Expected output:
 ``` -->
 
 <!-- > This step automatically runs `mvn test`. If these JAR files are generated, the environments for **AccessRefinery**, **MCP**, and **Access Analyzer** are set up correctly, and the project has been compiled successfully. -->
+
+For development environment setup in VS Code, see [details](docs/developer/VSCODE_DEVELOPER_GUIDE.md).
 
 ## Using Multi-Theory Constraint Preprocessor (MCP)
 
@@ -258,16 +262,18 @@ In addition, one file is generated in the current path:
 
 ## Evaluation Reproduction
 
-This section explains how to reproduce the results reported in the paper. 
-We archived all results reported in paper in `archive_result/`.
+This section describes how to reproduce the conclusions in the paper. We archive all results in `archive_results/`.
 
-> Note that the results for the real-world datasets are omitted because of commercial restrictions.
+> We omit the results for the real-world datasets because of commercial restrictions.
 
-### Reproducing Archived Results
+We recommend skipping full reproduction of the Reimplemented Access Analyzer (because it takes a very long time) and the CLI-based Access Analyzer (because setup is complex and requires AWS account registration, billing setup, and CLI credential configuration). We still provide instructions for developers who need to reproduce these results.
 
-#### Reproducing AccessRefinery
+- See [details](baselines/accessanalyzer-reimpl/README.md) for reproducing results of the Reimplemented Access Analyzer.
+- See [details](baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for reproducing results of the CLI-based Access Analyzer.
 
-The following scripts reproduce the AccessRefinery results and automatically invoke `target/accessrefinery-1.0.jar`.
+### Reproducing AccessRefinery Artifacts
+
+The following scripts invoke `target/accessrefinery-1.0.jar` and reproduce the AccessRefinery artifacts.
 
 ```bash
 sh tools/accessrefinery/running_bdd_miner.sh
@@ -277,199 +283,55 @@ sh tools/accessrefinery/running_sat_reducer.sh
 sh tools/accessrefinery/running_batch_compare.sh
 ```
 
-The following directories will be generated under `results/`:
+The following directories are generated under `results/`:
 
 - `accessrefinery_bdd_miner_10rs/`: Intent mining results for 10 rounds with JavaBDD.
 - `accessrefinery_sat_miner_10rs/`: Intent mining results for 10 rounds with MiniSAT.
 - `accessrefinery_bdd_reducer_10rs/`: Intent mining and reduction results for 10 rounds with JavaBDD.
 - `accessrefinery_sat_reducer_3rs/`: Intent mining and reduction results for 3 rounds with MiniSAT.
-- `compare_accessrefinery_with_accessanalyzer_cli/`: Comparison logs for AccessRefinery and the CLI-based Access Analyzer, as well as BDD-versus-SAT comparisons.
+- `compare_accessrefinery_with_accessanalyzer_cli/`: Comparison logs for AccessRefinery and the CLI-based Access Analyzer, including BDD-versus-SAT comparisons.
 
-> Because `accessrefinery_sat_reducer_3rs` runs very slowly, we report only three rounds for that experiment.
+> Because the MiniSAT-based reduction experiment runs very slowly, we report only three rounds for that experiment.
 
-#### Reproducing reimplemented Access Analyzer
+### Representative Conclusions
 
-@after-the-end
+This section highlights two representative conclusions. For a complete mapping between experimental logs and paper conclusions for AccessRefinfery, see [REPRODUCTION.md](docs/REPRODUCTION.md).
 
-Archived results for the reimplemented Access Analyzer are also available in `archive_result/`.
+1. **AccessRefinery** is 10-100x faster than **Access Analyzer** for intent mining.
 
-#### Reproducing CLI-based Access Analyzer
-
-It is strongly recommended that you skip reproducing the CLI-based Access Analyzer because its setup is complex (AWS account registration, billing setup, and CLI credential configuration). We still provide [Instructions]() for developers.
-
-We 归档数据在
-
-- archive_result
- 
-
-### Running Re-implemented Access Analyzer
-
-### Correspondence to Paper Sections
-
-After generating the experimental results, we explain how to reproduce the figures, tables, and conclusions reported in the paper.
-
-### 5 Experiment Setup
-
-**Target:** "*AWS provides an online Command Line Interface (CLI) for Access Analyzer, which we use to validate the correctness of our re-implementation. Specifically, for the 6-key dataset with 13 to 15 statements, both versions time out (> 1 hour). Both versions produce identical intents on the Correctness, 5-key, and 6-key datasets.*"
-
-**Reproduced Steps:**
-
-//Todo @after-the-end
-
----
-
-### 6.1 Is AccessRefinery correct?
-
-#### Correctness of MCP
-
-**Target:** "*We conducted a series of basic Boolean operation tests.*"
-
-**Reproduced Steps:**
-
-Basic Boolean operations are tested in [MCPTest.java](projects/mcp/src/test/java/org/mcp/core/MCPTest.java). These tests run automatically during `mvn package`.
-
----
-
-#### Correctness of Intent Miner
-
-**Target:** Figure 10 in the paper
-
-<img src="./tools/figures/figure10.png" width="450"/>
-
-**Required logs**:
-Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary.txt` to plot Figure 10 of the paper.
-
-**Target:** "*We compared the intents produced by AccessRefinery (without intent reduction), our re-implementation of Access Analyzer, and the AWS Access Analyzer via the CLI API. On synthetic datasets, all three produce the same set of intents.*"
-
-**Required Steps:**
-
-The following commands check whether the intents mined by AccessRefinery are consistent with those from AWS Access Analyzer (via CLI). Logs are generated in `result/compare_accessrefinery_with_accessanalyzer_cli/`:
-
-```bash
-sh tools/running_batch_compare.sh
-```
----
-
-#### Correctness of Intent Reducer
-
-**Target:** "*(1) The reduced intents fully cover the policy. (2) Removing any intent from the reduced intents causes the remaining intents to no longer cover the policy.*"
-
-Required Steps:
-
-//Todo @after-the-end
-
----
-
-### Section 6.2 Can AccessRefinery reduce the number of intents?
-
-**Target**: Figure 11 in the paper.
-
-<img src="./tools/figures/figure11.png" width="450"/>
-
-**Required logs**:
-
-- `accessrefinery_bdd_reducer_10rs/`
-  - `Scalability_05Keys/summary.txt`
-  - `Scalability_06Keys/summary.txt`
-
-The `NumberMCI` column represents the number of intents before reduction, and the `NumberRRI` column represents the number after reduction.
-
-> Note: The real-world results in the paper cannot be open sourced for commercial reasons.
-
----
-
-### Section 6.3 Can AccessRefinery speed up intent mining and reduction by using MCP?
-
-**Target**: Figure 12 in the paper.
-
-<img src="./tools/figures/figure12.png" width="450"/>
+<img src="./docs/figures/figure12.png" width="450"/>
 
 **Required logs**:
 
 - `accessrefinery_bdd_miner_10rs/`
-  - `Scalability_05Keys/summary.txt`
-  - `Scalability_06Keys/summary.txt`
+    - `Scalability_05Keys/summary.txt`
+    - `Scalability_06Keys/summary.txt`
 
-The `TotalTimeAverage` column represents the average runtime over 10 rounds.
+`TotalTimeAverage` denotes the average runtime over 10 rounds for **AccessRefinery**.
 
----
+- `accessanalyzer_z3_unreduced/`
+    - `Scalability_05Keys/summary.csv`
+    - `Scalability_06Keys/summary.csv`
+- `accessanalyzer_cvc5_unreduced/`
+    - `Scalability_05Keys/summary.csv`
+    - `Scalability_06Keys/summary.csv`
 
-**Target**: Figure 13 in the paper.
+`Total Time (s)` denotes the runtime for the **reimplemented Access Analyzer**. These runs are reported for one round because multi-round runs are prohibitively slow.
 
-<img src="./tools/figures/figure13.png" width="450"/>
+2. **AccessRefinery** can reduce the number of intents by up to 10x after reduction.
 
-**Required logs**:
-
-- `accessrefinery_bdd_reducer_10rs/`
-  - `Scalability_05Keys/summary.txt`
-  - `Scalability_06Keys/summary.txt`
-
-The `TotalTimeAverage` column represents the average runtime over 10 rounds.
-
----
-
-### Section 6.4 How does AccessRefinery perform on real-world datasets?
-
-These logs are omitted for commercial reasons.
-
----
-
-### Section 6.5 Is SAT or BDD better for intent mining and reduction?
-
-**Target (Intent Mining)**:
-"For intent mining, using JavaBDD is 1-6x faster than using MiniSAT (for clarity, the figure is omitted)."
-
-**Required logs (Intent Mining)**:
-
-- `accessrefinery_bdd_miner_10rs/`
-  - `Scalability_05Keys/summary.txt`
-  - `Scalability_06Keys/summary.txt`
-- `accessrefinery_sat_miner_10rs/`
-  - `Scalability_05Keys/summary.txt`
-  - `Scalability_06Keys/summary.txt`
-
-The `TotalTimeAverage` column represents the average runtime over 10 rounds.
-
----
-
-**Target (Intent Reduction)**: Figure 15 in the paper.
-
-<img src="./tools/figures/figure15.png" width="450"/>
-
-**Required logs (Intent Reduction)**:
-
-- `accessrefinery_bdd_reducer_10rs/`
-  - `Scalability_05Keys/summary.txt`
-  - `Scalability_06Keys/summary.txt`
-- `accessrefinery_sat_reducer_3rs/`
-  - `Scalability_05Keys/summary.txt`
-  - `Scalability_06Keys/summary.txt`
-
-For a fair comparison, compare average runtime per round using `TotalTimeAverage / rounds`. Since SAT-based reduction is much slower, we report SAT results for only 3 rounds.
-
----
-
-### Section 6.6 How does AccessRefinery accelerate single-round solving in multi-round SMT solving compared to SMT solvers?
-
-**Target**: Table 2 in the paper.
-
-<img src="./tools/figures/table2.png" width="450"/>
+<img src="./docs/figures/figure11.png" width="450"/>
 
 **Required logs**:
 
-- `accessrefinery_bdd_miner_10rs/`
-  - `Scalability_05Keys/`
-  - `Scalability_06Keys/`
+- `accessrefinery_bdd_reducer_10rs/Scalability_05Keys/summary.txt`
+- `accessrefinery_bdd_reducer_10rs/Scalability_06Keys/summary.txt`
 
-`MCILabelsTimeAverage` is the average MCP preprocessing time.
-`NumberRRI` is the number of reduced intents.
+`NumberMCI` denotes the number of intents before reduction, and `NumberRRI` denotes the number after reduction.
 
----
+### Plotting the Figures
 
-### Drawing the figures in the paper
-
-The following commands install `gnuplot` and generate all figures used in the experiments.
-The generated figures are saved in `paper_figures/results/`.
+We also provide scripts for drawing the figures in the paper. The following commands install `gnuplot` and generate all figures used in the experiments.
 
 ```shell
 sudo apt install gnuplot
@@ -477,7 +339,7 @@ cd paper_figures
 sh draw.sh
 ```
 
-## For developer
+The generated figures are saved in `paper_figures/results/`.
 
 ## Contact
 
