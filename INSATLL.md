@@ -106,6 +106,7 @@ Copied Z3 files to:
 - /usr/lib
 - /usr/bin
 - /home/nkang/.local/bin
+Added LD_LIBRARY_PATH to ~/.bashrc
 Z3 version 4.14.1 - 64 bit
 Z3 installation is correct.
 ```

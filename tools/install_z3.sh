@@ -18,6 +18,13 @@ echo "- /usr/lib"
 echo "- /usr/bin"
 echo "- $HOME/.local/bin"
 
+LD_EXPORT_LINE="export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:$Z3_DIR"
+if ! grep -Fq "$LD_EXPORT_LINE" "$HOME/.bashrc"; then
+	echo "$LD_EXPORT_LINE" >> "$HOME/.bashrc"
+fi
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$Z3_DIR"
+echo "Added LD_LIBRARY_PATH to ~/.bashrc"
+
 version_output="$(z3 -version 2>/dev/null | head -n1)"
 
 if [ "$version_output" = "$EXPECTED_VERSION" ]; then
