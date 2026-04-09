@@ -71,13 +71,18 @@ multiple_policy_scan() {
     directory="$1"
     timeout="${2:-0}"
 
+    base_result_dir="./results/accessanalyzer_cli"
+    if [ ! -d "$base_result_dir" ]; then
+        mkdir -p "$base_result_dir"
+    fi
+
     input_dir_name=$(basename "$directory")
     case "$directory" in
         data/*) input_dir_name="${directory#data/}" ;;
         *) input_dir_name=$(basename "$directory") ;;
     esac
 
-    result_dir="./aws_result/${input_dir_name}"
+    result_dir="./results/accessanalyzer_cli/${input_dir_name}"
     log_file="$result_dir/run.log"
     mkdir -p "$result_dir"
 
