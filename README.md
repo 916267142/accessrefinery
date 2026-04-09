@@ -13,40 +13,40 @@ by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](htt
 
 <!-- and its [commercial deployment](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-concepts.html) -->
 
-To accelerate intent mining, **AccessRefinery** uses our Multi-Theory Constraint Preprocessor (MCP) to speed up multi-round SMT solving by preprocessing constraints into bit-vector constraints.  
+To accelerate intent mining, **AccessRefinery** uses our Multi-Theory Constraint Preprocessor (**MCP**) to speed up multi-round SMT solving by preprocessing constraints into bit-vector constraints.  
 For intent reduction, **AccessRefinery** computes a compact set that covers all mined intents by solving a minimum set-cover problem.
-Moreover, we design MCP as a module separate from **AccessRefinery**, allowing other researchers to reuse MCP flexibly.
+Moreover, we design **MCP** as a module separate from **AccessRefinery**, allowing other researchers to reuse **MCP** flexibly.
 
-For technical details, see our [FSE 2026 paper](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf).
+For technical details, see our FSE 2026 paper: [AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf).
 
 ## Structure
 
-Since AWS Access Analyzer is not open source and provides only a CLI, we also reimplemented Access Analyzer for evaluation. We distinguish the two versions as **Reimplemented Access Analyzer** and **CLI-based Access Analyzer**.
+Since AWS Access Analyzer is not open source and provides only a Command-Line Interface (CLI), we also reimplemented Access Analyzer for evaluation. We distinguish the two versions as the **Reimplemented Access Analyzer** and the **CLI-based Access Analyzer**.
 
 - `data/`:
   - `Correctness/`: Dataset for correctness experiments.
   - `Scalability_05Keys/`: Synthetic dataset for scalability experiments.
   - `Scalability_06Keys/`: Synthetic dataset for scalability experiments.
-- `accessrefinery/`: Implementation of **AccessRefinery**.
+- `accessrefinery/`: Implementation of AccessRefinery.
   - `bdd/`: Implementation of the binary decision diagram backend used by MCP.
   - `mcp/`: Implementation of the Multi-Theory Constraint Preprocessor (MCP).
   - `refinery/`: Implementation of intent mining and reduction.
 - `baselines/`:
-  - `accessanalyzer-reimpl`: Reimplementation of AWS Access Analyzer.
-  - `accessanalyzer-cli`: Scripts for invoking Access Analyzer via AWS Command-Line Interface (CLI).
+  - `accessanalyzer-reimpl`: Reimplementation of Access Analyzer.
+  - `accessanalyzer-cli`: Scripts for invoking AWS Access Analyzer via CLI.
 - `pom.xml`: Maven root configuration.
 - `tools/`: Scripts for running the experiments.
 - `docs/`: Stores documents such as auto-generated JavaDoc.
-  - `mcp-javadoc`
+    - `mcp-javadoc`
   - `accessrefinery-javadoc` 
-- `paper_figures/`: Scripts for generating the figures in the paper.
+- `paper_figures/`: Scripts for plotting the figures in the paper.
 - `archive_results/`: Archived experimental results.
 
 ## Setup
 
 ### Prerequisites
 
-See [Requirements](REQUIREMENTS.md) and [Installation](INSTALL.md) for detailed setup (Linux, Java, Z3, jq) instructions. 
+See [Requirements](REQUIREMENTS.md) and [Installation](INSTALL.md) for detailed setup instructions (Linux, Java, Z3, and jq).
 
 ### Build
 
@@ -56,13 +56,13 @@ From the project root directory, run:
 mvn clean package
 ```
 
-The build generates the following artifacts in `target/`:
+The build generates the following JAR packages in `target/`:
 
 - `mcp-1.0.jar` for **MCP**, which can be reused in other projects for fast multi-round SMT solving.
 - `accessrefinery-1.0.jar` for **AccessRefinery**.
 - `accessanalyzer-1.0.jar` for the reimplemented **Access Analyzer**.
 
-For development environment setup in VS Code, see [details](docs/developer/VSCODE_DEVELOPER_GUIDE.md).
+For development in VS Code, see [details](docs/developer/VSCODE_DEVELOPER_GUIDE.md).
 
 ## Using Multi-Theory Constraint Preprocessor (MCP)
 
@@ -96,7 +96,7 @@ Then add the dependency to your `pom.xml`:
 
 ### Example
 
-This example follows the example in the paper (line 375).
+This example follows the example in the paper (line 414).
 Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resource`: `dept*/user1.txt`, `IpAddress`: `112.0.0.0/24`).
 
 ```json
@@ -133,7 +133,7 @@ Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resou
 }
 ```
 
-Moreover, suppose our goal is to check the satisfiability of three formulas: $\neg I_6 \land P$, $I_6 \land \neg P$, and $I_6 \land P$. The MCP code for checking these formulas is shown below.
+To check the satisfiability of three formulas, $\neg I_6 \land P$, $I_6 \land \neg P$, and $I_6 \land P$, we use the following code based on **MCP**.
 The example is also included in [MCPFactoryTest.java](accessrefinery/mcp/src/test/java/org/mcp/core/MCPFactoryTest.java) and runs automatically during `mvn package`.
 
 ```java
@@ -211,9 +211,9 @@ The command produces logs similar to the following:
 ...
 ```
 
-After processing all policies, results are generated in the `results/Correctness/` directory. The output includes:
+Results are generated in the `results/Correctness/` directory and include:
 
-- `xxx.json`: The generated intents for each policy.
+- `xxx.json`: The intents for each policy.
 - `xxx.csv`: Statistics for multi-round SMT solving for each policy.
 - `summary.txt`: Summary statistics for all policies in a folder.
 
@@ -227,14 +227,14 @@ This section describes how to reproduce the paper's conclusions. All archived re
 
 > We omit the results for the real-world datasets because of commercial restrictions.
 
-We recommend skipping full reproduction of the **Reimplemented Access Analyzer** (because it takes a very long time) and the **CLI-based Access Analyzer** (because the setup is complex and requires AWS account registration, billing setup, and CLI credential configuration). We still provide instructions for developers who need to reproduce these results.
+We recommend skipping reproduction of results from the **reimplemented Access Analyzer** (because it takes a very long time) and the **CLI-based Access Analyzer** (because the setup is complex and requires AWS account registration, billing setup, and CLI credential configuration). We still provide instructions for developers.
 
-- See [details](baselines/accessanalyzer-reimpl/README.md) for reproducing results of the **Reimplemented Access Analyzer**.
-- See [details](baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for reproducing results of the **CLI-based Access Analyzer**.
+- See [details](baselines/accessanalyzer-reimpl/README.md) for the **Reimplemented Access Analyzer**.
+- See [details](baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for the **CLI-based Access Analyzer**.
 
-### Reproducing **AccessRefinery** Artifacts
+### Reproducing AccessRefinery Archived Results
 
-The following scripts invoke `target/accessrefinery-1.0.jar` and reproduce the **AccessRefinery** artifacts.
+The following scripts invoke `target/accessrefinery-1.0.jar` and reproduce the **AccessRefinery** results.
 
 ```bash
 sh tools/accessrefinery/running_bdd_miner.sh
@@ -250,13 +250,13 @@ The following directories are generated under `results/`:
 - `accessrefinery_sat_miner_10rs/`: Intent mining results for 10 rounds with MiniSAT.
 - `accessrefinery_bdd_reducer_10rs/`: Intent mining and reduction results for 10 rounds with JavaBDD.
 - `accessrefinery_sat_reducer_3rs/`: Intent mining and reduction results for 3 rounds with MiniSAT.
-- `compare_accessrefinery_with_accessanalyzer_cli/`: Comparison logs for **AccessRefinery** and the **CLI-based Access Analyzer**, including BDD-versus-SAT comparisons.
+- `compare_accessrefinery_with_accessanalyzer_cli/`: Comparison logs between **AccessRefinery** and the **CLI-based Access Analyzer**, and between **AccessRefinery (BDD)** and **AccessRefinery (SAT)**.
 
 > Because the MiniSAT-based reduction experiment runs very slowly, we report only three rounds for that experiment.
 
-### Conclusions
+### Mapping results to paper conclusions
 
-This section highlights two representative conclusions. For a complete mapping between experimental logs and paper conclusions for **AccessRefinery**, see [details](docs/REPRODUCTION.md).
+This section presents two representative conclusions. See [details](docs/REPRODUCTION.md) for the full explanation.
 
 1. **AccessRefinery** is 10-100x faster than **Access Analyzer** for intent mining.
 
@@ -277,7 +277,7 @@ This section highlights two representative conclusions. For a complete mapping b
     - `Scalability_05Keys/summary.csv`
     - `Scalability_06Keys/summary.csv`
 
-`Total Time (s)` denotes the runtime for the **Reimplemented Access Analyzer**. These runs are reported for one round because multi-round runs are prohibitively slow.
+`Total Time (s)` denotes the runtime for the **reimplemented Access Analyzer**. We report one round because it is slow.
 
 2. **AccessRefinery** can reduce the number of intents by up to 10x after reduction.
 
@@ -285,10 +285,11 @@ This section highlights two representative conclusions. For a complete mapping b
 
 **Required logs**:
 
-- `accessrefinery_bdd_reducer_10rs/Scalability_05Keys/summary.txt`
-- `accessrefinery_bdd_reducer_10rs/Scalability_06Keys/summary.txt`
+- `accessrefinery_bdd_reducer_10rs/`
+    - `Scalability_05Keys/summary.txt`
+    - `Scalability_06Keys/summary.txt`
 
-`NumberMCI` denotes the number of intents before reduction, and `NumberRRI` denotes the number after reduction.
+`NumberMCI` denotes the number of intents before reduction, and `NumberRRI` denotes the number of intents after reduction.
 
 ### Plotting the Figures
 
