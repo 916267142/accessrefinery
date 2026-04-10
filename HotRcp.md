@@ -73,10 +73,10 @@ After downloading the archive, extract it with:
 unzip accessrefinery-1.0.zip -d accessrefinery
 ```
 
-- Maintained version: [GitHub repository](https://github.com/xjtu-netverify/AccessRefinery.git)
+- Maintained version: [GitHub repository](https://github.com/XJTU-NetVerify/accessrefinery.git)
 
 ```
-git clone https://github.com/xjtu-netverify/AccessRefinery.git
+git clone https://github.com/XJTU-NetVerify/accessrefinery.git
 ```
 
 ### Requirements
@@ -257,7 +257,7 @@ Then add the dependency to your `pom.xml`:
 
 ### Example
 
-This section illustrates how to use MCP with the example in the paper (line 414). The code is included in [MCPFactoryTest.java](accessrefinery/mcp/src/test/java/org/mcp/core/MCPFactoryTest.java), and MCP is imported as a Maven dependency. Running the following command automatically executes this example.
+This section illustrates how to use MCP with the example in the paper (line 414). The code is included in [MCPFactoryTest.java](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/accessrefinery/mcp/src/test/java/org/mcp/core/MCPTest.java), and MCP is imported as a Maven dependency. Running the following command automatically executes this example.
 
 **Running:**
 
@@ -510,7 +510,7 @@ The following scripts invoke `target/accessanalyzer-1.0.jar`.
 All previously mined intents are archived in the `archive_results/accessanalyzer_cli/` directory, which allows skipping the following step. The archived results can serve as the ground truth for subsequent correctness verification.
 
 - **If you are using your own environment:**
-  We strongly recommend skipping reproduction of results from the *CLI-based Access Analyzer*, as setup is complex and requires AWS account registration, billing configuration, and CLI credential setup. We still provide details in [AccessAnalyzerCLI.md](baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for developers.
+  We strongly recommend skipping reproduction of results from the *CLI-based Access Analyzer*, as setup is complex and requires AWS account registration, billing configuration, and CLI credential setup. We still provide details in [AccessAnalyzerCLI.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for developers.
 
 - **If you are using the provided cloud platform via SSH:**
   The environment is already configured, and you can test our scripts directly. However, because our original AWS account was suspended, the previous bucket name is no longer accessible. We migrated to a new account and created a new bucket accordingly. Therefore, generating archive results is not feasible. However, we can still verify the functionality of our script. Note that this script may still fail to run because our new AWS account may be suspended.
@@ -570,8 +570,6 @@ The following command compares intents between the *reimplemented Access Analyze
 sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare.sh
 ```
 
-<!-- > Note: The CLI-based Access Analyzer experiences timeouts on some datasets. -->
-
 **Expected Output:**
 
 - `results/accessanalyzer_miner_compare_results/*.log`
@@ -584,7 +582,7 @@ sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare.sh
 
 **Running:**
 
-Running maven test for [MCPTest.java](accessrefinery/mcp/src/test/java/org/mcp/core/MCPTest.java). 
+Running maven test for [MCPTest.java](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/accessrefinery/mcp/src/test/java/org/mcp/core/MCPTest.java). 
 
 ```
 mvn test -pl ./accessrefinery/mcp -Dtest=MCPTest.java#testComplexSATOperations
@@ -697,9 +695,6 @@ The `NumberMCI` column represents the number of intents before reduction, and th
 - `accessanalyzer_cvc5_miner_1rs/` : `Access Analyzer(CVC5)` in the figure. 
   - `Scalability_05Keys/summary.csv` : see `Total Time (s)` column
   - `Scalability_06Keys/summary.csv` : see `Total Time (s)` column
-
-<!-- 
-The `TotalTimeAverage` column represents the average runtime over 10 rounds of `AccessRefinery` in the figure. -->
 
 **Running:**
 
@@ -834,13 +829,14 @@ The generated figures are saved in `paper_figures/results/`.
 
 ## Development
 
-- We develop *AccessRefinery* in VS Code, see [VSCODE.md](docs/vscode-develop/VSCODE.md).
+- We develop *AccessRefinery* in VS Code, see [VSCODE.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/docs/vscode-develop/VSCODE.md).
 
-- We provide Javadocs for the project in `docs/mcp-javadocs/` and `docs/accessrefinery-javadocs/`.
+- We provide Javadocs for MCP in `docs/mcp-javadocs/` and AccessRefinery in `docs/accessrefinery-javadocs/`. Moreover, MCP is deployed on [GitHub Page](https://916267142.github.io/mcp.github.io/).
+
 
 ## License
 
-Apache-2.0 License, see [LICENSE](LICENSE).
+Apache-2.0 License, see [LICENSE](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/LICENSE).
 
 ## Contact
 
