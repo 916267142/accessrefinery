@@ -269,7 +269,7 @@ The following directories are generated under `results/`:
 
 ### Mapping results to paper conclusions
 
-This section presents two representative conclusions. See [details](docs/REPRODUCTION.md) for the full explanation.
+This section presents two representative conclusions. See [details](REPRODUCTION.md) for the full explanation.
 
 1. **AccessRefinery** is 10-100x faster than **Access Analyzer** for intent mining.
 

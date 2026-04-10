@@ -99,11 +99,11 @@ After generating the `archived_results/`, we explain how to reproduce the figure
 
 ---
 
-### 5 Experiment Setup
+**Target Conclusion (Line 750 in Section 5):** 
 
-**Target Conclusion (Line 750):** "*AWS provides an online Command Line Interface (CLI) for Access Analyzer, which we use to validate the correctness of our re-implementation. Specifically, for the 6-key dataset with 11 to 15 statements, both versions time out (> 1 hour). ...*"
+"*AWS provides an online Command Line Interface (CLI) for Access Analyzer, which we use to validate the correctness of our re-implementation. Specifically, for the 6-key dataset with 11 to 15 statements, both versions time out (> 1 hour). ...*"
 
-**Reproduced Steps:**
+**Steps:**
 
 See `archive_results/accessanalyzer_cli/run.log` for the 10_allow_result.json test case. AWS automatically terminated the mining process after `3386` seconds. This indicates that invoking Access Analyzer via the CLI with a 6-key dataset containing 10 to 15 statements results in a timeout.
 
@@ -119,36 +119,86 @@ See the last line of `archive_results/accessanalyzer_z3_miner_1rs/summary.csv`. 
 
 ---
 
-**Target Conclusion (Line 751):** "*AWS provides an online Command Line Interface (CLI) for Access Analyzer, which we use to validate the correctness of our re-implementation. ... Both versions produce identical intents on the Correctness, 5-key, and 6-key datasets.*"
+**Target Conclusion (Line 751 in Section 5):** 
 
-**Reproduced Steps:** 
+"*AWS provides an online Command Line Interface (CLI) for Access Analyzer, which we use to validate the correctness of our re-implementation. ... Both versions produce identical intents on the Correctness, 5-key, and 6-key datasets.*"
 
----
+**Running:** 
 
-### 6.1 Is AccessRefinery correct?
+The following command will compare the intents between reimplemented Access Analyzer and CLI-based Access Analyzer.
 
-#### Correctness of MCP
+```
+sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare.sh
+```
 
-**Target:** "*We conducted a series of basic Boolean operation tests.*"
+**Output:**
 
-**Reproduced Steps:**
+- `results/accessanalyzer_miner_compare_results/*.log`
 
-Basic Boolean operations are tested in [MCPTest.java](projects/mcp/src/test/java/org/mcp/core/MCPTest.java). These tests run automatically during `mvn package`.
+
+**Running：**
+
+Beside, to confirm our re-implementated Access Analyzer correctness when reducing the intents, we also compare the intents between reimplemented Access Analyzer and AccessRefinery.
+
+```
+sh tools/accessanalyzer-reimpl/running_accessanalyzer_reducer_compare.sh
+```
+
+**Output:**
+
+- `results/accessanalyzer_reducer_compare_results/*.log`
+
+**To this end, the conclusion holds.**
+
+--- 
+
+**Target Conclusion (Line 760 in Section 6.1):** "*We conducted a series of basic Boolean operation tests.*"
+
+**Running:**
+
+Basic Boolean operations are tested in [MCPTest.java](accessrefinery/mcp/src/test/java/org/mcp/core/MCPTest.java). 
+
+```
+mvn test -pl ./accessrefinery/mcp -Dtest=MCPTest.java#testComplexSATOperations
+```
+
+**Output:**
+
+```
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.212 s
+[INFO] Finished at: 2026-04-10T17:10:38+08:00
+[INFO] ------------------------------------------------------------------------
+```
 
 ---
 
 #### Correctness of Intent Miner
 
-**Target:** Figure 10 in the paper
+**Target Figure (Line 776 in Section 6.1):** Figure 10  
 
-<img src="../docs/figures/figure10.png" width="450"/>
+<img src="docs/figures/figure10.png" width="450"/>
 
-**Required logs**:
+**Required logs:**
 Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary.txt` to plot Figure 10 of the paper.
 
-**Target:** "*We compared the intents produced by AccessRefinery (without intent reduction), our re-implementation of Access Analyzer, and the AWS Access Analyzer via the CLI API. On synthetic datasets, all three produce the same set of intents.*"
 
-**Required Steps:**
+**Running:**（Preserve the parentheses during execution.）
+```shell
+(cd paper_figures && gnuplot gnuplot/RQ1-Experiment-Correctness.plt)
+```
+
+**Output:**
+
+`paper_figures/result/RQ1-Experiment-Correctness.pdf`
+
+---
+
+**Target Conclusion (Line 770 in Section 6.1):** "*We compared the intents produced by AccessRefinery (without intent reduction), our re-implementation of Access Analyzer, and the AWS Access Analyzer via the CLI API. On synthetic datasets, all three produce the same set of intents.*"
+
+**Runing:**
 
 The following commands check whether the intents mined by AccessRefinery are consistent with those from AWS Access Analyzer (via CLI). Logs are generated in `result/compare_accessrefinery_with_accessanalyzer_cli/`:
 
@@ -171,7 +221,7 @@ Required Steps:
 
 **Target**: Figure 11 in the paper.
 
-<img src="../docs/figures/figure11.png" width="450"/>
+<img src="docs/figures/figure11.png" width="450"/>
 
 **Required logs**:
 
@@ -189,7 +239,7 @@ The `NumberMCI` column represents the number of intents before reduction, and th
 
 **Target**: Figure 12 in the paper.
 
-<img src="../docs/figures/figure12.png" width="450"/>
+<img src="docs/figures/figure12.png" width="450"/>
 
 **Required logs**:
 
@@ -203,7 +253,7 @@ The `TotalTimeAverage` column represents the average runtime over 10 rounds.
 
 **Target**: Figure 13 in the paper.
 
-<img src="../docs/figures/figure13.png" width="450"/>
+<img src="docs/figures/figure13.png" width="450"/>
 
 **Required logs**:
 
@@ -241,7 +291,7 @@ The `TotalTimeAverage` column represents the average runtime over 10 rounds.
 
 **Target (Intent Reduction)**: Figure 15 in the paper.
 
-<img src="../docs/figures/figure15.png" width="450"/>
+<img src="docs/figures/figure15.png" width="450"/>
 
 **Required logs (Intent Reduction)**:
 
@@ -260,7 +310,7 @@ For a fair comparison, compare average runtime per round using `TotalTimeAverage
 
 **Target**: Table 2 in the paper.
 
-<img src="../docs/figures/table2.png" width="450"/>
+<img src="docs/figures/table2.png" width="450"/>
 
 **Required logs**:
 
