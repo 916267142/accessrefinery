@@ -407,6 +407,7 @@ java -jar target/accessanalyzer-1.0.jar <options>
 ```
 
 **Command-line options:**
+
 - `-r, --reduce`: Reduce the number of intents.
 - `-s, --solver <Z3/CVC5>`: Select the solver to use (Z3 or CVC5), default is Z3.
 - `-f, --file <DATA_PATH>`: Path to the input policies (JSON file or folder).
@@ -416,7 +417,7 @@ java -jar target/accessanalyzer-1.0.jar <options>
 
 ```bash
 java -jar target/accessanalyzer-1.0.jar -r -s Z3 -f data/Scalability_05Keys/01_allow.json
-``` 
+```
 
 **Expected output:**
 
@@ -475,7 +476,6 @@ sh tools/accessrefinery/running_sat_reducer.sh
   - `accessrefinery_sat_miner_10rs/`: intent mining using MiniSAT.
   - `accessrefinery_bdd_reducer_10rs/`: intent mining and reduction using JavaBDD.
   - `accessrefinery_sat_reducer_3rs/`: intent mining and reduction using MiniSAT (limited to 3 rounds due to slow execution).
-
 
 #### Reproducing Reimplemented Access Analyzer Archived Results
 
@@ -557,11 +557,11 @@ To this end, the conclusion holds.
 
 "*AWS provides an online Command Line Interface (CLI) for Access Analyzer, which we use to validate the correctness of our re-implementation. ... Both versions produce identical intents on the Correctness, 5-key, and 6-key datasets.*"
 
-**Running:** 
+**Running:**
 
 The following command compares intents between the *reimplemented Access Analyzer* and the *CLI-based Access Analyzer*.
 
-```
+```shell
 sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare.sh
 ```
 
@@ -577,13 +577,13 @@ sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare.sh
 
 Running maven test for [MCPTest.java](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/accessrefinery/mcp/src/test/java/org/mcp/core/MCPTest.java). 
 
-```
+```shell
 mvn test -pl ./accessrefinery/mcp -Dtest=MCPTest.java#testComplexSATOperations
 ```
 
 **Expected Output:**
 
-```
+```text
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
@@ -600,7 +600,6 @@ mvn test -pl ./accessrefinery/mcp -Dtest=MCPTest.java#testComplexSATOperations
 
 Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary.txt` to plot Figure 10 of the paper.
 
-
 **Running:** (Preserve the parentheses when executing the command.)
 ```shell
 (cd paper_figures && gnuplot gnuplot/RQ1-Experiment-Correctness.plt)
@@ -610,7 +609,7 @@ Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary
 
 - `paper_figures/results/RQ1-Experiment-Correctness.pdf`
 
-#### 5. Target Conclusion (Line 770 in Section 6.1): 
+#### 5. Target Conclusion (Line 770 in Section 6.1):
 
 "*We compared the intents produced by AccessRefinery (without intent reduction), our re-implementation of Access Analyzer, and the AWS Access Analyzer via the CLI API. On synthetic datasets, all three produce the same set of intents.*"
 
@@ -629,7 +628,6 @@ sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare_with_refiner
 - `results/`
   - `accessrefinery_miner_compare_results/*.log`
   - `accessanalyzer_miner_compare_results_with_refinery/*.log`
-
 
 #### 6. Target Conclusion (Line 788 in Section 6.1):
 
@@ -683,7 +681,7 @@ The `NumberMCI` column represents the number of intents before reduction, and th
 
 **Running:**
 
-```
+```shell
 (cd paper_figures && gnuplot gnuplot/RQ3-Experiment-Scalability-Mining.plt)
 ```
 
@@ -709,14 +707,13 @@ The `NumberMCI` column represents the number of intents before reduction, and th
 
 **Running:**
 
-```
+```shell
 (cd paper_figures && gnuplot gnuplot/RQ3-Experiment-Scalability-Reducing.plt)
 ```
 
 **Expected Output:**
 
 - `paper_figures/results/RQ3-Experiment-Scalability-Reducing.pdf`
-
 
 #### 10. Target Figure (Line 875 in Section 6.4): Figure 14
 
@@ -741,7 +738,7 @@ These logs are omitted for commercial reasons.
 
 The following command generates the figure omitted in the paper.
 
-```
+```shell
 (cd paper_figures && gnuplot gnuplot/RQ5-Experiment-MicroBenchmark-Mining.plt)
 ```
 
@@ -764,12 +761,11 @@ The following command generates the figure omitted in the paper.
 
 > Note: For a fair comparison, compare average runtime per round (normalized to 10 rounds). Since SAT-based reduction is much slower, we report SAT results for only 3 rounds.
 
-
 **Running:**
 
 The following command generates Figure 15 in the paper.
 
-```
+```shell
 (cd paper_figures && gnuplot gnuplot/RQ5-Experiment-MicroBenchmark-Reducing.plt)
 ```
 
@@ -805,7 +801,6 @@ The generated figures are saved in `paper_figures/results/`.
 
 - We provide Javadocs for *MCP* in `docs/mcp-javadocs/` and AccessRefinery in `docs/accessrefinery-javadocs/`. Moreover, *MCP* is deployed on [GitHub Page](https://916267142.github.io/mcp.github.io/), and *AccessRefinery* is also deployed on [GitHub Page](https://916267142.github.io/accessrefinery.github.io/).
 
-
 ## License
 
 Apache-2.0 License, see [LICENSE](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/LICENSE).
@@ -815,4 +810,4 @@ Apache-2.0 License, see [LICENSE](https://github.com/XJTU-NetVerify/accessrefine
 Feel free to contact us if you have any questions.
 
 - Ning Kang (<kangning2018@foxmail.com>)
-- Jianyuan Zhang (jyzhang0281@foxmail.com)
+- Jianyuan Zhang (<jyzhang0281@foxmail.com>)
