@@ -6,7 +6,7 @@ by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](htt
 
 ## About Artifact
 
-This repository contains the artifacts for the FSE 2026 paper titled ["AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud"](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf). *AccessRefinery* speeds up intent mining for IAM (Identity and Access Management) policies and reduces redundancy in the mined intents. Its speedup is achieved by reducing redundancy in multi-round SMT solving through a *Multi-Theory Constraint Preprocessor (MCP)* that transforms SMT constraints into bit-vector representations. For intent reduction, *AccessRefinery* computes a compact set of intents that covers all mined intents by solving a minimum set-cover problem. Compared with the [AWS Access Analyzer](https://link.springer.com/content/pdf/10.1007/978-3-030-53288-8_9.pdf) baseline, *AccessRefinery* achieves about 10–100× speedup and reduces the number of intents by up to 10×. This artifact includes the full implementations of *AccessRefinery* and the baseline reimplementation, along with datasets, archived results, experiment scripts, and plotting scripts to reproduce the paper's main claims. Additionally, we designed MCP as a reusable data structure that may also benefit other studies.
+This repository contains the artifacts for the FSE 2026 paper titled ["AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud"](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf). *AccessRefinery* speeds up intent mining for IAM (Identity and Access Management) policies and reduces redundancy in the mined intents. Its speedup is achieved by reducing redundancy in multi-round SMT solving through a *Multi-Theory Constraint Preprocessor (MCP)* that transforms SMT constraints into bit-vector representations. For intent reduction, *AccessRefinery* computes a compact set of intents that covers all mined intents by solving a minimum set-cover problem. Compared with the [AWS Access Analyzer](https://link.springer.com/content/pdf/10.1007/978-3-030-53288-8_9.pdf) baseline, *AccessRefinery* achieves about 10–100× speedup and reduces the number of intents by up to 10×. This artifact includes the full implementations of *AccessRefinery* and the baseline reimplementation, along with datasets, archived results, experiment scripts, and plotting scripts to reproduce the paper's main claims. Additionally, we designed *MCP* as a reusable data structure that may also benefit other studies.
 
 ## Status
 
@@ -41,7 +41,7 @@ We believe this artifact satisfies the Reusable criteria for the following reaso
 - **Reuse and repurposing of MCP (library-level reuse):**
   - **Modular design:** *MCP* is designed as a data structure. Running `mvn package` at the repository root generates `mcp-1.0.jar`, which can be directly imported into other Java projects.
   - **Easy-to-use Java API and examples:** *MCP* supports Java-style chained Boolean operations, for example, `policy.not().and(intent1.or(intent2))`. We also provide usage examples.
-  - **Standardized API documentation:** We provide standardized comments in the MCP source code, enabling automatic Maven documentation generation.
+  - **Standardized API documentation:** We provide standardized comments in the *MCP* source code, enabling automatic Maven documentation generation.
 
 - **Reuse and repurposing of AccessRefinery (tool-level reuse):**
   - **Easy-to-use command-line API and examples:** Running `mvn package` at the repository root generates `accessrefinery-1.0.jar`. It provides command-line parsing support. For example, `java -jar target/accessrefinery-1.0.jar -m -r --sat --round 10 -f data/Correctness` automatically runs 10 rounds to compute the average runtime, and `--sat` indicates that MiniSAT is used instead of BDD to represent bit-vectors. We also provide usage examples.
@@ -187,8 +187,7 @@ Z3 installation is correct.
 
 Moreover, CVC5 is installed automatically during project compilation.
 
-
-#### Build
+### Build
 
 In the root directory, run:
 
@@ -212,7 +211,7 @@ Since *AWS Access Analyzer* is not open source and provides only a Command-Line 
   - `Scalability_06Keys/`: Synthetic dataset for scalability experiments.
 - `accessrefinery/`: Implementation of *AccessRefinery*.
   - `bdd/`: Implementation of the binary decision diagram backend used by MCP.
-  - `mcp/`: Implementation of the Multi-Theory Constraint Preprocessor (MCP).
+  - `mcp/`: Implementation of the *Multi-Theory Constraint Preprocessor* (*MCP*).
   - `refinery/`: Implementation of intent mining and reduction.
 - `baselines/`:
   - `accessanalyzer-reimpl`: Reimplementation of *Access Analyzer*.
@@ -220,7 +219,7 @@ Since *AWS Access Analyzer* is not open source and provides only a Command-Line 
 - `pom.xml`: Maven root configuration.
 - `tools/`: Scripts for running the experiments.
 - `docs/`:
-  - `mcp-javadoc`: Javadoc for MCP.
+  - `mcp-javadoc`: Javadoc for *MCP*.
   - `accessrefinery-javadoc`: Javadoc for *AccessRefinery*.
 - `paper_figures/`: Scripts for plotting the figures in the paper.
 - `archive_results/`: Archived experimental results.
@@ -257,7 +256,7 @@ Then add the dependency to your `pom.xml`:
 
 ### Example
 
-This section illustrates how to use MCP with the example in the paper (line 414). The code is included in [MCPFactoryTest.java](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/accessrefinery/mcp/src/test/java/org/mcp/core/MCPTest.java), and MCP is imported as a Maven dependency. Running the following command automatically executes this example.
+This section illustrates how to use *MCP* with the example in the paper (line 414). The code is included in [MCPFactoryTest.java](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/accessrefinery/mcp/src/test/java/org/mcp/core/MCPTest.java), and *MCP* is imported as a Maven dependency. Running the following command automatically executes this example.
 
 **Running:**
 
@@ -803,7 +802,7 @@ The generated figures are saved in `paper_figures/results/`.
 
 - We develop *AccessRefinery* in VS Code, see [VSCODE.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/docs/vscode-develop/VSCODE.md).
 
-- We provide Javadocs for MCP in `docs/mcp-javadocs/` and AccessRefinery in `docs/accessrefinery-javadocs/`. Moreover, MCP is deployed on [GitHub Page](https://916267142.github.io/mcp.github.io/).
+- We provide Javadocs for *MCP* in `docs/mcp-javadocs/` and AccessRefinery in `docs/accessrefinery-javadocs/`. Moreover, *MCP* is deployed on [GitHub Page](https://916267142.github.io/mcp.github.io/).
 
 
 ## License
