@@ -1,0 +1,8 @@
+[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 21:32:09 : [0;32m----------[ Shaky Jenga Tower Code ]-------------[m
+[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 21:32:09 : [0;32mlogger path: /home/testmachine/accessrefinery/miner.log[m
+[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 21:32:09 : [0;32mpolicy path: ./data/Scalability_05Keys/11_allow.json[m
+[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 21:32:09 : [0;32mfindings path: /tmp/tmp.cRKL3Ko9rl[m
+[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 21:32:09 : [0;32m----------< Processing policy - 11_allow.json >-----------[m
+[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 21:32:09 : [0;32m----------< Processing findings - tmp.cRKL3Ko9rl >-----------[m
+[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 21:32:09 : [0;32m[1/2]  finish parser policy and findings[m
+[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 21:32:09 : [0;32mThe findings cover the policy.[m

@@ -3,12 +3,10 @@
 # Script to check if policy is covered by findings based on specific directory structures
 # Usage: ./tools/check_coverage.sh (Run from project root)
 
-JAR_PATH="target/accessanalyzer-1.0-SNAPSHOT-release.jar"
+JAR_PATH="target/accessanalyzer-1.0.jar"
 
 # Define the specific result folders to check (Folder0)
 RESULT_FOLDERS=(
-    "accessanalyzer_cvc5_reduced"
-    "accessanalyzer_z3_reduced"
     "accessrefinery_bdd_reducer_10rs"
 )
 
@@ -28,14 +26,15 @@ fi
 echo "Starting coverage check..."
 echo "-----------------------------------------------------------"
 
+mkdir -p ./results/coverage_check/
+
 # Enable nullglob so that if no files match the glob, the loop variable is empty/skipped
 shopt -s nullglob
 
 for FOLDER0 in "${RESULT_FOLDERS[@]}"; do
     for FOLDER1 in "${CATEGORIES[@]}"; do
         # Construct the directory path for findings
-        # Path: ./archived_result/$Folder0/$Folder1/
-        FINDINGS_DIR="./archived_result/$FOLDER0/$FOLDER1"
+        FINDINGS_DIR="./results/$FOLDER0/$FOLDER1"
 
         if [ -d "$FINDINGS_DIR" ]; then
             # Iterate over all _result.json files in this directory
@@ -59,6 +58,9 @@ for FOLDER0 in "${RESULT_FOLDERS[@]}"; do
                     if [ -f "$POLICY_PATH" ]; then
                         echo "Processing: $FINDINGS_FILE vs $POLICY_PATH"
 
+                        # Prepare log directory
+                        mkdir -p "./results/coverage_check/$FOLDER1"
+
                         # Prepare the findings file to be used
                         ACTUAL_FINDINGS_FILE="$FINDINGS_FILE"
                         TMP_FILE=""
@@ -73,12 +75,18 @@ for FOLDER0 in "${RESULT_FOLDERS[@]}"; do
                              echo "  (Using modified temporary file for accessrefinery compatibility)"
                         fi
 
-                        # Execute the check sequentially
-                        java -jar "$JAR_PATH" -c "$POLICY_PATH" "$ACTUAL_FINDINGS_FILE"
+                        # Execute the check sequentially with a timeout of 3600 seconds
+                        timeout 3600 java -jar "$JAR_PATH" -c "$POLICY_PATH" "$ACTUAL_FINDINGS_FILE" > "./results/coverage_check/$FOLDER1/${POLICY_NAME}_coverage.log" 2>&1
+                        EXIT_CODE=$?
 
                         # Cleanup temp file if used
                         if [[ -n "$TMP_FILE" && -f "$TMP_FILE" ]]; then
                             rm "$TMP_FILE"
+                        fi
+
+                        if [ $EXIT_CODE -eq 124 ]; then
+                            echo "Timeout reached for $POLICY_NAME. Skipping remaining files in $FINDINGS_DIR."
+                            break
                         fi
                     else
                         echo "Warning: Policy file not found for result: $FINDINGS_FILE (Expected: $POLICY_PATH)"
