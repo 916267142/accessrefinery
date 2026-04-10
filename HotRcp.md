@@ -4,7 +4,7 @@ by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](htt
 
 ![Java](https://img.shields.io/badge/Java-17-007396?logo=java&logoColor=white) ![Tests](https://img.shields.io/badge/tests-passing-brightgreen?logo=java) ![Paper](https://img.shields.io/badge/paper-FSE2026-orange) ![License](https://img.shields.io/badge/license-Apache--2.0-green)
 
-# About Artifact
+## About Artifact
 
 This repository contains the artifacts for the FSE 2026 paper titled ["AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud"](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf). *AccessRefinery* speeds up intent mining for IAM (Identity and Access Management) policies and reduces redundancy in the mined intents. Its speedup is achieved by reducing redundancy in multi-round SMT solving through a *Multi-Theory Constraint Preprocessor (MCP)* that transforms SMT constraints into bit-vector representations. For intent reduction, *AccessRefinery* computes a compact set of intents that covers all mined intents by solving a minimum set-cover problem. Compared with the [AWS Access Analyzer](https://link.springer.com/content/pdf/10.1007/978-3-030-53288-8_9.pdf) baseline, *AccessRefinery* achieves about 10–100× speedup and reduces the number of intents by up to 10×. This artifact includes the full implementations of *AccessRefinery* and the baseline reimplementation, along with datasets, archived results, experiment scripts, and plotting scripts to reproduce the paper's main claims. Additionally, we designed MCP as a reusable data structure that may also benefit other studies.
 
@@ -51,22 +51,24 @@ We believe this artifact satisfies the Reusable criteria for the following reaso
 
 We believe this artifact satisfies the Available criteria because it is publicly available on Zenodo and GitHub.
 
-## Installation
+## Environment Setup
 
 For artifact evaluation reviewers, we provide a cloud server that can be accessed via SSH, so this section can be skipped.
 
 ```shell
-ssh 
+ssh ...
+... # password
 cd accessrefinery
 ```
 
-### Source Code
+### Download Artifact
 
-We provide two ways to access the source code:
+We provide two ways to access the artifact:
 
 - Archived version: [Zenodo repository](https://github.com/xjtu-netverify/AccessRefinery.git)
 
 After downloading the archive, extract it with:
+
 ```
 unzip accessrefinery-1.0.zip -d accessrefinery
 ```
@@ -79,25 +81,21 @@ git clone https://github.com/xjtu-netverify/AccessRefinery.git
 
 ### Requirements
 
-#### Hardware Requirements
+- Hardware Requirements
+  - RAM: ≥ 32 GB
+  - Storage: ≥ 50 GB
+- Software Requirements
+  - Linux Ubuntu 22.04 LTS
+  - Java JDK 17
+  - Maven 3.6.3
+  - jq 1.6
+  - gnuplot 5.4
+  - SMT solver Z3 4.14.2 (for running baseline)
+  - SMT solver CVC5 1.2.1 (for running baseline)
 
-- **RAM:** ≥ 32 GB
-- **Storage:** ≥ 50 GB
+#### Installation
 
-#### Software Requirements
-
-- **Operating System:** Ubuntu 22.04 LTS (Linux)
-- Java JDK 17
-- Maven 3.6.3
-- jq 1.6
-- gnuplot 5.4
-- SMT solver Z3 4.14.2 (for running baseline)
-- SMT solver CVC5 1.2.1 (for running baseline)
-
-
-#### Environment Setup
-
-- Prepare a Linux system (recommended: [Ubuntu 22.04.5](https://releases.ubuntu.com/jammy/ubuntu-22.04.5-desktop-amd64.iso))
+- Prepare a Linux system (recommend [Ubuntu 22.04.5](https://releases.ubuntu.com/jammy/ubuntu-22.04.5-desktop-amd64.iso))
 
 - Install JDK 17:
 
@@ -111,7 +109,6 @@ Add Java to the environment variables (recommended):
 echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
-
 javac -version
 java -version
 ```
@@ -120,7 +117,6 @@ Expected output:
 
 ```shell
 javac 17.0.17
-
 openjdk version "17.0.17" 2025-10-21
 OpenJDK Runtime Environment (build 17.0.17+10-Ubuntu-122.04)
 OpenJDK 64-Bit Server VM (build 17.0.17+10-Ubuntu-122.04, mixed mode, sharing)
@@ -189,11 +185,12 @@ Z3 version 4.14.1 - 64 bit
 Z3 installation is correct.
 ```
 
-> Note: `CVC5` is installed automatically during project compilation.
+Moreover, CVC5 is installed automatically during project compilation.
 
-### Build
 
-From the project root directory, run:
+#### Build
+
+In the root directory, run:
 
 ```bash
 mvn clean package
@@ -205,7 +202,7 @@ The build generates the following JAR packages in `target/`:
 - `accessrefinery-1.0.jar` for *AccessRefinery*.
 - `accessanalyzer-1.0.jar` for the reimplemented *Access Analyzer*.
 
-## Structure
+## Project Structure
 
 Since AWS Access Analyzer is not open source and provides only a Command-Line Interface (CLI), we also reimplemented Access Analyzer for evaluation. We distinguish the two versions as the **Reimplemented Access Analyzer** and the **CLI-based Access Analyzer**.
 
@@ -222,14 +219,11 @@ Since AWS Access Analyzer is not open source and provides only a Command-Line In
   - `accessanalyzer-cli`: Scripts for invoking AWS Access Analyzer via CLI.
 - `pom.xml`: Maven root configuration.
 - `tools/`: Scripts for running the experiments.
-- `docs/`: Stores documents such as auto-generated JavaDoc.
-    - `mcp-javadoc`
-  - `accessrefinery-javadoc` 
+- `docs/`:
+    - `mcp-javadoc`: JavaDoc for MCP.
+  - `accessrefinery-javadoc`: JavaDoc for AccessRefinery.
 - `paper_figures/`: Scripts for plotting the figures in the paper.
 - `archive_results/`: Archived experimental results.
-
-## Setup
-
 
 ## Using Multi-Theory Constraint Preprocessor (MCP)
 
@@ -263,13 +257,26 @@ Then add the dependency to your `pom.xml`:
 
 ### Example
 
-This example follows the example in the paper (line 414). The example is also included in [MCPFactoryTest.java](accessrefinery/mcp/src/test/java/org/mcp/core/MCPFactoryTest.java) and runs automatically during `mvn package`.
+This example follows the one in the paper (line 414). It is also included in [MCPFactoryTest.java](accessrefinery/mcp/src/test/java/org/mcp/core/MCPFactoryTest.java), and MCP is used through Maven dependency import. Running the following command will automatically execute this example.
+
+Running: 
 
 ```
-mvn test
+mvn test -pl ./accessrefinery/mcp -Dtest=MCPFactoryTest.java#testMCPFactory
 ```
 
-Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resource`: `dept*/user1.txt`, `IpAddress`: `112.0.0.0/24`).
+Expected output:
+
+```text
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.579 s
+[INFO] Finished at: 2026-04-10T22:58:08+08:00
+[INFO] ------------------------------------------------------------------------
+```
+
+The following section explains the example in detail. Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resource`: `dept*/user1.txt`, `IpAddress`: `112.0.0.0/24`).
 
 ```json
 {
@@ -364,13 +371,13 @@ java -jar target/accessrefinery-1.0.jar [options]
 - `-s, --sat` : Use SAT to encode bit-vectors (default is BDD).
 - `--round <number>` : Number of mining rounds (to reduce experimental bias).
 
-**Example:**
+**Running:**
 
 ```shell
 java -jar target/accessrefinery-1.0.jar -m -r --round 1 -f data/Correctness
 ```
 
-The command produces logs similar to the following:
+**Expected output:**
 
 ```cmd
 [INFO] 2026-04-05 22:51:33 : ----------[ AccessRefinery Mode ]-------------
@@ -379,10 +386,9 @@ The command produces logs similar to the following:
 [INFO] 2026-04-05 22:51:33 : ----------< 1th policy - 11_allow_allow_equal.json >-----------
 [INFO] 2026-04-05 22:51:33 : [1/6]  finish parser policy
 [INFO] 2026-04-05 22:51:33 : [2/6]  finish ECs calculation
-...
 ```
 
-Results are generated in the `results/Correctness/` directory and include:
+Results are generated in the `result/Correctness/` directory and include:
 
 - `xxx.json`: The intents for each policy.
 - `xxx.csv`: Statistics for multi-round SMT solving for each policy.
@@ -392,24 +398,54 @@ In addition, one file is generated in the current path:
 
 - `accessrefinery.log` : Records the running log.
 
+## Using reimplemented Access Analyzer (Baseline)
+
+To run *Access Analzyer*, use:
+
+```bash
+$ java -jar target/accessanalyzer-1.0.jar <options>
+```
+
+**Command-line options:**
+- `-r, --reduce`: Reduce the number of intents.
+- `-s, --solver <Z3/CVC5>`: Select the solver to use (Z3 or CVC5), default is Z3.
+- `-f, --file <DATA_PATH>`: Path to the input policies (JSON file or folder).
+- `-h, --help`: Show help message and exit.
+
+**Running:**
+
+```bash
+java -jar target/accessanalyzer-1.0.jar -r -s Z3 -f data/Correctness/11_allow_allow_equal.json
+``` 
+
+**Expected output:**
+
+```text
+[INFO] 2026-04-10 23:08:41 : ----------[ Shaky Jenga Tower Code ]-------------
+[INFO] 2026-04-10 23:08:41 : logger path: /home/simple/workspace/accessrefinery-workspace/accessrefinery/miner.log
+[INFO] 2026-04-10 23:08:41 : input  path: data/Correctness/11_allow_allow_equal.json
+[INFO] 2026-04-10 23:08:41 : output path: result/Correctness/11_allow_allow_equal.json
+[INFO] 2026-04-10 23:08:41 : ----------< Processing policy - 11_allow_allow_equal.json >-----------
+[INFO] 2026-04-10 23:08:41 : [1/5]  finish parser policy
+[INFO] 2026-04-10 23:08:41 : [2/5]  finish label tree calculation
+[INFO] 2026-04-10 23:08:41 : [3/5]  finish findings mining : 1
+[INFO] 2026-04-10 23:08:41 : [4/5]  finish atomic predicates calculation
+```
+
+Then the result will be output to the `results/` folder. For the file `<file_name>.json`, the tool will output a folder named `results/<file_name>.json/`, containing the following files:
+
+- `<file_name>_<solver>_findings.json`: The mined intents in JSON format.
+- `<file_name>_<solver>_time.csv`: The time spent in mining the intents.
 
 ## Evaluation Reproduction
 
 This section describes (1) how to reproduce the results in `archive_results/`, and (2) how to map `archive_results/` to the corresponding figures, tables, and conclusions in the paper.
 
-> We omit the results for the real-world datasets because of commercial restrictions.
-
-<!-- We recommend skipping reproduction of results from the **reimplemented Access Analyzer** (because it takes a very long time) and the **CLI-based Access Analyzer** (because the setup is complex and requires AWS account registration, billing setup, and CLI credential configuration). We still provide instructions for developers.
-
-- See [details](baselines/accessanalyzer-reimpl/README.md) for the **Reimplemented Access Analyzer**.
-- See [details](baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for the **CLI-based Access Analyzer**. -->
+*We omit the results for the real-world datasets because of commercial restrictions.*
 
 ### Reproducing Archived Results
 
-All experimental results are archived in `archive_results/`, which allows you to skip the following steps.
-
-Due to repeated invocations of Access Analyzer, our AWS account has been suspended and is no longer usable. Therefore, we provide archived results for CLI-based Access Analyzer in `archive_results/accessanalyzer_cli/`. However, we still provide guidance for developers in [AccessAnalyzerCLI.md](baselines/accessanalyzer-cli/AccessAnalyzerCLI.md). We recommend skipping this step, as the setup process is prohibitively complex (it requires AWS account registration, billing configuration, and CLI credential setup).
-
+Running this part generates a `results/` directory. We archive its contents in `archive_results/` while preserving the same directory structure, which allows you to skip the following steps.
 
 #### Reproducing AccessRefinery Archived Results
 
@@ -434,7 +470,7 @@ sh tools/accessrefinery/running_sat_reducer.sh
 <!-- # The execution takes about 10 seconds.
 sh tools/accessrefinery/running_batch_compare.sh -->
 
-**Output:**
+**Expected Output:**
 
 - `results/`: All experiments are run for 10 rounds, and average time is reported.
 
@@ -464,13 +500,17 @@ The following scripts invoke `target/accessanalyzer-1.0.jar`.
 @ after-the-end
 ```
 
-**Output:**
+**Expected Output:**
 
 - `results/`: All results run for one round due to limited execution time.
   - `accessrefinery_z3_miner_1rs/`: intent mining using Z3 Solver.
   - `accessrefinery_cvc5_miner_1rs/`: intent mining using CVC5 Solver.
   - `accessrefinery_z3_reducer_1rs/`: intent mining and reduction using Z3 Solver.
   - `accessrefinery_cvc5_reducer_1rs/`: intent mining and reduction using CVC5 Solver.
+
+#### Reproducing CLI-based Access Analyzer Archived Results
+
+Due to largely invoking of Access Analyzer, our AWS account has been suspended. Therefore, we provide archived results for CLI-based Access Analyzer in `archive_results/accessanalyzer_cli/`. However, we still provide guidance for developers in [AccessAnalyzerCLI.md](baselines/accessanalyzer-cli/AccessAnalyzerCLI.md). We recommend skipping this step, as the setup process is prohibitively complex (it requires AWS account registration, billing configuration, and CLI credential setup).
 
 <!-- #### Reproducing CLI-based Access Analyzer Archived Results
 
@@ -493,7 +533,7 @@ Output directory:
 
 <!-- We recommend skipping reproduction of results from the **reimplemented Access Analyzer** (because it takes a very long time) and the **CLI-based Access Analyzer** (because the setup is complex and requires AWS account registration, billing setup, and CLI credential configuration). We still provide instructions for developers. -->
 
-### Correspondence to Paper Sections
+### Verifying Claims in the Paper
 
 After generating the results, we explain how to reproduce the figures, tables, and conclusions reported in the paper.
 
@@ -518,13 +558,13 @@ AWS automatically terminated the mining process after `3386` seconds. This indic
 See the last line of `archive_results/accessanalyzer_z3_miner_1rs/Scalability_05Keys/summary.csv`. 
 
 ```
-14,196,225,3.9041,895.8580
-15,225,256,4.5458,1183.9881
+9,81,676,2.3068,1569.1607
+10,100,881,2.9338,2596.6094
 ```
 
 The final column value of `2596.6094` seconds indicates that only up to 10 statements were mined. This implies that the reimplemented Access Analyzer timed out when handling 11 to 15 statements.
 
-**To this end, the conclusion holds.**
+To this end, the conclusion holds.
 
 ---
 
@@ -542,7 +582,7 @@ sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare.sh
 
 <!-- > Note: The CLI-based Access Analyzer experiences timeouts on some datasets. -->
 
-**Output:**
+**Expected Output:**
 
 - `results/accessanalyzer_miner_compare_results/*.log`
 
@@ -556,7 +596,7 @@ Besides, to confirm the correctness of our reimplemented Access Analyzer for int
 sh tools/accessanalyzer-reimpl/running_accessanalyzer_reducer_compare.sh
 ```
 
-**Output:**
+**Expected Output:**
 
 - `results/accessanalyzer_reducer_compare_results/*.log`
 
@@ -574,7 +614,7 @@ Running maven test for [MCPTest.java](accessrefinery/mcp/src/test/java/org/mcp/c
 mvn test -pl ./accessrefinery/mcp -Dtest=MCPTest.java#testComplexSATOperations
 ```
 
-**Output:**
+**Expected Output:**
 
 ```
 [INFO] ------------------------------------------------------------------------
@@ -601,7 +641,7 @@ Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary
 (cd paper_figures && gnuplot gnuplot/RQ1-Experiment-Correctness.plt)
 ```
 
-**Output:**
+**Expected Output:**
 
 - `paper_figures/results/RQ1-Experiment-Correctness.pdf`
 
@@ -620,13 +660,12 @@ The following commands check whether the intents mined by AccessRefinery are con
 sh tools/accessrefinery/running_accessrefinery_miner_compare.sh
 
 # Compare AccessRefinery and reimplemented Access Analyzer
-# 
 sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare_with_refinery.sh
 ```
 
 <!-- > Note that although we previously compared the reimplemented Access Analyzer against the CLI-based Access Analyzer, the CLI-based tool suffers from incomplete intent mining due to timeouts. Therefore, we instead compared the reimplemented Access Analyzer with AccessRefinery and confirmed that their results are consistent. -->
 
-**Output:**
+**Expected Output:**
 
 - `results/`
   - `accessrefinery_miner_compare_results/*.log`
@@ -641,7 +680,7 @@ sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare_with_refiner
 
 //Todo @after-the-end
 
-**Output:**
+**Expected Output:**
 
 ---
 
@@ -657,13 +696,15 @@ sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare_with_refiner
 
 The `NumberMCI` column represents the number of intents before reduction, and the `NumberRRI` column represents the number after reduction.
 
-> Note: The real-world results in the paper cannot be open sourced for commercial reasons.
+*Note: The real-world results in the paper cannot be open sourced for commercial reasons.*
 
 **Running:**
 
+```shell
 (cd paper_figures && gnuplot gnuplot/RQ2-Experiment-Effectiveness.plt)
+```
 
-**Output:**
+**Expected Output:**
 
 - `paper_figures/results/RQ2-Experiment-Effectiveness.pdf`
 
@@ -694,7 +735,7 @@ The `TotalTimeAverage` column represents the average runtime over 10 rounds of `
 (cd paper_figures && gnuplot gnuplot/RQ3-Experiment-Scalability-Mining.plt)
 ```
 
-**Output:**
+**Expected Output:**
 
 - `paper_figures/results/RQ3-Experiment-Scalability-Mining.pdf`
 
@@ -722,7 +763,7 @@ The `TotalTimeAverage` column represents the average runtime over 10 rounds of `
 (cd paper_figures && gnuplot gnuplot/RQ3-Experiment-Scalability-Reducing.plt)
 ```
 
-**Output:**
+**Expected Output:**
 
 - `paper_figures/results/RQ3-Experiment-Scalability-Reducing.pdf`
 
@@ -731,7 +772,7 @@ The `TotalTimeAverage` column represents the average runtime over 10 rounds of `
 
 **Target Figure (Line 875 in Section 6.4)**: Figure 14 in the paper.
 
-<img src="docs/figures/figure13.png" width="450"/>
+<img src="docs/figures/figure14.png" width="600"/>
 
 These logs are omitted for commercial reasons.
 
@@ -739,7 +780,7 @@ These logs are omitted for commercial reasons.
 
 **Target Conclusion (Line 884 in Section 6.5)**:
 
-"For intent mining, using JavaBDD is 1-6x faster than using MiniSAT (for clarity, the figure is omitted)."
+"*For intent mining, using JavaBDD is 1-6x faster than using MiniSAT (for clarity, the figure is omitted).*"
 
 **Required logs**:
 
@@ -760,7 +801,7 @@ The following command generates the figure omitted in the paper.
 
 ```
 
-**Output:**
+**Expected Output:**
 
 - `paper_figures/results/RQ5-Experiment-MicroBenchmark-Mining.pdf`
 
@@ -792,7 +833,7 @@ The following command generates Figure 15 in the paper.
 
 ```
 
-**Output:**
+**Expected Output:**
 
 - `paper_figures/results/RQ5-Experiment-MicroBenchmark-Reducing.pdf`
 
@@ -817,7 +858,7 @@ The `NumberRRI` column is the number of SMT solving rounds in the table. The `MC
 
 The `Average Time per Round (s)` column is the average single-round SMT solving time in the table for `Z3` and `CVC5`.
 
-The table is generated by LaTeX; therefore, no plotting program is used.
+The table is generated by LaTeX. Therefore, no plotting program is used.
 
 ---
 
@@ -825,7 +866,7 @@ The generated figures are saved in `paper_figures/results/`.
 
 ## Development
 
-- We develop AccessRefinery in VS Code IDEA, see [details](docs/vscode-develop/VSCODE.md).
+- We develop AccessRefinery in VS Code IDEA, see [VSCODE.md](docs/vscode-develop/VSCODE.md).
 
 - We provide JavaDocs for the project in `docs/mcp-javadocs/` and `docs/accessrefinery-javadocs/`.
 
@@ -837,4 +878,5 @@ Apache-2.0 License, see [LICENSE](LICENSE).
 
 Feel free to contact us if you have any questions.
 
-- Ning Kang (<kangning2018@qq.com>)
+- Ning Kang (<kangning2018@foxmail.com>)
+- Jianyuan Zhang (jyzhang0281@foxmail.com)
