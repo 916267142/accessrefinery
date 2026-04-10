@@ -487,16 +487,16 @@ The following scripts invoke `target/accessanalyzer-1.0.jar`.
 
 ```bash
 # The execution takes about ???
-@ after-the-end
+bash mining_miner_cvc5.sh
 
 # The execution takes about ???
-@ after-the-end
+bash mining_reducer_cvc5.sh
 
 # The execution takes about ???
-@ after-the-end
+bash mining_miner_z3.sh
 
 # The execution takes about ???
-@ after-the-end
+bash mining_reducer_z3.sh
 ```
 
 **Expected Output:**
@@ -639,9 +639,16 @@ sh tools/accessanalyzer-reimpl/running_accessanalyzer_compare_with_refinery.sh
 
 **Running:**
 
-//Todo @after-the-end
+```bash
+bash ./tools/accessanalyzer-reimpl/check_coverage.sh
+```
 
 **Expected Output:**
+
+- `results/coverage_check/`
+  - `Correctness/*_coverage.log`
+  - `Scalability_05Keys/*_coverage.log`
+  - `Scalability_06Keys/*_coverage.log`
 
 #### 7. Target Figure (Line 804 in Section 6.2): Figure 11
 
@@ -656,6 +663,17 @@ sh tools/accessanalyzer-reimpl/running_accessanalyzer_compare_with_refinery.sh
 The `NumberMCI` column represents the number of intents before reduction, and the `NumberRRI` column represents the number after reduction.
 
 *Note: The real-world results in the paper cannot be open sourced for commercial reasons.*
+
+**Running:**
+```bash
+bash tools/figures/extract_effectiveness-synthetic.sh
+```
+
+**Expected Output:**
+
+- `paper_figures/data/`
+  - `Experiment-Effectiveness-Synthetic-K2.dat`
+  - `Experiment-Effectiveness-Synthetic-K3.dat`
 
 **Running:**
 
@@ -693,6 +711,18 @@ paper_figures/results/RQ2-Experiment-Effectiveness.pdf
 
 **Running:**
 
+```bash
+bash tools/figures/extract_scalability_MCI.sh
+```
+
+**Expected Output:**
+
+- `paper_figures/data/`
+  - `Experiment-Scalability-MCI-K2.dat`
+  - `Experiment-Scalability-MCI-K3.dat`
+
+**Running:**
+
 ```shell
 (cd paper_figures && gnuplot gnuplot/RQ3-Experiment-Scalability-Mining.plt)
 ls paper_figures/results/RQ3*Mining*
@@ -719,6 +749,18 @@ paper_figures/results/RQ3-Experiment-Scalability-Mining.pdf
 - `accessanalyzer_cvc5_reducer_1rs/` : `Access Analyzer(CVC5)` in the figure. 
   - `Scalability_05Keys/summary.csv` : see `Total Time (s)` column
   - `Scalability_06Keys/summary.csv` : see `Total Time (s)` column
+
+**Running:**
+
+```bash
+bash tools/figures/extract_scalability_RRI.sh
+```
+
+**Expected Output:**
+
+- `paper_figures/data/`
+  - `Experiment-Scalability-RRI-K2.dat`
+  - `Experiment-Scalability-RRI-K3.dat`
 
 **Running:**
 
@@ -752,6 +794,21 @@ These logs are omitted for commercial reasons.
   - `Scalability_05Keys/summary.txt` : see `TotalTimeAverage` column
   - `Scalability_06Keys/summary.txt` : see `TotalTimeAverage` column
 
+// TODO @916267142
+// Is it duplicated to run the command again here?
+
+**Running:**
+
+```bash
+bash tools/figures/extract_scalability_MCI.sh
+```
+
+**Expected Output:**
+
+- `paper_figures/data/`
+  - `Experiment-Scalability-MCI-K2.dat`
+  - `Experiment-Scalability-MCI-K3.dat`
+
 **Running:**
 
 The following command generates the figure omitted in the paper.
@@ -781,6 +838,21 @@ paper_figures/results/RQ5-Experiment-MicroBenchmark-Mining.pdf`
   - `Scalability_06Keys/summary.txt` see `TotalTimeAverage` column
 
 > Note: For a fair comparison, compare average runtime per round (normalized to 10 rounds). Since SAT-based reduction is much slower, we report SAT results for only 3 rounds.
+
+// TODO @916267142
+// Is it duplicated to run the command again here?
+
+**Running:**
+
+```bash
+bash tools/figures/extract_scalability_RRI.sh
+```
+
+**Expected Output:**
+
+- `paper_figures/data/`
+  - `Experiment-Scalability-RRI-K2.dat`
+  - `Experiment-Scalability-RRI-K3.dat`
 
 **Running:**
 
