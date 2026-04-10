@@ -56,8 +56,7 @@ We believe this artifact satisfies the Available criteria because it is publicly
 For artifact evaluation reviewers, we provide a cloud server that can be accessed via SSH, so this section can be skipped.
 
 ```shell
-ssh ae_user@8.218.36.18
-fse2026 # password
+ssh 
 cd accessrefinery
 ```
 
