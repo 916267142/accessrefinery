@@ -486,26 +486,26 @@ sh tools/accessrefinery/running_sat_reducer.sh
 The following scripts invoke `target/accessanalyzer-1.0.jar`.
 
 ```bash
-# The execution takes about ???
+# The execution takes about 4.5 hours.
 bash mining_miner_cvc5.sh
 
-# The execution takes about ???
+# The execution takes about 3.5 hours.
 bash mining_reducer_cvc5.sh
 
-# The execution takes about ???
+# The execution takes about 3.5 hours
 bash mining_miner_z3.sh
 
-# The execution takes about ???
+# The execution takes about 2 hours
 bash mining_reducer_z3.sh
 ```
 
 **Expected Output:**
 
 - `results/`: All results run for one round due to limited execution time.
-  - `accessrefinery_z3_miner_1rs/`: intent mining using Z3 Solver.
-  - `accessrefinery_cvc5_miner_1rs/`: intent mining using CVC5 Solver.
-  - `accessrefinery_z3_reducer_1rs/`: intent mining and reduction using Z3 Solver.
-  - `accessrefinery_cvc5_reducer_1rs/`: intent mining and reduction using CVC5 Solver.
+  - `accessanalyzer_z3_miner_1rs/`: intent mining using Z3 Solver.
+  - `accessanalyzer_cvc5_miner_1rs/`: intent mining using CVC5 Solver.
+  - `accessanalyzer_z3_reducer_1rs/`: intent mining and reduction using Z3 Solver.
+  - `accessanalyzer_cvc5_reducer_1rs/`: intent mining and reduction using CVC5 Solver.
 
 #### Reproducing CLI-based Access Analyzer Archived Results
 
@@ -603,6 +603,14 @@ mvn test -pl ./accessrefinery/mcp -Dtest=MCPTest.java#testComplexSATOperations
 **Required logs:**
 
 Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary.txt` to plot Figure 10 of the paper.
+
+**Running:**
+```bash
+bash ./tools/figures/extract_correctness.sh
+```
+**Expected Output:**
+
+- `paper_figures/data/Experiment-Correctness-Synthetic.dat`
 
 **Running:** (Preserve the parentheses when executing the command.)
 ```shell
