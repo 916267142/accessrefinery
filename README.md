@@ -4,8 +4,8 @@ by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](htt
 
 ![Java](https://img.shields.io/badge/Java-17-007396?logo=java&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-passing-brightgreen?logo=java)
-![License](https://img.shields.io/badge/license-Apache--2.0-green)
 ![Paper](https://img.shields.io/badge/paper-FSE2026-orange)
+<!-- ![License](https://img.shields.io/badge/license-Apache--2.0-green) -->
 
 ## About AccessRefinery
 

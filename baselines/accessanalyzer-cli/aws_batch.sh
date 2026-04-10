@@ -1,7 +1,7 @@
 #!/bin/bash
 
-analyzer_arn="arn:aws:access-analyzer:ap-northeast-1:222634363387:analyzer/ExternalAccess"
-bucket_name="antsknmath"
+analyzer_arn="arn:aws:access-analyzer:ap-northeast-1:522814710926:analyzer/ExternalAccess-ConsoleAnalyzer"
+bucket_name="fse2026"
 
 single_policy_scan() {
     local policy_file="$1"

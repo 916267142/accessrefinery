@@ -78,7 +78,7 @@ public class FileUtil {
             newPath = newPath.resolve(inputFoldPath.getName(i));
         }
 
-        newPath = newPath.resolve("results");
+        newPath = newPath.resolve("result");
 
         newPath = newPath.resolve(inputFoldPath.getName(nameCount - 1));
 
