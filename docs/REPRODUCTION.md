@@ -1,4 +1,71 @@
 
+## Evaluation Reproduction
+
+This section describes (1) how to reproduce the results in the `archive_results/` folder, and (2) how to map the `archived_results/` to the corresponding figures, tables, and conclusions in the paper.
+
+> We omit the results for the real-world datasets because of commercial restrictions.
+
+<!-- We recommend skipping reproduction of results from the **reimplemented Access Analyzer** (because it takes a very long time) and the **CLI-based Access Analyzer** (because the setup is complex and requires AWS account registration, billing setup, and CLI credential configuration). We still provide instructions for developers.
+
+- See [details](baselines/accessanalyzer-reimpl/README.md) for the **Reimplemented Access Analyzer**.
+- See [details](baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for the **CLI-based Access Analyzer**. -->
+
+### Reproducing AccessRefinery Archived Results
+
+The following scripts invoke `target/accessrefinery-1.0.jar` and reproduce the **AccessRefinery** results.
+
+```bash
+# The execution takes about 5min
+sh tools/accessrefinery/running_bdd_miner.sh
+
+# The execution takes about 5min
+sh tools/accessrefinery/running_sat_miner.sh
+
+# The execution takes about 10min
+sh tools/accessrefinery/running_bdd_reducer.sh
+
+# The execution takes about 1h
+sh tools/accessrefinery/running_sat_reducer.sh
+```
+
+<!-- # The execution takes about 10 seconds.
+sh tools/accessrefinery/running_batch_compare.sh -->
+
+The following directories are generated
+
+- `results/`:
+  - `accessrefinery_bdd_miner_10rs/`: Contains intent mining results for 10 rounds using JavaBDD.
+  - `accessrefinery_sat_miner_10rs/`: Contains intent mining results for 10 rounds using MiniSAT.
+  - `accessrefinery_bdd_reducer_10rs/`: Contains intent mining and reduction results for 10 rounds using JavaBDD.
+  - `accessrefinery_sat_reducer_3rs/`: Contains intent mining and reduction results for 3 rounds using MiniSAT (running 3 rounds due to slow).
+
+*The same directory structure is preserved in the `archive_results/` folder.*
+
+<!-- - `compare_accessrefinery_with_accessanalyzer_cli/`: Comparison logs between **AccessRefinery** and the **CLI-based Access Analyzer**, and between **AccessRefinery (BDD)** and **AccessRefinery (SAT)**. -->
+
+### Reproducing reimplemented Access Analzyer Archived Results
+
+@ after-the-end
+
+### Reproducing CLI-based Access Analyzer Archived Results
+
+- **If you are using your own environment:**  
+  We strongly recommend skipping the reproduction of results from the **CLI-based Access Analyzer**, as the setup is complex and requires AWS account registration, billing configuration, and CLI credential setup. But we still provide [instructions](../baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for developer.
+
+- **If you are using the provided cloud platform via SSH:**  The environment has already been configured, and you can test our scripts directly.   However, due to the suspension of our original AWS account, the previous bucket name is no longer accessible. We have migrated to a new account and created a new bucket accordingly. Note that this new account may still be at risk of suspension by AWS due to unusual traffic patterns.
+
+```bash
+sh baselines/accessanalyzer-cli/aws_batch.sh data/TestCLI
+```
+
+Output:
+
+`results/accessanalyzer_cli/`
+
+*All previously mined intents are archived in `archive_results/accessanalyzer_cli/`. These archived results can serve as ground truth for correctness verification.*
+
+<!-- We recommend skipping reproduction of results from the **reimplemented Access Analyzer** (because it takes a very long time) and the **CLI-based Access Analyzer** (because the setup is complex and requires AWS account registration, billing setup, and CLI credential configuration). We still provide instructions for developers. -->
+
 ### Correspondence to Paper Sections
 
 After generating the experimental results, we explain how to reproduce the figures, tables, and conclusions reported in the paper.

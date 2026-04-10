@@ -96,7 +96,12 @@ Then add the dependency to your `pom.xml`:
 
 ### Example
 
-This example follows the example in the paper (line 414).
+This example follows the example in the paper (line 414). The example is also included in [MCPFactoryTest.java](accessrefinery/mcp/src/test/java/org/mcp/core/MCPFactoryTest.java) and runs automatically during `mvn package`.
+
+```
+mvn test
+```
+
 Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resource`: `dept*/user1.txt`, `IpAddress`: `112.0.0.0/24`).
 
 ```json
@@ -134,7 +139,6 @@ Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resou
 ```
 
 To check the satisfiability of three formulas, $\neg I_6 \land P$, $I_6 \land \neg P$, and $I_6 \land P$, we use the following code based on **MCP**.
-The example is also included in [MCPFactoryTest.java](accessrefinery/mcp/src/test/java/org/mcp/core/MCPFactoryTest.java) and runs automatically during `mvn package`.
 
 ```java
 package com.example;
@@ -249,9 +253,9 @@ sh tools/accessrefinery/running_bdd_reducer.sh
 # The execution takes about 1h
 sh tools/accessrefinery/running_sat_reducer.sh
 
-# The execution takes about 10 seconds.
-sh tools/accessrefinery/running_batch_compare.sh
 ```
+<!-- # # The execution takes about 10 seconds.
+# sh tools/accessrefinery/running_batch_compare.sh -->
 
 The following directories are generated under `results/`:
 
@@ -259,7 +263,7 @@ The following directories are generated under `results/`:
 - `accessrefinery_sat_miner_10rs/`: Intent mining results for 10 rounds with MiniSAT.
 - `accessrefinery_bdd_reducer_10rs/`: Intent mining and reduction results for 10 rounds with JavaBDD.
 - `accessrefinery_sat_reducer_3rs/`: Intent mining and reduction results for 3 rounds with MiniSAT.
-- `compare_accessrefinery_with_accessanalyzer_cli/`: Comparison logs between **AccessRefinery** and the **CLI-based Access Analyzer**, and between **AccessRefinery (BDD)** and **AccessRefinery (SAT)**.
+<!-- - `compare_accessrefinery_with_accessanalyzer_cli/`: Comparison logs between **AccessRefinery** and the **CLI-based Access Analyzer**, and between **AccessRefinery (BDD)** and **AccessRefinery (SAT)**. -->
 
 > Because the MiniSAT-based reduction experiment runs very slowly, we report only three rounds for that experiment.
 
