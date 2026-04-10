@@ -46,7 +46,7 @@ We believe this artifact satisfies the Reusable criteria for the following reaso
 
 - **Reuse and repurposing of AccessRefinery (tool-level reuse):**
   - **Easy-to-use command-line API and examples:** Running `mvn package` at the repository root generates `accessrefinery-1.0.jar`. It provides command-line parsing support. For example, `java -jar target/accessrefinery-1.0.jar -m -r --sat --round 10 -f data/Correctness` automatically runs 10 rounds to compute the average runtime, and `--sat` indicates that MiniSAT is used instead of BDD to represent bit-vectors. We also provide usage examples.
-  - **Standardized API documentation:** We provide standardized comments in the *AccessRefinery* source code, enabling automatic Maven documentation generation. See [GitHub Page](https://xjtu-netverify.github.io/accessrefinery.github.io/).
+  - **Standardized API documentation:** We provide standardized comments in the *AccessRefinery* source code, enabling automatic Maven documentation generation. See [GitHub Page](https://916267142.github.io/accessrefinery.github.io/).
 
 ### Available
 
@@ -66,7 +66,7 @@ cd accessrefinery
 
 We provide two ways to access the artifact:
 
-- Archived version: [Zenodo repository](https://github.com/xjtu-netverify/AccessRefinery.git)
+- Archived version: Zenodo repository with DOI [10.5281/zenodo.19488469](10.5281/zenodo.19488469)
 
 After downloading the archive, extract it with:
 
@@ -454,16 +454,16 @@ Running this part generates a `results/` directory. We archive its contents in `
 The following scripts invoke `target/accessrefinery-1.0.jar`.
 
 ```bash
-# The execution takes about 6 minutes.
+# The execution takes about 7 minutes.
 sh tools/accessrefinery/running_bdd_miner.sh
 
-# The execution takes about 1 hour.
+# The execution takes about 80 minutes.
 sh tools/accessrefinery/running_sat_miner.sh
 
-# The execution takes about ???.
+# The execution takes about 8 minutes.
 sh tools/accessrefinery/running_bdd_reducer.sh
 
-# The execution takes about ???.
+# The execution takes >12 hours.
 sh tools/accessrefinery/running_sat_reducer.sh
 ```
 
