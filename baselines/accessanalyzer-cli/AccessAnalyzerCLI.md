@@ -56,12 +56,8 @@ sh baselines/accessanalyzer-cli/aws_batch.sh <input_dir> <timeout_seconds>
 
 Outputs are written to `results/accessanalyzer_cli/`.
 
-## Reproducing Archived Results
-
-Run the following commands to reproduce the archived results:
+Example:
 
 ```bash
-sh baselines/accessanalyzer-cli/aws_batch.sh data/Correctness 3600
-sh baselines/accessanalyzer-cli/aws_batch.sh data/Scalability_05Keys 3600
-sh baselines/accessanalyzer-cli/aws_batch.sh data/Scalability_06Keys 3600
+sh baselines/accessanalyzer-cli/aws_batch.sh data/TestCLI
 ```

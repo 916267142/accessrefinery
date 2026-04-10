@@ -1,7 +1,7 @@
 
 ## Evaluation Reproduction
 
-This section describes (1) how to reproduce the results in the `archive_results/` folder, and (2) how to map the `archived_results/` to the corresponding figures, tables, and conclusions in the paper.
+This section describes (1) how to reproduce the results in `archive_results/`, and (2) how to map archived results to the corresponding figures, tables, and conclusions in the paper.
 
 > We omit the results for the real-world datasets because of commercial restrictions.
 
@@ -10,7 +10,11 @@ This section describes (1) how to reproduce the results in the `archive_results/
 - See [details](baselines/accessanalyzer-reimpl/README.md) for the **Reimplemented Access Analyzer**.
 - See [details](baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for the **CLI-based Access Analyzer**. -->
 
-### Reproducing AccessRefinery Archived Results
+### Reproducing Archived Results
+
+#### Reproducing AccessRefinery Archived Results
+
+All previously mined intents are archived in `archive_results/` directory, which allows skipping the following step.
 
 The following scripts invoke `target/accessrefinery-1.0.jar` and reproduce the **AccessRefinery** results.
 
@@ -31,52 +35,93 @@ sh tools/accessrefinery/running_sat_reducer.sh
 <!-- # The execution takes about 10 seconds.
 sh tools/accessrefinery/running_batch_compare.sh -->
 
-The following directories are generated
+
+Output:
 
 - `results/`:
   - `accessrefinery_bdd_miner_10rs/`: Contains intent mining results for 10 rounds using JavaBDD.
   - `accessrefinery_sat_miner_10rs/`: Contains intent mining results for 10 rounds using MiniSAT.
   - `accessrefinery_bdd_reducer_10rs/`: Contains intent mining and reduction results for 10 rounds using JavaBDD.
-  - `accessrefinery_sat_reducer_3rs/`: Contains intent mining and reduction results for 3 rounds using MiniSAT (running 3 rounds due to slow).
+  - `accessrefinery_sat_reducer_3rs/`: Contains intent mining and reduction results for 3 rounds using MiniSAT (limited to 3 rounds due to slow execution).
 
-*The same directory structure is preserved in the `archive_results/` folder.*
 
-<!-- - `compare_accessrefinery_with_accessanalyzer_cli/`: Comparison logs between **AccessRefinery** and the **CLI-based Access Analyzer**, and between **AccessRefinery (BDD)** and **AccessRefinery (SAT)**. -->
+#### Reproducing Reimplemented Access Analyzer Archived Results
 
-### Reproducing reimplemented Access Analzyer Archived Results
+All previously mined intents are archived in `archive_results/` directory, which allows skipping the following step.
 
+The following scripts invoke `target/accessanalyzer-1.0.jar` and reproduce the **reimplemented Access Analyzer** results.
+
+```bash
+# The execution takes about ???
 @ after-the-end
 
-### Reproducing CLI-based Access Analyzer Archived Results
+# The execution takes about ???
+@ after-the-end
+
+# The execution takes about ???
+@ after-the-end
+
+# The execution takes about ???
+@ after-the-end
+```
+
+- `results/`: All result run one round due to the limited execution time.
+  - `accessrefinery_z3_miner_1rs/`: Contains intent mining results using Z3 Solver.
+  - `accessrefinery_cvc5_miner_1rs/`: Contains intent mining results  using CVC5 Solver.
+  - `accessrefinery_z3_reducer_1rs/`: Contains intent mining and reduction results using Z3 Solver.
+  - `accessrefinery_cvc5_reducer_1rs/`: Contains intent mining and reduction results using CVC5 Solver.
+
+#### Reproducing CLI-based Access Analyzer Archived Results
+
+All previously mined intents are archived in `archive_results/accessanalyzer_cli/` directory, which allows skipping the following step. The archived results can serve as the ground truth for subsequent correctness verification.
 
 - **If you are using your own environment:**  
-  We strongly recommend skipping the reproduction of results from the **CLI-based Access Analyzer**, as the setup is complex and requires AWS account registration, billing configuration, and CLI credential setup. But we still provide [instructions](../baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for developer.
+  We strongly recommend skipping reproduction of results from the **CLI-based Access Analyzer**, as setup is complex and requires AWS account registration, billing configuration, and CLI credential setup. We still provide details in [AccessAnalyzerCLI.md](../baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for developers.
 
-- **If you are using the provided cloud platform via SSH:**  The environment has already been configured, and you can test our scripts directly.   However, due to the suspension of our original AWS account, the previous bucket name is no longer accessible. We have migrated to a new account and created a new bucket accordingly. Note that this new account may still be at risk of suspension by AWS due to unusual traffic patterns.
+- **If you are using the provided cloud platform via SSH:**  
+  The environment is already configured, and you can test our scripts directly. However, because our original AWS account was suspended, the previous bucket name is no longer accessible. We migrated to a new account and created a new bucket accordingly. This new account may still be at risk of AWS suspension due to unusual IP access patterns.
 
+Running (takes about 10 minutes):
 ```bash
 sh baselines/accessanalyzer-cli/aws_batch.sh data/TestCLI
 ```
 
-Output:
+Output directory:
 
-`results/accessanalyzer_cli/`
+- `results/accessanalyzer_cli/`
 
-*All previously mined intents are archived in `archive_results/accessanalyzer_cli/`. These archived results can serve as ground truth for correctness verification.*
 
 <!-- We recommend skipping reproduction of results from the **reimplemented Access Analyzer** (because it takes a very long time) and the **CLI-based Access Analyzer** (because the setup is complex and requires AWS account registration, billing setup, and CLI credential configuration). We still provide instructions for developers. -->
 
 ### Correspondence to Paper Sections
 
-After generating the experimental results, we explain how to reproduce the figures, tables, and conclusions reported in the paper.
+After generating the `archived_results/`, we explain how to reproduce the figures, tables, and conclusions reported in the paper.
+
+---
 
 ### 5 Experiment Setup
 
-**Target:** "*AWS provides an online Command Line Interface (CLI) for Access Analyzer, which we use to validate the correctness of our re-implementation. Specifically, for the 6-key dataset with 13 to 15 statements, both versions time out (> 1 hour). Both versions produce identical intents on the Correctness, 5-key, and 6-key datasets.*"
+**Target Conclusion (Line 750):** "*AWS provides an online Command Line Interface (CLI) for Access Analyzer, which we use to validate the correctness of our re-implementation. Specifically, for the 6-key dataset with 11 to 15 statements, both versions time out (> 1 hour). ...*"
 
 **Reproduced Steps:**
 
-//Todo @after-the-end
+See `archive_results/accessanalyzer_cli/run.log` for the 10_allow_result.json test case. AWS automatically terminated the mining process after `3386` seconds. This indicates that invoking Access Analyzer via the CLI with a 6-key dataset containing 10 to 15 statements results in a timeout.
+
+```test
+[4/5] intents saved at ./aws_result/Scalability_06Keys//10_allow_result.json
+[5/5] 2025-05-11 18:06:51: Total running time  : 3386 seconds
+[5/5] 2025-05-11 18:06:51: Final intents count : 1
+```
+
+See the last line of `archive_results/accessanalyzer_z3_miner_1rs/summary.csv`. The final column value of `2596.6094` seconds indicates that only up to 10 statements were mined. This implies that the reproduced Access Analyzer timed out when handling 11 to 15 statements.
+
+**To this end, the conclusion holds.**
+
+---
+
+**Target Conclusion (Line 751):** "*AWS provides an online Command Line Interface (CLI) for Access Analyzer, which we use to validate the correctness of our re-implementation. ... Both versions produce identical intents on the Correctness, 5-key, and 6-key datasets.*"
+
+**Reproduced Steps:** 
 
 ---
 
