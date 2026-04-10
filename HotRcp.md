@@ -41,11 +41,12 @@ We believe this artifact satisfies the Reusable criteria for the following reaso
 - **Reuse and repurposing of MCP (library-level reuse):**
   - **Modular design:** *MCP* is designed as a data structure. Running `mvn package` at the repository root generates `mcp-1.0.jar`, which can be directly imported into other Java projects.
   - **Easy-to-use Java API and examples:** *MCP* supports Java-style chained Boolean operations, for example, `policy.not().and(intent1.or(intent2))`. We also provide usage examples.
-  - **Standardized API documentation:** We provide standardized comments in the *MCP* source code, enabling automatic Maven documentation generation.
+  - **General Design:** *MCP* uses a general design for multiple variable types, including regex (RegexpLabel.java), prefix (PrefixLabel.java), range (RangeLabel.java), and set (IntegerSetLabel.java). These types are mapped to a unified superclass (Label.java) via Java polymorphism. *MCP* then performs processing (e.g., equivalence-class partitioning and bit-vector encoding) on the unified superclass. This design facilitates extension to additional variable types.
+  - **Standardized API documentation:** We provide standardized comments in the *MCP* source code, enabling automatic Maven documentation generation. See [GitHub Page](https://916267142.github.io/mcp.github.io/).
 
 - **Reuse and repurposing of AccessRefinery (tool-level reuse):**
   - **Easy-to-use command-line API and examples:** Running `mvn package` at the repository root generates `accessrefinery-1.0.jar`. It provides command-line parsing support. For example, `java -jar target/accessrefinery-1.0.jar -m -r --sat --round 10 -f data/Correctness` automatically runs 10 rounds to compute the average runtime, and `--sat` indicates that MiniSAT is used instead of BDD to represent bit-vectors. We also provide usage examples.
-  - **Standardized API documentation:** We provide standardized comments in the *AccessRefinery* source code, enabling automatic Maven documentation generation.
+  - **Standardized API documentation:** We provide standardized comments in the *AccessRefinery* source code, enabling automatic Maven documentation generation. See [GitHub Page](https://xjtu-netverify.github.io/accessrefinery.github.io/).
 
 ### Available
 
@@ -802,7 +803,7 @@ The generated figures are saved in `paper_figures/results/`.
 
 - We develop *AccessRefinery* in VS Code, see [VSCODE.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/docs/vscode-develop/VSCODE.md).
 
-- We provide Javadocs for *MCP* in `docs/mcp-javadocs/` and AccessRefinery in `docs/accessrefinery-javadocs/`. Moreover, *MCP* is deployed on [GitHub Page](https://916267142.github.io/mcp.github.io/).
+- We provide Javadocs for *MCP* in `docs/mcp-javadocs/` and AccessRefinery in `docs/accessrefinery-javadocs/`. Moreover, *MCP* is deployed on [GitHub Page](https://916267142.github.io/mcp.github.io/), and *AccessRefinery* is also deployed on [GitHub Page](https://916267142.github.io/accessrefinery.github.io/).
 
 
 ## License

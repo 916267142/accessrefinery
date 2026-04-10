@@ -2,6 +2,7 @@ org.iam
 org.iam.core
 org.iam.intent
 org.iam.model
+org.iam.policy
 org.iam.policy.grammer
 org.iam.policy.model
 org.iam.utils
