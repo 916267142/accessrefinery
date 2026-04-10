@@ -71,7 +71,7 @@ We provide two ways to access the artifact:
 After downloading the archive, extract it with:
 
 ```
-unzip accessrefinery-1.0.zip -d accessrefinery
+unzip accessrefinery.zip -d accessrefinery
 ```
 
 - Maintained version: [GitHub repository](https://github.com/XJTU-NetVerify/accessrefinery.git)
@@ -257,11 +257,13 @@ Then add the dependency to your `pom.xml`:
 
 ### Example
 
-This section illustrates how to use *MCP* with the example in the paper (line 414). The code is included in [MCPFactoryTest.java](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/accessrefinery/mcp/src/test/java/org/mcp/core/MCPTest.java), and *MCP* is imported as a Maven dependency. Running the following command automatically executes this example.
+This section illustrates how to use *MCP* with the example in the paper (line 414). The code is included in [MCPFactoryTest.java](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/accessrefinery/mcp/src/test/java/org/mcp/core/MCPFactoryTest.java), and *MCP* is imported as a Maven dependency. Running the following command automatically executes this example.
 
 **Running:**
 
-```
+```shell
+# The execution takes about 3 minutes.
+mvn clean install
 mvn test -pl ./accessrefinery/mcp -Dtest=MCPFactoryTest.java#testMCPFactory
 ```
 
@@ -276,7 +278,7 @@ mvn test -pl ./accessrefinery/mcp -Dtest=MCPFactoryTest.java#testMCPFactory
 [INFO] ------------------------------------------------------------------------
 ```
 
-The following section explains the example in detail. Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resource`: `dept*/user1.txt`, `IpAddress`: `112.0.0.0/24`).
+The following part explains the example in detail. Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resource`: `dept*/user1.txt`, `IpAddress`: `112.0.0.0/24`).
 
 ```json
 {
@@ -312,7 +314,7 @@ The following section explains the example in detail. Suppose we have the follow
 }
 ```
 
-To check the satisfiability of three formulas, $\neg I_6 \land P$, $I_6 \land \neg P$, and $I_6 \land P$, we use the following code based on *MCP*.
+To check the satisfiability of three formulas, ¬I6∧P, I6∧¬P, and I6∧P, we use the following code based on *MCP*.
 
 ```java
 package com.example;
@@ -416,7 +418,7 @@ java -jar target/accessanalyzer-1.0.jar <options>
 **Running:**
 
 ```bash
-java -jar target/accessanalyzer-1.0.jar -r -s Z3 -f data/Scalability_05Keys/01_allow.json
+java -jar target/accessanalyzer-1.0.jar -r -s Z3 -f data/TestCLI/01_allow.json
 ```
 
 **Expected output:**
@@ -433,7 +435,7 @@ java -jar target/accessanalyzer-1.0.jar -r -s Z3 -f data/Scalability_05Keys/01_a
 [INFO] 2026-04-10 23:08:41 : [4/5]  finish atomic predicates calculation
 ```
 
-Then the result will be output to the `results/` folder. For the file `<file_name>.json`, the tool will output a folder named `results/<file_name>.json/`, containing the following files:
+For the file `<file_name>.json`, the tool will output a folder named `results/<file_name>.json/`, containing the following files:
 
 - `<file_name>_<solver>_findings.json`: The mined intents in JSON format.
 - `<file_name>_<solver>_time.csv`: The time spent in mining the intents.
@@ -518,13 +520,13 @@ All previously mined intents are archived in the `archive_results/accessanalyzer
 **Running**:
 
 ```bash
-# The execution takes about 5 minutes.
+# The execution takes about 3 minutes.
 sh baselines/accessanalyzer-cli/aws_batch.sh data/TestCLI
 ```
 
 **Output directory:**
 
-`results/accessanalyzer_cli/`
+- `results/accessanalyzer_cli/`
 
 ### Verifying Claims in the Paper
 
@@ -562,7 +564,7 @@ To this end, the conclusion holds.
 The following command compares intents between the *reimplemented Access Analyzer* and the *CLI-based Access Analyzer*.
 
 ```shell
-sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare.sh
+sh tools/accessanalyzer-reimpl/running_accessanalyzer_compare.sh
 ```
 
 **Expected Output:**
@@ -575,9 +577,11 @@ sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare.sh
 
 **Running:**
 
-Running maven test for [MCPTest.java](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/accessrefinery/mcp/src/test/java/org/mcp/core/MCPTest.java). 
+Running maven test for [MCPTest.java](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/accessrefinery/mcp/src/test/java/org/mcp/core/MCPTest.java).
 
 ```shell
+# The execution takes about 3 minutes.
+mvn clean install
 mvn test -pl ./accessrefinery/mcp -Dtest=MCPTest.java#testComplexSATOperations
 ```
 
@@ -620,7 +624,7 @@ Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary
 sh tools/accessrefinery/running_accessrefinery_miner_compare.sh
 
 # Compare AccessRefinery and reimplemented Access Analyzer
-sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare_with_refinery.sh
+sh tools/accessanalyzer-reimpl/running_accessanalyzer_compare_with_refinery.sh
 ```
 
 **Expected Output:**
@@ -656,12 +660,20 @@ The `NumberMCI` column represents the number of intents before reduction, and th
 **Running:**
 
 ```shell
+# remove the history results
+rm -rf paper_figures/results
+mkdir -p paper_figures/results
+
+# plot the figure
 (cd paper_figures && gnuplot gnuplot/RQ2-Experiment-Effectiveness.plt)
+ls paper_figures/results/RQ2*
 ```
 
 **Expected Output:**
 
-- `paper_figures/results/RQ2-Experiment-Effectiveness.pdf`
+```text
+paper_figures/results/RQ2-Experiment-Effectiveness.pdf
+```
 
 #### 8. Target Figure (Line 842 in Section 6.3): Figure 12
 
@@ -683,11 +695,14 @@ The `NumberMCI` column represents the number of intents before reduction, and th
 
 ```shell
 (cd paper_figures && gnuplot gnuplot/RQ3-Experiment-Scalability-Mining.plt)
+ls paper_figures/results/RQ3*Mining*
 ```
 
 **Expected Output:**
 
-- `paper_figures/results/RQ3-Experiment-Scalability-Mining.pdf`
+```text
+paper_figures/results/RQ3-Experiment-Scalability-Mining.pdf
+```
 
 #### 9. Target Figure (Line 850 in Section 6.3): Figure 13
 
@@ -709,11 +724,14 @@ The `NumberMCI` column represents the number of intents before reduction, and th
 
 ```shell
 (cd paper_figures && gnuplot gnuplot/RQ3-Experiment-Scalability-Reducing.plt)
+ls paper_figures/results/RQ3*Reducing*
 ```
 
 **Expected Output:**
 
-- `paper_figures/results/RQ3-Experiment-Scalability-Reducing.pdf`
+```text
+paper_figures/results/RQ3-Experiment-Scalability-Reducing.pdf
+```
 
 #### 10. Target Figure (Line 875 in Section 6.4): Figure 14
 
@@ -740,11 +758,14 @@ The following command generates the figure omitted in the paper.
 
 ```shell
 (cd paper_figures && gnuplot gnuplot/RQ5-Experiment-MicroBenchmark-Mining.plt)
+ls paper_figures/results/RQ5*
 ```
 
 **Expected Output:**
 
-- `paper_figures/results/RQ5-Experiment-MicroBenchmark-Mining.pdf`
+```text
+paper_figures/results/RQ5-Experiment-MicroBenchmark-Mining.pdf`
+```
 
 #### 12. Target Figure (Line 898 in Section 6.5): Figure 15
 
@@ -767,11 +788,14 @@ The following command generates Figure 15 in the paper.
 
 ```shell
 (cd paper_figures && gnuplot gnuplot/RQ5-Experiment-MicroBenchmark-Reducing.plt)
+ls paper_figures/results/RQ5*Reducing*
 ```
 
 **Expected Output:**
 
-- `paper_figures/results/RQ5-Experiment-MicroBenchmark-Reducing.pdf`
+```text
+paper_figures/results/RQ5-Experiment-MicroBenchmark-Reducing.pdf`
+```
 
 #### 13. Target Table (Line 913 in Section 6.6): Table 2
 
@@ -782,18 +806,16 @@ The following command generates Figure 15 in the paper.
 - `accessrefinery_bdd_miner_10rs/`
   - `Scalability_05Keys/summary.txt`
 
-The `NumberRRI` column is the number of SMT solving rounds in the table. The `MCILabelsTimeAverage` column is the average MCP preprocessing time in the table. `MCIOperationsTimeAverage / NumberMCI` is the single-round Boolean solving time in the table.
+The `NumberRRI` column in `summary.txt` file is the number of SMT solving rounds in the table. The `MCILabelsTimeAverage` column is the average MCP preprocessing time in the table. `MCIOperationsTimeAverage / NumberMCI` is the single-round Boolean solving time in the table.
 
 - `accessanalyzer_z3_miner_1rs/`
   - `Scalability_05Keys/summary.csv`
 - `accessanalyzer_cvc5_miner_1rs/`
   - `Scalability_05Keys/summary.csv`
 
-The `Average Time per Round (s)` column is the average single-round SMT solving time in the table for `Z3` and `CVC5`.
+The `Average Time per Round (s)` column in `summary.csv` file is the average single-round SMT solving time in the table for `Z3` and `CVC5`.
 
 The table is generated by LaTeX. Therefore, no plotting program is used.
-
-The generated figures are saved in `paper_figures/results/`.
 
 ## Development
 
