@@ -12,9 +12,9 @@ This section describes (1) how to reproduce the results in `archive_results/`, a
 
 ### Reproducing Archived Results
 
-All experimental results are archived in `archive_results/`, which allows skipping the following steps. 
+All experimental results are archived in `archive_results/`, which allows you to skip the following steps.
 
-Due to repeated invoking Access Analyzer, our AWS account has been suspended and is no longer usable. Therefore, we provide the archived results for invoking Access Analyzer via the CLI in the `archive_results/accessanalyzer_cli/`. However, we stil provide guidance for developers, detailed in [AccessAnalyzerCLI.md](baselines/accessanalyzer-cli/AccessAnalyzerCLI.md). We recommend skipping this step, as the setup process is prohibitively complex (requires AWS account registration, billing configuration, and CLI credential setup). 
+Due to repeated invocations of Access Analyzer, our AWS account has been suspended and is no longer usable. Therefore, we provide archived results for CLI-based Access Analyzer in `archive_results/accessanalyzer_cli/`. However, we still provide guidance for developers in [AccessAnalyzerCLI.md](baselines/accessanalyzer-cli/AccessAnalyzerCLI.md). We recommend skipping this step, as the setup process is prohibitively complex (it requires AWS account registration, billing configuration, and CLI credential setup).
 
 
 #### Reproducing AccessRefinery Archived Results
@@ -42,7 +42,7 @@ sh tools/accessrefinery/running_batch_compare.sh -->
 
 **Output:**
 
-- `results/`: All results are run for 10 rounds, and the average time is calculated.
+- `results/`: All experiments are run for 10 rounds, and average time is reported.
 
   - `accessrefinery_bdd_miner_10rs/`: intent mining using JavaBDD.
   - `accessrefinery_sat_miner_10rs/`: intent mining using MiniSAT.
@@ -72,10 +72,10 @@ The following scripts invoke `target/accessanalyzer-1.0.jar`.
 
 **Output:**
 
-- `results/`: All result run one round due to the limited execution time.
+- `results/`: All results run for one round due to limited execution time.
   - `accessrefinery_z3_miner_1rs/`: intent mining using Z3 Solver.
   - `accessrefinery_cvc5_miner_1rs/`: intent mining using CVC5 Solver.
-  - `accessrefinery_z3_reducer_1rs/`:  intent mining and reduction using Z3 Solver.
+  - `accessrefinery_z3_reducer_1rs/`: intent mining and reduction using Z3 Solver.
   - `accessrefinery_cvc5_reducer_1rs/`: intent mining and reduction using CVC5 Solver.
 
 <!-- #### Reproducing CLI-based Access Analyzer Archived Results
@@ -101,7 +101,7 @@ Output directory:
 
 ### Correspondence to Paper Sections
 
-After generating the `archived_results/`, we explain how to reproduce the figures, tables, and conclusions reported in the paper.
+After generating the results, we explain how to reproduce the figures, tables, and conclusions reported in the paper.
 
 ---
 
@@ -111,7 +111,7 @@ After generating the `archived_results/`, we explain how to reproduce the figure
 
 **Steps:**
 
-See `archive_results/accessanalyzer_cli/run.log` for the 10_allow_result.json test case. AWS automatically terminated the mining process after `3386` seconds. This indicates that invoking Access Analyzer via the CLI with a 6-key dataset containing 10 to 15 statements results in a timeout.
+See `archive_results/accessanalyzer_cli/run.log` for the 10_allow_result.json test case. AWS automatically terminated the mining process after `3386` seconds. This indicates that invoking Access Analyzer via the CLI on a 6-key dataset containing 10 to 15 statements results in a timeout.
 
 ```test
 [4/5] intents saved at ./aws_result/Scalability_06Keys//10_allow_result.json
@@ -119,7 +119,7 @@ See `archive_results/accessanalyzer_cli/run.log` for the 10_allow_result.json te
 [5/5] 2025-05-11 18:06:51: Final intents count : 1
 ```
 
-See the last line of `archive_results/accessanalyzer_z3_miner_1rs/summary.csv`. The final column value of `2596.6094` seconds indicates that only up to 10 statements were mined. This implies that the reproduced Access Analyzer timed out when handling 11 to 15 statements.
+See the last line of `archive_results/accessanalyzer_z3_miner_1rs/summary.csv`. The final column value of `2596.6094` seconds indicates that only up to 10 statements were mined. This implies that the reimplemented Access Analyzer timed out when handling 11 to 15 statements.
 
 **To this end, the conclusion holds.**
 
@@ -131,7 +131,7 @@ See the last line of `archive_results/accessanalyzer_z3_miner_1rs/summary.csv`. 
 
 **Running:** 
 
-The following command will compare the intents between reimplemented Access Analyzer and CLI-based Access Analyzer.
+The following command compares intents between the reimplemented Access Analyzer and the CLI-based Access Analyzer.
 
 ```
 sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare.sh
@@ -144,9 +144,9 @@ sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare.sh
 - `results/accessanalyzer_miner_compare_results/*.log`
 
 
-**Running：**
+**Running:**
 
-Beside, to confirm our re-implementated Access Analyzer correctness when reducing the intents, we also compare the intents between reimplemented Access Analyzer and AccessRefinery.
+Besides, to confirm the correctness of our reimplemented Access Analyzer for intent reduction, we also compare intents between the reimplemented Access Analyzer and AccessRefinery.
 
 ```
 sh tools/accessanalyzer-reimpl/running_accessanalyzer_reducer_compare.sh
@@ -191,7 +191,7 @@ mvn test -pl ./accessrefinery/mcp -Dtest=MCPTest.java#testComplexSATOperations
 Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary.txt` to plot Figure 10 of the paper.
 
 
-**Running:**（Preserve the parentheses during execution.）
+**Running:** (Preserve the parentheses when executing the command.)
 ```shell
 (cd paper_figures && gnuplot gnuplot/RQ1-Experiment-Correctness.plt)
 ```
@@ -206,7 +206,7 @@ Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary
 
 "*We compared the intents produced by AccessRefinery (without intent reduction), our re-implementation of Access Analyzer, and the AWS Access Analyzer via the CLI API. On synthetic datasets, all three produce the same set of intents.*"
 
-**Runing:**
+**Running:**
 
 The following commands check whether the intents mined by AccessRefinery are consistent with those from CLI-based Access Analyzer. Logs are generated in `result/compare_accessrefinery_with_accessanalyzer_cli/`:
 
@@ -225,7 +225,7 @@ sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare_with_refiner
 
 ---
 
-**Target Concludion (Line 788 in Section 6.1):** 
+**Target Conclusion (Line 788 in Section 6.1):** 
 "*(1) The reduced intents fully cover the policy. (2) Removing any intent from the reduced intents causes the remaining intents to no longer cover the policy.*"
 
 **Running:**
@@ -370,12 +370,12 @@ The following command generates the figure omitted in the paper.
   - `Scalability_05Keys/summary.txt` see `TotalTimeAverage` column
   - `Scalability_06Keys/summary.txt` see `TotalTimeAverage` column
 
-> Note: For a fair comparison, compare average runtime for running 10 rounds. Since SAT-based reduction is much slower, we report SAT results for only 3 rounds.
+> Note: For a fair comparison, compare average runtime per round (normalized to 10 rounds). Since SAT-based reduction is much slower, we report SAT results for only 3 rounds.
 
 
 **Running:**
 
-The following command generates the figure 15 in the paper.
+The following command generates Figure 15 in the paper.
 
 ```
 
@@ -399,14 +399,14 @@ The following command generates the figure 15 in the paper.
 - `accessrefinery_bdd_miner_10rs/`
   - `Scalability_05Keys/summary.txt`
 
-`NumberRRI` column is the number of SMT solving rounds in the table. `MCILabelsTimeAverage` column is the average MCP preprocessing in the table. `MCIOperationsTimeAverage / NumerMCI` is the time of single-round Boolean solving in the table.
+The `NumberRRI` column is the number of SMT solving rounds in the table. The `MCILabelsTimeAverage` column is the average MCP preprocessing time in the table. `MCIOperationsTimeAverage / NumberMCI` is the single-round Boolean solving time in the table.
 
 - `accessanalyzer_z3_miner_1rs/`
   - `Scalability_05Keys/summary.csv`
 - `accessanalyzer_cvc5_miner_1rs/`
   - `Scalability_05Keys/summary.csv`
 
-`Average Time per Round (s)` column is the average time of single-round SMT solving in the table for `Z3` and `CVC5`.
+The `Average Time per Round (s)` column is the average single-round SMT solving time in the table for `Z3` and `CVC5`.
 
 The table is generated by LaTeX; therefore, no plotting program is used.
 
