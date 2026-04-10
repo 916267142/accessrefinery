@@ -14,7 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
 public class CmdRun {
@@ -171,9 +171,23 @@ public class CmdRun {
         boolean ans = miner.checkCovering(policy, findings);
         if (ans) {
             Parameter.LOGGER.info("The findings cover the policy.");
+            boolean minimal = true;
+            for (Finding finding : findings) {
+                Set<Finding> subset = new HashSet<>(findings);
+                subset.remove(finding);
+                if (miner.checkCovering(policy, subset)) {
+                    minimal = false;
+                    Parameter.LOGGER.info("Removing a finding still covers the policy: " + finding);
+                }
+            }
+            if (minimal) {
+                Parameter.LOGGER.info("The findings are minimal (removing any finding breaks coverage).");
+            } else {
+                Parameter.LOGGER.info("The findings are NOT minimal.");
+            }
         } else {
             Parameter.LOGGER.info("The findings do not cover the policy.");
         }
-        Parameter.LOGGER.info("[2/2]  finish covering checking : " + ans);
+        Parameter.LOGGER.info("[2/2]  finish covering checking.");
     }
 }
