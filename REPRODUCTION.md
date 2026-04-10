@@ -30,10 +30,10 @@ sh tools/accessrefinery/running_bdd_miner.sh
 # The execution takes about 1 hour.
 sh tools/accessrefinery/running_sat_miner.sh
 
-# The execution takes about ???
+# The execution takes about ???.
 sh tools/accessrefinery/running_bdd_reducer.sh
 
-# The execution takes about ???
+# The execution takes about ???.
 sh tools/accessrefinery/running_sat_reducer.sh
 ```
 
@@ -111,7 +111,7 @@ After generating the results, we explain how to reproduce the figures, tables, a
 
 **Steps:**
 
-See `archive_results/accessanalyzer_cli/run.log` for the 10_allow_result.json test case. AWS automatically terminated the mining process after `3386` seconds. This indicates that invoking Access Analyzer via the CLI on a 6-key dataset containing 10 to 15 statements results in a timeout.
+See `archive_results/accessanalyzer_cli/run.log` for the 10_allow_result.json case. 
 
 ```test
 [4/5] intents saved at ./aws_result/Scalability_06Keys//10_allow_result.json
@@ -119,7 +119,16 @@ See `archive_results/accessanalyzer_cli/run.log` for the 10_allow_result.json te
 [5/5] 2025-05-11 18:06:51: Final intents count : 1
 ```
 
-See the last line of `archive_results/accessanalyzer_z3_miner_1rs/summary.csv`. The final column value of `2596.6094` seconds indicates that only up to 10 statements were mined. This implies that the reimplemented Access Analyzer timed out when handling 11 to 15 statements.
+AWS automatically terminated the mining process after `3386` seconds. This indicates that invoking Access Analyzer via the CLI will time out on a 6-key dataset with 10 to 15 statements.
+
+See the last line of `archive_results/accessanalyzer_z3_miner_1rs/Scalability_05Keys/summary.csv`. 
+
+```
+14,196,225,3.9041,895.8580
+15,225,256,4.5458,1183.9881
+```
+
+The final column value of `2596.6094` seconds indicates that only up to 10 statements were mined. This implies that the reimplemented Access Analyzer timed out when handling 11 to 15 statements.
 
 **To this end, the conclusion holds.**
 
@@ -137,14 +146,15 @@ The following command compares intents between the reimplemented Access Analyzer
 sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare.sh
 ```
 
-> Note: The CLI-based Access Analyzer experiences timeouts on some datasets, resulting in missing data for these comparisons.
+<!-- > Note: The CLI-based Access Analyzer experiences timeouts on some datasets. -->
 
 **Output:**
 
 - `results/accessanalyzer_miner_compare_results/*.log`
 
+---
 
-**Running:**
+<!-- **Running:**
 
 Besides, to confirm the correctness of our reimplemented Access Analyzer for intent reduction, we also compare intents between the reimplemented Access Analyzer and AccessRefinery.
 
@@ -156,13 +166,15 @@ sh tools/accessanalyzer-reimpl/running_accessanalyzer_reducer_compare.sh
 
 - `results/accessanalyzer_reducer_compare_results/*.log`
 
---- 
+---  -->
 
-**Target Conclusion (Line 760 in Section 6.1):** "*We conducted a series of basic Boolean operation tests.*"
+**Target Conclusion (Line 760 in Section 6.1):** 
+
+"*We conducted a series of basic Boolean operation tests.*"
 
 **Running:**
 
-Basic Boolean operations are tested in [MCPTest.java](accessrefinery/mcp/src/test/java/org/mcp/core/MCPTest.java). 
+Running maven test for [MCPTest.java](accessrefinery/mcp/src/test/java/org/mcp/core/MCPTest.java). 
 
 ```
 mvn test -pl ./accessrefinery/mcp -Dtest=MCPTest.java#testComplexSATOperations
@@ -181,13 +193,12 @@ mvn test -pl ./accessrefinery/mcp -Dtest=MCPTest.java#testComplexSATOperations
 
 ---
 
-#### Correctness of Intent Miner
-
 **Target Figure (Line 776 in Section 6.1):** Figure 10  
 
 <img src="docs/figures/figure10.png" width="600"/>
 
 **Required logs:**
+
 Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary.txt` to plot Figure 10 of the paper.
 
 
@@ -208,14 +219,18 @@ Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary
 
 **Running:**
 
-The following commands check whether the intents mined by AccessRefinery are consistent with those from CLI-based Access Analyzer. Logs are generated in `result/compare_accessrefinery_with_accessanalyzer_cli/`:
+The following commands check whether the intents mined by AccessRefinery are consistent with those from CLI-based Access Analyzer. 
 
 ```bash
+# Compare AccessRefinery and CLI-based Access Analyzer
 sh tools/accessrefinery/running_accessrefinery_miner_compare.sh
+
+# Compare AccessRefinery and reimplemented Access Analyzer
+# 
 sh tools/accessanalyzer-reimpl/running_accessanalyzer_miner_compare_with_refinery.sh
 ```
 
-> Note that although we previously compared the reimplemented Access Analyzer against the CLI-based Access Analyzer, the CLI-based tool suffers from incomplete intent mining due to timeouts. Therefore, we instead compared the reimplemented Access Analyzer with AccessRefinery and confirmed that their results are consistent.
+<!-- > Note that although we previously compared the reimplemented Access Analyzer against the CLI-based Access Analyzer, the CLI-based tool suffers from incomplete intent mining due to timeouts. Therefore, we instead compared the reimplemented Access Analyzer with AccessRefinery and confirmed that their results are consistent. -->
 
 **Output:**
 
