@@ -1,7 +1,7 @@
 
 ## Evaluation Reproduction
 
-This section describes (1) how to reproduce the results in `archive_results/`, and (2) how to map archived results to the corresponding figures, tables, and conclusions in the paper.
+This section describes (1) how to reproduce the results in `archive_results/`, and (2) how to map `archive_results/` to the corresponding figures, tables, and conclusions in the paper.
 
 > We omit the results for the real-world datasets because of commercial restrictions.
 
@@ -12,44 +12,49 @@ This section describes (1) how to reproduce the results in `archive_results/`, a
 
 ### Reproducing Archived Results
 
+All experimental results are archived in `archive_results/`, which allows skipping the following steps. 
+
+Due to repeated invoking Access Analyzer, our AWS account has been suspended and is no longer usable. Therefore, we provide the archived results for invoking Access Analyzer via the CLI in the `archive_results/accessanalyzer_cli/`. However, we stil provide guidance for developers, detailed in [AccessAnalyzerCLI.md](baselines/accessanalyzer-cli/AccessAnalyzerCLI.md). We recommend skipping this step, as the setup process is prohibitively complex (requires AWS account registration, billing configuration, and CLI credential setup). 
+
+
 #### Reproducing AccessRefinery Archived Results
 
-All previously mined intents are archived in `archive_results/` directory, which allows skipping the following step.
+**Running:**
 
-The following scripts invoke `target/accessrefinery-1.0.jar` and reproduce the **AccessRefinery** results.
+The following scripts invoke `target/accessrefinery-1.0.jar`.
 
 ```bash
-# The execution takes about 5min
+# The execution takes about 6 minutes.
 sh tools/accessrefinery/running_bdd_miner.sh
 
-# The execution takes about 5min
+# The execution takes about 1 hour.
 sh tools/accessrefinery/running_sat_miner.sh
 
-# The execution takes about 10min
+# The execution takes about ???
 sh tools/accessrefinery/running_bdd_reducer.sh
 
-# The execution takes about 1h
+# The execution takes about ???
 sh tools/accessrefinery/running_sat_reducer.sh
 ```
 
 <!-- # The execution takes about 10 seconds.
 sh tools/accessrefinery/running_batch_compare.sh -->
 
+**Output:**
 
-Output:
+- `results/`: All results are run for 10 rounds, and the average time is calculated.
 
-- `results/`:
-  - `accessrefinery_bdd_miner_10rs/`: Contains intent mining results for 10 rounds using JavaBDD.
-  - `accessrefinery_sat_miner_10rs/`: Contains intent mining results for 10 rounds using MiniSAT.
-  - `accessrefinery_bdd_reducer_10rs/`: Contains intent mining and reduction results for 10 rounds using JavaBDD.
-  - `accessrefinery_sat_reducer_3rs/`: Contains intent mining and reduction results for 3 rounds using MiniSAT (limited to 3 rounds due to slow execution).
+  - `accessrefinery_bdd_miner_10rs/`: intent mining using JavaBDD.
+  - `accessrefinery_sat_miner_10rs/`: intent mining using MiniSAT.
+  - `accessrefinery_bdd_reducer_10rs/`: intent mining and reduction using JavaBDD.
+  - `accessrefinery_sat_reducer_3rs/`: intent mining and reduction using MiniSAT (limited to 3 rounds due to slow execution).
 
 
 #### Reproducing Reimplemented Access Analyzer Archived Results
 
-All previously mined intents are archived in `archive_results/` directory, which allows skipping the following step.
+**Running:**
 
-The following scripts invoke `target/accessanalyzer-1.0.jar` and reproduce the **reimplemented Access Analyzer** results.
+The following scripts invoke `target/accessanalyzer-1.0.jar`.
 
 ```bash
 # The execution takes about ???
@@ -65,13 +70,15 @@ The following scripts invoke `target/accessanalyzer-1.0.jar` and reproduce the *
 @ after-the-end
 ```
 
-- `results/`: All result run one round due to the limited execution time.
-  - `accessrefinery_z3_miner_1rs/`: Contains intent mining results using Z3 Solver.
-  - `accessrefinery_cvc5_miner_1rs/`: Contains intent mining results  using CVC5 Solver.
-  - `accessrefinery_z3_reducer_1rs/`: Contains intent mining and reduction results using Z3 Solver.
-  - `accessrefinery_cvc5_reducer_1rs/`: Contains intent mining and reduction results using CVC5 Solver.
+**Output:**
 
-#### Reproducing CLI-based Access Analyzer Archived Results
+- `results/`: All result run one round due to the limited execution time.
+  - `accessrefinery_z3_miner_1rs/`: intent mining using Z3 Solver.
+  - `accessrefinery_cvc5_miner_1rs/`: intent mining using CVC5 Solver.
+  - `accessrefinery_z3_reducer_1rs/`:  intent mining and reduction using Z3 Solver.
+  - `accessrefinery_cvc5_reducer_1rs/`: intent mining and reduction using CVC5 Solver.
+
+<!-- #### Reproducing CLI-based Access Analyzer Archived Results
 
 All previously mined intents are archived in `archive_results/accessanalyzer_cli/` directory, which allows skipping the following step. The archived results can serve as the ground truth for subsequent correctness verification.
 
@@ -79,7 +86,7 @@ All previously mined intents are archived in `archive_results/accessanalyzer_cli
   We strongly recommend skipping reproduction of results from the **CLI-based Access Analyzer**, as setup is complex and requires AWS account registration, billing configuration, and CLI credential setup. We still provide details in [AccessAnalyzerCLI.md](../baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for developers.
 
 - **If you are using the provided cloud platform via SSH:**  
-  The environment is already configured, and you can test our scripts directly. However, because our original AWS account was suspended, the previous bucket name is no longer accessible. We migrated to a new account and created a new bucket accordingly. This new account may still be at risk of AWS suspension due to unusual IP access patterns.
+  The environment is already configured, and you can test our scripts directly. However, because our original AWS account was suspended, the previous bucket name is no longer accessible. We migrated to a new account and created a new bucket accordingly. Therefore, generating archive results is not feasible. However, we can still verify the functionality of our script. Note that this script may still fail if the AWS account in use is subject to rate limiting or access restrictions.
 
 Running (takes about 10 minutes):
 ```bash
@@ -88,8 +95,7 @@ sh baselines/accessanalyzer-cli/aws_batch.sh data/TestCLI
 
 Output directory:
 
-- `results/accessanalyzer_cli/`
-
+- `results/accessanalyzer_cli/` -->
 
 <!-- We recommend skipping reproduction of results from the **reimplemented Access Analyzer** (because it takes a very long time) and the **CLI-based Access Analyzer** (because the setup is complex and requires AWS account registration, billing setup, and CLI credential configuration). We still provide instructions for developers. -->
 
@@ -393,14 +399,15 @@ The following command generates the figure 15 in the paper.
 - `accessrefinery_bdd_miner_10rs/`
   - `Scalability_05Keys/summary.txt`
 
-`MCILabelsTimeAverage` is the average MCP preprocessing time.
-`NumberRRI` is the number of reduced intents.
+`NumberRRI` column is the number of SMT solving rounds in the table. `MCILabelsTimeAverage` column is the average MCP preprocessing in the table. `MCIOperationsTimeAverage / NumerMCI` is the time of single-round Boolean solving in the table.
 
 - `accessanalyzer_z3_miner_1rs/`
   - `Scalability_05Keys/summary.csv`
 - `accessanalyzer_cvc5_miner_1rs/`
   - `Scalability_05Keys/summary.csv`
 
+`Average Time per Round (s)` column is the average time of single-round SMT solving in the table for `Z3` and `CVC5`.
+
+The table is generated by LaTeX; therefore, no plotting program is used.
 
 ---
-
