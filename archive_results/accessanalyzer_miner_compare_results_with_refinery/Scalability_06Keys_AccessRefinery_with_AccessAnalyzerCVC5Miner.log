@@ -1,8 +1,8 @@
 === JSON Directory Comparison Log ===
-Start time: 2026-04-10 17:34:38
-Comparing directories: archive_results/accessanalyzer_cvc5_miner_1rs/Scalability_06Keys/ and archive_results/accessanalyzer_cli/Scalability_06Keys/
+Start time: 2026-04-10 17:42:20
+Comparing directories: archive_results/accessanalyzer_cvc5_miner_1rs/Scalability_06Keys/ and archive_results/accessrefinery_bdd_miner_10rs/Scalability_06Keys/
 
-🔍 Comparing files in archive_results/accessanalyzer_cvc5_miner_1rs/Scalability_06Keys/ and archive_results/accessanalyzer_cli/Scalability_06Keys/...
+🔍 Comparing files in archive_results/accessanalyzer_cvc5_miner_1rs/Scalability_06Keys/ and archive_results/accessrefinery_bdd_miner_10rs/Scalability_06Keys/...
 ✅ 01_allow_result.json: equivalent
 ✅ 02_allow_result.json: equivalent
 ✅ 03_allow_result.json: equivalent
@@ -12,7 +12,7 @@ Comparing directories: archive_results/accessanalyzer_cvc5_miner_1rs/Scalability
 ✅ 07_allow_result.json: equivalent
 
 === Summary ===
-Timestamp: 2026-04-10 17:34:38
+Timestamp: 2026-04-10 17:42:21
 Total matched files: 7
 Different files: 0
 Identical files: 7

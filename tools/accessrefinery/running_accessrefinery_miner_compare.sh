@@ -1,31 +1,29 @@
-#!/bin/sh
+#!/bin/bash
 
-RESULT_ROOT="results"
-OUTPUT_DIR="${RESULT_ROOT}/accessrefinery_compare_results"
-ARCHIVE_ROOT="archive_results"
-COMPARE_SCRIPT="tools/accessrefinery/compare.sh"
+mkdir -p results/accessrefinery_miner_compare_results
 
-mkdir -p "${OUTPUT_DIR}"
+# compare Access Analyzer CLI with AccessRefinery with BDD
+sh tools/accessrefinery/compare.sh archive_results/accessanalyzer_cli/Correctness/ \
+    archive_results/accessrefinery_bdd_miner_10rs/Correctness/ \
+    results/accessrefinery_miner_compare_results/Correctness_AccessRefinery_with_WebAccessAnalyzer.log
 
-DATASETS="Correctness Scalability_05Keys Scalability_06Keys"
+sh tools/accessrefinery/compare.sh archive_results/accessanalyzer_cli/Scalability_05Keys/ \
+    archive_results/accessrefinery_bdd_miner_10rs/Scalability_05Keys/ \
+    results/accessrefinery_miner_compare_results/Scalability_05Keys_AccessRefinery_with_WebAccessAnalyzer.log
 
-# compare Web Access Analyzer with AccessRefinery
-for DATASET in ${DATASETS}; do
-    sh "${COMPARE_SCRIPT}" "${ARCHIVE_ROOT}/accessanalyzer_cli/${DATASET}/" \
-        "${ARCHIVE_ROOT}/accessrefinery_bdd_miner_10rs/${DATASET}/" \
-        "${OUTPUT_DIR}/${DATASET}_AccessRefinery_with_CliAccessAnalyzer.log"
-done
+sh tools/accessrefinery/compare.sh archive_results/accessanalyzer_cli/Scalability_06Keys/ \
+    archive_results/accessrefinery_bdd_miner_10rs/Scalability_06Keys/ \
+    results/accessrefinery_miner_compare_results/Scalability_06Keys_AccessRefinery_with_WebAccessAnalyzer.log
 
-# compare AccessRefinery MCI BDD with AccessRefinery MCI SAT
-for DATASET in ${DATASETS}; do
-    sh "${COMPARE_SCRIPT}" "${ARCHIVE_ROOT}/accessrefinery_bdd_miner_10rs/${DATASET}/" \
-        "${ARCHIVE_ROOT}/accessrefinery_sat_miner_10rs/${DATASET}/" \
-        "${OUTPUT_DIR}/${DATASET}_MCI_AccessRefinery_BDD_with_AccessRefinery_SAT.log"
-done
+# compare Access Analyzer CLI with AccessRefinery with SAT
+sh tools/accessrefinery/compare.sh archive_results/accessanalyzer_cli/Correctness/  \
+    archive_results/accessrefinery_sat_miner_10rs/Correctness/ \
+    results/accessrefinery_miner_compare_results/Correctness_MCI_AccessRefinery_BDD_with_AccessRefinery_SAT.log
 
-# compare AccessRefinery RRI BDD with AccessRefinery RRI SAT
-for DATASET in ${DATASETS}; do
-    sh "${COMPARE_SCRIPT}" "${ARCHIVE_ROOT}/accessrefinery_bdd_reducer_10rs/${DATASET}/" \
-        "${ARCHIVE_ROOT}/accessrefinery_sat_reducer_3rs/${DATASET}/" \
-        "${OUTPUT_DIR}/${DATASET}_RRI_AccessRefinery_BDD_with_AccessRefinery_SAT.log"
-done
+sh tools/accessrefinery/compare.sh archive_results/accessanalyzer_cli/Scalability_05Keys/  \
+    archive_results/accessrefinery_sat_miner_10rs/Scalability_05Keys/ \
+    results/accessrefinery_miner_compare_results/Scalability_05Keys_MCI_AccessRefinery_BDD_with_AccessRefinery_SAT.log
+
+sh tools/accessrefinery/compare.sh archive_results/accessanalyzer_cli/Scalability_06Keys/  \
+    archive_results/accessrefinery_sat_miner_10rs/Scalability_06Keys/ \
+    results/accessrefinery_miner_compare_results/Scalability_06Keys_MCI_AccessRefinery_BDD_with_AccessRefinery_SAT.log

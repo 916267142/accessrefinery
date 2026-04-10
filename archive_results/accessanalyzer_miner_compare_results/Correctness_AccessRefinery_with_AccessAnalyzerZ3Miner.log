@@ -1,5 +1,5 @@
 === JSON Directory Comparison Log ===
-Start time: 2026-04-10 16:57:13
+Start time: 2026-04-10 17:34:38
 Comparing directories: archive_results/accessanalyzer_z3_miner_1rs/Correctness/ and archive_results/accessanalyzer_cli/Correctness/
 
 🔍 Comparing files in archive_results/accessanalyzer_z3_miner_1rs/Correctness/ and archive_results/accessanalyzer_cli/Correctness/...
@@ -17,7 +17,7 @@ Comparing directories: archive_results/accessanalyzer_z3_miner_1rs/Correctness/ 
 ✅ 33_allow_deny_comp_disjoint_result.json: equivalent
 
 === Summary ===
-Timestamp: 2026-04-10 16:57:14
+Timestamp: 2026-04-10 17:34:39
 Total matched files: 12
 Different files: 0
 Identical files: 12

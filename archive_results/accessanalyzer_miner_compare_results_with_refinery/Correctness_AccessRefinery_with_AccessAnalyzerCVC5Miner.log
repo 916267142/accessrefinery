@@ -1,8 +1,8 @@
 === JSON Directory Comparison Log ===
-Start time: 2026-04-10 17:37:16
-Comparing directories: archive_results/accessanalyzer_z3_reducer_1rs/Correctness/ and archive_results/accessrefinery_bdd_reducer_10rs/Correctness/
+Start time: 2026-04-10 17:42:19
+Comparing directories: archive_results/accessanalyzer_cvc5_miner_1rs/Correctness and archive_results/accessrefinery_bdd_miner_10rs/Correctness
 
-🔍 Comparing files in archive_results/accessanalyzer_z3_reducer_1rs/Correctness/ and archive_results/accessrefinery_bdd_reducer_10rs/Correctness/...
+🔍 Comparing files in archive_results/accessanalyzer_cvc5_miner_1rs/Correctness and archive_results/accessrefinery_bdd_miner_10rs/Correctness...
 ✅ 11_allow_allow_equal_result.json: equivalent
 ✅ 12_allow_allow_overriding_result.json: equivalent
 ✅ 13_allow_allow_overlapping1_result.json: equivalent
@@ -17,7 +17,7 @@ Comparing directories: archive_results/accessanalyzer_z3_reducer_1rs/Correctness
 ✅ 33_allow_deny_comp_disjoint_result.json: equivalent
 
 === Summary ===
-Timestamp: 2026-04-10 17:37:17
+Timestamp: 2026-04-10 17:42:19
 Total matched files: 12
 Different files: 0
 Identical files: 12

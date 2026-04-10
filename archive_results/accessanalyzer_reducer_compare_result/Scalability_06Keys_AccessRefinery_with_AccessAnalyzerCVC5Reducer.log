@@ -1,5 +1,5 @@
 === JSON Directory Comparison Log ===
-Start time: 2026-04-10 16:59:52
+Start time: 2026-04-10 17:37:16
 Comparing directories: archive_results/accessanalyzer_cvc5_reducer_1rs/Scalability_06Keys/ and archive_results/accessrefinery_bdd_reducer_10rs/Scalability_06Keys/
 
 🔍 Comparing files in archive_results/accessanalyzer_cvc5_reducer_1rs/Scalability_06Keys/ and archive_results/accessrefinery_bdd_reducer_10rs/Scalability_06Keys/...
@@ -13,7 +13,7 @@ Comparing directories: archive_results/accessanalyzer_cvc5_reducer_1rs/Scalabili
 ✅ 08_allow_result.json: equivalent
 
 === Summary ===
-Timestamp: 2026-04-10 16:59:52
+Timestamp: 2026-04-10 17:37:16
 Total matched files: 8
 Different files: 0
 Identical files: 8

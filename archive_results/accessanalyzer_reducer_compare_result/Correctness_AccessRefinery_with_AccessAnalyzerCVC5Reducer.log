@@ -1,5 +1,5 @@
 === JSON Directory Comparison Log ===
-Start time: 2026-04-10 16:59:51
+Start time: 2026-04-10 17:37:14
 Comparing directories: archive_results/accessanalyzer_cvc5_reducer_1rs/Correctness/ and archive_results/accessrefinery_bdd_reducer_10rs/Correctness/
 
 🔍 Comparing files in archive_results/accessanalyzer_cvc5_reducer_1rs/Correctness/ and archive_results/accessrefinery_bdd_reducer_10rs/Correctness/...
@@ -17,7 +17,7 @@ Comparing directories: archive_results/accessanalyzer_cvc5_reducer_1rs/Correctne
 ✅ 33_allow_deny_comp_disjoint_result.json: equivalent
 
 === Summary ===
-Timestamp: 2026-04-10 16:59:51
+Timestamp: 2026-04-10 17:37:15
 Total matched files: 12
 Different files: 0
 Identical files: 12
