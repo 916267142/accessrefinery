@@ -1,17 +1,14 @@
+
 # AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud
 
 by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](https://xjtu-netverify.github.io/people/pzhang/) and [Jianyuan Zhang](https://xjtu-netverify.github.io/people/jyzhang/) at [ANTS lab](https://xjtu-netverify.github.io/).
 
-![Java](https://img.shields.io/badge/Java-17-007396?logo=java&logoColor=white)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen?logo=java)
-![Paper](https://img.shields.io/badge/paper-FSE2026-orange)
-<!-- ![License](https://img.shields.io/badge/license-Apache--2.0-green) -->
+![Java](https://img.shields.io/badge/Java-17-007396?logo=java&logoColor=white) ![Tests](https://img.shields.io/badge/tests-passing-brightgreen?logo=java) ![Paper](https://img.shields.io/badge/paper-FSE2026-orange) ![License](https://img.shields.io/badge/license-Apache--2.0-green)
+
 
 ## About AccessRefinery
 
 **AccessRefinery** automatically mines access control intents from IAM (Identity and Access Management) policies. These intents help users verify policy correctness. Compared with [AWS Access Analyzer](https://link.springer.com/content/pdf/10.1007/978-3-030-53288-8_9.pdf), AccessRefinery accelerates mining by ~10-100x and reduces the number of intents by up to ~10x.
-
-<!-- and its [commercial deployment](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-concepts.html) -->
 
 To accelerate intent mining, **AccessRefinery** uses our Multi-Theory Constraint Preprocessor (**MCP**) to speed up multi-round SMT solving by preprocessing constraints into bit-vector constraints.  
 For intent reduction, **AccessRefinery** computes a compact set that covers all mined intents by solving a minimum set-cover problem.
