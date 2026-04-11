@@ -362,18 +362,17 @@ cp -r archive_results/accessanalyzer_*rs results/
 The following scripts invoke `target/accessanalyzer-1.0.jar`.
 
 ```bash
-\TODO @after-the-end
-# The execution takes about 4.5 hours.
+# The execution takes about 5 hours.
 bash mining_miner_cvc5.sh
 
-# The execution takes about 3.5 hours.
+# The execution takes about 4 hours.
 # The time is less than that of AccessRefinery, because of an early timeout.
 bash mining_reducer_cvc5.sh
 
-# The execution takes about 3.5 hours
+# The execution takes about 4 hours
 bash mining_miner_z3.sh
 
-# The execution takes about 2 hours
+# The execution takes about 4 hours
 bash mining_reducer_z3.sh
 ```
 
@@ -453,8 +452,7 @@ Expected Output:
 #### Verifying Correctness of Intent Reducer (Section 6.1)
 
 ```bash
-\TODO @after-the-end
-# The execution takes about ??? hour.
+# The execution takes about 5 hour.
 bash ./tools/accessanalyzer-reimpl/check_coverage.sh
 ```
 
@@ -512,14 +510,17 @@ Expected Output:
 #### Plotting Table 2 (Section 6.5)
 
 ```bash
-\TODO @after-the-end
-???
+bash tools/figures/generate_table.sh
 ```
 
 Expected Output:
 
 ```text
-???
+3    9     192.1ms    28.0ms    77.5μs    54.5ms
+6    36    756.3ms    245.3ms   64.4μs    189.7ms
+9    81    1517.3ms   987.0ms   104.1μs   394.3ms
+12   144   3122.2ms   4979.3ms  190.2μs   1011.7ms
+15   225   4545.8ms   N/Ams     274.5μs   1741.5ms
 ```
 
 ## For Developers
