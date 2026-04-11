@@ -4,7 +4,7 @@ by [Ning Kang](https://xjtu-netverify.github.io/people/nkang/), [Peng Zhang](htt
 
 ![Java](https://img.shields.io/badge/Java-17-007396?logo=java&logoColor=white) ![Tests](https://img.shields.io/badge/tests-passing-brightgreen?logo=java) ![Paper](https://img.shields.io/badge/paper-FSE2026-orange) ![License](https://img.shields.io/badge/license-Apache--2.0-green)
 
-## About Artifact
+## About AccessRefinery
 
 This repository contains the artifacts for the FSE 2026 paper titled ["AccessRefinery: Fast Mining Concise Access Control Intents on Public Cloud"](https://xjtu-netverify.github.io/papers/AccessRefinery/accessrefinery_final_version.pdf). *AccessRefinery* speeds up intent mining for IAM (Identity and Access Management) policies and reduces redundancy in the mined intents. Its speedup is achieved by reducing redundancy in multi-round SMT solving through a *Multi-Theory Constraint Preprocessor (MCP)* that transforms SMT constraints into bit-vector representations. For intent reduction, *AccessRefinery* computes a compact set of intents that covers all mined intents by solving a minimum set-cover problem. Compared with the [AWS Access Analyzer](https://link.springer.com/content/pdf/10.1007/978-3-030-53288-8_9.pdf) baseline, *AccessRefinery* achieves about 10–100× speedup and reduces the number of intents by up to 10×. This artifact includes the full implementations of *AccessRefinery* and the baseline reimplementation, along with datasets, archived results, experiment scripts, and plotting scripts to reproduce the paper's main claims. Additionally, we designed *MCP* as a reusable data structure that may also benefit other studies.
 
@@ -52,7 +52,7 @@ We believe this artifact satisfies the Reusable criteria for the following reaso
 
 We believe this artifact satisfies the Available criteria because it is publicly available on Zenodo and GitHub.
 
-## Environment Setup
+## Getting AccessRefinery
 
 For artifact evaluation reviewers, we provide a cloud server that can be accessed via SSH, so **Download Artifact**, **Requirements**, **Installation** can be skipped.
 
@@ -61,8 +61,6 @@ ssh ...
 ... # password
 cd accessrefinery
 ```
-
-### Download Artifact
 
 We provide two ways to access the artifact:
 
@@ -79,6 +77,8 @@ unzip accessrefinery.zip -d accessrefinery
 ```
 git clone https://github.com/XJTU-NetVerify/accessrefinery.git
 ```
+
+## Installing AccessRefinery
 
 ### Requirements
 
@@ -440,7 +440,7 @@ For the file `<file_name>.json`, the tool will output a folder named `results/<f
 - `<file_name>_<solver>_findings.json`: The mined intents in JSON format.
 - `<file_name>_<solver>_time.csv`: The time spent in mining the intents.
 
-## Evaluation Reproduction
+## Running Experiments
 
 This section describes (1) how to reproduce the results in `results/`, and (2) how to map `results/` to the corresponding figures, tables, and conclusions in the paper.
 

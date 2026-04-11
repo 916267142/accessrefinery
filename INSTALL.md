@@ -1,15 +1,6 @@
 # Installation
 
-<!-- **AccessRefinery** is an intent-mining tool for IAM policies. In our experiments, we compare it with **AWS Access Analyzer**. -->
-
-This guide describes how to set up the experimental environment for **MCP**， **AccessRefinery**, and our reimplemented **Access Analyzer** baseline.
-
-## Environment Setup
-
-- Prepare a Linux system (recommended: Ubuntu 22.04.5):
-
-ubuntu-22.04.5-desktop-amd64.iso
-<https://releases.ubuntu.com/jammy/ubuntu-22.04.5-desktop-amd64.iso>
+- Prepare a Linux system (recommend [Ubuntu 22.04.5](https://releases.ubuntu.com/jammy/ubuntu-22.04.5-desktop-amd64.iso))
 
 - Install JDK 17:
 
@@ -23,7 +14,6 @@ Add Java to the environment variables (recommended):
 echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
-
 javac -version
 java -version
 ```
@@ -32,7 +22,6 @@ Expected output:
 
 ```shell
 javac 17.0.17
-
 openjdk version "17.0.17" 2025-10-21
 OpenJDK Runtime Environment (build 17.0.17+10-Ubuntu-122.04)
 OpenJDK 64-Bit Server VM (build 17.0.17+10-Ubuntu-122.04, mixed mode, sharing)
@@ -68,6 +57,32 @@ Expected output:
 jq-1.6
 ```
 
+- Install `bc` for basic math operations in command line:
+
+```shell
+sudo apt install bc
+bc --version
+```
+
+Expected output:
+
+```shell
+bc 1.07.1
+```
+
+- Install `gnuplot` for plotting figures:
+
+```bash
+sudo apt install gnuplot
+gnuplot --version
+```
+
+Expected output:
+
+```shell
+gnuplot 5.4 patchlevel 2
+```
+
 - Install `Z3`:
 
 `Z3` is already precompiled. Run the following script to automatically copy the `Z3` executable and libraries to the required directories.
@@ -88,6 +103,18 @@ Z3 version 4.14.1 - 64 bit
 Z3 installation is correct.
 ```
 
-> Note: `CVC5` is installed automatically during project compilation.
+Moreover, CVC5 is installed automatically during project compilation.
 
-<!-- ## Compile **AccessRefinery** and **Access Analyzer** -->
+## Build
+
+In the root directory, run:
+
+```bash
+mvn clean package
+```
+
+The build generates the following JAR packages in `target/`:
+
+- `mcp-1.0.jar` for *MCP*, which can be reused in other projects for fast multi-round SMT solving.
+- `accessrefinery-1.0.jar` for *AccessRefinery*.
+- `accessanalyzer-1.0.jar` for the *reimplemented Access Analyzer*.
