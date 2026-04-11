@@ -256,10 +256,6 @@ Expected output:
 
 *AccessRefinery* builds on *MCP* for IAM intent mining and reduction. In this repository, *MCP* is already integrated into *AccessRefinery*, so you can use it directly without a separate installation.
 
-#### AccessRefinery API
-
-To run *AccessRefinery*, use:
-
 ```shell
 java -jar target/accessrefinery-1.0.jar [options]
 ```
@@ -273,7 +269,7 @@ Command-line options:
 - `-s, --sat` : Use SAT to encode bit-vectors (default is BDD).
 - `--round <number>` : Number of mining rounds (to reduce experimental bias).
 
-#### Example
+**Example:**
 
 ```shell
 java -jar target/accessrefinery-1.0.jar -m -r --round 1 -f data/Correctness
@@ -312,6 +308,8 @@ This section describes (1) how to reproduce the results in `results/`, and (2) h
 
 ### Reproducing Archived Results
 
+- **Reproducing AccessRefinery Archived Results**
+
 Running with MiniSAT backend takes a long time to run.
 You can skip it by running the following commands to directly reuse the data in the `archive_results/` directory.
 
@@ -324,10 +322,8 @@ cp -r archive_results/accessrefinery_sat_*rs results/
 ```text
 # skip the BDD backend
 mkdir -p results/ 
-cp -r archive_results/accessrefinery_sat_*rs results/
+cp -r archive_results/accessrefinery_bdd_*rs results/
 ```
-
-- **Reproducing AccessRefinery Archived Results**
 
 The following scripts invoke `target/accessrefinery-1.0.jar`.
 
