@@ -1,10 +1,10 @@
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:35:38 : [0;32m----------[ Shaky Jenga Tower Code ]-------------[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:35:38 : [0;32mlogger path: /home/testmachine/accessrefinery/miner.log[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:35:38 : [0;32mpolicy path: ./data/Scalability_05Keys/07_allow.json[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:35:38 : [0;32mfindings path: /tmp/tmp.sm0K4wEWh7[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:35:38 : [0;32m----------< Processing policy - 07_allow.json >-----------[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:35:38 : [0;32m----------< Processing findings - tmp.sm0K4wEWh7 >-----------[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:35:38 : [0;32m[1/2]  finish parser policy and findings[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:35:38 : [0;32mThe findings cover the policy.[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:50:22 : [0;32mThe findings are minimal (removing any finding breaks coverage).[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:50:22 : [0;32m[2/2]  finish covering checking.[m
+[INFO] 2026-04-10 20:35:38 : ----------[ Shaky Jenga Tower Code ]-------------
+[INFO] 2026-04-10 20:35:38 : logger path: /home/testmachine/accessrefinery/miner.log
+[INFO] 2026-04-10 20:35:38 : policy path: ./data/Scalability_05Keys/07_allow.json
+[INFO] 2026-04-10 20:35:38 : findings path: /tmp/tmp.sm0K4wEWh7
+[INFO] 2026-04-10 20:35:38 : ----------< Processing policy - 07_allow.json >-----------
+[INFO] 2026-04-10 20:35:38 : ----------< Processing findings - tmp.sm0K4wEWh7 >-----------
+[INFO] 2026-04-10 20:35:38 : [1/2]  finish parser policy and findings
+[INFO] 2026-04-10 20:35:38 : The findings cover the policy.
+[INFO] 2026-04-10 20:50:22 : The findings are minimal (removing any finding breaks coverage).
+[INFO] 2026-04-10 20:50:22 : [2/2]  finish covering checking.

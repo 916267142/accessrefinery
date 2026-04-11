@@ -1,10 +1,10 @@
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:31:05 : [0;32m----------[ Shaky Jenga Tower Code ]-------------[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:31:05 : [0;32mlogger path: /home/testmachine/accessrefinery/miner.log[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:31:05 : [0;32mpolicy path: ./data/Correctness/21_allow_deny_equal.json[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:31:05 : [0;32mfindings path: /tmp/tmp.AMTWOrNFkT[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:31:05 : [0;32m----------< Processing policy - 21_allow_deny_equal.json >-----------[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:31:05 : [0;32m----------< Processing findings - tmp.AMTWOrNFkT >-----------[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:31:05 : [0;32m[1/2]  finish parser policy and findings[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:31:05 : [0;32mThe findings cover the policy.[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:31:05 : [0;32mThe findings are minimal (removing any finding breaks coverage).[m
-[1;39m[[0;1;34mINFO[0;1;39m] 2026-04-10 20:31:05 : [0;32m[2/2]  finish covering checking.[m
+[INFO] 2026-04-10 20:31:05 : ----------[ Shaky Jenga Tower Code ]-------------
+[INFO] 2026-04-10 20:31:05 : logger path: /home/testmachine/accessrefinery/miner.log
+[INFO] 2026-04-10 20:31:05 : policy path: ./data/Correctness/21_allow_deny_equal.json
+[INFO] 2026-04-10 20:31:05 : findings path: /tmp/tmp.AMTWOrNFkT
+[INFO] 2026-04-10 20:31:05 : ----------< Processing policy - 21_allow_deny_equal.json >-----------
+[INFO] 2026-04-10 20:31:05 : ----------< Processing findings - tmp.AMTWOrNFkT >-----------
+[INFO] 2026-04-10 20:31:05 : [1/2]  finish parser policy and findings
+[INFO] 2026-04-10 20:31:05 : The findings cover the policy.
+[INFO] 2026-04-10 20:31:05 : The findings are minimal (removing any finding breaks coverage).
+[INFO] 2026-04-10 20:31:05 : [2/2]  finish covering checking.
