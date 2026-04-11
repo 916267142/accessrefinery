@@ -1,25 +1,27 @@
 # Using Reimplemented Access Analyzer (Baseline)
 
+#### Access Analyzer API
+
 To run *Access Analyzer*, use:
 
 ```bash
 java -jar target/accessanalyzer-1.0.jar <options>
 ```
 
-**Command-line options:**
+Command-line options:
 
 - `-r, --reduce`: Reduce the number of intents.
 - `-s, --solver <Z3/CVC5>`: Select the solver to use (Z3 or CVC5), default is Z3.
 - `-f, --file <DATA_PATH>`: Path to the input policies (JSON file or folder).
 - `-h, --help`: Show help message and exit.
 
-**Running:**
+#### Example
 
 ```bash
 java -jar target/accessanalyzer-1.0.jar -r -s Z3 -f data/TestCLI/01_allow.json
 ```
 
-**Expected output:**
+Expected output:
 
 ```text
 [INFO] 2026-04-10 23:08:41 : ----------[ Shaky Jenga Tower Code ]-------------

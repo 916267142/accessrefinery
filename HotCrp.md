@@ -34,7 +34,7 @@ We believe this artifact satisfies the Functional criteria based on the followin
 
 - **Complete:** The artifact includes all necessary components to reproduce the experimental results reported in the paper:
   - Source code of *AccessRefinery*
-  - Source code of the reimplemented *AWS Access Analyzer* (used as a baseline, since the original service is not open source and only exposes a CLI interface)
+  - Source code of the reimplemented *Access Analyzer* (used as a baseline, since *AWS Access Analyzer* is not open source and only exposes a CLI interface)
   - Scripts for invoking *AWS Access Analyzer* via CLI
   - Three synthetic datasets (real-world datasets are not publicly available due to commercial restrictions)
   - Reproduction and plotting scripts
@@ -45,11 +45,11 @@ We believe this artifact satisfies the Functional criteria based on the followin
 
 We believe this artifact satisfies the Reusable criteria for the following reasons:
 
-- **Modular and extensible design:** 
-  AccessRefinery is designed with clear modular boundaries. In particular, it separates the core data abstraction (*MCP*) from the higher-level analysis tool. This separation enables users to reuse or extend individual components independently.
+- **Modular and extensible design:**
+  AccessRefinery is designed with clear modular boundaries. In particular, it separates the low-level data structure (*MCP*) from the higher-level analysis tool. This separation enables users to reuse or extend individual components independently.
 
 - **Reusable library (MCP):**
-MCP is implemented as a standalone Java library. Running `mvn package` generates a reusable JAR file (`mcp-1.0.jar`) that can be directly integrated into other projects.
+*MCP* is implemented as a standalone Java library. Running `mvn package` generates a reusable JAR file (`mcp-1.0.jar`) that can be directly integrated into other projects.
   - It provides a concise and expressive API (e.g., `policy.not().and(intent1.or(intent2))`).
   - It supports multiple variable types (e.g., regex, prefix, range, and set) through a unified abstraction, making it straightforward to extend to new types.
 
@@ -59,7 +59,7 @@ MCP is implemented as a standalone Java library. Running `mvn package` generates
   - The tool supports interchangeable backends (e.g., BDD and SAT solvers), enabling support for additional backends.
   
 - **Reusable baseline implementation (Access Analyzer):**
-  We provide a reimplementation of *AWS Access Analyzer* as a baseline system for evaluation, since the original service is not open source and only exposes a CLI interface.
+  We provide a reimplementation of *Access Analyzer* as a baseline system for evaluation, since *AWS Access Analyzer* is not open source and only exposes a CLI interface.
   - The reimplementation enables reproducible comparison under a unified experimental framework.
   - The tool supports interchangeable backends (e.g., Z3 and CVC5 solvers), enabling support for additional backends.
 
@@ -95,15 +95,15 @@ git clone https://github.com/XJTU-NetVerify/accessrefinery.git
 
 ## Installing AccessRefinery
 
-see [REQUIREMENTS.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/REQUIREMENTS.md)  and [INSTALL.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/REQUIREMENTS.md) for details.
+see [REQUIREMENTS.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/REQUIREMENTS.md)  and [INSTALL.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/INSTALL.md) for details.
 
 ## Project Structure
 
-Since *AWS Access Analyzer* is not open source and provides only a Command-Line Interface (CLI), we also reimplement Access Analyzer for evaluation. We distinguish the two versions as the *reimplemented Access Analyzer* and the *CLI-based Access Analyzer*.
+Since *AWS Access Analyzer* is not open source and provides only a Command-Line Interface (CLI), we also reimplement *Access Analyzer* for evaluation.
 
 - `data/`: Dataset for experiments.
 - `accessrefinery/`: Implementation of *AccessRefinery*.
-  - `bdd/`: Implementation of the binary decision diagram backend used by MCP.
+  - `bdd/`: Implementation of the binary decision diagram backend used by *MCP*.
   - `mcp/`: Implementation of the *Multi-Theory Constraint Preprocessor* (*MCP*).
   - `refinery/`: Implementation of intent mining and reduction.
 - `baselines/`:
@@ -165,7 +165,7 @@ Then add the dependency to your `pom.xml`:
 
 #### Example
 
-This section illustrates how to use *MCP* with the example in the paper (line 414). The following part explains the example in detail. Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resource`: `dept*/user1.txt`, `IpAddress`: `112.0.0.0/24`).
+This section illustrates how to use *MCP* with the example in the paper (line 414). Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resource`: `dept*/user1.txt`, `IpAddress`: `112.0.0.0/24`).
 
 ```json
 {
@@ -237,7 +237,7 @@ The code is included in [MCPFactoryTest.java](https://github.com/XJTU-NetVerify/
 
 ```shell
 # The execution takes about 3 minutes.
-mvn clean install
+mvn install
 mvn test -pl ./accessrefinery/mcp -Dtest=MCPFactoryTest.java#testMCPFactory
 ```
 
@@ -256,13 +256,15 @@ Expected output:
 
 *AccessRefinery* builds on *MCP* for IAM intent mining and reduction. In this repository, *MCP* is already integrated into *AccessRefinery*, so you can use it directly without a separate installation.
 
+#### AccessRefinery API
+
 To run *AccessRefinery*, use:
 
 ```shell
 java -jar target/accessrefinery-1.0.jar [options]
 ```
 
-**Command-line options:**
+Command-line options:
 
 - `-h, --help` : Show help information.
 - `-m, --mine` : Enable intent mining.
@@ -271,13 +273,13 @@ java -jar target/accessrefinery-1.0.jar [options]
 - `-s, --sat` : Use SAT to encode bit-vectors (default is BDD).
 - `--round <number>` : Number of mining rounds (to reduce experimental bias).
 
-**Running:**
+#### Example
 
 ```shell
 java -jar target/accessrefinery-1.0.jar -m -r --round 1 -f data/Correctness
 ```
 
-**Expected output:**
+Expected output:
 
 ```cmd
 [INFO] 2026-04-05 22:51:33 : ----------[ AccessRefinery Mode ]-------------
@@ -304,11 +306,26 @@ see [AccessAnalyzerUsage.md](https://github.com/XJTU-NetVerify/accessrefinery/bl
 
 ## Running Experiments
 
-This section describes (1) how to reproduce the results in `results/`, and (2) how to reproduce to the corresponding figures, tables, and conclusions in the paper from `results/`. 
+This section describes (1) how to reproduce the results in `results/`, and (2) how to reproduce to the corresponding figures, tables, and conclusions in the paper from `results/`.
 
 > We omit the results for the real-world datasets because of commercial restrictions.
 
 ### Reproducing Archived Results
+
+Running with MiniSAT backend takes a long time to run.
+You can skip it by running the following commands to directly reuse the data in the `archive_results/` directory.
+
+```text
+# skip the MiniSAT backend
+mkdir -p results/ 
+cp -r archive_results/accessrefinery_sat_*rs results/
+```
+
+```text
+# skip the BDD backend
+mkdir -p results/ 
+cp -r archive_results/accessrefinery_sat_*rs results/
+```
 
 - **Reproducing AccessRefinery Archived Results**
 
@@ -318,11 +335,11 @@ The following scripts invoke `target/accessrefinery-1.0.jar`.
 # The execution takes about 7 minutes.
 sh tools/accessrefinery/running_bdd_miner.sh
 
-# The execution takes about 80 minutes.
-sh tools/accessrefinery/running_sat_miner.sh
-
 # The execution takes about 8 minutes.
 sh tools/accessrefinery/running_bdd_reducer.sh
+
+# The execution takes about 80 minutes.
+sh tools/accessrefinery/running_sat_miner.sh
 
 # The execution takes >12 hours.
 sh tools/accessrefinery/running_sat_reducer.sh
@@ -343,12 +360,13 @@ This section takes a long time to run. You can skip it by running the following 
 
 ```text
 mkdir -p results/ 
-cp -r archive_results/accessanalyzer_rs results/
+cp -r archive_results/accessanalyzer_*rs results/
 ```
 
 The following scripts invoke `target/accessanalyzer-1.0.jar`.
 
 ```bash
+\TODO @after-the-end
 # The execution takes about 4.5 hours.
 bash mining_miner_cvc5.sh
 
@@ -371,9 +389,9 @@ Expected Output:
   - `accessanalyzer_z3_reducer_1rs/`: intent mining and reduction using Z3 Solver.
   - `accessanalyzer_cvc5_reducer_1rs/`: intent mining and reduction using CVC5 Solver.
 
-- **Reproducing CLI-based Access Analyzer Archived Results**
+- **Reproducing AWS Access Analyzer via CLI Archived Results**
 
-Because invoking Access Analyzer via the CLI requires a private AWS account, we do not provide this step. However, we still provide scripts for developers; see [AccessAnalyzerCLI.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for details.
+Because invoking Access Analyzer via CLI requires a private AWS account, we do not provide this step. However, we still provide scripts for developers; see [AccessAnalyzerCLI.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for details.
 
  We strongly recommend skipping this step and directly using the results in `archive_results/accessanalyzer_cli/`, since the setup is complex and requires AWS account registration, billing configuration, and CLI credential setup.
 
@@ -396,7 +414,7 @@ sh tools/clean_plotting.sh
 
 ```shell
 # The execution takes about 3 minutes.
-mvn clean install
+mvn install
 mvn test -pl ./accessrefinery/mcp -Dtest=MCPTest.java#testComplexSATOperations
 ```
 
@@ -412,8 +430,8 @@ mvn test -pl ./accessrefinery/mcp -Dtest=MCPTest.java#testComplexSATOperations
 #### Plotting Figure 10（Section 6.1）
 
 ```bash
-(cd paper_figures && gnuplot gnuplot/RQ1-Experiment-Correctness.plt)
 bash ./tools/figures/extract_correctness_synthetic.sh
+(cd paper_figures && gnuplot gnuplot/RQ1-Experiment-Correctness.plt)
 ```
 
 Expected Output:
@@ -423,7 +441,7 @@ Expected Output:
 #### Verifying Correctness of Intent Miner (Section 6.1)
 
 ```bash
-# Compare AccessRefinery and CLI-based Access Analyzer
+# Compare AccessRefinery and AWS Access Analyzer via CLI
 sh tools/accessrefinery/running_accessrefinery_miner_compare.sh
 
 # Compare AccessRefinery and reimplemented Access Analyzer
@@ -439,6 +457,7 @@ Expected Output:
 #### Verifying Correctness of Intent Reducer (Section 6.1)
 
 ```bash
+\TODO @after-the-end
 # The execution takes about ??? hour.
 bash ./tools/accessanalyzer-reimpl/check_coverage.sh
 ```
@@ -497,21 +516,21 @@ Expected Output:
 #### Plotting Table 2 (Section 6.5)
 
 ```bash
-bash tools/figures/extract_scalability_RRI.sh
-(cd paper_figures && gnuplot gnuplot/RQ5-Experiment-MicroBenchmark-Reducing.plt)
+\TODO @after-the-end
+???
 ```
 
 Expected Output:
 
 ```text
-paper_figures/results/RQ5-Experiment-MicroBenchmark-Reducing.pdf
+???
 ```
 
 ## For Developers
 
 - We develop *AccessRefinery* in VS Code, see [VSCODE.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/docs/vscode-develop/VSCODE.md).
 
-- We provide Javadocs for *MCP* in `docs/mcp-javadocs/` deployed on [GitHub Page](https://916267142.github.io/mcp.github.io/), and AccessRefinery in `docs/accessrefinery-javadocs/` deployed on [GitHub Page](https://916267142.github.io/accessrefinery.github.io/).
+- We provide Javadoc documentation for *MCP* in `docs/mcp-javadoc/`, available on [GitHub Pages](https://916267142.github.io/mcp.github.io/), and for *AccessRefinery* in `docs/accessrefinery-javadoc/`, available on [GitHub Pages](https://916267142.github.io/accessrefinery.github.io/).
 
 ## License
 
