@@ -442,13 +442,18 @@ For the file `<file_name>.json`, the tool will output a folder named `results/<f
 
 ## Evaluation Reproduction
 
-This section describes (1) how to reproduce the results in `archive_results/`, and (2) how to map `archive_results/` to the corresponding figures, tables, and conclusions in the paper.
+This section describes (1) how to reproduce the results in `results/`, and (2) how to map `results/` to the corresponding figures, tables, and conclusions in the paper.
 
 *We omit the results for the real-world datasets because of commercial restrictions.*
 
 ### Reproducing Archived Results
 
-Running this part generates a `results/` directory. We archive its contents in `archive_results/` while preserving the same directory structure, which allows you to skip the following steps.
+Running this part generates a `results/` directory. We archive its contents in `archive_results/` while preserving the same directory structure. You can run the following commands to skip this section.
+
+```bash
+rm -rf results/
+cp -r archive_results/ results/
+```
 
 #### Reproducing AccessRefinery Archived Results
 
@@ -490,6 +495,7 @@ The following scripts invoke `target/accessanalyzer-1.0.jar`.
 bash mining_miner_cvc5.sh
 
 # The execution takes about 3.5 hours.
+# The time is less than that of AccessRefinery, because of an early timeout.
 bash mining_reducer_cvc5.sh
 
 # The execution takes about 3.5 hours
@@ -530,7 +536,14 @@ sh baselines/accessanalyzer-cli/aws_batch.sh data/TestCLI
 
 ### Verifying Claims in the Paper
 
-After generating the results, we explain how to reproduce the figures, tables, and conclusions reported in the paper.
+After generating `results/`, we explain how to reproduce the figures, tables, and conclusions reported in the paper.
+
+Recall again that if you skip reproduction of results, you can simply copy the archived results to `results/`.
+
+```bash
+rm -rf results/
+cp -r archive_results/ results/
+```
 
 #### 1. Target Conclusion (Line 750 in Section 5):
 
@@ -600,19 +613,37 @@ mvn test -pl ./accessrefinery/mcp -Dtest=MCPTest.java#testComplexSATOperations
 
 <img src="docs/figures/figure10.png" width="450"/>
 
-**Required logs:**
-
-Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary.txt` to plot Figure 10 of the paper.
 
 **Running:**
+
+We provide a script to clear previous plotting results and ensure that plotting scripts use data from `results`.
+
 ```bash
-bash ./tools/figures/extract_correctness.sh
+sh tools/clean_plotting.sh
 ```
+
+**Expected Output:**
+
+```bash
+Clearing paper_figures/data
+Clearing paper_figures/results
+```
+
+**Running:**
+
+Use the `NumberMCI` values in `accessrefinery_bdd_miner_10rs/Correctness/summary.txt` to generate data of Figure 10 in the paper.
+
+```bash
+bash ./tools/figures/extract_correctness_synthetic.sh
+```
+
 **Expected Output:**
 
 - `paper_figures/data/Experiment-Correctness-Synthetic.dat`
 
-**Running:** (Preserve the parentheses when executing the command.)
+**Running:**
+(Preserve the parentheses when executing the command.)
+
 ```shell
 (cd paper_figures && gnuplot gnuplot/RQ1-Experiment-Correctness.plt)
 ```
@@ -662,7 +693,9 @@ bash ./tools/accessanalyzer-reimpl/check_coverage.sh
 
 <img src="docs/figures/figure11.png" width="450"/>
 
-**Required logs**:
+**Running:**
+
+The following command generates data of Figure 11 in the paper from
 
 - `accessrefinery_bdd_reducer_10rs/`
   - `Scalability_05Keys/summary.txt`
@@ -672,9 +705,8 @@ The `NumberMCI` column represents the number of intents before reduction, and th
 
 *Note: The real-world results in the paper cannot be open sourced for commercial reasons.*
 
-**Running:**
 ```bash
-bash tools/figures/extract_effectiveness-synthetic.sh
+bash tools/figures/extract_effectiveness_synthetic.sh
 ```
 
 **Expected Output:**
@@ -686,10 +718,6 @@ bash tools/figures/extract_effectiveness-synthetic.sh
 **Running:**
 
 ```shell
-# remove the history results
-rm -rf paper_figures/results
-mkdir -p paper_figures/results
-
 # plot the figure
 (cd paper_figures && gnuplot gnuplot/RQ2-Experiment-Effectiveness.plt)
 ls paper_figures/results/RQ2*
@@ -705,19 +733,19 @@ paper_figures/results/RQ2-Experiment-Effectiveness.pdf
 
 <img src="docs/figures/figure12.png" width="450"/>
 
-**Required logs**:
+**Running:**
+
+The following command generates data of Figure 12 in the paper from
 
 - `accessrefinery_bdd_miner_10rs/` : `AccessRefinery` in the figure.
   - `Scalability_05Keys/summary.txt` : see `TotalTimeAverage` column
   - `Scalability_06Keys/summary.txt` : see `TotalTimeAverage` column
-- `accessanalyzer_z3_miner_1rs/` : `Access Analyzer(Z3)` in the figure. 
+- `accessanalyzer_z3_miner_1rs/` : `Access Analyzer(Z3)` in the figure.
   - `Scalability_05Keys/summary.csv` : see `Total Time (s)` column
   - `Scalability_06Keys/summary.csv` : see `Total Time (s)` column
-- `accessanalyzer_cvc5_miner_1rs/` : `Access Analyzer(CVC5)` in the figure. 
+- `accessanalyzer_cvc5_miner_1rs/` : `Access Analyzer(CVC5)` in the figure.
   - `Scalability_05Keys/summary.csv` : see `Total Time (s)` column
   - `Scalability_06Keys/summary.csv` : see `Total Time (s)` column
-
-**Running:**
 
 ```bash
 bash tools/figures/extract_scalability_MCI.sh
@@ -733,20 +761,19 @@ bash tools/figures/extract_scalability_MCI.sh
 
 ```shell
 (cd paper_figures && gnuplot gnuplot/RQ3-Experiment-Scalability-Mining.plt)
-ls paper_figures/results/RQ3*Mining*
 ```
 
 **Expected Output:**
 
-```text
-paper_figures/results/RQ3-Experiment-Scalability-Mining.pdf
-```
+- `paper_figures/results/RQ3-Experiment-Scalability-Mining.pdf`
 
 #### 9. Target Figure (Line 850 in Section 6.3): Figure 13
 
 <img src="docs/figures/figure13.png" width="450"/>
 
-**Required logs**:
+**Running:**
+
+The following command generates data of Figure 13 in the paper from
 
 - `accessrefinery_bdd_reducer_10rs/` : `AccessRefinery` in the figure.
   - `Scalability_05Keys/summary.txt` : see `TotalTimeAverage` column
@@ -757,8 +784,6 @@ paper_figures/results/RQ3-Experiment-Scalability-Mining.pdf
 - `accessanalyzer_cvc5_reducer_1rs/` : `Access Analyzer(CVC5)` in the figure. 
   - `Scalability_05Keys/summary.csv` : see `Total Time (s)` column
   - `Scalability_06Keys/summary.csv` : see `Total Time (s)` column
-
-**Running:**
 
 ```bash
 bash tools/figures/extract_scalability_RRI.sh
@@ -774,14 +799,11 @@ bash tools/figures/extract_scalability_RRI.sh
 
 ```shell
 (cd paper_figures && gnuplot gnuplot/RQ3-Experiment-Scalability-Reducing.plt)
-ls paper_figures/results/RQ3*Reducing*
 ```
 
 **Expected Output:**
 
-```text
-paper_figures/results/RQ3-Experiment-Scalability-Reducing.pdf
-```
+- `paper_figures/results/RQ3-Experiment-Scalability-Reducing.pdf`
 
 #### 10. Target Figure (Line 875 in Section 6.4): Figure 14
 
@@ -793,7 +815,9 @@ These logs are omitted for commercial reasons.
 
 "*For intent mining, using JavaBDD is 1-6x faster than using MiniSAT (for clarity, the figure is omitted).*"
 
-**Required logs**:
+**Running:**
+
+The following command generates data of Figure 14 in the paper from
 
 - `accessrefinery_bdd_miner_10rs/` : time for `JavaBDD` in the paper
   - `Scalability_05Keys/summary.txt` : see `TotalTimeAverage` column
@@ -804,8 +828,6 @@ These logs are omitted for commercial reasons.
 
 // TODO @916267142
 // Is it duplicated to run the command again here?
-
-**Running:**
 
 ```bash
 bash tools/figures/extract_scalability_MCI.sh
@@ -823,20 +845,19 @@ The following command generates the figure omitted in the paper.
 
 ```shell
 (cd paper_figures && gnuplot gnuplot/RQ5-Experiment-MicroBenchmark-Mining.plt)
-ls paper_figures/results/RQ5*
 ```
 
 **Expected Output:**
 
-```text
-paper_figures/results/RQ5-Experiment-MicroBenchmark-Mining.pdf`
-```
+- `paper_figures/results/RQ5-Experiment-MicroBenchmark-Mining.pdf`
 
 #### 12. Target Figure (Line 898 in Section 6.5): Figure 15
 
 <img src="docs/figures/figure15.png" width="450"/>
 
-**Required logs (Intent Reduction)**:
+**Running:**
+
+The following command generates data of Figure 15 in the paper from
 
 - `accessrefinery_bdd_reducer_10rs/` time for `JavaBDD` in the paper
   - `Scalability_05Keys/summary.txt` see `TotalTimeAverage` column
@@ -849,8 +870,6 @@ paper_figures/results/RQ5-Experiment-MicroBenchmark-Mining.pdf`
 
 // TODO @916267142
 // Is it duplicated to run the command again here?
-
-**Running:**
 
 ```bash
 bash tools/figures/extract_scalability_RRI.sh
@@ -868,14 +887,11 @@ The following command generates Figure 15 in the paper.
 
 ```shell
 (cd paper_figures && gnuplot gnuplot/RQ5-Experiment-MicroBenchmark-Reducing.plt)
-ls paper_figures/results/RQ5*Reducing*
 ```
 
 **Expected Output:**
 
-```text
-paper_figures/results/RQ5-Experiment-MicroBenchmark-Reducing.pdf`
-```
+- `paper_figures/results/RQ5-Experiment-MicroBenchmark-Reducing.pdf`
 
 #### 13. Target Table (Line 913 in Section 6.6): Table 2
 
