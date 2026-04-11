@@ -56,8 +56,6 @@ for FOLDER0 in "${RESULT_FOLDERS[@]}"; do
                     POLICY_PATH="./data/$FOLDER1/${POLICY_NAME}.json"
 
                     if [ -f "$POLICY_PATH" ]; then
-                        echo "Processing: $FINDINGS_FILE vs $POLICY_PATH"
-
                         # Prepare log directory
                         mkdir -p "./results/coverage_check/$FOLDER1"
 
@@ -72,12 +70,27 @@ for FOLDER0 in "${RESULT_FOLDERS[@]}"; do
                              # We use simple pattern matching assuming checking standard JSON format
                              sed 's/"Finding"[[:space:]]*:/"Findings" :/g' "$FINDINGS_FILE" > "$TMP_FILE"
                              ACTUAL_FINDINGS_FILE="$TMP_FILE"
-                             echo "  (Using modified temporary file for accessrefinery compatibility)"
                         fi
 
                         # Execute the check sequentially with a timeout of 3600 seconds
                         timeout 3600 java -jar "$JAR_PATH" -c "$POLICY_PATH" "$ACTUAL_FINDINGS_FILE" > "./results/coverage_check/$FOLDER1/${POLICY_NAME}_coverage.log" 2>&1
                         EXIT_CODE=$?
+
+                        # Remove ANSI color codes from the generated log
+                        LOG_FILE="./results/coverage_check/$FOLDER1/${POLICY_NAME}_coverage.log"
+                        sed -i -r "s/\x1B\[[0-9;]*[a-zA-Z]//g" "$LOG_FILE"
+
+                        if [ $EXIT_CODE -eq 124 ]; then
+                            echo "❌ $POLICY_PATH: timeout"
+                        elif grep -q "The findings cover the policy." "$LOG_FILE"; then
+                            if grep -q "The findings are minimal" "$LOG_FILE"; then
+                                echo "✅ $POLICY_PATH: cover & minimal"
+                            else
+                                echo "❌ $POLICY_PATH: cover & not minimal"
+                            fi
+                        else
+                            echo "❌ $POLICY_PATH: not cover"
+                        fi
 
                         # Cleanup temp file if used
                         if [[ -n "$TMP_FILE" && -f "$TMP_FILE" ]]; then
