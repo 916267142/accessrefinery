@@ -123,7 +123,7 @@ Since *AWS Access Analyzer* is not open source and provides only a Command-Line 
 
 In the root directory, run:
 
-```bash
+```shell
 mvn clean package
 ```
 
@@ -141,7 +141,7 @@ The build generates the following JAR packages in `target/`:
 
 Install `target/mcp-1.0.jar` into your local Maven repository:
 
-```bash
+```shell
 mvn install:install-file \
     -Dfile=target/mcp-1.0.jar \
     -DgroupId=org.ants \
@@ -277,7 +277,7 @@ java -jar target/accessrefinery-1.0.jar -m -r --round 1 -f data/Correctness
 
 Expected output:
 
-```cmd
+```text
 [INFO] 2026-04-05 22:51:33 : ----------[ AccessRefinery Mode ]-------------
 [INFO] 2026-04-05 22:51:33 : input  path: data/Correctness
 [INFO] 2026-04-05 22:51:33 : output path: result/Correctness
@@ -304,30 +304,27 @@ see [AccessAnalyzerUsage.md](https://github.com/XJTU-NetVerify/accessrefinery/bl
 
 This section describes (1) how to reproduce the results in `results/`, and (2) how to reproduce to the corresponding figures, tables, and conclusions in the paper from `results/`.
 
-> We omit the results for the real-world datasets because of commercial restrictions.
+*We omit the results for the real-world datasets because of commercial restrictions.*
 
 ### Reproducing Archived Results
 
 - **Reproducing AccessRefinery Archived Results**
 
-Running with MiniSAT backend takes a long time to run.
-You can skip it by running the following commands to directly reuse the data in the `archive_results/` directory.
+Running with MiniSAT backend takes a long time to run. You can skip it by running the following commands to directly reuse the data in the `archive_results/` directory.
 
-```text
-# skip the MiniSAT backend
+```shell
+# skip running AccessRefinery with the MiniSAT backend
 mkdir -p results/ 
 cp -r archive_results/accessrefinery_sat_*rs results/
-```
 
-```text
-# skip the BDD backend
+# skip running AccessRefinery with the BDD backend
 mkdir -p results/ 
 cp -r archive_results/accessrefinery_bdd_*rs results/
 ```
 
 The following scripts invoke `target/accessrefinery-1.0.jar`.
 
-```bash
+```shell
 # The execution takes about 7 minutes.
 sh tools/accessrefinery/running_bdd_miner.sh
 
@@ -354,28 +351,29 @@ Expected Output:
 
 This section takes a long time to run. You can skip it by running the following commands to directly reuse the data in the `archive_results/` directory.
 
-```text
+```shell
 mkdir -p results/ 
 cp -r archive_results/accessanalyzer_*rs results/
 ```
 
 The following scripts invoke `target/accessanalyzer-1.0.jar`.
 
-```bash
-\TODO @after-the-end
-# The execution takes about 4.5 hours.
-bash mining_miner_cvc5.sh
+```shell
+# The execution takes about 5 hours.
+bash tools/accessanalyzer-reimpl/mining_miner_cvc5.sh
 
-# The execution takes about 3.5 hours.
+# The execution takes about 4 hours.
 # The time is less than that of AccessRefinery, because of an early timeout.
-bash mining_reducer_cvc5.sh
+bash tools/accessanalyzer-reimpl/mining_reducer_cvc5.sh
 
-# The execution takes about 3.5 hours
-bash mining_miner_z3.sh
+# The execution takes about 4 hours
+bash tools/accessanalyzer-reimpl/mining_miner_z3.sh
 
-# The execution takes about 2 hours
-bash mining_reducer_z3.sh
+# The execution takes about 4 hours
+bash tools/accessanalyzer-reimpl/mining_reducer_z3.sh
 ```
+
+*Note: `Ctrl + C` or `Ctrl + Z` end the scripts*
 
 Expected Output:
 
@@ -391,7 +389,7 @@ Because invoking Access Analyzer via CLI requires a private AWS account, we do n
 
  We strongly recommend skipping this step and directly using the results in `archive_results/accessanalyzer_cli/`, since the setup is complex and requires AWS account registration, billing configuration, and CLI credential setup.
 
-```text
+```shell
 mkdir -p results/
 cp -r archive_results/accessanalyzer_cli/ results/accessanalyzer_cli/
 ```
@@ -425,7 +423,7 @@ mvn test -pl ./accessrefinery/mcp -Dtest=MCPTest.java#testComplexSATOperations
 
 #### Plotting Figure 10（Section 6.1）
 
-```bash
+```shell
 bash ./tools/figures/extract_correctness_synthetic.sh
 (cd paper_figures && gnuplot gnuplot/RQ1-Experiment-Correctness.plt)
 ```
@@ -436,7 +434,7 @@ Expected Output:
 
 #### Verifying Correctness of Intent Miner (Section 6.1)
 
-```bash
+```shell
 # Compare AccessRefinery and AWS Access Analyzer via CLI
 sh tools/accessrefinery/running_accessrefinery_miner_compare.sh
 
@@ -452,9 +450,8 @@ Expected Output:
 
 #### Verifying Correctness of Intent Reducer (Section 6.1)
 
-```bash
-\TODO @after-the-end
-# The execution takes about ??? hour.
+```shell
+# The execution takes about 5 hour.
 bash ./tools/accessanalyzer-reimpl/check_coverage.sh
 ```
 
@@ -478,7 +475,7 @@ Expected Output:
 
 #### Plotting Figure 12 (Section 6.3)
 
-```bash
+```shell
 bash tools/figures/extract_scalability_MCI.sh
 (cd paper_figures && gnuplot gnuplot/RQ3-Experiment-Scalability-Mining.plt)
 ```
@@ -489,7 +486,7 @@ Expected Output:
 
 #### Plotting Figure 13 (Section 6.3)
 
-```bash
+```shell
 bash tools/figures/extract_scalability_RRI.sh
 (cd paper_figures && gnuplot gnuplot/RQ3-Experiment-Scalability-Reducing.plt)
 ```
@@ -500,7 +497,7 @@ Expected Output:
 
 #### Plotting Figure 15 (Section 6.5)
 
-```bash
+```shell
 bash tools/figures/extract_scalability_RRI.sh
 (cd paper_figures && gnuplot gnuplot/RQ5-Experiment-MicroBenchmark-Reducing.plt)
 ```
@@ -509,17 +506,20 @@ Expected Output:
 
 - `paper_figures/results/RQ5-Experiment-MicroBenchmark-Reducing.pdf`
 
-#### Plotting Table 2 (Section 6.5)
+#### Plotting Table 2 (Section 6.6)
 
-```bash
-\TODO @after-the-end
-???
+```shell
+bash tools/figures/generate_table.sh
 ```
 
 Expected Output:
 
 ```text
-???
+3    9     192.1ms    28.0ms    77.5μs    54.5ms
+6    36    756.3ms    245.3ms   64.4μs    189.7ms
+9    81    1517.3ms   987.0ms   104.1μs   394.3ms
+12   144   3122.2ms   4979.3ms  190.2μs   1011.7ms
+15   225   4545.8ms   N/Ams     274.5μs   1741.5ms
 ```
 
 ## For Developers
