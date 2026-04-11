@@ -5,7 +5,7 @@ process_dir() {
     local out_file=$2
     local f2="results/accessanalyzer_z3_reducer_1rs/${dir_name}/summary.csv"
     local f3="archive_results/accessanalyzer_cvc5_reducer_1rs/${dir_name}/summary.csv"
-    local f4="results/accessrefinery_sat_reducer_10rs/${dir_name}/summary.txt"
+    local f4="results/accessrefinery_sat_reducer_3rs/${dir_name}/summary.txt"
     local f5="results/accessrefinery_bdd_reducer_10rs/${dir_name}/summary.txt"
     local val2=()
     local val3=()
@@ -29,11 +29,17 @@ process_dir() {
     fi
     > "$out_file"
     for i in {0..14}; do
-        local v2=${val2[$i]:-3600000.0}
-        local v3=${val3[$i]:-3600000.0}
-        local v4=${val4[$i]:-3600000.00}
-        local v5=${val5[$i]:-3600000.00}
-        echo "$((i+1)) $v2 $v3 $v4 $v5" >> "$out_file"
+        local v2=${val2[$i]:-3600000}
+        local v3=${val3[$i]:-3600000}
+        local v4=${val4[$i]:-3600000}
+        local v5=${val5[$i]:-3600000}
+
+        v2=$(awk -v v="$v2" 'BEGIN{printf "%.1f", (v>3600000 ? 3600000 : v)}')
+        v3=$(awk -v v="$v3" 'BEGIN{printf "%.1f", (v>3600000 ? 3600000 : v)}')
+        v4=$(awk -v v="$v4" 'BEGIN{printf "%.2f", (v>3600000 ? 3600000 : v)}')
+        v5=$(awk -v v="$v5" 'BEGIN{printf "%.2f", (v>3600000 ? 3600000 : v)}')
+
+        echo "$v2 $v3 $v4 $v5" >> "$out_file"
     done
 }
 process_dir "Scalability_05Keys" "paper_figures/data/Experiment-Scalability-RRI-K2.dat"
