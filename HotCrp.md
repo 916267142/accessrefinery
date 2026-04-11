@@ -30,15 +30,14 @@ We believe this artifact satisfies the Functional criteria based on the followin
   - API documentation generated via Javadoc
   - Developer instructions (including running the system in VS Code)
 
-- **Exercisable:** The system can be built and executed from source using standard Maven workflows with JDK 17. All major functionalities are accessible through the provided command-line interfaces.
+- **Exercisable:** The system can be built and executed from source using standard Maven workflows with JDK 17.
 
 - **Complete:** The artifact includes all necessary components to reproduce the experimental results reported in the paper:
   - Source code of *AccessRefinery*
   - Source code of the reimplemented *AWS Access Analyzer* (used as a baseline, since the original service is not open source and only exposes a CLI interface)
   - Scripts for invoking *AWS Access Analyzer* via CLI
   - Three synthetic datasets (real-world datasets are not publicly available due to commercial restrictions)
-  - Reproduction scripts
-  - Plotting and evaluation scripts
+  - Reproduction and plotting scripts
 
 - **Consistent with the paper:** The artifact includes archived experimental results and provides instructions to reproduce all key claims reported in the paper.
 
@@ -57,15 +56,15 @@ MCP is implemented as a standalone Java library. Running `mvn package` generates
 - **Reusable tool (AccessRefinery):**
   AccessRefinery provides a command-line interface with flexible options for different analysis tasks.
   - Users can easily run experiments or adapt workflows via configurable parameters.
-  - The tool supports interchangeable backends (e.g., BDD and SAT solvers), enabling reuse in different environments.
+  - The tool supports interchangeable backends (e.g., BDD and SAT solvers), enabling support for additional backends.
   
 - **Reusable baseline implementation (Access Analyzer):**
   We provide a reimplementation of *AWS Access Analyzer* as a baseline system for evaluation, since the original service is not open source and only exposes a CLI interface.
   - The reimplementation enables reproducible comparison under a unified experimental framework.
-  - The tool supports interchangeable backends (e.g., Z3 and CVC5 solvers), enabling reuse in different environments.
+  - The tool supports interchangeable backends (e.g., Z3 and CVC5 solvers), enabling support for additional backends.
 
 - **Ease of extension:**
-  The system is designed to facilitate incremental extensions. For example, adding support for new policy languages or analysis techniques only requires extending specific components without modifying the entire system.
+  The system is designed to facilitate incremental extensions. For example, adding support for new policy languages only requires extending specific components without modifying the entire system.
 
 - **Documentation and examples:**
   The artifact includes API documentation (via Javadoc), usage examples, and instructions, which lower the barrier for reuse and repurposing.
@@ -96,16 +95,13 @@ git clone https://github.com/XJTU-NetVerify/accessrefinery.git
 
 ## Installing AccessRefinery
 
-see [INSTALL.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/REQUIREMENTS.md) and [REQUIREMENTS.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/REQUIREMENTS.md) for details.
+see [REQUIREMENTS.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/REQUIREMENTS.md)  and [INSTALL.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/REQUIREMENTS.md) for details.
 
 ## Project Structure
 
 Since *AWS Access Analyzer* is not open source and provides only a Command-Line Interface (CLI), we also reimplement Access Analyzer for evaluation. We distinguish the two versions as the *reimplemented Access Analyzer* and the *CLI-based Access Analyzer*.
 
-- `data/`:
-  - `Correctness/`: Dataset for correctness experiments.
-  - `Scalability_05Keys/`: Synthetic dataset for scalability experiments.
-  - `Scalability_06Keys/`: Synthetic dataset for scalability experiments.
+- `data/`: Dataset for experiments.
 - `accessrefinery/`: Implementation of *AccessRefinery*.
   - `bdd/`: Implementation of the binary decision diagram backend used by MCP.
   - `mcp/`: Implementation of the *Multi-Theory Constraint Preprocessor* (*MCP*).
@@ -169,28 +165,7 @@ Then add the dependency to your `pom.xml`:
 
 #### Example
 
-This section illustrates how to use *MCP* with the example in the paper (line 414). The code is included in [MCPFactoryTest.java](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/accessrefinery/mcp/src/test/java/org/mcp/core/MCPFactoryTest.java), and *MCP* is imported as a Maven dependency. Running the following command automatically executes this example.
-
-**Running:**
-
-```shell
-# The execution takes about 3 minutes.
-mvn clean install
-mvn test -pl ./accessrefinery/mcp -Dtest=MCPFactoryTest.java#testMCPFactory
-```
-
-**Expected output:**
-
-```text
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.579 s
-[INFO] Finished at: 2026-04-10T22:58:08+08:00
-[INFO] ------------------------------------------------------------------------
-```
-
-The following part explains the example in detail. Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resource`: `dept*/user1.txt`, `IpAddress`: `112.0.0.0/24`).
+This section illustrates how to use *MCP* with the example in the paper (line 414). The following part explains the example in detail. Suppose we have the following IAM policy and a target intent, `Intent_6` (`Resource`: `dept*/user1.txt`, `IpAddress`: `112.0.0.0/24`).
 
 ```json
 {
@@ -229,14 +204,6 @@ The following part explains the example in detail. Suppose we have the following
 To check the satisfiability of three formulas, ¬I6∧P, I6∧¬P, and I6∧P, we use the following code based on *MCP*.
 
 ```java
-package com.example;
-import org.batfish.datamodel.Prefix;
-import org.junit.Assert;
-import org.mcp.core.MCPBitVector;
-import org.mcp.core.MCPFactory;
-import org.mcp.core.MCPFactory.MCPType;
-import org.mcp.variables.statics.LabelType;
-
 public class Main {
     public static void main(String[] args) {
         MCPFactory mcp = new MCPFactory(MCPType.BDD);
@@ -264,6 +231,25 @@ public class Main {
         Assert.assertTrue(!policy.and(intent6).isZero());
     }
 }
+```
+
+The code is included in [MCPFactoryTest.java](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/accessrefinery/mcp/src/test/java/org/mcp/core/MCPFactoryTest.java), and *MCP* is imported as a Maven dependency. Running the following command automatically executes this example.
+
+```shell
+# The execution takes about 3 minutes.
+mvn clean install
+mvn test -pl ./accessrefinery/mcp -Dtest=MCPFactoryTest.java#testMCPFactory
+```
+
+Expected output:
+
+```text
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.579 s
+[INFO] Finished at: 2026-04-10T22:58:08+08:00
+[INFO] ------------------------------------------------------------------------
 ```
 
 ### Using AccessRefinery
@@ -318,15 +304,13 @@ see [AccessAnalyzerUsage.md](https://github.com/XJTU-NetVerify/accessrefinery/bl
 
 ## Running Experiments
 
-This section describes (1) how to reproduce the results in `results/`, and (2) how to map `results/` to the corresponding figures, tables, and conclusions in the paper.
+This section describes (1) how to reproduce the results in `results/`, and (2) how to reproduce to the corresponding figures, tables, and conclusions in the paper from `results/`. 
 
-> We omit the results for the real-world datasets because of commercial restrictions. 
+> We omit the results for the real-world datasets because of commercial restrictions.
 
 ### Reproducing Archived Results
 
-#### Reproducing AccessRefinery Archived Results
-
-**Running:**
+- **Reproducing AccessRefinery Archived Results**
 
 The following scripts invoke `target/accessrefinery-1.0.jar`.
 
@@ -344,7 +328,7 @@ sh tools/accessrefinery/running_bdd_reducer.sh
 sh tools/accessrefinery/running_sat_reducer.sh
 ```
 
-**Expected Output:**
+Expected Output:
 
 - `results/`: All experiments are run for 10 rounds, and average time is reported.
 
@@ -353,15 +337,14 @@ sh tools/accessrefinery/running_sat_reducer.sh
   - `accessrefinery_bdd_reducer_10rs/`: intent mining and reduction using JavaBDD.
   - `accessrefinery_sat_reducer_3rs/`: intent mining and reduction using MiniSAT (limited to 3 rounds due to slow execution).
 
-#### Reproducing Reimplemented Access Analyzer Archived Results
+- **Reproducing Reimplemented Access Analyzer Archived Results**
 
 This section takes a long time to run. You can skip it by running the following commands to directly reuse the data in the `archive_results/` directory.
 
 ```text
-mkdir -p results/ cp -r archive_results/accessanalyzer_rs results/
+mkdir -p results/ 
+cp -r archive_results/accessanalyzer_rs results/
 ```
-
-**Running:**
 
 The following scripts invoke `target/accessanalyzer-1.0.jar`.
 
@@ -388,7 +371,7 @@ Expected Output:
   - `accessanalyzer_z3_reducer_1rs/`: intent mining and reduction using Z3 Solver.
   - `accessanalyzer_cvc5_reducer_1rs/`: intent mining and reduction using CVC5 Solver.
 
-#### Reproducing CLI-based Access Analyzer Archived Results
+- **Reproducing CLI-based Access Analyzer Archived Results**
 
 Because invoking Access Analyzer via the CLI requires a private AWS account, we do not provide this step. However, we still provide scripts for developers; see [AccessAnalyzerCLI.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for details.
 
@@ -399,13 +382,11 @@ mkdir -p results/
 cp -r archive_results/accessanalyzer_cli/ results/accessanalyzer_cli/
 ```
 
-### Quickyly Verifying Claims in the Paper
+### Reproducing Claims in the Paper
 
-The full details see [REPRODUCTION.md](docs/REPRODUCTION.md).
+After generating `results/`, we show how to reproduce the claims in the paper with scripts. 
 
-After generating `results/`, we explain how to reproduce the figures, tables, and conclusions reported in the paper.
-
-Before plotting, we recommend clearing any previously used plotting data with:
+Before plotting, we recommend clearing previously used plotting data with:
 
 ```shell
 sh tools/clean_plotting.sh
@@ -493,8 +474,6 @@ Expected Output:
 
 #### Plotting Figure 13 (Section 6.3)
 
-<img src="docs/figures/figure13.png" width="450"/>
-
 ```bash
 bash tools/figures/extract_scalability_RRI.sh
 (cd paper_figures && gnuplot gnuplot/RQ3-Experiment-Scalability-Reducing.plt)
@@ -504,7 +483,7 @@ Expected Output:
 
 - `paper_figures/results/RQ3-Experiment-Scalability-Reducing.pdf`
 
-#### Plotting Figure 15
+#### Plotting Figure 15 (Section 6.5)
 
 ```bash
 bash tools/figures/extract_scalability_RRI.sh
@@ -515,11 +494,7 @@ Expected Output:
 
 - `paper_figures/results/RQ5-Experiment-MicroBenchmark-Reducing.pdf`
 
-#### 13. Plotting Table 2
-
-<img src="docs/figures/table2.png" width="450"/>
-
-**Required logs**:
+#### Plotting Table 2 (Section 6.5)
 
 ```bash
 bash tools/figures/extract_scalability_RRI.sh

@@ -22,3 +22,5 @@ accessrefinery.log*
 comparison.log
 miner.log
 results/*
+paper_figures/data/*
+paper_figures/results/*
