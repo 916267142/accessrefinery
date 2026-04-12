@@ -17,7 +17,7 @@ Moreover, the artifact includes the full implementations of *AccessRefinery* and
 
 You can download the AccessRefinery FSE 2026 artifact from either of the following sources:
 
-- Archived version: Zenodo repository with DOI [10.5281/zenodo.19488469](10.5281/zenodo.19488469)
+- Archived version: Zenodo repository with DOI [10.5281/zenodo.19534299](https://doi.org/10.5281/zenodo.19534299)
 
 - Maintained version: [GitHub repository](https://github.com/XJTU-NetVerify/accessrefinery.git)
 
@@ -113,7 +113,7 @@ This section illustrates how to use *MCP* with the example in the paper (line 41
         },
         {
             "Effect": "Deny",
-            "NotResource": "dept1/user*.txt",
+            "NotResource": "dept*/user1.txt",
             "Condition": {
                 "IpAddress": {
                     "aws:SourceIp": "112.0.0.0/24"
@@ -122,7 +122,7 @@ This section illustrates how to use *MCP* with the example in the paper (line 41
         },
         {
             "Effect": "Deny",
-            "NotResource": "dept*/user1.txt",
+            "NotResource": "dept1/user*.txt",
             "Condition": {
                 "IpAddress": {
                     "aws:SourceIp" : "113.0.0.0/24"
@@ -238,11 +238,11 @@ This section describes (1) how to reproduce the results in `results/`, and (2) h
 
 *We omit the results for the real-world datasets because of commercial restrictions.*
 
-### Reproducing Archived Results
+### Reproducing  Results
 
-- **Reproducing AccessRefinery Archived Results**
+- **Reproducing AccessRefinery Results**
 
-Running with MiniSAT backend takes a long time to run. You can skip it by running the following commands to directly reuse the data in the `archive_results/` directory.
+Running *AccessRefinery* with MiniSAT backend takes a long time. You can skip it by running the following commands to directly reuse the data in the `archive_results/` directory.
 
 ```shell
 # skip running AccessRefinery with the MiniSAT backend
@@ -279,7 +279,7 @@ Expected Output:
   - `accessrefinery_bdd_reducer_10rs/`: intent mining and reduction using JavaBDD.
   - `accessrefinery_sat_reducer_3rs/`: intent mining and reduction using MiniSAT (limited to 3 rounds due to slow execution).
 
-- **Reproducing Reimplemented Access Analyzer Archived Results**
+- **Reproducing Reimplemented Access Analyzer Results**
 
 This section takes a long time to run. You can skip it by running the following commands to directly reuse the data in the `archive_results/` directory.
 
@@ -315,7 +315,7 @@ Expected Output:
   - `accessanalyzer_z3_reducer_1rs/`: intent mining and reduction using Z3 Solver.
   - `accessanalyzer_cvc5_reducer_1rs/`: intent mining and reduction using CVC5 Solver.
 
-- **Reproducing AWS Access Analyzer via CLI Archived Results**
+- **Reproducing AWS Access Analyzer via CLI Results**
 
 Because invoking Access Analyzer via CLI requires a private AWS account, we do not provide this step. However, we still provide scripts for developers; see [AccessAnalyzerCLI.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for details.
 

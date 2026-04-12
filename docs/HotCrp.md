@@ -15,7 +15,7 @@ Moreover, the artifact includes the full implementations of *AccessRefinery* and
 
 ## Status
 
-We are claiming 3 badges (Functional, Reusable, and Available) under the Artifacts Evaluated and Available sections.
+We are claiming 3 badges (Functional, Reusable, and Available) as the following:.
 
 ### Evaluated - Functional
 
@@ -28,7 +28,7 @@ We believe this artifact satisfies the Functional criteria based on the followin
   - Usage examples
   - Reproduction scripts and step-by-step instructions
   - API documentation generated via Javadoc
-  - Developer instructions (including running the system in VS Code)
+  - Developer instructions (develop AccessRefinery  in VS Code)
 
 - **Exercisable:** The system can be built and executed from source using standard Maven workflows with JDK 17.
 
@@ -56,18 +56,18 @@ We believe this artifact satisfies the Reusable criteria for the following reaso
 - **Reusable tool (AccessRefinery):**
   AccessRefinery provides a command-line interface with flexible options for different analysis tasks.
   - Users can easily run experiments or adapt workflows via configurable parameters.
-  - The tool supports interchangeable backends (e.g., BDD and SAT solvers), enabling support for additional backends.
+  - The tool supports interchangeable backends (using BDD or SAT solver to represent bitvector constraints), enabling support for additional backends.
   
 - **Reusable baseline implementation (Access Analyzer):**
   We provide a reimplementation of *Access Analyzer* as a baseline system for evaluation, since *AWS Access Analyzer* is not open source and only exposes a CLI interface.
-  - The reimplementation enables reproducible comparison under a unified experimental framework.
+  - The reimplementation enables  comparison with *AccessRefinery* under a unified experimental framework.
   - The tool supports interchangeable backends (e.g., Z3 and CVC5 solvers), enabling support for additional backends.
 
 - **Ease of extension:**
   The system is designed to facilitate incremental extensions. For example, adding support for new policy languages only requires extending specific components without modifying the entire system.
 
 - **Documentation and examples:**
-  The artifact includes API documentation (via Javadoc), usage examples, and instructions, which lower the barrier for reuse and repurposing.
+  The artifact includes API documentation (via Javadoc) and usage examples..
 
 ### Available
 
@@ -75,17 +75,19 @@ We believe this artifact satisfies the Available criteria because it is publicly
 
 ## Getting AccessRefinery
 
-For artifact evaluation reviewers, we provide a cloud server that can be accessed via SSH, so **Getting AccessRefinery** and **Installing AccessRefinery** can be skipped.
+For artifact evaluation reviewers, we provide a cloud server that can be accessed via SSH, so  **Installing AccessRefinery** can be skipped.  
 
 ```shell
-ssh ...
-... # password
+ssh ae_user@8.218.36.18
+fse2026   # password
 cd accessrefinery
 ```
 
+Due to potential concurrent access by multiple reviewers, we recommend creating a directory and cloning the repository independently.
+
 You can download the AccessRefinery FSE 2026 artifact from either of the following sources:
 
-- Archived version: Zenodo repository with DOI [10.5281/zenodo.19488469](10.5281/zenodo.19488469)
+- Archived version: Zenodo repository with DOI [10.5281/zenodo.19534299](https://doi.org/10.5281/zenodo.19534299)
 
 - Maintained version: [GitHub repository](https://github.com/XJTU-NetVerify/accessrefinery.git)
 
@@ -181,7 +183,7 @@ This section illustrates how to use *MCP* with the example in the paper (line 41
         },
         {
             "Effect": "Deny",
-            "NotResource": "dept1/user*.txt",
+            "NotResource": "dept*/user1.txt",
             "Condition": {
                 "IpAddress": {
                     "aws:SourceIp": "112.0.0.0/24"
@@ -190,7 +192,7 @@ This section illustrates how to use *MCP* with the example in the paper (line 41
         },
         {
             "Effect": "Deny",
-            "NotResource": "dept*/user1.txt",
+            "NotResource": "dept1/user*.txt",
             "Condition": {
                 "IpAddress": {
                     "aws:SourceIp" : "113.0.0.0/24"
@@ -306,11 +308,11 @@ This section describes (1) how to reproduce the results in `results/`, and (2) h
 
 *We omit the results for the real-world datasets because of commercial restrictions.*
 
-### Reproducing Archived Results
+### Reproducing  Results
 
-- **Reproducing AccessRefinery Archived Results**
+- **Reproducing AccessRefinery Results**
 
-Running with MiniSAT backend takes a long time to run. You can skip it by running the following commands to directly reuse the data in the `archive_results/` directory.
+Running *AccessRefinery* with MiniSAT backend takes a long time. You can skip it by running the following commands to directly reuse the data in the `archive_results/` directory.
 
 ```shell
 # skip running AccessRefinery with the MiniSAT backend
@@ -347,7 +349,7 @@ Expected Output:
   - `accessrefinery_bdd_reducer_10rs/`: intent mining and reduction using JavaBDD.
   - `accessrefinery_sat_reducer_3rs/`: intent mining and reduction using MiniSAT (limited to 3 rounds due to slow execution).
 
-- **Reproducing Reimplemented Access Analyzer Archived Results**
+- **Reproducing Reimplemented Access Analyzer Results**
 
 This section takes a long time to run. You can skip it by running the following commands to directly reuse the data in the `archive_results/` directory.
 
@@ -383,7 +385,7 @@ Expected Output:
   - `accessanalyzer_z3_reducer_1rs/`: intent mining and reduction using Z3 Solver.
   - `accessanalyzer_cvc5_reducer_1rs/`: intent mining and reduction using CVC5 Solver.
 
-- **Reproducing AWS Access Analyzer via CLI Archived Results**
+- **Reproducing AWS Access Analyzer via CLI Results**
 
 Because invoking Access Analyzer via CLI requires a private AWS account, we do not provide this step. However, we still provide scripts for developers; see [AccessAnalyzerCLI.md](https://github.com/XJTU-NetVerify/accessrefinery/blob/main/baselines/accessanalyzer-cli/AccessAnalyzerCLI.md) for details.
 

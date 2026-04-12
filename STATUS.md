@@ -1,7 +1,7 @@
 
 # Status
 
-We are claiming 3 badges (Functional, Reusable, and Available) under the Artifacts Evaluated and Available sections.
+We are claiming 3 badges (Functional, Reusable, and Available) as the following:.
 
 ## Evaluated - Functional
 
@@ -14,7 +14,7 @@ We believe this artifact satisfies the Functional criteria based on the followin
   - Usage examples
   - Reproduction scripts and step-by-step instructions
   - API documentation generated via Javadoc
-  - Developer instructions (including running the system in VS Code)
+  - Developer instructions (develop AccessRefinery  in VS Code)
 
 - **Exercisable:** The system can be built and executed from source using standard Maven workflows with JDK 17.
 
@@ -42,18 +42,18 @@ We believe this artifact satisfies the Reusable criteria for the following reaso
 - **Reusable tool (AccessRefinery):**
   AccessRefinery provides a command-line interface with flexible options for different analysis tasks.
   - Users can easily run experiments or adapt workflows via configurable parameters.
-  - The tool supports interchangeable backends (e.g., BDD and SAT solvers), enabling support for additional backends.
+  - The tool supports interchangeable backends (using BDD or SAT solver to represent bitvector constraints), enabling support for additional backends.
   
 - **Reusable baseline implementation (Access Analyzer):**
   We provide a reimplementation of *Access Analyzer* as a baseline system for evaluation, since *AWS Access Analyzer* is not open source and only exposes a CLI interface.
-  - The reimplementation enables reproducible comparison under a unified experimental framework.
+  - The reimplementation enables  comparison with *AccessRefinery* under a unified experimental framework.
   - The tool supports interchangeable backends (e.g., Z3 and CVC5 solvers), enabling support for additional backends.
 
 - **Ease of extension:**
   The system is designed to facilitate incremental extensions. For example, adding support for new policy languages only requires extending specific components without modifying the entire system.
 
 - **Documentation and examples:**
-  The artifact includes API documentation (via Javadoc), usage examples, and instructions, which lower the barrier for reuse and repurposing.
+  The artifact includes API documentation (via Javadoc) and usage examples..
 
 ## Available
 
