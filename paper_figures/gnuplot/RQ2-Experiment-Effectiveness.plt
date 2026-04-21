@@ -1,4 +1,4 @@
-set terminal pdfcairo font "Times New Roman, 13" linewidth 1 rounded fontscale 1.35 size 26cm, 9cm
+set terminal pdfcairo font "Times New Roman, 13" linewidth 1 rounded fontscale 1.35 size 35cm, 9cm
 
 # Set background and axes styles
 set style line 80 lt rgb "#808080"
@@ -24,7 +24,7 @@ set xtics font "Times New Roman, 13"
 set ytics font "Times New Roman, 13"
 set boxwidth 0.9
 
-set key width -0.05 Left vertical maxrows 1 reverse samplen 1 at screen 0.815, 1.02 font ',13' spacing 2
+set key width -0.05 Left vertical maxrows 1 reverse samplen 1 at screen 0.74, 1.02 font ',13' spacing 2
 set bmargin screen 0.33
 set tmargin at screen 0.9
 set rmargin screen 0.87
@@ -33,11 +33,11 @@ set rmargin screen 0.87
 set output 'results/RQ2-Experiment-Effectiveness.pdf'
 
 set label "The ID of datasets" at screen 0.54, 0.06 center font ",13"
-set label "Real-world" at screen 0.195, 0.76 center font ",13"
-set label "5-Keys" at screen 0.475, 0.76 center font ",13"
-set label "6-Keys" at screen 0.79, 0.76 center font ",13"
+set label "Real-world" at screen 0.185, 0.76 center font ",13"
+set label "5-Keys" at screen 0.49, 0.76 center font ",13"
+set label "6-Keys" at screen 0.81, 0.76 center font ",13"
 
-set multiplot layout 1,3 margins 0.10, 0.96, 0.31, 0.80 spacing 0.07
+set multiplot layout 1,3 margins 0.10, 0.96, 0.31, 0.80 spacing 0.13
 
 set yrange[0: 90]
 set ytics 20

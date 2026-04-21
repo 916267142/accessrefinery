@@ -36,11 +36,11 @@ set boxwidth 0.9
 
 # Set labels
 set label "The ID of datasets" at screen 0.54, 0.06 center font ",13"
-set label "Real-world" at screen 0.185, 0.90 center font ",13"
-set label "Synthetic" at screen 0.655, 0.90 center font ",13"
+set label "Real-world" at screen 0.197, 0.90 center font ",13"
+set label "Synthetic" at screen 0.730, 0.90 center font ",13"
 
 # Multiplot layout and axis settings
-set multiplot layout 1,2 margins 0.10, 0.96, 0.35, 0.94 spacing 0.09
+set multiplot layout 1,2 margins 0.10, 0.96, 0.35, 0.94 spacing 0.23
 set ylabel "# of Intents" offset 1.5,0
 set xrange [0: 520]
 set yrange [0: 90]
